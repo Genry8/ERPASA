@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6DE7FAD-AC3D-40D9-BC4E-D6AFC8D719F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CapaEntidad</RootNamespace>
+    <AssemblyName>CapaEntidad</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ce_administracion.cs" />
+    <Compile Include="ce_almacen.cs" />
+    <Compile Include="ce_comedor.cs" />
+    <Compile Include="ce_compraproducto.cs" />
+    <Compile Include="ce_datoscliente.cs" />
+    <Compile Include="ce_datospersonal.cs" />
+    <Compile Include="ce_datosventa.cs" />
+    <Compile Include="ce_equipoti.cs" />
+    <Compile Include="ce_fotofotosheck.cs" />
+    <Compile Include="ce_logistica.cs" />
+    <Compile Include="ce_nisira.cs" />
+    <Compile Include="ce_planilla.cs" />
+    <Compile Include="ce_regproducto.cs" />
+    <Compile Include="ce_reportes.cs" />
+    <Compile Include="ce_rolesbi.cs" />
+    <Compile Include="ce_rolespermiso.cs" />
+    <Compile Include="ce_rolesuser.cs" />
+    <Compile Include="ce_rrhh.cs" />
+    <Compile Include="ce_selecdesarrollo.cs" />
+    <Compile Include="ce_sig.cs" />
+    <Compile Include="ce_sst.cs" />
+    <Compile Include="ce_taller.cs" />
+    <Compile Include="ce_topico.cs" />
+    <Compile Include="ce_transporte.cs" />
+    <Compile Include="ce_usuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
