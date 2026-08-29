@@ -18,7 +18,7 @@ namespace ERPASA
             //Application.Run(new Frm_Logistica.Frm_ProgramarCursos());
             //Application.Run(new Reportes.AcopioRRHH.Frm_CargarReqPersonalSemanal());
             //Application.Run(new Reportes.AcopioRRHH.Frm_CargarReqPersonalAnual());
-            //Application.Run(new Frm_TabMaestra.Frm_RegistroPersonal());
+            //Application.Run(new Frm_SST.Frm_Registrar_AtenMed());
             Application.Run(new Frm_Login());
         }
 
