@@ -19,6 +19,7 @@ namespace ERPASA
             //Application.Run(new Reportes.AcopioRRHH.Frm_CargarReqPersonalSemanal());
             //Application.Run(new Reportes.AcopioRRHH.Frm_CargarReqPersonalAnual());
             //Application.Run(new Frm_SST.Frm_Registrar_AtenMed());
+            //Application.Run(new Frm_SST.Frm_Registrar_AtenMed());
             Application.Run(new Frm_Login());
         }
 
