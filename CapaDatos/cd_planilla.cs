@@ -877,7 +877,8 @@ namespace CapaDatos
             , string diagnostico, string sintomas, string localidad
             , decimal cant_med, string accion_realizada
             , string parteCuerpo, string labor
-            , DateTime hr_ent, DateTime hr_sal, string hoja
+            , DateTime hr_ent, DateTime hr_sal
+            , DateTime hr_campo, DateTime hr_topico, string nivelAtencion, string hoja
             , string estado, DateTime fec_cre, int usereg, string hostname, DateTime fec_mov, int usedit)
         {
             using (var conexion = leerconexion())
@@ -907,6 +908,9 @@ namespace CapaDatos
                     comando.Parameters.AddWithValue("@Labor", SqlDbType.VarChar).Value = labor;
                     comando.Parameters.AddWithValue("@Hr_ent", SqlDbType.Time).Value = hr_ent;
                     comando.Parameters.AddWithValue("@Hr_sal", SqlDbType.Time).Value = hr_sal;
+                    comando.Parameters.AddWithValue("@Hr_campo", SqlDbType.Time).Value = hr_campo;
+                    comando.Parameters.AddWithValue("@Hr_topico", SqlDbType.Time).Value = hr_topico;
+                    comando.Parameters.AddWithValue("@Nivel_atencion", SqlDbType.VarChar).Value = nivelAtencion;
 
                     comando.Parameters.AddWithValue("@Hoja", SqlDbType.VarChar).Value = hoja;
                     comando.Parameters.AddWithValue("@Estado", SqlDbType.VarChar).Value = estado;
@@ -1385,8 +1389,9 @@ namespace CapaDatos
             , string diagnostico, string sintomas, string localidad
             , decimal cant_med, string accion_realizada
             , string parteCuerpo, string labor
-            , DateTime hr_ent, DateTime hr_sal, string hoja
-            , string estado, DateTime fec_mov, int usedit)
+            , DateTime hr_ent, DateTime hr_sal
+            , DateTime hr_campo, DateTime hr_topico, string nivelAtencion
+            , string hoja, string estado, DateTime fec_mov, int usedit)
         {
             using (var conexion = leerconexion())
             {
@@ -1415,6 +1420,9 @@ namespace CapaDatos
                     comando.Parameters.AddWithValue("@Labor", SqlDbType.VarChar).Value = labor;
                     comando.Parameters.AddWithValue("@Hr_ent", SqlDbType.Time).Value = hr_ent;
                     comando.Parameters.AddWithValue("@Hr_sal", SqlDbType.Time).Value = hr_sal;
+                    comando.Parameters.AddWithValue("@Hr_campo", SqlDbType.Time).Value = hr_campo;
+                    comando.Parameters.AddWithValue("@Hr_topico", SqlDbType.Time).Value = hr_topico;
+                    comando.Parameters.AddWithValue("@Nivel_atencion", SqlDbType.VarChar).Value = nivelAtencion;
 
                     comando.Parameters.AddWithValue("@Hoja", SqlDbType.VarChar).Value = hoja;
                     comando.Parameters.AddWithValue("@Estado", SqlDbType.VarChar).Value = estado;

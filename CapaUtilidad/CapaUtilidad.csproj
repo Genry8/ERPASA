@@ -66,6 +66,7 @@
     <Compile Include="cu_excel.cs" />
     <Compile Include="cu_excel_progress.cs" />
     <Compile Include="cu_NumeroALetras.cs" />
+    <Compile Include="cu_numeros.cs" />
     <Compile Include="MinMaxClose.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

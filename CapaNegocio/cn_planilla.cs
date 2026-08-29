@@ -135,14 +135,17 @@ namespace CapaNegocio
             , string sintomas, string localidad
             , decimal cant_med, string accion_realizada
             , string parteCuerpo, string labor
-            , DateTime hr_ent, DateTime hr_sal, string hoja
-            , string estado, DateTime fec_cre, int usereg, string hostname, DateTime fec_mov, int usedit)
+            , DateTime hr_ent, DateTime hr_sal
+            , DateTime hr_campo, DateTime hr_topico, string nivelAtencion, string hoja
+            , string estado, DateTime fec_cre, int usereg,
+            string hostname, DateTime fec_mov, int usedit)
         {
             cd_planilla datos = new cd_planilla();
             datos.GuardarAtenMedica(fecha, quincena, mes, emp, sed, dni
             , apenom, area, jefearea, patologia, diagnostico, sintomas, localidad
             , cant_med, accion_realizada, parteCuerpo, labor
-            , hr_ent, hr_sal, hoja, estado, fec_cre, usereg, hostname
+            , hr_ent, hr_sal
+            , hr_campo, hr_topico, nivelAtencion, hoja, estado, fec_cre, usereg, hostname
                 , fec_mov, usedit);
         }
 
@@ -417,13 +420,16 @@ namespace CapaNegocio
             , string diagnostico, string sintomas, string localidad
             , decimal cant_med, string accion_realizada
             , string parteCuerpo, string labor
-            , DateTime hr_ent, DateTime hr_sal, string hoja
-            , string estado, DateTime fec_mov, int usedit)
+            , DateTime hr_ent, DateTime hr_sal
+            , DateTime hr_campo, DateTime hr_topico, string nivelAtencion
+            , string hoja, string estado, DateTime fec_mov, int usedit)
         {
             cd_planilla datos = new cd_planilla();
             datos.ActualizarAtenMedica(fecha, quincena, mes, emp, sed, dni
             , apenom, area, jefearea, patologia, diagnostico, sintomas, localidad
-            , cant_med, accion_realizada, parteCuerpo, labor, hr_ent, hr_sal, hoja, estado
+            , cant_med, accion_realizada, parteCuerpo, labor, hr_ent, hr_sal
+            , hr_campo, hr_topico, nivelAtencion
+            ,hoja, estado
                 , fec_mov, usedit);
         }
 

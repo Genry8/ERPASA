@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaUtilidad;
 using System;
 using System.Data;
 using System.Drawing;
@@ -31,6 +32,8 @@ namespace ERPASA.Frm_SST
             textBox_Sintomas.CharacterCasing = CharacterCasing.Upper;
             textBox_CantMedicamento.CharacterCasing = CharacterCasing.Upper;
             textBox_AccionRealizada.CharacterCasing = CharacterCasing.Upper;
+            comboBox_NivelAtencion.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox_NivelAtencion.SelectedIndex = 0;
             label_ParteAfectada.Visible = false;
             label_Labor.Visible = false;
             textBox_ParteAfectada.Visible = false;
@@ -39,6 +42,7 @@ namespace ERPASA.Frm_SST
 
             PonerOscuroComboBox();
             CargarDatosComboBox();
+            InicializarHoras();
         }
 
 
@@ -62,6 +66,15 @@ namespace ERPASA.Frm_SST
 
 
         }
+
+        public void InicializarHoras()
+        {
+            HoraTextBoxHelper.Configurar(textBox_HoraEntrada);
+            HoraTextBoxHelper.Configurar(textBox_HoraSalida);
+            HoraTextBoxHelper.Configurar(textBox_HoraCampo);
+            HoraTextBoxHelper.Configurar(textBox_HoraTopico);
+        }
+
 
         private void comboBox_detalle_empresa_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -203,6 +216,16 @@ namespace ERPASA.Frm_SST
                     Msbox.Frm_NotificacionesPeligro ng = new Msbox.Frm_NotificacionesPeligro("INGRESE HORA DE SALIDA", Color.FromArgb(238, 24, 24), 3);
                     ng.ShowDialog();
                 }
+                else if (textBox_HoraCampo.Text == "")
+                {
+                    Msbox.Frm_NotificacionesPeligro ng = new Msbox.Frm_NotificacionesPeligro("FALTA HORA REPORTADO EN CAMPO", Color.FromArgb(238, 24, 24), 3);
+                    ng.ShowDialog();
+                }
+                else if (textBox_HoraTopico.Text == "")
+                {
+                    Msbox.Frm_NotificacionesPeligro ng = new Msbox.Frm_NotificacionesPeligro("FALTA HORA LLEGADA A TOPICO", Color.FromArgb(238, 24, 24), 3);
+                    ng.ShowDialog();
+                }
                 else if (textBox_Patologia.Text == "")
                 {
                     Msbox.Frm_NotificacionesPeligro ng = new Msbox.Frm_NotificacionesPeligro("INGRESE PATOLOGIA", Color.FromArgb(238, 24, 24), 3);
@@ -283,6 +306,9 @@ namespace ERPASA.Frm_SST
                     textBox_Labor.Text,//LABOR
                     Convert.ToDateTime(textBox_HoraEntrada.Text),//HR_ENT
                     Convert.ToDateTime(textBox_HoraSalida.Text),//HR_SAL
+                    Convert.ToDateTime(textBox_HoraCampo.Text),//HR_CAMPO
+                    Convert.ToDateTime(textBox_HoraTopico.Text),//HR_TOPICO
+                    comboBox_NivelAtencion.Text.Trim(),
 
                     "",
                     "S",
@@ -323,6 +349,9 @@ namespace ERPASA.Frm_SST
                     textBox_Labor.Text,//LABOR
                     Convert.ToDateTime(textBox_HoraEntrada.Text),//HR_ENT
                     Convert.ToDateTime(textBox_HoraSalida.Text),//HR_SAL
+                    Convert.ToDateTime(textBox_HoraCampo.Text),//HR_CAMPO
+                    Convert.ToDateTime(textBox_HoraTopico.Text),//HR_TOPICO
+                    comboBox_NivelAtencion.Text.Trim(),
 
                     "",
                     "S",

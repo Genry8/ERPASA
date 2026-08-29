@@ -196,6 +196,9 @@ namespace ERPASA.Frm_SST
                         "",
                         Convert.ToDateTime(dataGridView1[13, i].Value),//HR_ENT
                         Convert.ToDateTime(dataGridView1[14, i].Value),//HR_SAL
+                        Convert.ToDateTime(dataGridView1[13, i].Value),//HR_ENT
+                        Convert.ToDateTime(dataGridView1[14, i].Value),//HR_SAL
+                        "",
 
                         comboBox_Hojas.Text,
                         "",
@@ -233,6 +236,9 @@ namespace ERPASA.Frm_SST
                         "",
                         Convert.ToDateTime(dataGridView1[13, i].Value),//HR_ENT
                         Convert.ToDateTime(dataGridView1[14, i].Value),//HR_SAL
+                        Convert.ToDateTime(dataGridView1[13, i].Value),//HR_ENT
+                        Convert.ToDateTime(dataGridView1[14, i].Value),//HR_SAL
+                        "",
 
                         comboBox_Hojas.Text,
                         "",
