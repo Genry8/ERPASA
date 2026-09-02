@@ -214,9 +214,9 @@ namespace ERPASA
             this.label_version_actual.Location = new System.Drawing.Point(361, 578);
             this.label_version_actual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_version_actual.Name = "label_version_actual";
-            this.label_version_actual.Size = new System.Drawing.Size(55, 24);
+            this.label_version_actual.Size = new System.Drawing.Size(58, 24);
             this.label_version_actual.TabIndex = 22;
-            this.label_version_actual.Text = "v.01.79";
+            this.label_version_actual.Text = "v.01.80";
             // 
             // linkLabel1
             // 

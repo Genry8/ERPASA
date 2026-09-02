@@ -1149,7 +1149,7 @@ namespace CapaDatos
         {
             using (var conexion = leerconexion())
             {
-                string sql = "UPDATE TR_ListaVehiculos SET Activo='NO'";
+                string sql = "DELETE FROM TR_ListaVehiculos ";
 
                 using (var comando = new SqlCommand(sql, conexion))
                 {
@@ -1163,7 +1163,7 @@ namespace CapaDatos
         {
             using (var conexion = leerconexion())
             {
-                string sql = "UPDATE TR_Listaconductores SET Activo='NO'";
+                string sql = "DELETE FROM TR_Listaconductores ";
 
                 using (var comando = new SqlCommand(sql, conexion))
                 {
