@@ -995,7 +995,7 @@ namespace CapaDatos
 
         // MOSTRAR LISTA ORDEN
         public DataTable ListaReporteOrdProd(DateTime fecini, DateTime fecfin,
-            string emp, string sed,string cult)
+            string emp, string sed, string cult)
         {
             SqlDataReader resultado; //permite leer las filas
             DataTable tabla = new DataTable();

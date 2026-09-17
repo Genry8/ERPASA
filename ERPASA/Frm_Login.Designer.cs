@@ -155,7 +155,7 @@
             this.label_version_actual.Name = "label_version_actual";
             this.label_version_actual.Size = new System.Drawing.Size(110, 20);
             this.label_version_actual.TabIndex = 6;
-            this.label_version_actual.Text = "v.01.81";
+            this.label_version_actual.Text = "v.01.82";
             this.label_version_actual.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel_login2

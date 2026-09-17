@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaUtilidad;
 using ExcelDataReader;
 using System;
 using System.Data;
@@ -181,111 +182,71 @@ namespace ERPASA.Frm_Comunicacion
                         dateTimePicker_FecEncuesta.Value.Date //item
                         );
 
-                int filas = dataGridView1.Rows.Count; //Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString())
-                int a;
+                Cursor = Cursors.WaitCursor;
+
+                // Toda la tanda va de una sola vez con SqlBulkCopy. El borrado
+                // por tipo de personal y año ya corrio arriba.
+                DataTable datos = new DataTable();
+                foreach (string c in new string[] { "Empresa", "Sede" })
+                    datos.Columns.Add(c, typeof(string));
+                datos.Columns.Add("Fecha_Respuesta", typeof(DateTime));
+                datos.Columns.Add("Fecha", typeof(DateTime));
+                foreach (string c in new string[] { "Sexo", "Rango_Edad", "Gerencia", "Puesto",
+                    "Area", "Tiempo_en_Compañia" })
+                    datos.Columns.Add(c, typeof(string));
+                for (int n = 1; n <= 68; n++)
+                    datos.Columns.Add("Item_" + n, typeof(string));
+                foreach (string c in new string[] { "Sugerencia", "Recomendacion_Sugerencia",
+                    "TipoPersonal", "Hoja", "Estado" })
+                    datos.Columns.Add(c, typeof(string));
+                datos.Columns.Add("FecCre", typeof(DateTime));
+                datos.Columns.Add("UseReg", typeof(int));
+                datos.Columns.Add("Hostname", typeof(string));
+                datos.Columns.Add("FecEdit", typeof(DateTime));
+                datos.Columns.Add("UseEdit", typeof(int));
+
+                DateTime fechaSis = ce_usuario.FechaSistema();
+                string hostname = ce_usuario.HostName();
+                DateTime fechaEncuesta = dateTimePicker_FecEncuesta.Value.Date;
+
+                int filas = dataGridView1.Rows.Count;
                 for (int i = 0; i <= filas - 1; i++)
-                //foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    objcnlog.GuardarEncuestaClima(
-                        "",//Empresa
-                        dataGridView1[3, i].Value.ToString().ToUpper().Trim(),//Sede
-                        Convert.ToDateTime(dataGridView1[0, i].Value),//item
-                        dateTimePicker_FecEncuesta.Value.Date,//fecha
-                        dataGridView1[1, i].Value.ToString().ToUpper().Trim(),//sexo
-                        dataGridView1[2, i].Value.ToString().ToUpper().Trim(),//rango edad
-                        dataGridView1[4, i].Value.ToString().ToUpper().Trim(),//gerencia
-                        dataGridView1[5, i].Value.ToString().ToUpper().Trim(),//puesto
-                        dataGridView1[6, i].Value.ToString().ToUpper().Trim(),//area
-                        dataGridView1[7, i].Value.ToString().ToUpper().Trim(),//tiempo en compañia
+                    if (dataGridView1.Rows[i].IsNewRow)
+                        continue;
 
-                        dataGridView1[8, i].Value.ToString().ToUpper().Trim(),//item_1
-                        dataGridView1[9, i].Value.ToString().ToUpper().Trim(),//item_2
-                        dataGridView1[10, i].Value.ToString().ToUpper().Trim(),//item_3
-                        dataGridView1[11, i].Value.ToString().ToUpper().Trim(),//item_4
-                        dataGridView1[12, i].Value.ToString().ToUpper().Trim(),//item_5
-                        dataGridView1[13, i].Value.ToString().ToUpper().Trim(),//item_6
-                        dataGridView1[14, i].Value.ToString().ToUpper().Trim(),//item_7
-                        dataGridView1[15, i].Value.ToString().ToUpper().Trim(),//item_8
-                        dataGridView1[16, i].Value.ToString().ToUpper().Trim(),//item_9
-                        dataGridView1[17, i].Value.ToString().ToUpper().Trim(),//item_10
-                        dataGridView1[18, i].Value.ToString().ToUpper().Trim(),//item_11
-                        dataGridView1[19, i].Value.ToString().ToUpper().Trim(),//item_12
-                        dataGridView1[20, i].Value.ToString().ToUpper().Trim(),//item_13
-                        dataGridView1[21, i].Value.ToString().ToUpper().Trim(),//item_14
-                        dataGridView1[22, i].Value.ToString().ToUpper().Trim(),//item_15
-                        dataGridView1[23, i].Value.ToString().ToUpper().Trim(),//item_16
-                        dataGridView1[24, i].Value.ToString().ToUpper().Trim(),//item_17
-                        dataGridView1[25, i].Value.ToString().ToUpper().Trim(),//item_18
-                        dataGridView1[26, i].Value.ToString().ToUpper().Trim(),//item_19
-                        dataGridView1[27, i].Value.ToString().ToUpper().Trim(),//item_20
+                    DataRow fila = datos.NewRow();
+                    fila["Empresa"] = "";
+                    fila["Sede"] = cu_valores.TextoMayus(dataGridView1[3, i].Value);
+                    fila["Fecha_Respuesta"] = cu_valores.Fecha(dataGridView1[0, i].Value);
+                    fila["Fecha"] = fechaEncuesta;
+                    fila["Sexo"] = cu_valores.TextoMayus(dataGridView1[1, i].Value);
+                    fila["Rango_Edad"] = cu_valores.TextoMayus(dataGridView1[2, i].Value);
+                    fila["Gerencia"] = cu_valores.TextoMayus(dataGridView1[4, i].Value);
+                    fila["Puesto"] = cu_valores.TextoMayus(dataGridView1[5, i].Value);
+                    fila["Area"] = cu_valores.TextoMayus(dataGridView1[6, i].Value);
+                    fila["Tiempo_en_Compañia"] = cu_valores.TextoMayus(dataGridView1[7, i].Value);
 
-                        dataGridView1[28, i].Value.ToString().ToUpper().Trim(),//item_21
-                        dataGridView1[29, i].Value.ToString().ToUpper().Trim(),//item_22
-                        dataGridView1[30, i].Value.ToString().ToUpper().Trim(),//item_23
-                        dataGridView1[31, i].Value.ToString().ToUpper().Trim(),//item_24
-                        dataGridView1[32, i].Value.ToString().ToUpper().Trim(),//item_25
-                        dataGridView1[33, i].Value.ToString().ToUpper().Trim(),//item_26
-                        dataGridView1[34, i].Value.ToString().ToUpper().Trim(),//item_27
-                        dataGridView1[35, i].Value.ToString().ToUpper().Trim(),//item_28
-                        dataGridView1[36, i].Value.ToString().ToUpper().Trim(),//item_29
-                        dataGridView1[37, i].Value.ToString().ToUpper().Trim(),//item_30
-                        dataGridView1[38, i].Value.ToString().ToUpper().Trim(),//item_31
-                        dataGridView1[39, i].Value.ToString().ToUpper().Trim(),//item_32
-                        dataGridView1[40, i].Value.ToString().ToUpper().Trim(),//item_33
-                        dataGridView1[41, i].Value.ToString().ToUpper().Trim(),//item_34
-                        dataGridView1[42, i].Value.ToString().ToUpper().Trim(),//item_35
-                        dataGridView1[43, i].Value.ToString().ToUpper().Trim(),//item_36
-                        dataGridView1[44, i].Value.ToString().ToUpper().Trim(),//item_37
-                        dataGridView1[45, i].Value.ToString().ToUpper().Trim(),//item_38
-                        dataGridView1[46, i].Value.ToString().ToUpper().Trim(),//item_39
-                        dataGridView1[47, i].Value.ToString().ToUpper().Trim(),//item_40
+                    // Item_1..Item_68 salen de las columnas 8 a 75 de la grilla.
+                    for (int n = 1; n <= 68; n++)
+                        fila["Item_" + n] = cu_valores.TextoMayus(dataGridView1[n + 7, i].Value);
 
-                        dataGridView1[48, i].Value.ToString().ToUpper().Trim(),//item_41
-                        dataGridView1[49, i].Value.ToString().ToUpper().Trim(),//item_42
-                        dataGridView1[50, i].Value.ToString().ToUpper().Trim(),//item_43
-                        dataGridView1[51, i].Value.ToString().ToUpper().Trim(),//item_44
-                        dataGridView1[52, i].Value.ToString().ToUpper().Trim(),//item_45
-                        dataGridView1[53, i].Value.ToString().ToUpper().Trim(),//item_46
-                        dataGridView1[54, i].Value.ToString().ToUpper().Trim(),//item_47
-                        dataGridView1[55, i].Value.ToString().ToUpper().Trim(),//item_48
-                        dataGridView1[56, i].Value.ToString().ToUpper().Trim(),//item_49
-                        dataGridView1[57, i].Value.ToString().ToUpper().Trim(),//item_50
-                        dataGridView1[58, i].Value.ToString().ToUpper().Trim(),//item_51
-                        dataGridView1[59, i].Value.ToString().ToUpper().Trim(),//item_52
-                        dataGridView1[60, i].Value.ToString().ToUpper().Trim(),//item_53
-                        dataGridView1[61, i].Value.ToString().ToUpper().Trim(),//item_54
-                        dataGridView1[62, i].Value.ToString().ToUpper().Trim(),//item_55
-                        dataGridView1[63, i].Value.ToString().ToUpper().Trim(),//item_56
-                        dataGridView1[64, i].Value.ToString().ToUpper().Trim(),//item_57
-                        dataGridView1[65, i].Value.ToString().ToUpper().Trim(),//item_58
-                        dataGridView1[66, i].Value.ToString().ToUpper().Trim(),//item_59
-                        dataGridView1[67, i].Value.ToString().ToUpper().Trim(),//item_60
-
-                        dataGridView1[68, i].Value.ToString().ToUpper().Trim(),//item_61
-                        dataGridView1[69, i].Value.ToString().ToUpper().Trim(),//item_62
-                        dataGridView1[70, i].Value.ToString().ToUpper().Trim(),//item_63
-                        dataGridView1[71, i].Value.ToString().ToUpper().Trim(),//item_64
-                        dataGridView1[72, i].Value.ToString().ToUpper().Trim(),//item_65
-                        dataGridView1[73, i].Value.ToString().ToUpper().Trim(),//item_66
-                        dataGridView1[74, i].Value.ToString().ToUpper().Trim(),//item_67
-                        dataGridView1[75, i].Value.ToString().ToUpper().Trim(),//item_68
-                                                                               //dataGridView1[76, i].Value.ToString().ToUpper().Trim(),//item_69
-                                                                               //dataGridView1[77, i].Value.ToString().ToUpper().Trim(),//item_70
-                                                                               //dataGridView1[78, i].Value.ToString().ToUpper().Trim(),//item_71
-                                                                               //dataGridView1[79, i].Value.ToString().ToUpper().Trim(),//item_72
-                        dataGridView1[76, i].Value.ToString().ToUpper().Trim(),//tienes sugerencia
-                        dataGridView1[77, i].Value.ToString().ToUpper().Trim(),//sugerencia_recomend
-
-                        comboBox_TipoPersonal.Text,
-                        comboBox_Hojas.Text,
-                        "S",
-                        ce_usuario.FechaSistema(),
-                        ce_usuario.usecod,
-                        ce_usuario.HostName(),
-                        ce_usuario.FechaSistema(),
-                        0
-                        );
+                    fila["Sugerencia"] = cu_valores.TextoMayus(dataGridView1[76, i].Value);
+                    fila["Recomendacion_Sugerencia"] = cu_valores.TextoMayus(dataGridView1[77, i].Value);
+                    fila["TipoPersonal"] = comboBox_TipoPersonal.Text;
+                    fila["Hoja"] = comboBox_Hojas.Text;
+                    fila["Estado"] = "S";
+                    fila["FecCre"] = fechaSis;
+                    fila["UseReg"] = ce_usuario.usecod;
+                    fila["Hostname"] = hostname;
+                    fila["FecEdit"] = fechaSis;
+                    fila["UseEdit"] = 0;
+                    datos.Rows.Add(fila);
                 }
+
+                objcnlog.GuardarEncuestaClimaMasivo(datos);
+
+                Cursor = Cursors.Default;
 
                 Msbox.Frm_NotificacionesPeligro ng = new Msbox.Frm_NotificacionesPeligro("GUARDADO CORRECTAMENTE", Color.FromArgb(12, 19, 214), 1);
                 ng.ShowDialog();

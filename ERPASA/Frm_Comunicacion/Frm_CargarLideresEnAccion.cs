@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaUtilidad;
 using ExcelDataReader;
 using System;
 using System.Data;
@@ -194,88 +195,66 @@ namespace ERPASA.Frm_Comunicacion
             DialogResult dialogResult = MessageBox.Show(MessageBoxContent, MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)
             {
-                int filas = dataGridView1.Rows.Count; //Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString())
-                int a;
+                Cursor = Cursors.WaitCursor;
+
+                // Toda la tanda va de una sola vez con SqlBulkCopy; el SP
+                // resuelve alta y actualizacion en un MERGE por
+                // Empresa + Sede + Fecha + Item, asi que ya no hace falta
+                // preguntar por cada fila si existe.
+                DataTable datos = new DataTable();
+                datos.Columns.Add("Item", typeof(int));
+                datos.Columns.Add("Fecha", typeof(DateTime));
+                foreach (string c in new string[] { "Ape_Nom", "Dni", "Empresa", "Sede",
+                    "Area", "Labor", "Jefe" })
+                    datos.Columns.Add(c, typeof(string));
+                datos.Columns.Add("Puntaje", typeof(decimal));
+                datos.Columns.Add("Categoria", typeof(string));
+                datos.Columns.Add("Estrellas", typeof(int));
+                datos.Columns.Add("Premio", typeof(string));
+                datos.Columns.Add("Hoja", typeof(string));
+                datos.Columns.Add("Estado", typeof(string));
+                datos.Columns.Add("FecCre", typeof(DateTime));
+                datos.Columns.Add("UseReg", typeof(int));
+                datos.Columns.Add("Hostname", typeof(string));
+                datos.Columns.Add("FecEdit", typeof(DateTime));
+                datos.Columns.Add("UseEdit", typeof(int));
+
+                DateTime fechaSis = ce_usuario.FechaSistema();
+                string hostname = ce_usuario.HostName();
+
+                int filas = dataGridView1.Rows.Count;
                 for (int i = 0; i <= filas - 1; i++)
-                //foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    var exrev = cn_comunicacion.BuscExisteLideresEnAccion(
-                        dataGridView1[4, i].Value.ToString().ToUpper().Trim(),//empresa
-                        dataGridView1[5, i].Value.ToString().ToUpper().Trim(),//sede
-                        Convert.ToDateTime(dataGridView1[1, i].Value).Date, //Fecha
-                        Convert.ToInt32(dataGridView1[0, i].Value) //item
-                        );
+                    if (dataGridView1.Rows[i].IsNewRow)
+                        continue;
 
-                    if (dataGridView1[9, i].Value.ToString() == "")
-                    {
-                        dataGridView1[9, i].Value = "0";
-                    }
-                    if (dataGridView1[11, i].Value.ToString() == "")
-                    {
-                        dataGridView1[11, i].Value = "0";
-                    }
-
-                    if (exrev == true)
-                    {
-                        objcnlog.ActualizarLideresEnAccion(
-                        Convert.ToInt32(dataGridView1[0, i].Value),//item
-                        Convert.ToDateTime(dataGridView1[1, i].Value),//fecha
-                        dataGridView1[2, i].Value.ToString().ToUpper().Trim(),//apenom
-                        dataGridView1[3, i].Value.ToString().ToUpper().Trim(),//dni
-                        dataGridView1[4, i].Value.ToString().ToUpper().Trim(),//empresa
-                        dataGridView1[5, i].Value.ToString().Trim(),//sede
-                        //comboBox_Sede.Text,//Sede
-                        dataGridView1[6, i].Value.ToString().ToUpper().Trim(),//area
-                        dataGridView1[7, i].Value.ToString().ToUpper().Trim(),//labor
-                        dataGridView1[8, i].Value.ToString().ToUpper().Trim(),//jefe
-
-                        Convert.ToDecimal(dataGridView1[9, i].Value),//puntaje
-                        dataGridView1[10, i].Value.ToString().ToUpper().Trim(),//categoria
-                        Convert.ToInt32(dataGridView1[11, i].Value),//estrellas
-                        dataGridView1[12, i].Value.ToString().ToUpper().Trim(),//premio
-
-                        comboBox_Hojas.Text,
-                        "S",
-                        ce_usuario.FechaSistema(),
-                        ce_usuario.usecod
-                        //ce_usuario.HostName(),
-                        //ce_usuario.FechaSistema(),
-                        //0,
-                        //0
-                        );
-
-                    }
-
-                    else //if (dataGridView2[0, i].Value.ToString() != ce_nisira.CodUsuarioExiste) //if (dr.Cells[0].Value.ToString() != ce_rolesbi.CodExiste)
-                    {
-                        objcnlog.GuardarLideresEnAccion(
-                        Convert.ToInt32(dataGridView1[0, i].Value),//item
-                        Convert.ToDateTime(dataGridView1[1, i].Value),//fecha
-                        dataGridView1[2, i].Value.ToString().ToUpper().Trim(),//apenom
-                        dataGridView1[3, i].Value.ToString().ToUpper().Trim(),//dni
-                        dataGridView1[4, i].Value.ToString().ToUpper().Trim(),//empresa
-                        dataGridView1[5, i].Value.ToString().Trim(),//sede
-                        //comboBox_Sede.Text,//Sede
-                        dataGridView1[6, i].Value.ToString().ToUpper().Trim(),//area
-                        dataGridView1[7, i].Value.ToString().ToUpper().Trim(),//labor
-                        dataGridView1[8, i].Value.ToString().ToUpper().Trim(),//jefe
-
-                        Convert.ToDecimal(dataGridView1[9, i].Value),//puntaje
-                        dataGridView1[10, i].Value.ToString().ToUpper().Trim(),//categoria
-                        Convert.ToInt32(dataGridView1[11, i].Value),//estrellas
-                        dataGridView1[12, i].Value.ToString().ToUpper().Trim(),//premio
-
-                        comboBox_Hojas.Text,
-                        "S",
-                        ce_usuario.FechaSistema(),
-                        ce_usuario.usecod,
-                        ce_usuario.HostName(),
-                        ce_usuario.FechaSistema(),
-                        0
-                        );
-
-                    }
+                    DataRow fila = datos.NewRow();
+                    fila["Item"] = cu_valores.Entero(dataGridView1[0, i].Value);
+                    fila["Fecha"] = cu_valores.Fecha(dataGridView1[1, i].Value);
+                    fila["Ape_Nom"] = cu_valores.TextoMayus(dataGridView1[2, i].Value);
+                    fila["Dni"] = cu_valores.TextoMayus(dataGridView1[3, i].Value);
+                    fila["Empresa"] = cu_valores.TextoMayus(dataGridView1[4, i].Value);
+                    fila["Sede"] = cu_valores.Texto(dataGridView1[5, i].Value);
+                    fila["Area"] = cu_valores.TextoMayus(dataGridView1[6, i].Value);
+                    fila["Labor"] = cu_valores.TextoMayus(dataGridView1[7, i].Value);
+                    fila["Jefe"] = cu_valores.TextoMayus(dataGridView1[8, i].Value);
+                    fila["Puntaje"] = cu_valores.Decimal(dataGridView1[9, i].Value);
+                    fila["Categoria"] = cu_valores.TextoMayus(dataGridView1[10, i].Value);
+                    fila["Estrellas"] = cu_valores.Entero(dataGridView1[11, i].Value);
+                    fila["Premio"] = cu_valores.TextoMayus(dataGridView1[12, i].Value);
+                    fila["Hoja"] = comboBox_Hojas.Text;
+                    fila["Estado"] = "S";
+                    fila["FecCre"] = fechaSis;
+                    fila["UseReg"] = ce_usuario.usecod;
+                    fila["Hostname"] = hostname;
+                    fila["FecEdit"] = fechaSis;
+                    fila["UseEdit"] = ce_usuario.usecod;
+                    datos.Rows.Add(fila);
                 }
+
+                objcnlog.GuardarActualizarLideresEnAccionMasivo(datos);
+
+                Cursor = Cursors.Default;
 
                 Msbox.Frm_NotificacionesPeligro ng = new Msbox.Frm_NotificacionesPeligro("GUARDADO CORRECTAMENTE", Color.FromArgb(12, 19, 214), 1);
                 ng.ShowDialog();

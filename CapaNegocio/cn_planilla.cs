@@ -429,7 +429,7 @@ namespace CapaNegocio
             , apenom, area, jefearea, patologia, diagnostico, sintomas, localidad
             , cant_med, accion_realizada, parteCuerpo, labor, hr_ent, hr_sal
             , hr_campo, hr_topico, nivelAtencion
-            ,hoja, estado
+            , hoja, estado
                 , fec_mov, usedit);
         }
 
@@ -876,6 +876,33 @@ namespace CapaNegocio
         */
 
 
+
+
+        //
+        //metodos de carga masiva de comunicacion (SqlBulkCopy)
+        public void GuardarParticipacionEncuestaMasivo(DataTable datos)
+        {
+            cd_planilla datoscd = new cd_planilla();
+            datoscd.GuardarParticipacionEncuestaMasivo(datos);
+        }
+
+        public void GuardarMovimientoCanjeMasivo(DataTable datos)
+        {
+            cd_planilla datoscd = new cd_planilla();
+            datoscd.GuardarMovimientoCanjeMasivo(datos);
+        }
+
+        public void GuardarActualizarSaldoPlanillaMasivo(DataTable datos)
+        {
+            cd_planilla datoscd = new cd_planilla();
+            datoscd.GuardarActualizarSaldoPlanillaMasivo(datos);
+        }
+
+        public void GuardarActualizarSaldoMasivo(DataTable datos)
+        {
+            cd_planilla datoscd = new cd_planilla();
+            datoscd.GuardarActualizarSaldoMasivo(datos);
+        }
 
     }
 }

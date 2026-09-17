@@ -100,7 +100,7 @@ namespace ERPASA.Reportes.Acopio
             //var val = cn_sst.BuscAtencionPaciente(textBox_Dni.Text, dateTimePicker_FecAtencion.Value.Date,textBox_HoraEntrada.Text);
             //if (val == true)
             //{
-            string emp, sed,cult;
+            string emp, sed, cult;
             if (comboBox_detalle_empresa.Text == "SELECCIONE")
             {
                 emp = "%";
@@ -133,7 +133,7 @@ namespace ERPASA.Reportes.Acopio
             dataGridView2.Columns.Clear();
             dataGridView2.DataSource = cn_sst.ListaReporteOrdProd(dateTimePicker_FecInicio.Value.Date
                 , dateTimePicker_FecFin.Value.Date, emp
-                , sed,cult);
+                , sed, cult);
 
             dataGridView2.AllowUserToAddRows = false;
             OrigenColorfila();

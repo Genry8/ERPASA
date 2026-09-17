@@ -384,7 +384,7 @@ namespace CapaNegocio
             DateTime fecini)
         {
             cd_packing datos = new cd_packing();
-            return datos.ReporteCierreProcesoPacking(id,fecini);
+            return datos.ReporteCierreProcesoPacking(id, fecini);
         }
 
 

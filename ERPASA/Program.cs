@@ -13,7 +13,8 @@ namespace ERPASA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Frm_SST.Frm_Registrar_AtenMed());
+            //Application.Run(new Frm_TabMaestra.Frm_RolesUserAppMovil());
+            //Application.Run(new Frm_Comunicacion.Frm_CargarSaldoPuntos());
             Application.Run(new Frm_Login());
         }
 

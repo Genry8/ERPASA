@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaUtilidad;
 using ExcelDataReader;
 using System;
 using System.Data;
@@ -171,50 +172,78 @@ namespace ERPASA.Frm_Comunicacion
                         Convert.ToInt32(comboBox_Año.Text)
                         );
 
-                int filas = dataGridView1.Rows.Count; //Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString())
-                int a;
+                Cursor = Cursors.WaitCursor;
+
+                // Toda la tanda va de una sola vez con SqlBulkCopy. El borrado
+                // por año ya corrio arriba.
+                DataTable datos = new DataTable();
+                foreach (string c in new string[] { "empresa", "dni", "nombre_completo", "Sede",
+                    "tipo_movimiento", "tipo_logico", "tipo_bono", "labor" })
+                    datos.Columns.Add(c, typeof(string));
+                datos.Columns.Add("Cantidad", typeof(double));
+                datos.Columns.Add("puntos", typeof(double));
+                datos.Columns.Add("PrecioIGV", typeof(double));
+                foreach (string c in new string[] { "CodigoNisira", "codigo", "codigo_producto",
+                    "descripcion_producto", "estado_canje" })
+                    datos.Columns.Add(c, typeof(string));
+                datos.Columns.Add("fecha_movimiento", typeof(DateTime));
+                datos.Columns.Add("fecha_estimada", typeof(DateTime));
+                datos.Columns.Add("fecha_entrega", typeof(DateTime));
+                foreach (string c in new string[] { "estado", "correo", "direccion", "telefono",
+                    "usuario_registro", "usuario_edicion", "usuario_entrega", "Hoja" })
+                    datos.Columns.Add(c, typeof(string));
+                datos.Columns.Add("FecCre", typeof(DateTime));
+                datos.Columns.Add("UseReg", typeof(int));
+                datos.Columns.Add("Hostname", typeof(string));
+
+                DateTime fechaSis = ce_usuario.FechaSistema();
+                string hostname = ce_usuario.HostName();
+
+                int filas = dataGridView1.Rows.Count;
                 for (int i = 0; i <= filas - 1; i++)
-                //foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    objcnlog.GuardarActualizarMovimientoCanje(
-                        dataGridView1[0, i].Value.ToString().Trim(),//empresa
-                        dataGridView1[1, i].Value.ToString().Trim(),//dni
-                        dataGridView1[2, i].Value.ToString().ToUpper().Trim(),//nombres
-                        dataGridView1[3, i].Value.ToString().ToUpper().Trim(),//SEDE
-                        dataGridView1[4, i].Value.ToString().ToUpper().Trim(),//tipo mov
-                        dataGridView1[5, i].Value.ToString().ToUpper().Trim(),//tipo log
-                        dataGridView1[6, i].Value.ToString().ToUpper().Trim(),//tipo bono
-                        dataGridView1[7, i].Value.ToString().ToUpper().Trim(),//labor
-                        dataGridView1[8, i].Value.ToString().ToUpper().Trim(),//CANTIDAD
-                        dataGridView1[9, i].Value.ToString().Trim(),//puntos
-                        dataGridView1[10, i].Value.ToString().Trim(),//PRECIO - IGV
-                        dataGridView1[11, i].Value.ToString().ToUpper().Trim(),//CODIGO NISIRA
-                        dataGridView1[12, i].Value.ToString().ToUpper().Trim(),//codigo
-                        dataGridView1[13, i].Value.ToString().ToUpper().Trim(),//cod producti
-                        dataGridView1[14, i].Value.ToString().ToUpper().Trim(),//despro
-                        dataGridView1[15, i].Value.ToString().ToUpper().Trim(),//estado canje
-                        dataGridView1[16, i].Value.ToString().ToUpper().Trim(),//fecha mov
-                        dataGridView1[17, i].Value.ToString().ToUpper().Trim(),//fecha est
-                        dataGridView1[18, i].Value.ToString().ToUpper().Trim(),//fecha entre
-                        dataGridView1[19, i].Value.ToString().ToUpper().Trim(),//estado
+                    if (dataGridView1.Rows[i].IsNewRow)
+                        continue;
 
-                        dataGridView1[20, i].Value.ToString().ToUpper().Trim(),//correo
-                        dataGridView1[21, i].Value.ToString().ToUpper().Trim(),//direccion
-                        dataGridView1[22, i].Value.ToString().ToUpper().Trim(),//telefono
-                        dataGridView1[23, i].Value.ToString().ToUpper().Trim(),//user reg
-                        dataGridView1[24, i].Value.ToString().ToUpper().Trim(),//user edit
-                        dataGridView1[25, i].Value.ToString().ToUpper().Trim(),//user ent
-
-                        comboBox_Hojas.Text,
-                        ce_usuario.FechaSistema(),
-                        ce_usuario.usecod,
-                        ce_usuario.HostName(),
-                        ce_usuario.FechaSistema(),
-                        ce_usuario.usecod,
-                        ce_usuario.usecod
-                        );
-
+                    DataRow fila = datos.NewRow();
+                    fila["empresa"] = cu_valores.Texto(dataGridView1[0, i].Value);
+                    fila["dni"] = cu_valores.Texto(dataGridView1[1, i].Value);
+                    fila["nombre_completo"] = cu_valores.TextoMayus(dataGridView1[2, i].Value);
+                    fila["Sede"] = cu_valores.TextoMayus(dataGridView1[3, i].Value);
+                    fila["tipo_movimiento"] = cu_valores.TextoMayus(dataGridView1[4, i].Value);
+                    fila["tipo_logico"] = cu_valores.TextoMayus(dataGridView1[5, i].Value);
+                    fila["tipo_bono"] = cu_valores.TextoMayus(dataGridView1[6, i].Value);
+                    fila["labor"] = cu_valores.TextoMayus(dataGridView1[7, i].Value);
+                    fila["Cantidad"] = cu_valores.Numero(dataGridView1[8, i].Value);
+                    fila["puntos"] = cu_valores.Numero(dataGridView1[9, i].Value);
+                    fila["PrecioIGV"] = cu_valores.Numero(dataGridView1[10, i].Value);
+                    fila["CodigoNisira"] = cu_valores.TextoMayus(dataGridView1[11, i].Value);
+                    fila["codigo"] = cu_valores.TextoMayus(dataGridView1[12, i].Value);
+                    fila["codigo_producto"] = cu_valores.TextoMayus(dataGridView1[13, i].Value);
+                    fila["descripcion_producto"] = cu_valores.TextoMayus(dataGridView1[14, i].Value);
+                    fila["estado_canje"] = cu_valores.TextoMayus(dataGridView1[15, i].Value);
+                    fila["fecha_movimiento"] = cu_valores.Fecha(dataGridView1[16, i].Value);
+                    fila["fecha_estimada"] = cu_valores.Fecha(dataGridView1[17, i].Value);
+                    fila["fecha_entrega"] = cu_valores.Fecha(dataGridView1[18, i].Value);
+                    fila["estado"] = cu_valores.TextoMayus(dataGridView1[19, i].Value);
+                    fila["correo"] = cu_valores.TextoMayus(dataGridView1[20, i].Value);
+                    fila["direccion"] = cu_valores.TextoMayus(dataGridView1[21, i].Value);
+                    fila["telefono"] = cu_valores.TextoMayus(dataGridView1[22, i].Value);
+                    fila["usuario_registro"] = cu_valores.TextoMayus(dataGridView1[23, i].Value);
+                    fila["usuario_edicion"] = cu_valores.TextoMayus(dataGridView1[24, i].Value);
+                    fila["usuario_entrega"] = cu_valores.TextoMayus(dataGridView1[25, i].Value);
+                    fila["Hoja"] = comboBox_Hojas.Text;
+                    fila["FecCre"] = fechaSis;
+                    fila["UseReg"] = ce_usuario.usecod;
+                    fila["Hostname"] = hostname;
+                    // FecEdit, UseEdit y UseElim quedan nulos en el alta, igual
+                    // que los dejaba el INSERT del SP.
+                    datos.Rows.Add(fila);
                 }
+
+                objcnlog.GuardarMovimientoCanjeMasivo(datos);
+
+                Cursor = Cursors.Default;
 
                 Msbox.Frm_NotificacionesPeligro ng = new Msbox.Frm_NotificacionesPeligro("GUARDADO CORRECTAMENTE", Color.FromArgb(12, 19, 214), 1);
                 ng.ShowDialog();

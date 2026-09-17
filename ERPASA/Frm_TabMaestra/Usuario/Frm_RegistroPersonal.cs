@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace ERPASA.Frm_TabMaestra
 {
-    public partial class Frm_RegistroPersonal : Form , VarDatosEntroFormUsuario
+    public partial class Frm_RegistroPersonal : Form, VarDatosEntroFormUsuario
     {
         cn_usuario objcuserneg = new cn_usuario();
         cd_conexion objcdconex = new cd_conexion();

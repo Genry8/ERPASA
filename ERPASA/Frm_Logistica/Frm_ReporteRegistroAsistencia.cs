@@ -33,7 +33,7 @@ namespace ERPASA.Frm_Logistica
         cn_sst objcnsst = new cn_sst();
         cd_logistica objlogistica = new cd_logistica();
 
-        string TipoAlimento, emp=string.Empty;
+        string TipoAlimento, emp = string.Empty;
 
         cu_excel_progressForm objexcel_progress = new cu_excel_progressForm();
         DataTable dtg;
@@ -699,7 +699,7 @@ namespace ERPASA.Frm_Logistica
                     comboBox_empresa.Invoke(new MethodInvoker(() =>
                     {
                         empText = comboBox_empresa.Text;
-                        emp= comboBox_empresa.Text;
+                        emp = comboBox_empresa.Text;
                     }));
                 }
                 else
@@ -726,7 +726,7 @@ namespace ERPASA.Frm_Logistica
                     .Cells["Firma"]
                     .Value
                     .ToString();
-                                
+
 
                 if (empText == "AGRICOLA SANTA AZUL S.R.L")
                 {
@@ -1400,7 +1400,7 @@ namespace ERPASA.Frm_Logistica
 
             Paragraph titulo =
                 new Paragraph(
-                    "EXAMEN ESCRITO: " + rt["Curso"].ToString(), 
+                    "EXAMEN ESCRITO: " + rt["Curso"].ToString(),
                     fontExamen);
 
             titulo.Alignment =
@@ -1821,16 +1821,16 @@ namespace ERPASA.Frm_Logistica
                         emp = "IA";
                     }
 
-                        string nombreArchivo =
-                    $"{row.Cells["Dni"].Value?.ToString()}" +
-                    $"_{emp}" +
-                    $"_{row.Cells["ApeNom"].Value?.ToString()}" +
-                    $"_{row.Cells["Curso"].Value?.ToString()}" +
-                    $"_{Convert.ToDateTime(row.Cells["FechaCapacitacion"].Value?.ToString()):yyyyMMdd}.pdf";
+                    string nombreArchivo =
+                $"{row.Cells["Dni"].Value?.ToString()}" +
+                $"_{emp}" +
+                $"_{row.Cells["ApeNom"].Value?.ToString()}" +
+                $"_{row.Cells["Curso"].Value?.ToString()}" +
+                $"_{Convert.ToDateTime(row.Cells["FechaCapacitacion"].Value?.ToString()):yyyyMMdd}.pdf";
 
                     string rutaCompleta =
                         Path.Combine(carpetaDestino, nombreArchivo);
-                    
+
                     if (empText == "AGRICOLA SANTA AZUL S.R.L")
                     {
                         cn_equipoti.BuscPaginaParaHoja(31, dateTimePicker_Fecha_Fin.Value.Date);

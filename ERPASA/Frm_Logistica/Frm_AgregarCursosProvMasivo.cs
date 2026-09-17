@@ -164,7 +164,7 @@ namespace ERPASA.Frm_Logistica
                             //    continue;
 
                             bool existe = cn_logistica.BuscExisteCursoProgramado(
-                                                dni+""+idCurso,
+                                                dni + "" + idCurso,
                                                 dateTimePicker_FechaInd.Value.Date,
                                                 3);
 
@@ -213,7 +213,7 @@ namespace ERPASA.Frm_Logistica
                     ng.ShowDialog();
 
                 }
-            
+
             }
         }
 

@@ -661,6 +661,11 @@ namespace ERPASA
             AbrirFormularioHijo<Frm_TabMaestra.Frm_RolesUser>();
         }
 
+        private void TabMaest_Roles_AppMovil_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_TabMaestra.Frm_RolesUserAppMovil>();
+        }
+
         private void TabMaest_PowerBI_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo<Frm_TabMaestra.Frm_RolesBI>();

@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaUtilidad;
 using ExcelDataReader;
 using System;
 using System.Data;
@@ -168,34 +169,61 @@ namespace ERPASA.Frm_Comunicacion
             DialogResult dialogResult = MessageBox.Show(MessageBoxContent, MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)
             {
-                int filas = dataGridView1.Rows.Count; //Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString())
-                int a;
+                Cursor = Cursors.WaitCursor;
+
+                // Toda la tanda va de una sola vez con SqlBulkCopy; el SP
+                // resuelve alta y actualizacion en un MERGE por dni + Fecha_entrega.
+                DataTable datos = new DataTable();
+                foreach (string c in new string[] { "empresa", "dni", "nombre_completo" })
+                    datos.Columns.Add(c, typeof(string));
+                datos.Columns.Add("puntos", typeof(double));
+                datos.Columns.Add("codigo_producto", typeof(string));
+                datos.Columns.Add("descripcion_producto", typeof(string));
+                datos.Columns.Add("monto_planilla", typeof(double));
+                datos.Columns.Add("IGV", typeof(double));
+                datos.Columns.Add("Total", typeof(double));
+                datos.Columns.Add("estado_canje", typeof(string));
+                datos.Columns.Add("Fecha_entrega", typeof(DateTime));
+                datos.Columns.Add("Hoja", typeof(string));
+                datos.Columns.Add("FecCre", typeof(DateTime));
+                datos.Columns.Add("UseReg", typeof(int));
+                datos.Columns.Add("Hostname", typeof(string));
+                datos.Columns.Add("FecEdit", typeof(DateTime));
+                datos.Columns.Add("UseEdit", typeof(int));
+
+                DateTime fechaSis = ce_usuario.FechaSistema();
+                string hostname = ce_usuario.HostName();
+
+                int filas = dataGridView1.Rows.Count;
                 for (int i = 0; i <= filas - 1; i++)
-                //foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    objcnlog.GuardarActualizarSaldoPlanilla(
-                        "",//empresa
-                        dataGridView1[0, i].Value.ToString().Trim(),//dni
-                        dataGridView1[1, i].Value.ToString().ToUpper().Trim(),//nombre completo
-                        dataGridView1[2, i].Value.ToString().ToUpper().Trim(),//puntos
-                        dataGridView1[3, i].Value.ToString().ToUpper().Trim(),//cod prod
-                        dataGridView1[4, i].Value.ToString().ToUpper().Trim(),//des prod
-                        dataGridView1[5, i].Value.ToString().ToUpper().Trim(),//monto
-                        dataGridView1[6, i].Value.ToString().ToUpper().Trim(),//igv
-                        dataGridView1[7, i].Value.ToString().ToUpper().Trim(),//total
-                        dataGridView1[8, i].Value.ToString().ToUpper().Trim(),//estado canje
-                        dataGridView1[9, i].Value.ToString().ToUpper().Trim(),//fecha ent
+                    if (dataGridView1.Rows[i].IsNewRow)
+                        continue;
 
-                        comboBox_Hojas.Text,
-                        ce_usuario.FechaSistema(),
-                        ce_usuario.usecod,
-                        ce_usuario.HostName(),
-                        ce_usuario.FechaSistema(),
-                        ce_usuario.usecod,
-                        ce_usuario.usecod
-                        );
-
+                    DataRow fila = datos.NewRow();
+                    fila["empresa"] = "";
+                    fila["dni"] = cu_valores.Texto(dataGridView1[0, i].Value);
+                    fila["nombre_completo"] = cu_valores.TextoMayus(dataGridView1[1, i].Value);
+                    fila["puntos"] = cu_valores.Numero(dataGridView1[2, i].Value);
+                    fila["codigo_producto"] = cu_valores.TextoMayus(dataGridView1[3, i].Value);
+                    fila["descripcion_producto"] = cu_valores.TextoMayus(dataGridView1[4, i].Value);
+                    fila["monto_planilla"] = cu_valores.Numero(dataGridView1[5, i].Value);
+                    fila["IGV"] = cu_valores.Numero(dataGridView1[6, i].Value);
+                    fila["Total"] = cu_valores.Numero(dataGridView1[7, i].Value);
+                    fila["estado_canje"] = cu_valores.TextoMayus(dataGridView1[8, i].Value);
+                    fila["Fecha_entrega"] = cu_valores.Fecha(dataGridView1[9, i].Value);
+                    fila["Hoja"] = comboBox_Hojas.Text;
+                    fila["FecCre"] = fechaSis;
+                    fila["UseReg"] = ce_usuario.usecod;
+                    fila["Hostname"] = hostname;
+                    fila["FecEdit"] = fechaSis;
+                    fila["UseEdit"] = ce_usuario.usecod;
+                    datos.Rows.Add(fila);
                 }
+
+                objcnlog.GuardarActualizarSaldoPlanillaMasivo(datos);
+
+                Cursor = Cursors.Default;
 
                 Msbox.Frm_NotificacionesPeligro ng = new Msbox.Frm_NotificacionesPeligro("GUARDADO CORRECTAMENTE", Color.FromArgb(12, 19, 214), 1);
                 ng.ShowDialog();

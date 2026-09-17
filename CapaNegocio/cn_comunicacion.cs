@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using System;
+using System.Data;
 
 namespace CapaNegocio
 {
@@ -432,6 +433,33 @@ namespace CapaNegocio
                 );
         }
 
+
+
+        //
+        //metodos de carga masiva (SqlBulkCopy)
+        public void GuardarCosechandoGanadoresMasivo(DataTable datos)
+        {
+            cd_comunicacion datoscd = new cd_comunicacion();
+            datoscd.GuardarCosechandoGanadoresMasivo(datos);
+        }
+
+        public void GuardarPotenciandoLideresMasivo(DataTable datos)
+        {
+            cd_comunicacion datoscd = new cd_comunicacion();
+            datoscd.GuardarPotenciandoLideresMasivo(datos);
+        }
+
+        public void GuardarEncuestaClimaMasivo(DataTable datos)
+        {
+            cd_comunicacion datoscd = new cd_comunicacion();
+            datoscd.GuardarEncuestaClimaMasivo(datos);
+        }
+
+        public void GuardarActualizarLideresEnAccionMasivo(DataTable datos)
+        {
+            cd_comunicacion datoscd = new cd_comunicacion();
+            datoscd.GuardarActualizarLideresEnAccionMasivo(datos);
+        }
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Net.Http;
 
@@ -31,6 +32,80 @@ namespace CapaDatos
         public SqlConnection leerconexion()
         {
             return new SqlConnection(conexionstring);
+        }
+
+        // =============================
+        // 🔹 CARGA MASIVA (SqlBulkCopy)
+        // =============================
+
+        /// <summary>
+        /// Sube la tabla de golpe con SqlBulkCopy a una tabla temporal y deja
+        /// que el SP haga el MERGE. Los tres pasos van sobre la MISMA conexión:
+        /// la tabla temporal solo existe mientras esa conexión siga abierta.
+        /// Para cuando hay que insertar o actualizar según una clave.
+        /// </summary>
+        protected void CargaMasiva(DataTable datos, string tabla, string ddl, string sp)
+        {
+            if (datos == null || datos.Rows.Count == 0)
+                return;
+
+            using (var conexion = leerconexion())
+            {
+                conexion.Open();
+
+                // 1) tabla temporal de la sesion
+                using (var crear = new SqlCommand(ddl, conexion))
+                {
+                    crear.ExecuteNonQuery();
+                }
+
+                // 2) carga masiva
+                using (var bulk = new SqlBulkCopy(conexion))
+                {
+                    bulk.DestinationTableName = tabla;
+                    bulk.BulkCopyTimeout = 0;
+                    foreach (DataColumn columna in datos.Columns)
+                    {
+                        bulk.ColumnMappings.Add(columna.ColumnName, columna.ColumnName);
+                    }
+                    bulk.WriteToServer(datos);
+                }
+
+                // 3) un solo MERGE contra la tabla real
+                using (var comando = new SqlCommand(sp, conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.CommandTimeout = 0;
+                    comando.ExecuteNonQuery();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Inserta la tabla directamente en su destino real, sin temporal ni SP.
+        /// Para las pantallas que primero borran y después vuelven a insertar
+        /// todo: ahí no hay nada que comparar, solo filas nuevas.
+        /// </summary>
+        protected void CargaMasivaDirecta(DataTable datos, string tablaDestino)
+        {
+            if (datos == null || datos.Rows.Count == 0)
+                return;
+
+            using (var conexion = leerconexion())
+            {
+                conexion.Open();
+
+                using (var bulk = new SqlBulkCopy(conexion))
+                {
+                    bulk.DestinationTableName = tablaDestino;
+                    bulk.BulkCopyTimeout = 0;
+                    foreach (DataColumn columna in datos.Columns)
+                    {
+                        bulk.ColumnMappings.Add(columna.ColumnName, columna.ColumnName);
+                    }
+                    bulk.WriteToServer(datos);
+                }
+            }
         }
     }
 

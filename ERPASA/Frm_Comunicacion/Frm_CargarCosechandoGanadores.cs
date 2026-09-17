@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaUtilidad;
 using ExcelDataReader;
 using System;
 using System.Data;
@@ -201,80 +202,59 @@ namespace ERPASA.Frm_Comunicacion
                         1//Convert.ToInt32(dataGridView1[0, i].Value) //item
                         );
 
-                int filas = dataGridView1.Rows.Count; //Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString())
-                int a;
+                Cursor = Cursors.WaitCursor;
+
+                // Toda la tanda va de una sola vez con SqlBulkCopy. El borrado
+                // previo ya corrio arriba, asi que aca solo se insertan filas.
+                DataTable datos = new DataTable();
+                foreach (string c in new string[] { "Item", "Fecha", "Situacion", "Sol_Reconoce",
+                    "Sol_Empresa", "Sol_Gerencia", "Sol_Sede", "Sol_Cargo", "Sol_Area",
+                    "Rec_Reconocido", "Rec_Gerencia", "Rec_Cargo", "Rec_Area", "Rec_Motivo",
+                    "Rec_Tipo", "Principio", "Hoja", "Estado", "Hostname" })
+                    datos.Columns.Add(c, typeof(string));
+                datos.Columns["Item"].DataType = typeof(int);
+                datos.Columns.Add("Fecha_", typeof(DateTime));
+                datos.Columns.Remove("Fecha");
+                datos.Columns["Fecha_"].ColumnName = "Fecha";
+                datos.Columns.Add("FecCre", typeof(DateTime));
+                datos.Columns.Add("UseReg", typeof(int));
+                datos.Columns.Add("FecEdit", typeof(DateTime));
+                datos.Columns.Add("UseEdit", typeof(int));
+
+                DateTime fechaSis = ce_usuario.FechaSistema();
+                string hostname = ce_usuario.HostName();
+
+                int filas = dataGridView1.Rows.Count;
                 for (int i = 0; i <= filas - 1; i++)
-                //foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    //if (exrev == true)
-                    //{
-                    //    objcnlog.ActualizarCosechandoGanadores(
-                    //    Convert.ToInt32(dataGridView1[0, i].Value),//item
-                    //    Convert.ToDateTime(dataGridView1[1, i].Value),//fecha
-                    //    dataGridView1[2, i].Value.ToString().ToUpper().Trim(),//situa
-                    //    dataGridView1[3, i].Value.ToString().ToUpper().Trim(),//sol reco
-                    //    dataGridView1[4, i].Value.ToString().ToUpper().Trim(),//empresa
-                    //    //comboBox_empresa.Text,//Empresa
-                    //    dataGridView1[5, i].Value.ToString().ToUpper().Trim(),//gerencia
-                    //    dataGridView1[6, i].Value.ToString().Trim(),//sede
-                    //    //comboBox_Sede.Text,//Sede
-                    //    dataGridView1[7, i].Value.ToString().ToUpper().Trim(),//cargo
-                    //    dataGridView1[8, i].Value.ToString().ToUpper().Trim(),//area
+                    if (dataGridView1.Rows[i].IsNewRow)
+                        continue;
 
-                    //    dataGridView1[9, i].Value.ToString().ToUpper().Trim(),//rec_recon
-                    //    dataGridView1[10, i].Value.ToString().ToUpper().Trim(),//rec_ger
-                    //    dataGridView1[11, i].Value.ToString().ToUpper().Trim(),//rec_carg
-                    //    dataGridView1[12, i].Value.ToString().ToUpper().Trim(),//rec_area
-                    //    dataGridView1[13, i].Value.ToString().ToUpper().Trim(),//rec_motivo
-                    //    dataGridView1[14, i].Value.ToString().ToUpper().Trim(),//rec_tipo
-                    //    dataGridView1[15, i].Value.ToString().ToUpper().Trim(),//principio cultural
+                    DataRow fila = datos.NewRow();
+                    fila["Item"] = cu_valores.Entero(dataGridView1[0, i].Value);
+                    fila["Fecha"] = cu_valores.Fecha(dataGridView1[1, i].Value);
+                    string[] campos = new string[] { "Situacion", "Sol_Reconoce", "Sol_Empresa",
+                        "Sol_Gerencia", "Sol_Sede", "Sol_Cargo", "Sol_Area", "Rec_Reconocido",
+                        "Rec_Gerencia", "Rec_Cargo", "Rec_Area", "Rec_Motivo", "Rec_Tipo", "Principio" };
+                    // La sede se guardaba sin pasar a mayusculas; el resto si.
+                    for (int c = 0; c < campos.Length; c++)
+                        fila[campos[c]] = campos[c] == "Sol_Sede"
+                            ? cu_valores.Texto(dataGridView1[c + 2, i].Value)
+                            : cu_valores.TextoMayus(dataGridView1[c + 2, i].Value);
 
-                    //    comboBox_Hojas.Text,
-                    //    "S",
-                    //    ce_usuario.FechaSistema(),
-                    //    ce_usuario.usecod
-                    //    //ce_usuario.HostName(),
-                    //    //ce_usuario.FechaSistema(),
-                    //    //0,
-                    //    //0
-                    //    );
-
-                    //}
-
-                    //else //if (dataGridView2[0, i].Value.ToString() != ce_nisira.CodUsuarioExiste) //if (dr.Cells[0].Value.ToString() != ce_rolesbi.CodExiste)
-                    //{
-                    objcnlog.GuardarCosechandoGanadores(
-                    Convert.ToInt32(dataGridView1[0, i].Value),//item
-                    Convert.ToDateTime(dataGridView1[1, i].Value),//fecha
-                    dataGridView1[2, i].Value.ToString().ToUpper().Trim(),//situa
-                    dataGridView1[3, i].Value.ToString().ToUpper().Trim(),//sol reco
-                    dataGridView1[4, i].Value.ToString().ToUpper().Trim(),//empresa
-                                                                          //comboBox_empresa.Text,//Empresa
-                    dataGridView1[5, i].Value.ToString().ToUpper().Trim(),//gerencia
-                    dataGridView1[6, i].Value.ToString().Trim(),//sede
-                                                                //comboBox_Sede.Text,//Sede
-                    dataGridView1[7, i].Value.ToString().ToUpper().Trim(),//cargo
-                    dataGridView1[8, i].Value.ToString().ToUpper().Trim(),//area
-
-                    dataGridView1[9, i].Value.ToString().ToUpper().Trim(),//rec_recon
-                    dataGridView1[10, i].Value.ToString().ToUpper().Trim(),//rec_ger
-                    dataGridView1[11, i].Value.ToString().ToUpper().Trim(),//rec_carg
-                    dataGridView1[12, i].Value.ToString().ToUpper().Trim(),//rec_area
-                    dataGridView1[13, i].Value.ToString().ToUpper().Trim(),//rec_motivo
-                    dataGridView1[14, i].Value.ToString().ToUpper().Trim(),//rec_tipo
-                    dataGridView1[15, i].Value.ToString().ToUpper().Trim(),//principio cultural
-
-                    comboBox_Hojas.Text,
-                    "S",
-                    ce_usuario.FechaSistema(),
-                    ce_usuario.usecod,
-                    ce_usuario.HostName(),
-                    ce_usuario.FechaSistema(),
-                    0
-                    );
-
+                    fila["Hoja"] = comboBox_Hojas.Text;
+                    fila["Estado"] = "S";
+                    fila["FecCre"] = fechaSis;
+                    fila["UseReg"] = ce_usuario.usecod;
+                    fila["Hostname"] = hostname;
+                    fila["FecEdit"] = fechaSis;
+                    fila["UseEdit"] = 0;
+                    datos.Rows.Add(fila);
                 }
-                //}
+
+                objcnlog.GuardarCosechandoGanadoresMasivo(datos);
+
+                Cursor = Cursors.Default;
 
                 Msbox.Frm_NotificacionesPeligro ng = new Msbox.Frm_NotificacionesPeligro("GUARDADO CORRECTAMENTE", Color.FromArgb(12, 19, 214), 1);
                 ng.ShowDialog();

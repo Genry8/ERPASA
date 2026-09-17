@@ -30,15 +30,15 @@ namespace ERPASA.Frm_Sistema
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_InventarioActivo));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_titulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button_minimizar = new System.Windows.Forms.Button();
@@ -279,7 +279,7 @@ namespace ERPASA.Frm_Sistema
             this.panel1.Location = new System.Drawing.Point(0, 77);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1402, 775);
+            this.panel1.Size = new System.Drawing.Size(1402, 475);
             this.panel1.TabIndex = 104;
             // 
             // panel_mantenimiento
@@ -306,11 +306,15 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_observaciones_mantenimiento
             // 
+            this.textBox_observaciones_mantenimiento.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_observaciones_mantenimiento.DefaultText = "";
             this.textBox_observaciones_mantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_observaciones_mantenimiento.ForeColor = System.Drawing.Color.Black;
             this.textBox_observaciones_mantenimiento.Location = new System.Drawing.Point(269, 180);
             this.textBox_observaciones_mantenimiento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_observaciones_mantenimiento.Name = "textBox_observaciones_mantenimiento";
+            this.textBox_observaciones_mantenimiento.PlaceholderText = "";
+            this.textBox_observaciones_mantenimiento.SelectedText = "";
             this.textBox_observaciones_mantenimiento.Size = new System.Drawing.Size(670, 26);
             this.textBox_observaciones_mantenimiento.TabIndex = 298;
             // 
@@ -348,14 +352,14 @@ namespace ERPASA.Frm_Sistema
             this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView3.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -372,20 +376,20 @@ namespace ERPASA.Frm_Sistema
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView3.RowHeadersWidth = 82;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView3.Size = new System.Drawing.Size(1340, 295);
             this.dataGridView3.TabIndex = 295;
@@ -469,14 +473,16 @@ namespace ERPASA.Frm_Sistema
             // 
             // dateTimePicker_TipoMantenimiento
             // 
-            this.dateTimePicker_TipoMantenimiento.Checked = false;
             this.dateTimePicker_TipoMantenimiento.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_TipoMantenimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_TipoMantenimiento.Location = new System.Drawing.Point(753, 118);
             this.dateTimePicker_TipoMantenimiento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker_TipoMantenimiento.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker_TipoMantenimiento.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker_TipoMantenimiento.Name = "dateTimePicker_TipoMantenimiento";
             this.dateTimePicker_TipoMantenimiento.Size = new System.Drawing.Size(187, 31);
             this.dateTimePicker_TipoMantenimiento.TabIndex = 292;
+            this.dateTimePicker_TipoMantenimiento.Value = new System.DateTime(2026, 9, 17, 13, 0, 14, 382);
             // 
             // toolStrip1
             // 
@@ -562,21 +568,33 @@ namespace ERPASA.Frm_Sistema
             // 
             // comboBox_TipoMantenimiento
             // 
+            this.comboBox_TipoMantenimiento.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_TipoMantenimiento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_TipoMantenimiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_TipoMantenimiento.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBox_TipoMantenimiento.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox_TipoMantenimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_TipoMantenimiento.FormattingEnabled = true;
+            this.comboBox_TipoMantenimiento.ItemHeight = 30;
             this.comboBox_TipoMantenimiento.Items.AddRange(new object[] {
             "PREVENTIVO",
             "CORRECTIVO"});
             this.comboBox_TipoMantenimiento.Location = new System.Drawing.Point(269, 126);
             this.comboBox_TipoMantenimiento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_TipoMantenimiento.Name = "comboBox_TipoMantenimiento";
-            this.comboBox_TipoMantenimiento.Size = new System.Drawing.Size(261, 28);
+            this.comboBox_TipoMantenimiento.Size = new System.Drawing.Size(261, 36);
             this.comboBox_TipoMantenimiento.TabIndex = 282;
             // 
             // textBox1
             // 
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox1.DefaultText = "";
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBox1.Location = new System.Drawing.Point(1616, 117);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Name = "textBox1";
+            this.textBox1.PlaceholderText = "";
+            this.textBox1.SelectedText = "";
             this.textBox1.Size = new System.Drawing.Size(148, 26);
             this.textBox1.TabIndex = 147;
             this.textBox1.Visible = false;
@@ -622,11 +640,15 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_item
             // 
+            this.textBox_item.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_item.DefaultText = "";
             this.textBox_item.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_item.ForeColor = System.Drawing.Color.Black;
             this.textBox_item.Location = new System.Drawing.Point(734, 10);
             this.textBox_item.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_item.Name = "textBox_item";
+            this.textBox_item.PlaceholderText = "";
+            this.textBox_item.SelectedText = "";
             this.textBox_item.Size = new System.Drawing.Size(30, 26);
             this.textBox_item.TabIndex = 295;
             this.textBox_item.Visible = false;
@@ -671,14 +693,14 @@ namespace ERPASA.Frm_Sistema
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column11,
@@ -694,20 +716,20 @@ namespace ERPASA.Frm_Sistema
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridView1.RowHeadersWidth = 82;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1056, 278);
             this.dataGridView1.TabIndex = 295;
@@ -784,14 +806,16 @@ namespace ERPASA.Frm_Sistema
             // 
             // dateTimePicker_EntregaDevolucion
             // 
-            this.dateTimePicker_EntregaDevolucion.Checked = false;
             this.dateTimePicker_EntregaDevolucion.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_EntregaDevolucion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_EntregaDevolucion.Location = new System.Drawing.Point(753, 118);
             this.dateTimePicker_EntregaDevolucion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker_EntregaDevolucion.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker_EntregaDevolucion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker_EntregaDevolucion.Name = "dateTimePicker_EntregaDevolucion";
             this.dateTimePicker_EntregaDevolucion.Size = new System.Drawing.Size(187, 31);
             this.dateTimePicker_EntregaDevolucion.TabIndex = 292;
+            this.dateTimePicker_EntregaDevolucion.Value = new System.DateTime(2026, 9, 17, 13, 0, 14, 486);
             // 
             // toolStrip_EntregaDevolucion
             // 
@@ -877,21 +901,33 @@ namespace ERPASA.Frm_Sistema
             // 
             // comboBox_TipoMovimiento
             // 
+            this.comboBox_TipoMovimiento.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_TipoMovimiento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_TipoMovimiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_TipoMovimiento.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBox_TipoMovimiento.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox_TipoMovimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_TipoMovimiento.FormattingEnabled = true;
+            this.comboBox_TipoMovimiento.ItemHeight = 30;
             this.comboBox_TipoMovimiento.Items.AddRange(new object[] {
             "ENTREGA",
             "DEVOLUCION"});
             this.comboBox_TipoMovimiento.Location = new System.Drawing.Point(248, 125);
             this.comboBox_TipoMovimiento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_TipoMovimiento.Name = "comboBox_TipoMovimiento";
-            this.comboBox_TipoMovimiento.Size = new System.Drawing.Size(261, 28);
+            this.comboBox_TipoMovimiento.Size = new System.Drawing.Size(261, 36);
             this.comboBox_TipoMovimiento.TabIndex = 282;
             // 
             // textBox_prueba
             // 
+            this.textBox_prueba.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_prueba.DefaultText = "";
+            this.textBox_prueba.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBox_prueba.Location = new System.Drawing.Point(1616, 117);
             this.textBox_prueba.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_prueba.Name = "textBox_prueba";
+            this.textBox_prueba.PlaceholderText = "";
+            this.textBox_prueba.SelectedText = "";
             this.textBox_prueba.Size = new System.Drawing.Size(148, 26);
             this.textBox_prueba.TabIndex = 147;
             this.textBox_prueba.Visible = false;
@@ -952,14 +988,14 @@ namespace ERPASA.Frm_Sistema
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -977,20 +1013,20 @@ namespace ERPASA.Frm_Sistema
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridView2.RowHeadersWidth = 82;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(1156, 374);
             this.dataGridView2.TabIndex = 149;
@@ -1126,11 +1162,18 @@ namespace ERPASA.Frm_Sistema
             // 
             // comboBox_Activo
             // 
+            this.comboBox_Activo.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_Activo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_Activo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Activo.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBox_Activo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox_Activo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_Activo.FormattingEnabled = true;
+            this.comboBox_Activo.ItemHeight = 30;
             this.comboBox_Activo.Location = new System.Drawing.Point(961, 20);
             this.comboBox_Activo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_Activo.Name = "comboBox_Activo";
-            this.comboBox_Activo.Size = new System.Drawing.Size(220, 28);
+            this.comboBox_Activo.Size = new System.Drawing.Size(220, 36);
             this.comboBox_Activo.TabIndex = 295;
             // 
             // label18
@@ -1161,21 +1204,32 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_Numero
             // 
+            this.textBox_Numero.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_Numero.DefaultText = "";
             this.textBox_Numero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Numero.ForeColor = System.Drawing.Color.Black;
             this.textBox_Numero.Location = new System.Drawing.Point(961, 172);
             this.textBox_Numero.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_Numero.Name = "textBox_Numero";
+            this.textBox_Numero.PlaceholderText = "";
+            this.textBox_Numero.SelectedText = "";
             this.textBox_Numero.Size = new System.Drawing.Size(186, 26);
             this.textBox_Numero.TabIndex = 273;
             // 
             // comboBox_EstadoActivo
             // 
+            this.comboBox_EstadoActivo.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_EstadoActivo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_EstadoActivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_EstadoActivo.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBox_EstadoActivo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox_EstadoActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_EstadoActivo.FormattingEnabled = true;
+            this.comboBox_EstadoActivo.ItemHeight = 30;
             this.comboBox_EstadoActivo.Location = new System.Drawing.Point(197, 376);
             this.comboBox_EstadoActivo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_EstadoActivo.Name = "comboBox_EstadoActivo";
-            this.comboBox_EstadoActivo.Size = new System.Drawing.Size(220, 28);
+            this.comboBox_EstadoActivo.Size = new System.Drawing.Size(220, 36);
             this.comboBox_EstadoActivo.TabIndex = 269;
             // 
             // label7
@@ -1245,25 +1299,29 @@ namespace ERPASA.Frm_Sistema
             // 
             // dateTimePicker_F_Entrega
             // 
-            this.dateTimePicker_F_Entrega.Checked = false;
             this.dateTimePicker_F_Entrega.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_F_Entrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_F_Entrega.Location = new System.Drawing.Point(961, 323);
             this.dateTimePicker_F_Entrega.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker_F_Entrega.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker_F_Entrega.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker_F_Entrega.Name = "dateTimePicker_F_Entrega";
             this.dateTimePicker_F_Entrega.Size = new System.Drawing.Size(187, 31);
             this.dateTimePicker_F_Entrega.TabIndex = 276;
+            this.dateTimePicker_F_Entrega.Value = new System.DateTime(2026, 9, 17, 13, 0, 14, 646);
             // 
             // dateTimePicker_F_Deolucion
             // 
-            this.dateTimePicker_F_Deolucion.Checked = false;
             this.dateTimePicker_F_Deolucion.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_F_Deolucion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_F_Deolucion.Location = new System.Drawing.Point(961, 373);
             this.dateTimePicker_F_Deolucion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker_F_Deolucion.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker_F_Deolucion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker_F_Deolucion.Name = "dateTimePicker_F_Deolucion";
             this.dateTimePicker_F_Deolucion.Size = new System.Drawing.Size(187, 31);
             this.dateTimePicker_F_Deolucion.TabIndex = 277;
+            this.dateTimePicker_F_Deolucion.Value = new System.DateTime(2026, 9, 17, 13, 0, 14, 702);
             // 
             // label14
             // 
@@ -1280,11 +1338,15 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_Obs2
             // 
+            this.textBox_Obs2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_Obs2.DefaultText = "";
             this.textBox_Obs2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Obs2.ForeColor = System.Drawing.Color.Black;
             this.textBox_Obs2.Location = new System.Drawing.Point(961, 123);
             this.textBox_Obs2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_Obs2.Name = "textBox_Obs2";
+            this.textBox_Obs2.PlaceholderText = "";
+            this.textBox_Obs2.SelectedText = "";
             this.textBox_Obs2.Size = new System.Drawing.Size(383, 26);
             this.textBox_Obs2.TabIndex = 272;
             // 
@@ -1316,21 +1378,29 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_Ubicacion
             // 
+            this.textBox_Ubicacion.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_Ubicacion.DefaultText = "";
             this.textBox_Ubicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Ubicacion.ForeColor = System.Drawing.Color.Black;
             this.textBox_Ubicacion.Location = new System.Drawing.Point(961, 277);
             this.textBox_Ubicacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_Ubicacion.Name = "textBox_Ubicacion";
+            this.textBox_Ubicacion.PlaceholderText = "";
+            this.textBox_Ubicacion.SelectedText = "";
             this.textBox_Ubicacion.Size = new System.Drawing.Size(383, 26);
             this.textBox_Ubicacion.TabIndex = 275;
             // 
             // textBox_DevEvent
             // 
+            this.textBox_DevEvent.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_DevEvent.DefaultText = "";
             this.textBox_DevEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_DevEvent.ForeColor = System.Drawing.Color.Black;
             this.textBox_DevEvent.Location = new System.Drawing.Point(197, 425);
             this.textBox_DevEvent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_DevEvent.Name = "textBox_DevEvent";
+            this.textBox_DevEvent.PlaceholderText = "";
+            this.textBox_DevEvent.SelectedText = "";
             this.textBox_DevEvent.Size = new System.Drawing.Size(435, 26);
             this.textBox_DevEvent.TabIndex = 270;
             // 
@@ -1349,11 +1419,15 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_Usuario
             // 
+            this.textBox_Usuario.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_Usuario.DefaultText = "";
             this.textBox_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Usuario.ForeColor = System.Drawing.Color.Black;
             this.textBox_Usuario.Location = new System.Drawing.Point(197, 325);
             this.textBox_Usuario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_Usuario.Name = "textBox_Usuario";
+            this.textBox_Usuario.PlaceholderText = "";
+            this.textBox_Usuario.SelectedText = "";
             this.textBox_Usuario.Size = new System.Drawing.Size(435, 26);
             this.textBox_Usuario.TabIndex = 268;
             // 
@@ -1372,30 +1446,45 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_Dni
             // 
+            this.textBox_Dni.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_Dni.DefaultText = "";
             this.textBox_Dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Dni.ForeColor = System.Drawing.Color.Black;
             this.textBox_Dni.Location = new System.Drawing.Point(197, 275);
             this.textBox_Dni.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_Dni.Name = "textBox_Dni";
+            this.textBox_Dni.PlaceholderText = "";
+            this.textBox_Dni.SelectedText = "";
             this.textBox_Dni.Size = new System.Drawing.Size(180, 26);
             this.textBox_Dni.TabIndex = 267;
             // 
             // comboBox_Estado
             // 
+            this.comboBox_Estado.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_Estado.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_Estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Estado.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBox_Estado.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox_Estado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_Estado.FormattingEnabled = true;
+            this.comboBox_Estado.ItemHeight = 30;
             this.comboBox_Estado.Location = new System.Drawing.Point(961, 430);
             this.comboBox_Estado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_Estado.Name = "comboBox_Estado";
-            this.comboBox_Estado.Size = new System.Drawing.Size(181, 28);
+            this.comboBox_Estado.Size = new System.Drawing.Size(181, 36);
             this.comboBox_Estado.TabIndex = 278;
             // 
             // textBox_Obs1
             // 
+            this.textBox_Obs1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_Obs1.DefaultText = "";
             this.textBox_Obs1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Obs1.ForeColor = System.Drawing.Color.Black;
             this.textBox_Obs1.Location = new System.Drawing.Point(961, 72);
             this.textBox_Obs1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_Obs1.Name = "textBox_Obs1";
+            this.textBox_Obs1.PlaceholderText = "";
+            this.textBox_Obs1.SelectedText = "";
             this.textBox_Obs1.Size = new System.Drawing.Size(383, 26);
             this.textBox_Obs1.TabIndex = 271;
             // 
@@ -1414,21 +1503,32 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_Cant
             // 
+            this.textBox_Cant.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_Cant.DefaultText = "";
             this.textBox_Cant.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Cant.ForeColor = System.Drawing.Color.Black;
             this.textBox_Cant.Location = new System.Drawing.Point(961, 222);
             this.textBox_Cant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_Cant.Name = "textBox_Cant";
+            this.textBox_Cant.PlaceholderText = "";
+            this.textBox_Cant.SelectedText = "";
             this.textBox_Cant.Size = new System.Drawing.Size(146, 26);
             this.textBox_Cant.TabIndex = 274;
             // 
             // comboBox_CodArea
             // 
+            this.comboBox_CodArea.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_CodArea.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_CodArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_CodArea.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBox_CodArea.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox_CodArea.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_CodArea.FormattingEnabled = true;
+            this.comboBox_CodArea.ItemHeight = 30;
             this.comboBox_CodArea.Location = new System.Drawing.Point(197, 219);
             this.comboBox_CodArea.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_CodArea.Name = "comboBox_CodArea";
-            this.comboBox_CodArea.Size = new System.Drawing.Size(261, 28);
+            this.comboBox_CodArea.Size = new System.Drawing.Size(261, 36);
             this.comboBox_CodArea.TabIndex = 266;
             // 
             // label9
@@ -1446,11 +1546,18 @@ namespace ERPASA.Frm_Sistema
             // 
             // comboBox_CodSede
             // 
+            this.comboBox_CodSede.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_CodSede.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_CodSede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_CodSede.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBox_CodSede.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox_CodSede.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_CodSede.FormattingEnabled = true;
+            this.comboBox_CodSede.ItemHeight = 30;
             this.comboBox_CodSede.Location = new System.Drawing.Point(197, 170);
             this.comboBox_CodSede.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_CodSede.Name = "comboBox_CodSede";
-            this.comboBox_CodSede.Size = new System.Drawing.Size(261, 28);
+            this.comboBox_CodSede.Size = new System.Drawing.Size(261, 36);
             this.comboBox_CodSede.TabIndex = 265;
             // 
             // label8
@@ -1468,11 +1575,18 @@ namespace ERPASA.Frm_Sistema
             // 
             // comboBox_CodEmp
             // 
+            this.comboBox_CodEmp.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_CodEmp.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_CodEmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_CodEmp.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBox_CodEmp.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox_CodEmp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_CodEmp.FormattingEnabled = true;
+            this.comboBox_CodEmp.ItemHeight = 30;
             this.comboBox_CodEmp.Location = new System.Drawing.Point(197, 120);
             this.comboBox_CodEmp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_CodEmp.Name = "comboBox_CodEmp";
-            this.comboBox_CodEmp.Size = new System.Drawing.Size(393, 28);
+            this.comboBox_CodEmp.Size = new System.Drawing.Size(393, 36);
             this.comboBox_CodEmp.TabIndex = 264;
             // 
             // label_User
@@ -1490,11 +1604,15 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_CodAsig
             // 
+            this.textBox_CodAsig.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_CodAsig.DefaultText = "";
             this.textBox_CodAsig.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CodAsig.ForeColor = System.Drawing.Color.Black;
             this.textBox_CodAsig.Location = new System.Drawing.Point(197, 70);
             this.textBox_CodAsig.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_CodAsig.Name = "textBox_CodAsig";
+            this.textBox_CodAsig.PlaceholderText = "";
+            this.textBox_CodAsig.SelectedText = "";
             this.textBox_CodAsig.Size = new System.Drawing.Size(143, 26);
             this.textBox_CodAsig.TabIndex = 263;
             // 
@@ -1539,7 +1657,14 @@ namespace ERPASA.Frm_Sistema
             // 
             // comboBox_Inventario
             // 
+            this.comboBox_Inventario.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_Inventario.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_Inventario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Inventario.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBox_Inventario.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox_Inventario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_Inventario.FormattingEnabled = true;
+            this.comboBox_Inventario.ItemHeight = 30;
             this.comboBox_Inventario.Items.AddRange(new object[] {
             "1",
             "2",
@@ -1556,7 +1681,7 @@ namespace ERPASA.Frm_Sistema
             this.comboBox_Inventario.Location = new System.Drawing.Point(197, 18);
             this.comboBox_Inventario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_Inventario.Name = "comboBox_Inventario";
-            this.comboBox_Inventario.Size = new System.Drawing.Size(119, 28);
+            this.comboBox_Inventario.Size = new System.Drawing.Size(119, 36);
             this.comboBox_Inventario.TabIndex = 230;
             // 
             // label4
@@ -1574,7 +1699,14 @@ namespace ERPASA.Frm_Sistema
             // 
             // comboBox_NumInventario
             // 
+            this.comboBox_NumInventario.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_NumInventario.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_NumInventario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_NumInventario.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBox_NumInventario.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox_NumInventario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_NumInventario.FormattingEnabled = true;
+            this.comboBox_NumInventario.ItemHeight = 30;
             this.comboBox_NumInventario.Items.AddRange(new object[] {
             "2018",
             "2019",
@@ -1590,7 +1722,7 @@ namespace ERPASA.Frm_Sistema
             this.comboBox_NumInventario.Location = new System.Drawing.Point(485, 13);
             this.comboBox_NumInventario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_NumInventario.Name = "comboBox_NumInventario";
-            this.comboBox_NumInventario.Size = new System.Drawing.Size(105, 28);
+            this.comboBox_NumInventario.Size = new System.Drawing.Size(105, 36);
             this.comboBox_NumInventario.TabIndex = 228;
             // 
             // label3
@@ -1728,7 +1860,7 @@ namespace ERPASA.Frm_Sistema
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1402, 852);
+            this.ClientSize = new System.Drawing.Size(1402, 552);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_titulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
