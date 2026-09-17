@@ -29,6 +29,8 @@ namespace ERPASA.Frm_SelecDesarrollo
         public Frm_CargarProductividad()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_CargarProductividad_Load(object sender, EventArgs e)

@@ -35,18 +35,18 @@ namespace ERPASA.Frm_Taller
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_DetalleInsumosVehiculo));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox_Modelo = new System.Windows.Forms.TextBox();
-            this.textBox_Marca = new System.Windows.Forms.TextBox();
-            this.textBox_Grupo = new System.Windows.Forms.TextBox();
-            this.textBox_KmProx = new System.Windows.Forms.TextBox();
+            this.textBox_Modelo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox_Marca = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox_Grupo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox_KmProx = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox_Sede = new System.Windows.Forms.TextBox();
+            this.textBox_Sede = new Guna.UI2.WinForms.Guna2TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textbox_Vehiculo = new System.Windows.Forms.TextBox();
+            this.textbox_Vehiculo = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -98,7 +98,6 @@ namespace ERPASA.Frm_Taller
             // 
             // textBox_Modelo
             // 
-            this.textBox_Modelo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Modelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Modelo.ForeColor = System.Drawing.Color.Black;
             this.textBox_Modelo.Location = new System.Drawing.Point(559, 55);
@@ -110,7 +109,6 @@ namespace ERPASA.Frm_Taller
             // 
             // textBox_Marca
             // 
-            this.textBox_Marca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Marca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Marca.ForeColor = System.Drawing.Color.Black;
             this.textBox_Marca.Location = new System.Drawing.Point(288, 55);
@@ -122,7 +120,6 @@ namespace ERPASA.Frm_Taller
             // 
             // textBox_Grupo
             // 
-            this.textBox_Grupo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Grupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Grupo.ForeColor = System.Drawing.Color.Black;
             this.textBox_Grupo.Location = new System.Drawing.Point(7, 55);
@@ -134,7 +131,6 @@ namespace ERPASA.Frm_Taller
             // 
             // textBox_KmProx
             // 
-            this.textBox_KmProx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_KmProx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_KmProx.ForeColor = System.Drawing.Color.Black;
             this.textBox_KmProx.Location = new System.Drawing.Point(904, 54);
@@ -155,7 +151,6 @@ namespace ERPASA.Frm_Taller
             // 
             // textBox_Sede
             // 
-            this.textBox_Sede.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Sede.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Sede.ForeColor = System.Drawing.Color.Black;
             this.textBox_Sede.Location = new System.Drawing.Point(559, 16);
@@ -252,7 +247,6 @@ namespace ERPASA.Frm_Taller
             // 
             // textbox_Vehiculo
             // 
-            this.textbox_Vehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_Vehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_Vehiculo.ForeColor = System.Drawing.Color.Black;
             this.textbox_Vehiculo.Location = new System.Drawing.Point(7, 16);
@@ -418,12 +412,12 @@ namespace ERPASA.Frm_Taller
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        public System.Windows.Forms.TextBox textBox_Modelo;
-        public System.Windows.Forms.TextBox textBox_Marca;
-        public System.Windows.Forms.TextBox textBox_Grupo;
-        public System.Windows.Forms.TextBox textBox_KmProx;
-        public System.Windows.Forms.TextBox textBox_Sede;
-        public System.Windows.Forms.TextBox textbox_Vehiculo;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Modelo;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Marca;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Grupo;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_KmProx;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Sede;
+        public Guna.UI2.WinForms.Guna2TextBox textbox_Vehiculo;
         private System.Windows.Forms.ToolStripButton toolStripButton_Refrescar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripButton toolStripButton_excel;

@@ -30,6 +30,8 @@ namespace ERPASA.Reportes.Acopio
         public Frm_ImprimirPallet_ASA()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_ImprimirPallet_ASA_Load(object sender, EventArgs e)

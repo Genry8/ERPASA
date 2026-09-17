@@ -58,12 +58,11 @@ namespace ERPASA
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            if (circularProgressBar1.Value < 100)
+            if (progress_carga.Value < 100)
             {
 
-                circularProgressBar1.Value += 5;
-                circularProgressBar1.Text = circularProgressBar1.Value.ToString() + "%";
-                //label_porcentaje.Text = progressBar1.Value.ToString() + "%";
+                progress_carga.Value += 5;
+                label_carga.Text = "Preparando el sistema... " + progress_carga.Value + "%";
             }
 
             else

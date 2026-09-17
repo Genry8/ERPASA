@@ -19,6 +19,8 @@ namespace ERPASA.Frm_SST
         public Frm_CargarMotivoAccidente()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_CargarMotivoAccidente_Load(object sender, EventArgs e)

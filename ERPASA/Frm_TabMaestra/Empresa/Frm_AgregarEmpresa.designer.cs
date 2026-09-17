@@ -36,13 +36,13 @@ namespace ERPASA.Frm_TabMaestra
             this.button_cerrar = new System.Windows.Forms.Button();
             this.pictureBox_titulo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox_DesEmpresa = new System.Windows.Forms.TextBox();
+            this.textBox_DesEmpresa = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_EstEmpresa = new System.Windows.Forms.ComboBox();
+            this.comboBox_EstEmpresa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textbox_ObsEmpresa = new System.Windows.Forms.TextBox();
+            this.textbox_ObsEmpresa = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_CodEmpresa = new System.Windows.Forms.TextBox();
+            this.textBox_CodEmpresa = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_User = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_nuevo = new System.Windows.Forms.ToolStripButton();
@@ -172,7 +172,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_DesEmpresa
             // 
-            this.textBox_DesEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_DesEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_DesEmpresa.ForeColor = System.Drawing.Color.Black;
             this.textBox_DesEmpresa.Location = new System.Drawing.Point(162, 166);
@@ -218,7 +217,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textbox_ObsEmpresa
             // 
-            this.textbox_ObsEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_ObsEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_ObsEmpresa.ForeColor = System.Drawing.Color.Black;
             this.textbox_ObsEmpresa.Location = new System.Drawing.Point(162, 222);
@@ -242,7 +240,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_CodEmpresa
             // 
-            this.textBox_CodEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_CodEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CodEmpresa.ForeColor = System.Drawing.Color.Black;
             this.textBox_CodEmpresa.Location = new System.Drawing.Point(162, 108);
@@ -475,10 +472,10 @@ namespace ERPASA.Frm_TabMaestra
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_aliminar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        public System.Windows.Forms.TextBox textBox_CodEmpresa;
-        public System.Windows.Forms.TextBox textBox_DesEmpresa;
-        public System.Windows.Forms.TextBox textbox_ObsEmpresa;
-        public System.Windows.Forms.ComboBox comboBox_EstEmpresa;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_CodEmpresa;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_DesEmpresa;
+        public Guna.UI2.WinForms.Guna2TextBox textbox_ObsEmpresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_EstEmpresa;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         public System.Windows.Forms.ToolStripButton toolStripButton_eliminar;
         public System.Windows.Forms.ToolStripButton toolStripButton_nuevo;

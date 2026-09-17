@@ -28,6 +28,8 @@ namespace ERPASA.Frm_Administracion
         public Frm_Cargar_ProgHectarea()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_Cargar_ProgHectarea_Load(object sender, EventArgs e)

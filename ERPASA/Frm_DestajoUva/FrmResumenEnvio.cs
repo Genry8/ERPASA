@@ -22,6 +22,8 @@ namespace ERPASA.Frm_DestajoUva
         public FrmResumenEnvio(List<ResumenEnvioDto> resumen)
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
             dgvResumen.CellFormatting += dgvResumen_CellFormatting;
 
             dgvResumen.AutoGenerateColumns = false;

@@ -1582,6 +1582,8 @@
     <Compile Include="Frm_Comunicacion\Frm_CargarMovimientoCanje.Designer.cs">
       <DependentUpon>Frm_CargarMovimientoCanje.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estilos\EstiloErp.cs" />
+    <Compile Include="Estilos\EstilizadorErp.cs" />
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>

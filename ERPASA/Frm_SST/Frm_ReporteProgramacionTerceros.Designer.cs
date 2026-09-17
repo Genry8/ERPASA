@@ -45,7 +45,7 @@ namespace ERPASA.Frm_SST
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_credenciales_limpiar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.textBox_marc = new System.Windows.Forms.TextBox();
+            this.textBox_marc = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dateTimePicker_Fecha_Fin = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -434,7 +434,7 @@ namespace ERPASA.Frm_SST
         public System.Windows.Forms.ToolStripButton toolStripButton_credenciales_limpiar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.TextBox textBox_marc;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_marc;
         private System.Windows.Forms.ToolStripButton toolStripButton_buscar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_buscar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;

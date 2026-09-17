@@ -36,13 +36,13 @@ namespace ERPASA.Frm_TabMaestra
             this.button_cerrar = new System.Windows.Forms.Button();
             this.pictureBox_titulo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox_DesTipo = new System.Windows.Forms.TextBox();
+            this.textBox_DesTipo = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_EstSede = new System.Windows.Forms.ComboBox();
+            this.comboBox_EstSede = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textbox_ObsTipAct = new System.Windows.Forms.TextBox();
+            this.textbox_ObsTipAct = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_CodTipAct = new System.Windows.Forms.TextBox();
+            this.textBox_CodTipAct = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_User = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_nuevo = new System.Windows.Forms.ToolStripButton();
@@ -172,7 +172,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_DesTipo
             // 
-            this.textBox_DesTipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_DesTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_DesTipo.ForeColor = System.Drawing.Color.Black;
             this.textBox_DesTipo.Location = new System.Drawing.Point(216, 208);
@@ -218,7 +217,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textbox_ObsTipAct
             // 
-            this.textbox_ObsTipAct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_ObsTipAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_ObsTipAct.ForeColor = System.Drawing.Color.Black;
             this.textbox_ObsTipAct.Location = new System.Drawing.Point(216, 277);
@@ -242,7 +240,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_CodTipAct
             // 
-            this.textBox_CodTipAct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_CodTipAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CodTipAct.ForeColor = System.Drawing.Color.Black;
             this.textBox_CodTipAct.Location = new System.Drawing.Point(216, 135);
@@ -475,10 +472,10 @@ namespace ERPASA.Frm_TabMaestra
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_aliminar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        public System.Windows.Forms.TextBox textBox_CodTipAct;
-        public System.Windows.Forms.TextBox textBox_DesTipo;
-        public System.Windows.Forms.TextBox textbox_ObsTipAct;
-        public System.Windows.Forms.ComboBox comboBox_EstSede;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_CodTipAct;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_DesTipo;
+        public Guna.UI2.WinForms.Guna2TextBox textbox_ObsTipAct;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_EstSede;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         public System.Windows.Forms.ToolStripButton toolStripButton_eliminar;
         public System.Windows.Forms.ToolStripButton toolStripButton_nuevo;

@@ -17,6 +17,8 @@ namespace ERPASA.Reportes.For_Impresion
         public Frm_ImpresionVS()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
         // Este método recibe el DataSet que le pasas desde el otro formulario
         public void CargarReporte(DataSetQrPlaca objDsRepFotosheck)

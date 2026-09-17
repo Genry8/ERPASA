@@ -19,6 +19,8 @@ namespace ERPASA.Reportes.Acopio
         public frm_AgregarOrdenProduccion()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void frm_AgregarOrdenProduccion_Load(object sender, EventArgs e)

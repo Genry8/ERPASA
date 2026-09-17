@@ -308,7 +308,7 @@ namespace ERPASA
             // 
             // panel_titulo2
             // 
-            this.panel_titulo2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.panel_titulo2.BackColor = System.Drawing.Color.White;
             this.panel_titulo2.Controls.Add(this.button_minimizar);
             this.panel_titulo2.Controls.Add(this.button_min_max);
             this.panel_titulo2.Controls.Add(this.button_cerrar);
@@ -317,7 +317,7 @@ namespace ERPASA
             this.panel_titulo2.Location = new System.Drawing.Point(0, 0);
             this.panel_titulo2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel_titulo2.Name = "panel_titulo2";
-            this.panel_titulo2.Size = new System.Drawing.Size(1924, 62);
+            this.panel_titulo2.Size = new System.Drawing.Size(1924, 60);
             this.panel_titulo2.TabIndex = 1;
             this.panel_titulo2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_titulo2_MouseDown);
             // 
@@ -399,11 +399,15 @@ namespace ERPASA
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
             this.toolStripMenuItem3});
+            this.menuStrip1.CanOverflow = true;
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuStrip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(66)))));
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 40);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 60);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -2460,6 +2464,8 @@ namespace ERPASA
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(74)))), ((int)(((byte)(94)))));
+            this.panel2.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
             this.panel2.Controls.Add(this.label_sede);
             this.panel2.Controls.Add(this.label_fechasistema);
             this.panel2.Controls.Add(this.label_version);
@@ -2475,10 +2481,14 @@ namespace ERPASA
             // 
             // label_sede
             // 
-            this.label_sede.AutoSize = true;
-            this.label_sede.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.label_sede.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label_sede.ForeColor = System.Drawing.Color.White;
+            this.label_sede.AutoSize = false;
+            this.label_sede.AutoEllipsis = true;
+            this.label_sede.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_sede.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.label_sede.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label_sede.BackColor = System.Drawing.Color.Transparent;
+            this.label_sede.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular);
+            this.label_sede.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(206)))), ((int)(((byte)(214)))));
             this.label_sede.Location = new System.Drawing.Point(1401, 3);
             this.label_sede.Name = "label_sede";
             this.label_sede.Size = new System.Drawing.Size(57, 28);
@@ -2488,9 +2498,12 @@ namespace ERPASA
             // label_fechasistema
             // 
             this.label_fechasistema.AutoSize = true;
-            this.label_fechasistema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.label_fechasistema.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label_fechasistema.ForeColor = System.Drawing.Color.White;
+            this.label_fechasistema.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label_fechasistema.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.label_fechasistema.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_fechasistema.BackColor = System.Drawing.Color.Transparent;
+            this.label_fechasistema.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular);
+            this.label_fechasistema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(206)))), ((int)(((byte)(214)))));
             this.label_fechasistema.Location = new System.Drawing.Point(1156, 3);
             this.label_fechasistema.Name = "label_fechasistema";
             this.label_fechasistema.Size = new System.Drawing.Size(109, 28);
@@ -2500,9 +2513,12 @@ namespace ERPASA
             // label_version
             // 
             this.label_version.AutoSize = true;
-            this.label_version.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.label_version.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label_version.ForeColor = System.Drawing.Color.White;
+            this.label_version.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label_version.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.label_version.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_version.BackColor = System.Drawing.Color.Transparent;
+            this.label_version.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular);
+            this.label_version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(206)))), ((int)(((byte)(214)))));
             this.label_version.Location = new System.Drawing.Point(998, 3);
             this.label_version.Name = "label_version";
             this.label_version.Size = new System.Drawing.Size(79, 28);
@@ -2512,9 +2528,12 @@ namespace ERPASA
             // label_ip
             // 
             this.label_ip.AutoSize = true;
-            this.label_ip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.label_ip.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label_ip.ForeColor = System.Drawing.Color.White;
+            this.label_ip.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label_ip.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.label_ip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_ip.BackColor = System.Drawing.Color.Transparent;
+            this.label_ip.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular);
+            this.label_ip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(206)))), ((int)(((byte)(214)))));
             this.label_ip.Location = new System.Drawing.Point(824, 5);
             this.label_ip.Name = "label_ip";
             this.label_ip.Size = new System.Drawing.Size(72, 28);
@@ -2524,9 +2543,12 @@ namespace ERPASA
             // label_hostname
             // 
             this.label_hostname.AutoSize = true;
-            this.label_hostname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.label_hostname.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label_hostname.ForeColor = System.Drawing.Color.White;
+            this.label_hostname.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label_hostname.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.label_hostname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_hostname.BackColor = System.Drawing.Color.Transparent;
+            this.label_hostname.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular);
+            this.label_hostname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(206)))), ((int)(((byte)(214)))));
             this.label_hostname.Location = new System.Drawing.Point(600, 5);
             this.label_hostname.Name = "label_hostname";
             this.label_hostname.Size = new System.Drawing.Size(103, 28);
@@ -2536,8 +2558,11 @@ namespace ERPASA
             // label_Bienvenido
             // 
             this.label_Bienvenido.AutoSize = true;
-            this.label_Bienvenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.label_Bienvenido.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label_Bienvenido.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label_Bienvenido.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
+            this.label_Bienvenido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_Bienvenido.BackColor = System.Drawing.Color.Transparent;
+            this.label_Bienvenido.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label_Bienvenido.ForeColor = System.Drawing.Color.White;
             this.label_Bienvenido.Location = new System.Drawing.Point(3, 5);
             this.label_Bienvenido.Name = "label_Bienvenido";
@@ -2547,8 +2572,8 @@ namespace ERPASA
             // 
             // panel_contenedor
             // 
-            this.panel_contenedor.AutoSize = true;
-            this.panel_contenedor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_contenedor.AutoSize = false;
+            this.panel_contenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.panel_contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel_contenedor.CausesValidation = false;
             this.panel_contenedor.Controls.Add(this.label_Hora_Centro);
@@ -2563,27 +2588,26 @@ namespace ERPASA
             // 
             // label_Hora_Centro
             // 
-            this.label_Hora_Centro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_Hora_Centro.AutoSize = true;
+            this.label_Hora_Centro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Hora_Centro.AutoSize = false;
             this.label_Hora_Centro.BackColor = System.Drawing.Color.Transparent;
-            this.label_Hora_Centro.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Hora_Centro.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label_Hora_Centro.Location = new System.Drawing.Point(1492, 333);
+            this.label_Hora_Centro.Font = new System.Drawing.Font("Segoe UI Semilight", 58F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Hora_Centro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.label_Hora_Centro.Location = new System.Drawing.Point(1324, 318);
             this.label_Hora_Centro.Name = "label_Hora_Centro";
-            this.label_Hora_Centro.Size = new System.Drawing.Size(319, 144);
+            this.label_Hora_Centro.Size = new System.Drawing.Size(560, 140);
+            this.label_Hora_Centro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label_Hora_Centro.TabIndex = 18;
             this.label_Hora_Centro.Text = "HORA";
             // 
             // label_Fecha_Centro
             // 
-            this.label_Fecha_Centro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Fecha_Centro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label_Fecha_Centro.AutoSize = true;
             this.label_Fecha_Centro.BackColor = System.Drawing.Color.Transparent;
-            this.label_Fecha_Centro.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Fecha_Centro.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label_Fecha_Centro.Location = new System.Drawing.Point(12, 357);
+            this.label_Fecha_Centro.Font = new System.Drawing.Font("Segoe UI Semilight", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Fecha_Centro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.label_Fecha_Centro.Location = new System.Drawing.Point(28, 350);
             this.label_Fecha_Centro.Name = "label_Fecha_Centro";
             this.label_Fecha_Centro.Size = new System.Drawing.Size(295, 115);
             this.label_Fecha_Centro.TabIndex = 17;

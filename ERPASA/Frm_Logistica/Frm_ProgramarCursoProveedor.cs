@@ -28,6 +28,8 @@ namespace ERPASA.Frm_Logistica
         public Frm_ProgramarCursoProveedor()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_ProgramarCursoProveedor_Load(object sender, EventArgs e)

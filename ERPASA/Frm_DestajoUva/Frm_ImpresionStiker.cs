@@ -53,6 +53,8 @@ namespace ERPASA.Frm_DestajoUva
         public Frm_ImpresionStiker()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
             dataGridView2.EditingControlShowing += dataGridView2_EditingControlShowing;
         }
 

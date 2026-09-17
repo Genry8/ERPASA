@@ -40,6 +40,8 @@ namespace ERPASA.Reportes.Frm_sst
         public Frm_MisInspecciones()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         //DsRepVentas dst = new DsRepVentas();

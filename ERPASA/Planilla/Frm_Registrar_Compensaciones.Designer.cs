@@ -46,9 +46,9 @@ namespace ERPASA.Planilla
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.label_cantreg = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.comboBox_Semana = new System.Windows.Forms.ComboBox();
+            this.comboBox_Semana = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox_Año = new System.Windows.Forms.ComboBox();
+            this.comboBox_Año = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textRuta = new Guna.UI2.WinForms.Guna2TextBox();
@@ -494,11 +494,11 @@ namespace ERPASA.Planilla
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.Label label_cantreg;
         private System.Windows.Forms.Button btnBuscar;
-        public System.Windows.Forms.ComboBox comboBox_Semana;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Semana;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_guardar;
-        public System.Windows.Forms.ComboBox comboBox_Año;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Año;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox textRuta;

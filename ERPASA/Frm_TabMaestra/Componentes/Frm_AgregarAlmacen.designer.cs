@@ -37,14 +37,14 @@ namespace ERPASA.Frm_TabMaestra
             this.pictureBox_titulo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_Establecimiento = new System.Windows.Forms.ComboBox();
-            this.textBox_descripcion = new System.Windows.Forms.TextBox();
+            this.comboBox_Establecimiento = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.textBox_descripcion = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_estado = new System.Windows.Forms.ComboBox();
+            this.comboBox_estado = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textbox_comentario = new System.Windows.Forms.TextBox();
+            this.textbox_comentario = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_CodAlmacen = new System.Windows.Forms.TextBox();
+            this.textBox_CodAlmacen = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_User = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_nuevo = new System.Windows.Forms.ToolStripButton();
@@ -198,7 +198,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_descripcion
             // 
-            this.textBox_descripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_descripcion.ForeColor = System.Drawing.Color.Black;
             this.textBox_descripcion.Location = new System.Drawing.Point(216, 208);
@@ -244,7 +243,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textbox_comentario
             // 
-            this.textbox_comentario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_comentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_comentario.ForeColor = System.Drawing.Color.Black;
             this.textbox_comentario.Location = new System.Drawing.Point(216, 277);
@@ -268,7 +266,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_CodAlmacen
             // 
-            this.textBox_CodAlmacen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_CodAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CodAlmacen.ForeColor = System.Drawing.Color.Black;
             this.textBox_CodAlmacen.Location = new System.Drawing.Point(216, 135);
@@ -496,20 +493,20 @@ namespace ERPASA.Frm_TabMaestra
         private System.Windows.Forms.ToolStripButton toolStripButton_limpiar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_limpiar;
         private System.Windows.Forms.Label label_User;
-        private System.Windows.Forms.TextBox textbox_comentario;
+        private Guna.UI2.WinForms.Guna2TextBox textbox_comentario;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox_CodAlmacen;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_CodAlmacen;
         private System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_guardar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox_estado;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_estado;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox_descripcion;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_descripcion;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripButton toolStripButton_eliminar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_aliminar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox_Establecimiento;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Establecimiento;
     }
 }

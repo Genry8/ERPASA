@@ -11,6 +11,8 @@ namespace ERPASA.Frm_DestajoUva
         public FrmSeleccionImpresora()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void FrmSeleccionImpresora_Load(object sender, EventArgs e)

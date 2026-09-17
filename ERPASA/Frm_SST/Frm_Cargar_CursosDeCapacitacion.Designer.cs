@@ -50,9 +50,9 @@ namespace ERPASA.Frm_SST
             this.toolStripLabel_Reporte = new System.Windows.Forms.ToolStripLabel();
             this.label_cantreg = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.comboBox_CodSede = new System.Windows.Forms.ComboBox();
+            this.comboBox_CodSede = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox_empresa = new System.Windows.Forms.ComboBox();
+            this.comboBox_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -447,9 +447,9 @@ namespace ERPASA.Frm_SST
         private System.Windows.Forms.Button btnBuscar;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_guardar;
-        public System.Windows.Forms.ComboBox comboBox_CodSede;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_CodSede;
         private System.Windows.Forms.Label label7;
-        public System.Windows.Forms.ComboBox comboBox_empresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_empresa;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;

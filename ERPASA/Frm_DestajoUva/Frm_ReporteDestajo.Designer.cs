@@ -36,18 +36,18 @@ namespace ERPASA.Frm_DestajoUva
             this.label_estado_reg = new System.Windows.Forms.Label();
             this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_linea = new System.Windows.Forms.ComboBox();
+            this.comboBox_linea = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox_nave = new System.Windows.Forms.ComboBox();
+            this.comboBox_nave = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2TextBox_Buscar = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Fecha_Inicio = new System.Windows.Forms.DateTimePicker();
+            this.Fecha_Inicio = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.pictureBox_Excel = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Fecha_Fin = new System.Windows.Forms.DateTimePicker();
+            this.Fecha_Fin = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.pictureBox_Search = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_Puestotrabajo = new System.Windows.Forms.ComboBox();
+            this.comboBox_Puestotrabajo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pictureBox_Imprimir = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Excel)).BeginInit();
@@ -201,7 +201,6 @@ namespace ERPASA.Frm_DestajoUva
             // 
             // Fecha_Inicio
             // 
-            this.Fecha_Inicio.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fecha_Inicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fecha_Inicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.Fecha_Inicio.Location = new System.Drawing.Point(109, 17);
@@ -249,7 +248,6 @@ namespace ERPASA.Frm_DestajoUva
             // 
             // Fecha_Fin
             // 
-            this.Fecha_Fin.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fecha_Fin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fecha_Fin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.Fecha_Fin.Location = new System.Drawing.Point(368, 17);
@@ -346,18 +344,18 @@ namespace ERPASA.Frm_DestajoUva
         private System.Windows.Forms.Label label_estado_reg;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.ComboBox comboBox_linea;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_linea;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.ComboBox comboBox_nave;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_nave;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox_Buscar;
-        private System.Windows.Forms.DateTimePicker Fecha_Inicio;
+        private Guna.UI2.WinForms.Guna2DateTimePicker Fecha_Inicio;
         private System.Windows.Forms.PictureBox pictureBox_Excel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker Fecha_Fin;
+        private Guna.UI2.WinForms.Guna2DateTimePicker Fecha_Fin;
         private System.Windows.Forms.PictureBox pictureBox_Search;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.ComboBox comboBox_Puestotrabajo;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Puestotrabajo;
         private System.Windows.Forms.PictureBox pictureBox_Imprimir;
     }
 }

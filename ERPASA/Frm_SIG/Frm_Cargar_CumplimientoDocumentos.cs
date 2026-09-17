@@ -29,6 +29,8 @@ namespace ERPASA.Frm_SIG
         public Frm_Cargar_CumplimientoDocumentos()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_Cargar_CumplimientoDocumentos_Load(object sender, EventArgs e)

@@ -43,6 +43,8 @@ namespace ERPASA.Reportes.Acopio
         public Frm_CierreProcesoPacking()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
             dataGridView1.CellBeginEdit += dataGridView1_CellBeginEdit;
         }
 

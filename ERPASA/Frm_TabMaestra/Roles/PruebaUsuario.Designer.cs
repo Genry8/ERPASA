@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox_id = new System.Windows.Forms.TextBox();
-            this.textBox_usuario = new System.Windows.Forms.TextBox();
-            this.textBox_correo = new System.Windows.Forms.TextBox();
-            this.textBox_comentario = new System.Windows.Forms.TextBox();
+            this.textBox_id = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox_usuario = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox_correo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox_comentario = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -95,9 +95,9 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox_id;
-        private System.Windows.Forms.TextBox textBox_usuario;
-        private System.Windows.Forms.TextBox textBox_correo;
-        private System.Windows.Forms.TextBox textBox_comentario;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_id;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_usuario;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_correo;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_comentario;
     }
 }

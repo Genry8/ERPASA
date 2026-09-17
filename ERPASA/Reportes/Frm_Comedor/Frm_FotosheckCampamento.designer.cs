@@ -36,15 +36,15 @@ namespace ERPASA.Reportes.Frm_Comedor
             this.button_credenciales = new System.Windows.Forms.Button();
             this.panel_general = new System.Windows.Forms.Panel();
             this.label_cantreg = new System.Windows.Forms.Label();
-            this.comboBox_Hojas = new System.Windows.Forms.ComboBox();
+            this.comboBox_Hojas = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.textRuta = new System.Windows.Forms.TextBox();
+            this.textRuta = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox_tipo_alto_riesgo = new System.Windows.Forms.ComboBox();
+            this.comboBox_tipo_alto_riesgo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker_AltoRiesgo_F_Ini = new System.Windows.Forms.DateTimePicker();
-            this.comboBox_empresa_alto_riesgo = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker_AltoRiesgo_F_Ini = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.comboBox_empresa_alto_riesgo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -450,10 +450,10 @@ namespace ERPASA.Reportes.Frm_Comedor
 
         private System.Windows.Forms.Button button_credenciales;
         private System.Windows.Forms.Panel panel_general;
-        public System.Windows.Forms.ComboBox comboBox_tipo_alto_riesgo;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_tipo_alto_riesgo;
         private System.Windows.Forms.Label label11;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_AltoRiesgo_F_Ini;
-        public System.Windows.Forms.ComboBox comboBox_empresa_alto_riesgo;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_AltoRiesgo_F_Ini;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_empresa_alto_riesgo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -466,10 +466,10 @@ namespace ERPASA.Reportes.Frm_Comedor
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ComboBox comboBox_Hojas;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Hojas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox textRuta;
+        private Guna.UI2.WinForms.Guna2TextBox textRuta;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_cantreg;
         private System.Windows.Forms.ToolStripButton toolStripButton_imprimirHombreNuevo;

@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_EditarModeloVehiculo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox_MarcaVehiculo = new System.Windows.Forms.ComboBox();
+            this.comboBox_MarcaVehiculo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox_Obs = new System.Windows.Forms.TextBox();
+            this.textBox_Obs = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox_Modelo = new System.Windows.Forms.TextBox();
+            this.textBox_Modelo = new Guna.UI2.WinForms.Guna2TextBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_guardar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel_imprimir = new System.Windows.Forms.ToolStripLabel();
@@ -189,8 +189,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         public System.Windows.Forms.Label label_Id;
-        public System.Windows.Forms.TextBox textBox_Obs;
-        public System.Windows.Forms.TextBox textBox_Modelo;
-        public System.Windows.Forms.ComboBox comboBox_MarcaVehiculo;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Obs;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Modelo;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_MarcaVehiculo;
     }
 }

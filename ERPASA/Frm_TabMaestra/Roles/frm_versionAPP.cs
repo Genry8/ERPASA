@@ -27,6 +27,8 @@ namespace ERPASA.Frm_TabMaestra.Roles
         public frm_versionAPP()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void frm_versionAPP_Load(object sender, EventArgs e)

@@ -21,6 +21,8 @@ namespace ERPASA.Reportes.Acopio
         public Frm_EstadosPT(List<ce_packingPT> lista)
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
             datosRecibidos = lista;
         }
 

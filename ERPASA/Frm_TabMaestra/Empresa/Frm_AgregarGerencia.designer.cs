@@ -36,13 +36,13 @@ namespace ERPASA.Frm_TabMaestra
             this.button_cerrar = new System.Windows.Forms.Button();
             this.pictureBox_titulo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox_DesGerencia = new System.Windows.Forms.TextBox();
+            this.textBox_DesGerencia = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_EstGerencia = new System.Windows.Forms.ComboBox();
+            this.comboBox_EstGerencia = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textbox_ObsGerencia = new System.Windows.Forms.TextBox();
+            this.textbox_ObsGerencia = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_CodGerencia = new System.Windows.Forms.TextBox();
+            this.textBox_CodGerencia = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_User = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_nuevo = new System.Windows.Forms.ToolStripButton();
@@ -172,7 +172,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_DesGerencia
             // 
-            this.textBox_DesGerencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_DesGerencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_DesGerencia.ForeColor = System.Drawing.Color.Black;
             this.textBox_DesGerencia.Location = new System.Drawing.Point(216, 208);
@@ -218,7 +217,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textbox_ObsGerencia
             // 
-            this.textbox_ObsGerencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_ObsGerencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_ObsGerencia.ForeColor = System.Drawing.Color.Black;
             this.textbox_ObsGerencia.Location = new System.Drawing.Point(216, 277);
@@ -242,7 +240,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_CodGerencia
             // 
-            this.textBox_CodGerencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_CodGerencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CodGerencia.ForeColor = System.Drawing.Color.Black;
             this.textBox_CodGerencia.Location = new System.Drawing.Point(216, 135);
@@ -475,10 +472,10 @@ namespace ERPASA.Frm_TabMaestra
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_aliminar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        public System.Windows.Forms.TextBox textBox_CodGerencia;
-        public System.Windows.Forms.TextBox textBox_DesGerencia;
-        public System.Windows.Forms.TextBox textbox_ObsGerencia;
-        public System.Windows.Forms.ComboBox comboBox_EstGerencia;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_CodGerencia;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_DesGerencia;
+        public Guna.UI2.WinForms.Guna2TextBox textbox_ObsGerencia;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_EstGerencia;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         public System.Windows.Forms.ToolStripButton toolStripButton_eliminar;
         public System.Windows.Forms.ToolStripButton toolStripButton_nuevo;

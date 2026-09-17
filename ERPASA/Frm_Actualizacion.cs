@@ -34,6 +34,8 @@ namespace ERPASA
         public Frm_Actualizacion()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_Actualizacion_Load_1(object sender, EventArgs e)

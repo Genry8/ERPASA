@@ -18,6 +18,8 @@ namespace ERPASA.Frm_Taller
         public Frm_Registrar_MaqMantenimiento()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_Registrar_MaqMantenimiento_Load(object sender, EventArgs e)

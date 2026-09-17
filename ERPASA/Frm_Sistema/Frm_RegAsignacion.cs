@@ -36,6 +36,8 @@ namespace ERPASA.Frm_Sistema
         public Frm_RegAsignacion()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
             dataGridView2.ClearSelection();
         }
 

@@ -30,6 +30,8 @@ namespace ERPASA.Planilla
         public Frm_Registrar_VacTruncasDev()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_Registrar_VacTruncasDev_Load(object sender, EventArgs e)

@@ -36,13 +36,13 @@ namespace ERPASA.Frm_TabMaestra
             this.button_cerrar = new System.Windows.Forms.Button();
             this.pictureBox_titulo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox_DesDD = new System.Windows.Forms.TextBox();
+            this.textBox_DesDD = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_Est = new System.Windows.Forms.ComboBox();
+            this.comboBox_Est = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textbox_ObsDD = new System.Windows.Forms.TextBox();
+            this.textbox_ObsDD = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_CodDD = new System.Windows.Forms.TextBox();
+            this.textBox_CodDD = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_User = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_nuevo = new System.Windows.Forms.ToolStripButton();
@@ -172,7 +172,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_DesDD
             // 
-            this.textBox_DesDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_DesDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_DesDD.ForeColor = System.Drawing.Color.Black;
             this.textBox_DesDD.Location = new System.Drawing.Point(216, 208);
@@ -218,7 +217,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textbox_ObsDD
             // 
-            this.textbox_ObsDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_ObsDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_ObsDD.ForeColor = System.Drawing.Color.Black;
             this.textbox_ObsDD.Location = new System.Drawing.Point(216, 277);
@@ -242,7 +240,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_CodDD
             // 
-            this.textBox_CodDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_CodDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CodDD.ForeColor = System.Drawing.Color.Black;
             this.textBox_CodDD.Location = new System.Drawing.Point(216, 135);
@@ -475,10 +472,10 @@ namespace ERPASA.Frm_TabMaestra
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_aliminar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        public System.Windows.Forms.TextBox textBox_CodDD;
-        public System.Windows.Forms.TextBox textBox_DesDD;
-        public System.Windows.Forms.TextBox textbox_ObsDD;
-        public System.Windows.Forms.ComboBox comboBox_Est;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_CodDD;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_DesDD;
+        public Guna.UI2.WinForms.Guna2TextBox textbox_ObsDD;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Est;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         public System.Windows.Forms.ToolStripButton toolStripButton_eliminar;
         public System.Windows.Forms.ToolStripButton toolStripButton_nuevo;

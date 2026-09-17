@@ -24,6 +24,8 @@ namespace ERPASA.Frm_DestajoUva
         public frm_AgregarSticker()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void guna2TextBox_liquidacion_TextChanged(object sender, EventArgs e)

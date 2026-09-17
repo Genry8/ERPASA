@@ -61,65 +61,65 @@ namespace ERPASA.Frm_Sistema
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox_prueba = new System.Windows.Forms.TextBox();
+            this.textBox_prueba = new Guna.UI2.WinForms.Guna2TextBox();
             this.button_EliminarFormAcademica = new System.Windows.Forms.Button();
             this.button_Perifericos = new System.Windows.Forms.Button();
             this.panel_secundario = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
             this.pictureBox_Activo_QR = new System.Windows.Forms.PictureBox();
-            this.comboBox_PlanMovil = new System.Windows.Forms.ComboBox();
+            this.comboBox_PlanMovil = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox_NumCelular = new System.Windows.Forms.TextBox();
-            this.dateTimePicker_F_Compra = new System.Windows.Forms.DateTimePicker();
+            this.textBox_NumCelular = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dateTimePicker_F_Compra = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
-            this.dateTimePicker_F_Garantia = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_F_Garantia = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox_Obs2 = new System.Windows.Forms.TextBox();
-            this.textBox_Serie = new System.Windows.Forms.TextBox();
+            this.textBox_Obs2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox_Serie = new Guna.UI2.WinForms.Guna2TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox_NumOrd = new System.Windows.Forms.TextBox();
-            this.textBox_MACEther = new System.Windows.Forms.TextBox();
+            this.textBox_NumOrd = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox_MACEther = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox_MACEquipo = new System.Windows.Forms.TextBox();
+            this.textBox_MACEquipo = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textbox_MACWifi = new System.Windows.Forms.TextBox();
-            this.textBox_Obs1 = new System.Windows.Forms.TextBox();
+            this.textbox_MACWifi = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox_Obs1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox_IMEI = new System.Windows.Forms.TextBox();
+            this.textBox_IMEI = new Guna.UI2.WinForms.Guna2TextBox();
             this.button_datossecundarios = new System.Windows.Forms.Button();
             this.panel_general = new System.Windows.Forms.Panel();
-            this.comboBox_EstActivo = new System.Windows.Forms.ComboBox();
+            this.comboBox_EstActivo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.comboBox_CodProv = new System.Windows.Forms.ComboBox();
+            this.comboBox_CodProv = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.comboBox_CodMod = new System.Windows.Forms.ComboBox();
+            this.comboBox_CodMod = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBox_CodMar = new System.Windows.Forms.ComboBox();
+            this.comboBox_CodMar = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox_CodDD = new System.Windows.Forms.ComboBox();
+            this.comboBox_CodDD = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox_CodMem = new System.Windows.Forms.ComboBox();
+            this.comboBox_CodMem = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox_generacion = new System.Windows.Forms.ComboBox();
-            this.comboBox_CodProc = new System.Windows.Forms.ComboBox();
-            this.comboBox_Estado = new System.Windows.Forms.ComboBox();
+            this.comboBox_generacion = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_CodProc = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_Estado = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox_CodSisOpe = new System.Windows.Forms.ComboBox();
+            this.comboBox_CodSisOpe = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox_CodOrg = new System.Windows.Forms.ComboBox();
+            this.comboBox_CodOrg = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox_TipAct = new System.Windows.Forms.ComboBox();
+            this.comboBox_TipAct = new Guna.UI2.WinForms.Guna2ComboBox();
             this.button_cargar_foto = new System.Windows.Forms.Button();
             this.label_User = new System.Windows.Forms.Label();
             this.pictureBox_fotoperfil = new System.Windows.Forms.PictureBox();
-            this.textBox_CodAct = new System.Windows.Forms.TextBox();
+            this.textBox_CodAct = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button_general = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -621,7 +621,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_NumCelular
             // 
-            this.textBox_NumCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_NumCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_NumCelular.ForeColor = System.Drawing.Color.Black;
             this.textBox_NumCelular.Location = new System.Drawing.Point(768, 36);
@@ -694,7 +693,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_Obs2
             // 
-            this.textBox_Obs2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Obs2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Obs2.ForeColor = System.Drawing.Color.Black;
             this.textBox_Obs2.Location = new System.Drawing.Point(768, 316);
@@ -705,7 +703,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_Serie
             // 
-            this.textBox_Serie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Serie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Serie.ForeColor = System.Drawing.Color.Black;
             this.textBox_Serie.Location = new System.Drawing.Point(200, 92);
@@ -743,7 +740,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_NumOrd
             // 
-            this.textBox_NumOrd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_NumOrd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_NumOrd.ForeColor = System.Drawing.Color.Black;
             this.textBox_NumOrd.Location = new System.Drawing.Point(200, 36);
@@ -754,7 +750,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_MACEther
             // 
-            this.textBox_MACEther.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_MACEther.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_MACEther.ForeColor = System.Drawing.Color.Black;
             this.textBox_MACEther.Location = new System.Drawing.Point(200, 204);
@@ -778,7 +773,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_MACEquipo
             // 
-            this.textBox_MACEquipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_MACEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_MACEquipo.ForeColor = System.Drawing.Color.Black;
             this.textBox_MACEquipo.Location = new System.Drawing.Point(200, 316);
@@ -815,7 +809,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textbox_MACWifi
             // 
-            this.textbox_MACWifi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_MACWifi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_MACWifi.ForeColor = System.Drawing.Color.Black;
             this.textbox_MACWifi.Location = new System.Drawing.Point(200, 260);
@@ -826,7 +819,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_Obs1
             // 
-            this.textBox_Obs1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Obs1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Obs1.ForeColor = System.Drawing.Color.Black;
             this.textBox_Obs1.Location = new System.Drawing.Point(768, 260);
@@ -863,7 +855,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_IMEI
             // 
-            this.textBox_IMEI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_IMEI.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_IMEI.ForeColor = System.Drawing.Color.Black;
             this.textBox_IMEI.Location = new System.Drawing.Point(200, 148);
@@ -1249,7 +1240,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_CodAct
             // 
-            this.textBox_CodAct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_CodAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CodAct.ForeColor = System.Drawing.Color.Black;
             this.textBox_CodAct.Location = new System.Drawing.Point(202, 36);
@@ -1513,19 +1503,19 @@ namespace ERPASA.Frm_Sistema
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_aliminar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        public System.Windows.Forms.TextBox textBox_CodAct;
-        public System.Windows.Forms.TextBox textBox_MACEquipo;
-        public System.Windows.Forms.TextBox textbox_MACWifi;
-        public System.Windows.Forms.ComboBox comboBox_Estado;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_CodAct;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_MACEquipo;
+        public Guna.UI2.WinForms.Guna2TextBox textbox_MACWifi;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Estado;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         public System.Windows.Forms.ToolStripButton toolStripButton_eliminar;
         public System.Windows.Forms.ToolStripButton toolStripButton_nuevo;
         public System.Windows.Forms.ToolStripButton toolStripButton_limpiar;
-        public System.Windows.Forms.TextBox textBox_MACEther;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_MACEther;
         private System.Windows.Forms.Label label7;
-        public System.Windows.Forms.TextBox textBox_IMEI;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_IMEI;
         private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.TextBox textBox_Obs1;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Obs1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button_general;
         private System.Windows.Forms.Panel panel_general;
@@ -1535,7 +1525,7 @@ namespace ERPASA.Frm_Sistema
         private System.Windows.Forms.Panel panel_secundario;
         private System.Windows.Forms.Button button_Perifericos;
         private System.Windows.Forms.Panel panel_periferico;
-        private System.Windows.Forms.TextBox textBox_prueba;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_prueba;
         private System.Windows.Forms.Button button_EliminarFormAcademica;
         private System.Windows.Forms.ToolStrip toolStrip2;
         public System.Windows.Forms.ToolStripButton toolStripButton_PerifericoAgregar;
@@ -1550,37 +1540,37 @@ namespace ERPASA.Frm_Sistema
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
         private System.Windows.Forms.Label label8;
-        public System.Windows.Forms.ComboBox comboBox_TipAct;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_TipAct;
         private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.ComboBox comboBox_CodOrg;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_CodOrg;
         private System.Windows.Forms.Label label10;
-        public System.Windows.Forms.ComboBox comboBox_CodSisOpe;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_CodSisOpe;
         private System.Windows.Forms.Label label11;
-        public System.Windows.Forms.ComboBox comboBox_CodDD;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_CodDD;
         private System.Windows.Forms.Label label12;
-        public System.Windows.Forms.ComboBox comboBox_CodMem;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_CodMem;
         private System.Windows.Forms.Label label13;
-        public System.Windows.Forms.ComboBox comboBox_CodProc;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_CodProc;
         private System.Windows.Forms.Label label14;
-        public System.Windows.Forms.ComboBox comboBox_CodMar;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_CodMar;
         private System.Windows.Forms.Label label15;
-        public System.Windows.Forms.ComboBox comboBox_CodProv;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_CodProv;
         private System.Windows.Forms.Label label16;
-        public System.Windows.Forms.ComboBox comboBox_CodMod;
-        public System.Windows.Forms.TextBox textBox_Serie;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_CodMod;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Serie;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        public System.Windows.Forms.TextBox textBox_NumOrd;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_NumOrd;
         private System.Windows.Forms.Label label19;
-        public System.Windows.Forms.TextBox textBox_Obs2;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Obs2;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        public System.Windows.Forms.TextBox textBox_NumCelular;
-        public System.Windows.Forms.ComboBox comboBox_PlanMovil;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_F_Compra;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_F_Garantia;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_NumCelular;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_PlanMovil;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_F_Compra;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_F_Garantia;
         public System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
@@ -1590,11 +1580,11 @@ namespace ERPASA.Frm_Sistema
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        public System.Windows.Forms.ComboBox comboBox_EstActivo;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_EstActivo;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.PictureBox pictureBox_Activo_QR;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        public System.Windows.Forms.ComboBox comboBox_generacion;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_generacion;
     }
 }

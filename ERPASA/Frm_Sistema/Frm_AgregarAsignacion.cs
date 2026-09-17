@@ -31,6 +31,15 @@ namespace ERPASA.Frm_Sistema
         public Frm_AgregarAsignacion()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate
+            {
+                Estilos.EstilizadorErp.Aplicar(this);
+                // Cabeceras de sección con el mismo chip que Usuario App.
+                Estilos.EstilizadorErp.EstilizarCabeceraSeccion(button_general);
+                Estilos.EstilizadorErp.EstilizarCabeceraSeccion(button_datossecundarios);
+                Estilos.EstilizadorErp.EstilizarCabeceraSeccion(button_Inventario);
+            };
         }
 
         //DsRepVentas dst = new DsRepVentas();

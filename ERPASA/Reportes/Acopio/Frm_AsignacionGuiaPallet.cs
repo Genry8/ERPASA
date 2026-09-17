@@ -33,6 +33,8 @@ namespace ERPASA.Reportes.Acopio
         public Frm_AsignacionGuiaPallet()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_AsignacionGuiaPallet_Load(object sender, EventArgs e)

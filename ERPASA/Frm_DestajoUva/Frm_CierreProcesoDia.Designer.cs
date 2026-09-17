@@ -36,7 +36,7 @@ namespace ERPASA.Frm_DestajoUva
             this.label_estado_reg = new System.Windows.Forms.Label();
             this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2TextBox_Buscar = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Fecha_Inicio = new System.Windows.Forms.DateTimePicker();
+            this.Fecha_Inicio = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.pictureBox_Excel = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox_Search = new System.Windows.Forms.PictureBox();
@@ -145,7 +145,6 @@ namespace ERPASA.Frm_DestajoUva
             // 
             // Fecha_Inicio
             // 
-            this.Fecha_Inicio.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fecha_Inicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fecha_Inicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.Fecha_Inicio.Location = new System.Drawing.Point(222, 22);
@@ -241,7 +240,7 @@ namespace ERPASA.Frm_DestajoUva
         private System.Windows.Forms.Label label_estado_reg;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox_Buscar;
-        private System.Windows.Forms.DateTimePicker Fecha_Inicio;
+        private Guna.UI2.WinForms.Guna2DateTimePicker Fecha_Inicio;
         private System.Windows.Forms.PictureBox pictureBox_Excel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox_Search;

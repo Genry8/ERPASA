@@ -33,9 +33,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button_actualizarContraseña = new System.Windows.Forms.Button();
-            this.textBox_ContraseñaActual = new System.Windows.Forms.TextBox();
-            this.textBox_NuevaContraseña = new System.Windows.Forms.TextBox();
-            this.textBox_ConfirmarContraseña = new System.Windows.Forms.TextBox();
+            this.textBox_ContraseñaActual = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox_NuevaContraseña = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox_ConfirmarContraseña = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_coincide_contraseña = new System.Windows.Forms.Label();
             this.pictureBox_ConfirmaContra = new System.Windows.Forms.PictureBox();
             this.pictureBox_NuevaCont = new System.Windows.Forms.PictureBox();
@@ -195,9 +195,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button_actualizarContraseña;
-        private System.Windows.Forms.TextBox textBox_ContraseñaActual;
-        private System.Windows.Forms.TextBox textBox_NuevaContraseña;
-        private System.Windows.Forms.TextBox textBox_ConfirmarContraseña;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_ContraseñaActual;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_NuevaContraseña;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_ConfirmarContraseña;
         private System.Windows.Forms.Label label_coincide_contraseña;
         private System.Windows.Forms.PictureBox pictureBox_ConfirmaContra;
         private System.Windows.Forms.PictureBox pictureBox_NuevaCont;

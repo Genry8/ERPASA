@@ -1163,7 +1163,7 @@ namespace CapaDatos
         {
             using (var conexion = leerconexion())
             {
-                string sql = "DELETE FROM TR_Listaconductores ";
+                string sql = " DELETE FROM TR_Listaconductores ";
 
                 using (var comando = new SqlCommand(sql, conexion))
                 {

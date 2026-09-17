@@ -51,7 +51,7 @@ namespace ERPASA.Frm_Contabilidad
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.miniToolStrip = new System.Windows.Forms.ToolStrip();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -1718,7 +1718,7 @@ namespace ERPASA.Frm_Contabilidad
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+        private Guna.UI2.WinForms.Guna2TextBox textBox1;
         private System.Windows.Forms.ToolStrip miniToolStrip;
         private System.Windows.Forms.TabPage tabPage4;
         public System.Windows.Forms.DataGridView dataGridView3;

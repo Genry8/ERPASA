@@ -24,6 +24,8 @@ namespace ERPASA.Frm_Contabilidad
         public Frm_ClasificacionPartidas()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_ClasificacionPartidas_Load(object sender, EventArgs e)

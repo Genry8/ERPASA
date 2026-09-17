@@ -19,6 +19,8 @@ namespace ERPASA.Ser_personal
         public Frm_CargarEncuestaComedor()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_CargarEncuestaComedor_Load(object sender, EventArgs e)

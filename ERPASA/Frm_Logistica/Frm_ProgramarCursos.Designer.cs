@@ -55,8 +55,8 @@ namespace ERPASA.Frm_Logistica
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.comboBox_detalle_sede = new System.Windows.Forms.ComboBox();
-            this.comboBox_detalle_empresa = new System.Windows.Forms.ComboBox();
+            this.comboBox_detalle_sede = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_detalle_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip2.SuspendLayout();
@@ -381,14 +381,14 @@ namespace ERPASA.Frm_Logistica
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         public System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label45;
-        public System.Windows.Forms.ComboBox comboBox_detalle_empresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_empresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton_imprimir;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_imprimir;
         private System.Windows.Forms.Label label46;
-        public System.Windows.Forms.ComboBox comboBox_detalle_sede;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_sede;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;

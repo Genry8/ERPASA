@@ -17,6 +17,8 @@ namespace ERPASA.Frm_Comercial
         public frm_EliminarLiquidacion()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void guna2TextBox_liquidacion_TextChanged(object sender, EventArgs e)

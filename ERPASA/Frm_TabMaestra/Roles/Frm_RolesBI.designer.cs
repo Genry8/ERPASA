@@ -71,7 +71,7 @@ namespace ERPASA.Frm_TabMaestra
             this.Grupo_Pagina = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox_grupo = new System.Windows.Forms.ComboBox();
+            this.comboBox_grupo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.button_guardar_GrupoPagina = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,10 +79,10 @@ namespace ERPASA.Frm_TabMaestra
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol_Usuario = new System.Windows.Forms.TabPage();
-            this.textBox_Usuario = new System.Windows.Forms.TextBox();
+            this.textBox_Usuario = new Guna.UI2.WinForms.Guna2TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_usuario = new System.Windows.Forms.ComboBox();
+            this.comboBox_usuario = new Guna.UI2.WinForms.Guna2ComboBox();
             this.button_guardar_RolUsuario = new System.Windows.Forms.Button();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -780,7 +780,7 @@ namespace ERPASA.Frm_TabMaestra
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Button button_guardar_GrupoPagina;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.ComboBox comboBox_grupo;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_grupo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
@@ -789,7 +789,7 @@ namespace ERPASA.Frm_TabMaestra
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox_usuario;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_usuario;
         private System.Windows.Forms.Button button_guardar_RolUsuario;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -800,6 +800,6 @@ namespace ERPASA.Frm_TabMaestra
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.TextBox textBox_Usuario;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_Usuario;
     }
 }

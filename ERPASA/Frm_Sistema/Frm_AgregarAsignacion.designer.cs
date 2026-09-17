@@ -40,11 +40,11 @@ namespace ERPASA.Frm_Sistema
             this.pictureBox_titulo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_periferico = new System.Windows.Forms.Panel();
-            this.textBox_prueba = new System.Windows.Forms.TextBox();
+            this.textBox_prueba = new Guna.UI2.WinForms.Guna2TextBox();
             this.button_EliminarFormAcademica = new System.Windows.Forms.Button();
             this.button_Inventario = new System.Windows.Forms.Button();
             this.panel_secundario = new System.Windows.Forms.Panel();
-            this.textBox_salida = new System.Windows.Forms.TextBox();
+            this.textBox_salida = new Guna.UI2.WinForms.Guna2TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,23 +76,23 @@ namespace ERPASA.Frm_Sistema
             this.button_BuscarUsuario = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.dateTimePicker_F_Entrega = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker_F_Deolucion = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_F_Entrega = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dateTimePicker_F_Deolucion = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox_DevEvent = new System.Windows.Forms.TextBox();
+            this.textBox_DevEvent = new Guna.UI2.WinForms.Guna2TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox_Usuario = new System.Windows.Forms.TextBox();
+            this.textBox_Usuario = new Guna.UI2.WinForms.Guna2TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox_Dni = new System.Windows.Forms.TextBox();
+            this.textBox_Dni = new Guna.UI2.WinForms.Guna2TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox_CodArea = new System.Windows.Forms.ComboBox();
+            this.comboBox_CodArea = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox_CodSede = new System.Windows.Forms.ComboBox();
+            this.comboBox_CodSede = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox_CodEmp = new System.Windows.Forms.ComboBox();
+            this.comboBox_CodEmp = new Guna.UI2.WinForms.Guna2ComboBox();
             this.button_cargar_foto = new System.Windows.Forms.Button();
             this.pictureBox_fotoperfil = new System.Windows.Forms.PictureBox();
-            this.textBox_CodAsig = new System.Windows.Forms.TextBox();
+            this.textBox_CodAsig = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button_general = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -301,7 +301,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_salida
             // 
-            this.textBox_salida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_salida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_salida.ForeColor = System.Drawing.Color.Black;
             this.textBox_salida.Location = new System.Drawing.Point(502, 11);
@@ -701,7 +700,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_DevEvent
             // 
-            this.textBox_DevEvent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_DevEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_DevEvent.ForeColor = System.Drawing.Color.Black;
             this.textBox_DevEvent.Location = new System.Drawing.Point(842, 149);
@@ -725,7 +723,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_Usuario
             // 
-            this.textBox_Usuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Usuario.ForeColor = System.Drawing.Color.Black;
             this.textBox_Usuario.Location = new System.Drawing.Point(842, 92);
@@ -749,7 +746,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_Dni
             // 
-            this.textBox_Dni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Dni.ForeColor = System.Drawing.Color.Black;
             this.textBox_Dni.Location = new System.Drawing.Point(842, 36);
@@ -858,7 +854,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_CodAsig
             // 
-            this.textBox_CodAsig.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_CodAsig.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CodAsig.ForeColor = System.Drawing.Color.Black;
             this.textBox_CodAsig.Location = new System.Drawing.Point(163, 36);
@@ -1118,7 +1113,7 @@ namespace ERPASA.Frm_Sistema
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_aliminar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        public System.Windows.Forms.TextBox textBox_CodAsig;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_CodAsig;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         public System.Windows.Forms.ToolStripButton toolStripButton_eliminar;
         public System.Windows.Forms.ToolStripButton toolStripButton_nuevo;
@@ -1131,22 +1126,22 @@ namespace ERPASA.Frm_Sistema
         private System.Windows.Forms.Panel panel_secundario;
         private System.Windows.Forms.Button button_Inventario;
         private System.Windows.Forms.Panel panel_periferico;
-        private System.Windows.Forms.TextBox textBox_prueba;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_prueba;
         private System.Windows.Forms.Button button_EliminarFormAcademica;
         private System.Windows.Forms.Label label8;
-        public System.Windows.Forms.ComboBox comboBox_CodEmp;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_CodEmp;
         private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.ComboBox comboBox_CodSede;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_CodSede;
         private System.Windows.Forms.Label label10;
-        public System.Windows.Forms.ComboBox comboBox_CodArea;
-        public System.Windows.Forms.TextBox textBox_DevEvent;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_F_Entrega;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_F_Deolucion;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_CodArea;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_DevEvent;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_F_Entrega;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_F_Deolucion;
         public System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label13;
-        public System.Windows.Forms.TextBox textBox_Usuario;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Usuario;
         private System.Windows.Forms.Label label24;
-        public System.Windows.Forms.TextBox textBox_Dni;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Dni;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
@@ -1163,7 +1158,7 @@ namespace ERPASA.Frm_Sistema
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
         private System.Windows.Forms.Button button_BuscarUsuario;
-        public System.Windows.Forms.TextBox textBox_salida;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_salida;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

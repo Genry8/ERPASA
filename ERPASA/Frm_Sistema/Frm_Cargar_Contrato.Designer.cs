@@ -49,24 +49,24 @@ namespace ERPASA.Frm_Sistema
             this.toolStripButton_credenciales_limpiar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.btnBuscar_Contrato = new System.Windows.Forms.Button();
-            this.textRuta_Contrato = new System.Windows.Forms.TextBox();
+            this.textRuta_Contrato = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox_Proveedor = new System.Windows.Forms.TextBox();
+            this.textBox_Proveedor = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox_Contrato = new System.Windows.Forms.TextBox();
+            this.textBox_Contrato = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_cantreg = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox_CodContrato = new System.Windows.Forms.TextBox();
-            this.textBox_filtro_proveedor = new System.Windows.Forms.TextBox();
+            this.textBox_CodContrato = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox_filtro_proveedor = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker_Fec_Inicio_Contrato = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker_Fec_Fin_Contrato = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_Fec_Inicio_Contrato = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dateTimePicker_Fec_Fin_Contrato = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label_renovar_contrato = new System.Windows.Forms.Label();
-            this.comboBox_Renovar_Contrato = new System.Windows.Forms.ComboBox();
+            this.comboBox_Renovar_Contrato = new Guna.UI2.WinForms.Guna2ComboBox();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -304,7 +304,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_Proveedor
             // 
-            this.textBox_Proveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Proveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Proveedor.ForeColor = System.Drawing.Color.Black;
             this.textBox_Proveedor.Location = new System.Drawing.Point(277, 117);
@@ -328,7 +327,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_Contrato
             // 
-            this.textBox_Contrato.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Contrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Contrato.ForeColor = System.Drawing.Color.Black;
             this.textBox_Contrato.Location = new System.Drawing.Point(710, 116);
@@ -364,7 +362,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_CodContrato
             // 
-            this.textBox_CodContrato.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_CodContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CodContrato.ForeColor = System.Drawing.Color.Black;
             this.textBox_CodContrato.Location = new System.Drawing.Point(71, 117);
@@ -375,7 +372,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_filtro_proveedor
             // 
-            this.textBox_filtro_proveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_filtro_proveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_filtro_proveedor.ForeColor = System.Drawing.Color.DarkGray;
             this.textBox_filtro_proveedor.Location = new System.Drawing.Point(11, 200);
@@ -509,29 +505,29 @@ namespace ERPASA.Frm_Sistema
         public System.Windows.Forms.ToolStripButton toolStripButton_credenciales_limpiar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.Button btnBuscar_Contrato;
-        private System.Windows.Forms.TextBox textRuta_Contrato;
+        private Guna.UI2.WinForms.Guna2TextBox textRuta_Contrato;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_guardar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Label label13;
-        public System.Windows.Forms.TextBox textBox_Proveedor;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Proveedor;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox textBox_Contrato;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Contrato;
         private System.Windows.Forms.Label label_cantreg;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox textBox_CodContrato;
-        public System.Windows.Forms.TextBox textBox_filtro_proveedor;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_CodContrato;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_filtro_proveedor;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_Fec_Inicio_Contrato;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_Fec_Fin_Contrato;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_Fec_Inicio_Contrato;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_Fec_Fin_Contrato;
         private System.Windows.Forms.ToolStripButton toolStripButton_buscar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_buscar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.Label label_renovar_contrato;
-        private System.Windows.Forms.ComboBox comboBox_Renovar_Contrato;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Renovar_Contrato;
     }
 }

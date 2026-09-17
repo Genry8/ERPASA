@@ -45,16 +45,16 @@ namespace ERPASA.Frm_Administracion
             this.toolStripButton_credenciales_limpiar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.label_cantreg = new System.Windows.Forms.Label();
-            this.comboBox_Hojas = new System.Windows.Forms.ComboBox();
+            this.comboBox_Hojas = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.textRuta = new System.Windows.Forms.TextBox();
+            this.textRuta = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox_sede = new System.Windows.Forms.ComboBox();
+            this.comboBox_sede = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox_cabezal = new System.Windows.Forms.ComboBox();
+            this.comboBox_cabezal = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -368,18 +368,18 @@ namespace ERPASA.Frm_Administracion
         public System.Windows.Forms.ToolStripButton toolStripButton_credenciales_limpiar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.Label label_cantreg;
-        private System.Windows.Forms.ComboBox comboBox_Hojas;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Hojas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox textRuta;
+        private Guna.UI2.WinForms.Guna2TextBox textRuta;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_guardar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        public System.Windows.Forms.ComboBox comboBox_sede;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_sede;
         private System.Windows.Forms.Label label8;
-        public System.Windows.Forms.ComboBox comboBox_cabezal;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_cabezal;
         private System.Windows.Forms.Label label11;
     }
 }

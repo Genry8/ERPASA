@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_AgregarMarcaVehiculo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox_GrupoVehiculo = new System.Windows.Forms.ComboBox();
+            this.comboBox_GrupoVehiculo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox_Obs = new System.Windows.Forms.TextBox();
+            this.textBox_Obs = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox_Marca = new System.Windows.Forms.TextBox();
+            this.textBox_Marca = new Guna.UI2.WinForms.Guna2TextBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_buscar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel_buscar = new System.Windows.Forms.ToolStripLabel();
@@ -253,10 +253,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox_Obs;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_Obs;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox_Marca;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_Marca;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox_GrupoVehiculo;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_GrupoVehiculo;
     }
 }

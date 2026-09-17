@@ -26,6 +26,8 @@ namespace ERPASA.Frm_Taller
         public frm_BuscarVehiculo()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
             //FormBorderStyle = FormBorderStyle.None;            
         }
 

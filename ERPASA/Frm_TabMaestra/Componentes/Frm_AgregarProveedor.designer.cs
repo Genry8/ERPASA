@@ -37,20 +37,20 @@ namespace ERPASA.Frm_TabMaestra
             this.pictureBox_titulo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox_Telefono = new System.Windows.Forms.TextBox();
+            this.textBox_Telefono = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox_Dirección = new System.Windows.Forms.TextBox();
+            this.textBox_Dirección = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox_Ruc = new System.Windows.Forms.TextBox();
+            this.textBox_Ruc = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_Distrito = new System.Windows.Forms.ComboBox();
-            this.textBox_descripcion = new System.Windows.Forms.TextBox();
+            this.comboBox_Distrito = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.textBox_descripcion = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_estado = new System.Windows.Forms.ComboBox();
+            this.comboBox_estado = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textbox_comentario = new System.Windows.Forms.TextBox();
+            this.textbox_comentario = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_CodProveedor = new System.Windows.Forms.TextBox();
+            this.textBox_CodProveedor = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_User = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_nuevo = new System.Windows.Forms.ToolStripButton();
@@ -201,7 +201,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_Telefono
             // 
-            this.textBox_Telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Telefono.ForeColor = System.Drawing.Color.Black;
             this.textBox_Telefono.Location = new System.Drawing.Point(216, 471);
@@ -225,7 +224,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_Dirección
             // 
-            this.textBox_Dirección.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Dirección.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Dirección.ForeColor = System.Drawing.Color.Black;
             this.textBox_Dirección.Location = new System.Drawing.Point(216, 404);
@@ -249,7 +247,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_Ruc
             // 
-            this.textBox_Ruc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Ruc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Ruc.ForeColor = System.Drawing.Color.Black;
             this.textBox_Ruc.Location = new System.Drawing.Point(216, 337);
@@ -282,7 +279,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_descripcion
             // 
-            this.textBox_descripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_descripcion.ForeColor = System.Drawing.Color.Black;
             this.textBox_descripcion.Location = new System.Drawing.Point(216, 202);
@@ -328,7 +324,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textbox_comentario
             // 
-            this.textbox_comentario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_comentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_comentario.ForeColor = System.Drawing.Color.Black;
             this.textbox_comentario.Location = new System.Drawing.Point(216, 269);
@@ -352,7 +347,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_CodProveedor
             // 
-            this.textBox_CodProveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_CodProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CodProveedor.ForeColor = System.Drawing.Color.Black;
             this.textBox_CodProveedor.Location = new System.Drawing.Point(216, 135);
@@ -589,14 +583,14 @@ namespace ERPASA.Frm_TabMaestra
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        public System.Windows.Forms.TextBox textbox_comentario;
-        public System.Windows.Forms.TextBox textBox_CodProveedor;
-        public System.Windows.Forms.ComboBox comboBox_estado;
-        public System.Windows.Forms.TextBox textBox_descripcion;
-        public System.Windows.Forms.ComboBox comboBox_Distrito;
-        public System.Windows.Forms.TextBox textBox_Ruc;
-        public System.Windows.Forms.TextBox textBox_Dirección;
-        public System.Windows.Forms.TextBox textBox_Telefono;
+        public Guna.UI2.WinForms.Guna2TextBox textbox_comentario;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_CodProveedor;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_estado;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_descripcion;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Distrito;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Ruc;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Dirección;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Telefono;
         public System.Windows.Forms.ToolStripButton toolStripButton_nuevo;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         public System.Windows.Forms.ToolStripButton toolStripButton_limpiar;

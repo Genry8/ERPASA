@@ -39,10 +39,10 @@ namespace ERPASA.Frm_Sistema
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnMostrar = new System.Windows.Forms.Button();
-            this.cboHojas = new System.Windows.Forms.ComboBox();
+            this.cboHojas = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtRuta = new System.Windows.Forms.TextBox();
+            this.txtRuta = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_nuevo = new System.Windows.Forms.ToolStripButton();
@@ -483,10 +483,10 @@ namespace ERPASA.Frm_Sistema
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button_min_max;
         private System.Windows.Forms.Button btnMostrar;
-        private System.Windows.Forms.ComboBox cboHojas;
+        private Guna.UI2.WinForms.Guna2ComboBox cboHojas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtRuta;
+        private Guna.UI2.WinForms.Guna2TextBox txtRuta;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.Button btnRegistrarData;

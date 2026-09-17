@@ -45,16 +45,16 @@ namespace ERPASA.Planilla
             this.toolStripButton_credenciales_limpiar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.label_cantreg = new System.Windows.Forms.Label();
-            this.comboBox_Hojas = new System.Windows.Forms.ComboBox();
+            this.comboBox_Hojas = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.textRuta = new System.Windows.Forms.TextBox();
+            this.textRuta = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker_Comedor_F_Prog = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_Comedor_F_Prog = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -356,10 +356,10 @@ namespace ERPASA.Planilla
         public System.Windows.Forms.ToolStripButton toolStripButton_credenciales_limpiar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.Label label_cantreg;
-        private System.Windows.Forms.ComboBox comboBox_Hojas;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Hojas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox textRuta;
+        private Guna.UI2.WinForms.Guna2TextBox textRuta;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -367,6 +367,6 @@ namespace ERPASA.Planilla
         private System.Windows.Forms.ToolStripLabel toolStripLabel_guardar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_Comedor_F_Prog;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_Comedor_F_Prog;
     }
 }

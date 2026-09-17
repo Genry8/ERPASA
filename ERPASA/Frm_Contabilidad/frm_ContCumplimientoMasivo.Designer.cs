@@ -33,15 +33,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ContCumplimientoMasivo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox_mes = new System.Windows.Forms.ComboBox();
+            this.comboBox_mes = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox_año = new System.Windows.Forms.ComboBox();
+            this.comboBox_año = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox_Hojas = new System.Windows.Forms.ComboBox();
+            this.comboBox_Hojas = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.textRuta = new System.Windows.Forms.TextBox();
+            this.textRuta = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
@@ -56,7 +56,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.label_cantreg = new System.Windows.Forms.ToolStripLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip2.SuspendLayout();
@@ -412,17 +412,17 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ComboBox comboBox_Hojas;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Hojas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox textRuta;
+        private Guna.UI2.WinForms.Guna2TextBox textRuta;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripLabel label_cantreg;
-        public System.Windows.Forms.ComboBox comboBox_mes;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_mes;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.ComboBox comboBox_año;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_año;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private Guna.UI2.WinForms.Guna2TextBox textBox1;
     }
 }

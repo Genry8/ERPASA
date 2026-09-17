@@ -14,6 +14,8 @@ namespace ERPASA.Reportes.Acopio
         public frm_EditarOrdenPoduccion()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void frm_EditarOrdenPoduccion_Load(object sender, EventArgs e)

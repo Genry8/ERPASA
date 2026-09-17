@@ -74,6 +74,438 @@ namespace ERPASA.Frm_TabMaestra
             //dataGridView4.AllowUserToAddRows = false;
 
             this.Padding = new Padding(borderSize);
+
+            AplicarEstiloModerno();
+        }
+
+        /// <summary>
+        /// Aplica la identidad visual del ERP a todo el formulario. Se hace por
+        /// código y no en el diseñador porque son más de 200 controles repartidos
+        /// en cinco secciones del acordeón; así todas quedan consistentes.
+        /// </summary>
+        private void AplicarEstiloModerno()
+        {
+            this.BackColor = Estilos.PaletaErp.Fondo;
+
+            // --- Barra de título ---
+            panel_titulo.BackColor = Estilos.PaletaErp.Petroleo;
+            label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
+            label1.Text = "REGISTRO DE USUARIO APP";
+            AcomodarBotonesVentana();
+
+            // --- Barra de acciones ---
+            toolStrip1.Renderer = new Estilos.BarraAccionesRenderer();
+            toolStrip1.BackColor = Estilos.PaletaErp.Tarjeta;
+            toolStrip1.GripStyle = ToolStripGripStyle.Hidden;
+            toolStrip1.ImageScalingSize = new Size(22, 22);
+            toolStrip1.Font = new Font("Segoe UI", 9.5F);
+            toolStrip1.Padding = new Padding(10, 3, 10, 3);
+            FusionarBotonesBarra();
+
+            // --- Cabeceras del acordeón ---
+            EstilizarCabecera(button_general);
+            EstilizarCabecera(button_datoslaborales);
+            EstilizarCabecera(button_formacionacademica);
+            EstilizarCabecera(button_planilla);
+            EstilizarCabecera(button_otrosdatos);
+
+            // comboBox3/4/5 son duplicados que quedaron exactamente encima de
+            // T-Profesional, Grupo Rol y Establecimiento. No se usan en ninguna
+            // parte del código y, al redimensionar los de verdad, asomaban detrás.
+            comboBox3.Visible = false;
+            comboBox4.Visible = false;
+            comboBox5.Visible = false;
+
+            // --- Contenido de cada sección ---
+            EstilizarContenedor(panel_general);
+            EstilizarContenedor(panel_costos);
+            EstilizarContenedor(panel_stock);
+            EstilizarContenedor(panel_codigos);
+            EstilizarContenedor(panel_otrosdatos);
+        }
+
+        private enum IconoVentana { Minimizar, Maximizar, Cerrar }
+
+        /// <summary>
+        /// Los tres botones se alinean pegados en la esquina, con el mismo tamaño,
+        /// tomando como referencia el borde derecho que ya tenía el de cerrar.
+        /// </summary>
+        private void AcomodarBotonesVentana()
+        {
+            const int ancho = 46;
+            const int alto = 30;
+            int y = Math.Max(0, (panel_titulo.Height - alto) / 2);
+
+            button_cerrar.SetBounds(button_cerrar.Right - ancho, y, ancho, alto);
+            button_min_max.SetBounds(button_cerrar.Left - ancho, y, ancho, alto);
+            button_minimizar.SetBounds(button_min_max.Left - ancho, y, ancho, alto);
+
+            EstilizarBotonVentana(button_minimizar, IconoVentana.Minimizar);
+            EstilizarBotonVentana(button_min_max, IconoVentana.Maximizar);
+            EstilizarBotonVentana(button_cerrar, IconoVentana.Cerrar);
+        }
+
+        /// <summary>
+        /// Los glifos de texto (— ❐ ✕) salían finos y de tamaños distintos según
+        /// la fuente, así que los iconos se dibujan con líneas.
+        /// </summary>
+        private void EstilizarBotonVentana(Button b, IconoVentana icono)
+        {
+            bool esCerrar = icono == IconoVentana.Cerrar;
+
+            b.BackgroundImage = null;
+            b.Text = "";
+            b.BackColor = Estilos.PaletaErp.Petroleo;
+            b.FlatStyle = FlatStyle.Flat;
+            b.FlatAppearance.BorderSize = 0;
+            b.FlatAppearance.MouseOverBackColor = esCerrar
+                ? Estilos.PaletaErp.Peligro
+                : Estilos.PaletaErp.PetroleoClaro;
+            b.FlatAppearance.MouseDownBackColor = esCerrar
+                ? Color.FromArgb(180, 40, 40)
+                : Estilos.PaletaErp.Acento;
+            b.Cursor = Cursors.Hand;
+            b.TabStop = false;
+            b.UseVisualStyleBackColor = false;
+            b.Tag = icono;
+            b.Paint += BotonVentanaPaint;
+        }
+
+        private void BotonVentanaPaint(object sender, PaintEventArgs e)
+        {
+            var b = (Button)sender;
+            if (!(b.Tag is IconoVentana)) return;
+
+            var icono = (IconoVentana)b.Tag;
+            var g = e.Graphics;
+
+            // Los iconos son de 10x10, centrados en el botón.
+            const int lado = 10;
+            int x = (b.Width - lado) / 2;
+            int y = (b.Height - lado) / 2;
+
+            var modo = g.SmoothingMode;
+            g.SmoothingMode = icono == IconoVentana.Cerrar
+                ? System.Drawing.Drawing2D.SmoothingMode.AntiAlias
+                : System.Drawing.Drawing2D.SmoothingMode.None;
+
+            using (var p = new Pen(Color.White, 1.2f))
+            {
+                switch (icono)
+                {
+                    case IconoVentana.Minimizar:
+                        g.DrawLine(p, x, y + lado / 2, x + lado, y + lado / 2);
+                        break;
+
+                    case IconoVentana.Maximizar:
+                        g.DrawRectangle(p, x, y, lado - 1, lado - 1);
+                        break;
+
+                    case IconoVentana.Cerrar:
+                        g.DrawLine(p, x, y, x + lado, y + lado);
+                        g.DrawLine(p, x + lado, y, x, y + lado);
+                        break;
+                }
+            }
+
+            g.SmoothingMode = modo;
+        }
+
+        private void EstilizarCabecera(Button b)
+        {
+            Estilos.EstilizadorErp.EstilizarCabeceraSeccion(b);
+        }
+
+        /// <summary>
+        /// La barra traía cada icono como botón y su texto como etiqueta aparte,
+        /// así que el resaltado solo cubría el icono. Aquí se juntan en un mismo
+        /// botón y se ocultan las etiquetas y los separadores.
+        /// </summary>
+        private void FusionarBotonesBarra()
+        {
+            ToolStripButton ultimoBoton = null;
+
+            foreach (ToolStripItem item in toolStrip1.Items)
+            {
+                if (item is ToolStripButton)
+                {
+                    ultimoBoton = (ToolStripButton)item;
+                    // El diseñador traía tamaños de fuente distintos por botón.
+                    ultimoBoton.Font = new Font("Segoe UI", 9.5F);
+                    ultimoBoton.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+                    ultimoBoton.TextImageRelation = TextImageRelation.ImageBeforeText;
+                    ultimoBoton.Padding = new Padding(8, 0, 12, 0);
+                    ultimoBoton.Margin = new Padding(0, 1, 4, 2);
+                    ultimoBoton.AutoSize = true;
+                }
+                else if (item is ToolStripLabel)
+                {
+                    if (ultimoBoton != null && !string.IsNullOrEmpty(item.Text))
+                        ultimoBoton.Text = item.Text;
+
+                    item.Visible = false;
+                }
+                else if (item is ToolStripSeparator)
+                {
+                    item.Visible = false;
+                }
+            }
+        }
+
+        private const int AltoMinCampo = 24;
+        private const int AltoMaxCampo = 30;
+
+        /// <summary>
+        /// Espacio libre hacia abajo hasta el siguiente control que se solapa
+        /// horizontalmente. Sirve para dar alto a los campos sin encimarlos.
+        /// No se filtra por Visible porque los paneles del acordeón están
+        /// ocultos mientras se aplica el estilo.
+        /// </summary>
+        private static int EspacioAbajo(Control c)
+        {
+            if (c.Parent == null) return AltoMaxCampo;
+
+            int libre = Math.Max(c.Height, c.Parent.ClientSize.Height - c.Top);
+
+            foreach (Control o in c.Parent.Controls)
+            {
+                if (o == c) continue;
+                if (o.Top <= c.Top) continue;                        // no está debajo
+                if (o.Right <= c.Left || o.Left >= c.Right) continue; // no se cruza en X
+
+                libre = Math.Min(libre, o.Top - c.Top);
+            }
+
+            return libre;
+        }
+
+        /// <summary>Espacio libre hacia la derecha hasta el siguiente control de la fila.</summary>
+        private static int EspacioDerecha(Control c)
+        {
+            if (c.Parent == null) return c.Width;
+
+            int libre = Math.Max(c.Width, c.Parent.ClientSize.Width - c.Left);
+
+            foreach (Control o in c.Parent.Controls)
+            {
+                if (o == c) continue;
+                if (o.Left < c.Right) continue;                        // no está a la derecha
+                if (o.Bottom <= c.Top || o.Top >= c.Bottom) continue;  // no comparte fila
+
+                libre = Math.Min(libre, o.Left - c.Left);
+            }
+
+            return libre;
+        }
+
+        /// <summary>
+        /// Los campos traían la altura de los controles nativos y los Guna2
+        /// quedaban aplastados. Se les da el alto que permita la fila.
+        /// </summary>
+        private static void AjustarAlto(Control c)
+        {
+            int alto = Math.Max(AltoMinCampo, Math.Min(AltoMaxCampo, EspacioAbajo(c) - 4));
+            if (c.Height < alto) c.Height = alto;
+        }
+
+        /// <summary>
+        /// El combo de Guna reserva más ancho para la flecha que el nativo, así que
+        /// textos como "NO ESPECIFICA" se cortaban. Se ensancha lo necesario para el
+        /// item más largo, sin pasarse del control que tenga al lado.
+        /// </summary>
+        private static void AjustarAnchoCombo(Guna.UI2.WinForms.Guna2ComboBox combo)
+        {
+            int textoMax = TextRenderer.MeasureText(combo.Text ?? "", combo.Font).Width;
+
+            var tabla = combo.DataSource as DataTable;
+            if (tabla != null && !string.IsNullOrEmpty(combo.DisplayMember)
+                && tabla.Columns.Contains(combo.DisplayMember))
+            {
+                foreach (DataRow fila in tabla.Rows)
+                {
+                    string texto = Convert.ToString(fila[combo.DisplayMember]);
+                    int w = TextRenderer.MeasureText(texto, combo.Font).Width;
+                    if (w > textoMax) textoMax = w;
+                }
+            }
+            else
+            {
+                foreach (object item in combo.Items)
+                {
+                    int w = TextRenderer.MeasureText(combo.GetItemText(item), combo.Font).Width;
+                    if (w > textoMax) textoMax = w;
+                }
+            }
+
+            int necesario = textoMax + 46;               // flecha + márgenes internos
+            int disponible = EspacioDerecha(combo) - 10; // sin tocar lo que siga en la fila
+
+            int ancho = Math.Min(necesario, disponible);
+            if (ancho > combo.Width) combo.Width = ancho;
+        }
+
+        private void EstilizarContenedor(Control raiz)
+        {
+            if (raiz is Panel)
+                raiz.BackColor = Estilos.PaletaErp.Tarjeta;
+
+            foreach (Control c in raiz.Controls)
+            {
+                var caja = c as Guna.UI2.WinForms.Guna2TextBox;
+                if (caja != null)
+                {
+                    caja.BorderRadius = 6;
+                    caja.BorderThickness = 1;
+                    caja.BorderColor = Estilos.PaletaErp.Borde;
+                    caja.FillColor = Color.White;
+                    caja.ForeColor = Estilos.PaletaErp.Texto;
+                    caja.Font = new Font("Segoe UI", 9F);
+                    caja.Animated = true;
+                    caja.TextOffset = new Point(4, 0);
+                    caja.HoverState.BorderColor = Estilos.PaletaErp.BordeFuerte;
+                    caja.FocusedState.BorderColor = Estilos.PaletaErp.Acento;
+                    caja.FocusedState.FillColor = Color.White;
+                    // Deshabilitado también en blanco: solo cambian texto y borde.
+                    caja.DisabledState.FillColor = Color.White;
+                    caja.DisabledState.BorderColor = Estilos.PaletaErp.BordeSuave;
+                    caja.DisabledState.ForeColor = Estilos.PaletaErp.TextoApagado;
+                    caja.DisabledState.PlaceholderForeColor = Estilos.PaletaErp.TextoApagado;
+                    AjustarAlto(caja);
+                    continue;
+                }
+
+                var combo = c as Guna.UI2.WinForms.Guna2ComboBox;
+                if (combo != null)
+                {
+                    combo.BorderRadius = 6;
+                    combo.BorderThickness = 1;
+                    combo.BorderColor = Estilos.PaletaErp.Borde;
+                    combo.FillColor = Color.White;
+                    combo.BackColor = Color.Transparent;
+                    combo.ForeColor = Estilos.PaletaErp.Texto;
+                    combo.Font = new Font("Segoe UI", 9F);
+                    combo.ItemHeight = 24;
+                    combo.HoverState.BorderColor = Estilos.PaletaErp.BordeFuerte;
+                    combo.FocusedState.BorderColor = Estilos.PaletaErp.Acento;
+                    combo.FocusedColor = Estilos.PaletaErp.Acento;
+                    combo.DisabledState.FillColor = Color.White;
+                    combo.DisabledState.BorderColor = Estilos.PaletaErp.BordeSuave;
+                    combo.DisabledState.ForeColor = Estilos.PaletaErp.TextoApagado;
+                    AjustarAlto(combo);
+                    AjustarAnchoCombo(combo);
+                    continue;
+                }
+
+                var fecha = c as Guna.UI2.WinForms.Guna2DateTimePicker;
+                if (fecha != null)
+                {
+                    fecha.BorderRadius = 6;
+                    fecha.BorderThickness = 1;
+                    fecha.BorderColor = Estilos.PaletaErp.Borde;
+                    fecha.FillColor = Color.White;
+                    fecha.ForeColor = Estilos.PaletaErp.Texto;
+                    fecha.Font = new Font("Segoe UI", 9F);
+                    fecha.HoverState.BorderColor = Estilos.PaletaErp.BordeFuerte;
+                    AjustarAlto(fecha);
+
+                    // Guna dibuja un icono de calendario a la izquierda, así que
+                    // necesita más ancho que el DateTimePicker nativo.
+                    int necesario = TextRenderer.MeasureText(fecha.Text ?? "", fecha.Font).Width + 60;
+                    int ancho = Math.Min(necesario, EspacioDerecha(fecha) - 10);
+                    if (ancho > fecha.Width) fecha.Width = ancho;
+                    continue;
+                }
+
+                var botonGuna = c as Guna.UI2.WinForms.Guna2Button;
+                if (botonGuna != null)
+                {
+                    botonGuna.BorderRadius = 6;
+                    botonGuna.Animated = true;
+                    botonGuna.Cursor = Cursors.Hand;
+                    botonGuna.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+                    botonGuna.ForeColor = Color.White;
+
+                    bool destructivo = botonGuna.Text.IndexOf("ELIMINAR",
+                        StringComparison.OrdinalIgnoreCase) >= 0;
+
+                    botonGuna.FillColor = destructivo
+                        ? Estilos.PaletaErp.Peligro
+                        : Estilos.PaletaErp.Acento;
+                    botonGuna.HoverState.FillColor = destructivo
+                        ? Color.FromArgb(200, 48, 48)
+                        : Estilos.PaletaErp.AcentoClaro;
+                    botonGuna.HoverState.ForeColor = Color.White;
+                    botonGuna.DisabledState.FillColor = Color.FromArgb(226, 230, 236);
+                    botonGuna.DisabledState.ForeColor = Estilos.PaletaErp.TextoApagado;
+                    continue;
+                }
+
+                var etiqueta = c as Label;
+                if (etiqueta != null)
+                {
+                    etiqueta.Font = new Font("Segoe UI", 9F);
+                    etiqueta.ForeColor = Estilos.PaletaErp.Etiqueta;
+                    continue;
+                }
+
+                var check = c as CheckBox;
+                if (check != null)
+                {
+                    check.Font = new Font("Segoe UI", 9F);
+                    check.ForeColor = Estilos.PaletaErp.Texto;
+                    continue;
+                }
+
+                var grupo = c as GroupBox;
+                if (grupo != null)
+                {
+                    grupo.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+                    grupo.ForeColor = Estilos.PaletaErp.Petroleo;
+                    grupo.BackColor = Estilos.PaletaErp.Tarjeta;
+                    EstilizarContenedor(grupo);
+                    continue;
+                }
+
+                var grilla = c as DataGridView;
+                if (grilla != null)
+                {
+                    EstilizarGrilla(grilla);
+                    continue;
+                }
+
+                var boton = c as Button;
+                if (boton != null)
+                {
+                    boton.FlatStyle = FlatStyle.Flat;
+                    boton.FlatAppearance.BorderSize = 0;
+                    boton.Cursor = Cursors.Hand;
+
+                    // Solo los botones con texto reciben el relleno de acento;
+                    // los que son puro icono conservan su imagen.
+                    if (!string.IsNullOrWhiteSpace(boton.Text) && boton.BackgroundImage == null)
+                    {
+                        boton.BackColor = Estilos.PaletaErp.Acento;
+                        boton.ForeColor = Color.White;
+                        boton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+                        boton.FlatAppearance.MouseOverBackColor = Estilos.PaletaErp.AcentoClaro;
+                        boton.UseVisualStyleBackColor = false;
+                    }
+                    continue;
+                }
+
+                if (c.HasChildren)
+                    EstilizarContenedor(c);
+            }
+        }
+
+        /// <summary>
+        /// Delega en el estilizador compartido para que este formulario no tenga
+        /// su propia copia de los colores de la grilla.
+        /// </summary>
+        private void EstilizarGrilla(DataGridView g)
+        {
+            Estilos.EstilizadorErp.EstilizarGrilla(g);
         }
 
         public void LipiarTextbox()

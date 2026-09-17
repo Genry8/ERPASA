@@ -39,12 +39,12 @@ namespace ERPASA.Frm_Contabilidad
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBox_IdCuentaSin = new System.Windows.Forms.ComboBox();
+            this.comboBox_IdCuentaSin = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_EmpresaSin = new System.Windows.Forms.ComboBox();
+            this.comboBox_EmpresaSin = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_buscarPend = new System.Windows.Forms.ToolStripButton();
@@ -59,11 +59,11 @@ namespace ERPASA.Frm_Contabilidad
             this.toolStripLabel_imprimir = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.comboBox_IdCuenta = new System.Windows.Forms.ComboBox();
+            this.comboBox_IdCuenta = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox_Area = new System.Windows.Forms.ComboBox();
+            this.comboBox_Area = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox_empresa = new System.Windows.Forms.ComboBox();
+            this.comboBox_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -653,7 +653,7 @@ namespace ERPASA.Frm_Contabilidad
 
         #endregion
         public System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox textBox1;
+        private Guna.UI2.WinForms.Guna2TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.TabControl tabControl1;
@@ -686,15 +686,15 @@ namespace ERPASA.Frm_Contabilidad
         public System.Windows.Forms.ToolStripButton toolStripButtonGuardarClasif;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        public System.Windows.Forms.ComboBox comboBox_Area;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Area;
         private System.Windows.Forms.Label label7;
-        public System.Windows.Forms.ComboBox comboBox_empresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_empresa;
         private System.Windows.Forms.Label label8;
-        public System.Windows.Forms.ComboBox comboBox_IdCuenta;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_IdCuenta;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.ComboBox comboBox_IdCuentaSin;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_IdCuentaSin;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.ComboBox comboBox_EmpresaSin;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_EmpresaSin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;

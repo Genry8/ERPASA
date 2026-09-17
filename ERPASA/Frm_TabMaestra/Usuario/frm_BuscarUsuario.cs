@@ -28,13 +28,23 @@ namespace ERPASA.Frm_TabMaestra
 
         private void frm_BuscarUsuario_Load(object sender, EventArgs e)
         {
+            guna2TextBoxSearch.IconLeft = Estilos.PaletaErp.IconoBuscar(
+                Estilos.PaletaErp.TextoApagado, 18);
+
             dataGridView2.Columns.Clear();
             dtg2 = cn_rolesuser.ListaBuscarUsuarioAPP("%", "%");
             dataGridView2.DataSource = dtg2;
             dataGridView2.AllowUserToAddRows = false;
             dataGridView2.ClearSelection();
 
-            //
+            ActualizarContador();
+            guna2TextBoxSearch.Focus();
+        }
+
+        private void ActualizarContador()
+        {
+            int n = dataGridView2.Rows.Count;
+            label_resultados.Text = n == 1 ? "1 usuario" : n + " usuarios";
         }
 
         private void Frm_agregar_Resize(object sender, EventArgs e)
@@ -194,6 +204,8 @@ namespace ERPASA.Frm_TabMaestra
                     dv.RowFilter = string.Join(" OR ", condiciones);
                     OrigenColorfila();
                 }
+
+                ActualizarContador();
             }
         }
     }

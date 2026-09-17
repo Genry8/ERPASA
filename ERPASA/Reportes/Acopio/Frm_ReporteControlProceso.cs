@@ -26,6 +26,8 @@ namespace ERPASA.Reportes.Acopio
         public Frm_ReporteControlProceso()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_ReporteControlProceso_Load(object sender, EventArgs e)

@@ -32,18 +32,18 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.comboBox_detalle_sede = new System.Windows.Forms.ComboBox();
-            this.comboBox_detalle_empresa = new System.Windows.Forms.ComboBox();
-            this.comboBox_Cultivo = new System.Windows.Forms.ComboBox();
+            this.comboBox_detalle_sede = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_detalle_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_Cultivo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox_Comentario = new System.Windows.Forms.TextBox();
+            this.textBox_Comentario = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox_cajas = new System.Windows.Forms.TextBox();
+            this.textBox_cajas = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox_Presentacion = new System.Windows.Forms.ComboBox();
-            this.textBox_Peso = new System.Windows.Forms.TextBox();
+            this.comboBox_Presentacion = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.textBox_Peso = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_buscar = new System.Windows.Forms.ToolStripButton();
@@ -404,12 +404,12 @@
 
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox_Cultivo;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Cultivo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label45;
-        public System.Windows.Forms.ComboBox comboBox_detalle_sede;
-        public System.Windows.Forms.ComboBox comboBox_detalle_empresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_sede;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_empresa;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_imprimir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
@@ -421,14 +421,14 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
-        public System.Windows.Forms.TextBox textBox_Peso;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Peso;
         private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.ComboBox comboBox_Presentacion;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Presentacion;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox textBox_cajas;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_cajas;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox textBox_Comentario;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_Comentario;
         private System.Windows.Forms.Label label_Id;
     }
 }

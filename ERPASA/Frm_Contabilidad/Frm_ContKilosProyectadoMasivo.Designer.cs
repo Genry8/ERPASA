@@ -34,10 +34,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ContKilosProyectadoMasivo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox_Hojas = new System.Windows.Forms.ComboBox();
+            this.comboBox_Hojas = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.textRuta = new System.Windows.Forms.TextBox();
+            this.textRuta = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
@@ -52,12 +52,12 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.label_cantreg = new System.Windows.Forms.ToolStripLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox_Cultivo = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.comboBox_Cultivo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox_empresa = new System.Windows.Forms.ComboBox();
+            this.comboBox_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox_Sucursal = new System.Windows.Forms.ComboBox();
+            this.comboBox_Sucursal = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -453,19 +453,19 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ComboBox comboBox_Hojas;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Hojas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox textRuta;
+        private Guna.UI2.WinForms.Guna2TextBox textRuta;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripLabel label_cantreg;
-        private System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.ComboBox comboBox_Cultivo;
+        private Guna.UI2.WinForms.Guna2TextBox textBox1;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Cultivo;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.ComboBox comboBox_empresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_empresa;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.ComboBox comboBox_Sucursal;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Sucursal;
         private System.Windows.Forms.Label label5;
     }
 }

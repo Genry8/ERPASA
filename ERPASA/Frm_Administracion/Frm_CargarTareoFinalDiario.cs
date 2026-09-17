@@ -19,6 +19,8 @@ namespace ERPASA.Frm_Administracion
         public Frm_CargarTareoFinalDiario()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_CargarTareoFinalDiario_Load(object sender, EventArgs e)

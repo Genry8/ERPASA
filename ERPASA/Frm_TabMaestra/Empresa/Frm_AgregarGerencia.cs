@@ -28,6 +28,8 @@ namespace ERPASA.Frm_TabMaestra
         public Frm_AgregarGerencia()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         //DsRepVentas dst = new DsRepVentas();

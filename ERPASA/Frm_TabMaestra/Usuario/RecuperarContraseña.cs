@@ -23,6 +23,8 @@ namespace ERPASA.Frm_TabMaestra.Usuario
         public RecuperarContraseña()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void button_enviarCorreo_Click(object sender, EventArgs e)

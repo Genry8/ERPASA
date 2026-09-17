@@ -33,14 +33,14 @@ namespace ERPASA.Frm_Contabilidad
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CargarKilosProyectado));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.comboBox_Cultivo = new System.Windows.Forms.ComboBox();
+            this.comboBox_Cultivo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_empresa = new System.Windows.Forms.ComboBox();
+            this.comboBox_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox_año = new System.Windows.Forms.ComboBox();
+            this.comboBox_año = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -455,7 +455,7 @@ namespace ERPASA.Frm_Contabilidad
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+        private Guna.UI2.WinForms.Guna2TextBox textBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
         public System.Windows.Forms.DataGridView dataGridView1;
@@ -477,11 +477,11 @@ namespace ERPASA.Frm_Contabilidad
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         public System.Windows.Forms.ToolStripButton toolStripButton_CargaMasiva;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
-        public System.Windows.Forms.ComboBox comboBox_año;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_año;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.ComboBox comboBox_empresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_empresa;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.ComboBox comboBox_Cultivo;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Cultivo;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
     }
