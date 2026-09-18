@@ -52,6 +52,7 @@ namespace ERPASA.Frm_TabMaestra
             this.comboBox_app = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.USUARIOS = new System.Windows.Forms.TabPage();
+            this.guna2TextBoxSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBox_CodUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBox_ApellidosNombres = new Guna.UI2.WinForms.Guna2TextBox();
             this.button_guardar_UsuarioRol = new System.Windows.Forms.Button();
@@ -72,7 +73,6 @@ namespace ERPASA.Frm_TabMaestra
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_guardar_permiso_app = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.guna2TextBoxSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SUB_MENU.SuspendLayout();
@@ -272,6 +272,28 @@ namespace ERPASA.Frm_TabMaestra
             this.USUARIOS.Size = new System.Drawing.Size(1133, 479);
             this.USUARIOS.TabIndex = 0;
             this.USUARIOS.Text = "USUARIO_PERMISO";
+            // 
+            // guna2TextBoxSearch
+            // 
+            this.guna2TextBoxSearch.BorderRadius = 2;
+            this.guna2TextBoxSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBoxSearch.DefaultText = "";
+            this.guna2TextBoxSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBoxSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBoxSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBoxSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBoxSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBoxSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBoxSearch.ForeColor = System.Drawing.Color.Teal;
+            this.guna2TextBoxSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBoxSearch.Location = new System.Drawing.Point(17, 89);
+            this.guna2TextBoxSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2TextBoxSearch.Name = "guna2TextBoxSearch";
+            this.guna2TextBoxSearch.PlaceholderText = "Search";
+            this.guna2TextBoxSearch.SelectedText = "";
+            this.guna2TextBoxSearch.Size = new System.Drawing.Size(705, 34);
+            this.guna2TextBoxSearch.TabIndex = 381;
+            this.guna2TextBoxSearch.TextChanged += new System.EventHandler(this.guna2TextBoxSearch_TextChanged);
             // 
             // textBox_CodUsuario
             // 
@@ -566,27 +588,6 @@ namespace ERPASA.Frm_TabMaestra
             this.label5.Size = new System.Drawing.Size(120, 29);
             this.label5.TabIndex = 46;
             this.label5.Text = "USUARIO";
-            // 
-            // guna2TextBoxSearch
-            // 
-            this.guna2TextBoxSearch.BorderRadius = 2;
-            this.guna2TextBoxSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBoxSearch.DefaultText = "";
-            this.guna2TextBoxSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBoxSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBoxSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBoxSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBoxSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBoxSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBoxSearch.ForeColor = System.Drawing.Color.Teal;
-            this.guna2TextBoxSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBoxSearch.Location = new System.Drawing.Point(17, 89);
-            this.guna2TextBoxSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBoxSearch.Name = "guna2TextBoxSearch";
-            this.guna2TextBoxSearch.PlaceholderText = "Search";
-            this.guna2TextBoxSearch.SelectedText = "";
-            this.guna2TextBoxSearch.Size = new System.Drawing.Size(705, 34);
-            this.guna2TextBoxSearch.TabIndex = 381;
             // 
             // Frm_RolesUserAppMovil
             // 

@@ -6,6 +6,7 @@ using ERPASA.Frm_Contabilidad;
 using System;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -23,6 +24,7 @@ namespace ERPASA.Frm_TabMaestra
         cn_rolesuser objrolesbicn = new cn_rolesuser();
         cd_rolesuser datos = new cd_rolesuser();
         cu_excel objexcel = new cu_excel();
+        DataTable dtg = new DataTable();
         int IdRol;
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -418,22 +420,24 @@ namespace ERPASA.Frm_TabMaestra
                     DateTime fecha = ce_usuario.FechaSistema();
                     string hostname = ce_usuario.HostName();
 
-                    // Columnas: 0 Check, 1 Activo (oculta), 2 IdApp, 3 App, 4 IdAppOpc, 5 Nombre
-                    int filas = dataGridView6.Rows.Count;
-                    for (int i = 0; i <= filas - 1; i++)
+                    // Se recorre el DataTable y no la grilla: si el buscador
+                    // dejo un filtro puesto, la grilla solo muestra parte de las
+                    // filas y las demas se quedarian sin grabar.
+                    dataGridView6.EndEdit();
+
+                    foreach (DataRow opcion in dtg.Rows)
                     {
-                        // Fila en blanco (la de nuevo registro): no hay nada que grabar.
-                        if (dataGridView6[4, i].Value == null ||
-                            dataGridView6[4, i].Value.ToString().Trim() == "")
+                        if (opcion["IdAppOpc"] == null ||
+                            opcion["IdAppOpc"].ToString().Trim() == "")
                             continue;
 
                         // El check marcado es el que va a la columna Activo.
-                        Boolean activo = dataGridView6[0, i].Value != null &&
-                                         Convert.ToBoolean(dataGridView6[0, i].Value);
+                        Boolean activo = opcion["Activo"] != DBNull.Value &&
+                                         Convert.ToBoolean(opcion["Activo"]);
 
                         permisos.Rows.Add(
                             iduser,                                                  //IdUser
-                            Convert.ToInt32(dataGridView6[4, i].Value.ToString()),   //IdAppOpc
+                            Convert.ToInt32(opcion["IdAppOpc"].ToString()),          //IdAppOpc
                             activo,                                                  //Activo
                             "",//Obs
                             "S", //estado
@@ -564,7 +568,7 @@ namespace ERPASA.Frm_TabMaestra
         /// <summary>
         /// Arma dataGridView6 con el check al inicio y deja marcadas las
         /// opciones que el usuario ya tiene activas.
-        /// Columnas: 0 Check, 1 Activo (oculta), 2 IdApp, 3 App, 4 IdAppOpc, 5 Nombre.
+        /// Columnas: Activo (el check), IdApp, App, IdAppOpc, Nombre.
         /// </summary>
         // Check que va en la cabecera de dataGridView6 para marcar toda la columna.
         private CheckBox check_TodosPermiso;
@@ -578,24 +582,25 @@ namespace ERPASA.Frm_TabMaestra
 
             cargandoPermiso = true;
 
+            dtg = cn_rolesuser.ListaAppOpciones(Convert.ToInt32(textBox_CodUsuario.Text));
+
+            // Activo sale de una expresion del SELECT (CAST(ISNULL(...))), asi
+            // que DataTable.Load la marca de solo lectura y la casilla no se
+            // dejaria marcar. Aca es un campo editable.
+            dtg.Columns["Activo"].ReadOnly = false;
+
             dataGridView6.Columns.Clear();
-            dataGridView6.DataSource = cn_rolesuser.ListaAppOpciones(Convert.ToInt32(textBox_CodUsuario.Text));
+            dataGridView6.DataSource = dtg;
             dataGridView6.ClearSelection();
 
-            DataGridViewCheckBoxColumn estas = new DataGridViewCheckBoxColumn();
-            estas.HeaderText = "Check";
-            dataGridView6.Columns.Insert(0, estas);
-
-            int a;
-            for (a = 0; a <= dataGridView6.Rows.Count - 1; a++)
-            {
-                if (Convert.ToBoolean(dataGridView6.Rows[a].Cells[1].Value))
-                {
-                    dataGridView6.Rows[a].Cells[0].Value = true;
-                }
-            }
-            // La columna 1 es el bit que trajo la consulta: ya se ve en el check.
-            dataGridView6.Columns[1].Visible = false;
+            // El check es la columna Activo que ya trae la consulta, no una
+            // columna agregada aparte. Una columna sin enlazar pierde sus
+            // valores cada vez que el buscador cambia el RowFilter, porque el
+            // enlace rearma las filas; guardandolo en el propio DataTable las
+            // marcas sobreviven al filtro.
+            dataGridView6.Columns["Activo"].HeaderText = "Check";
+            dataGridView6.Columns["Activo"].DisplayIndex = 0;
+            dataGridView6.Columns["Activo"].Visible = true;
 
             dataGridView6.AllowUserToAddRows = false;
 
@@ -641,8 +646,9 @@ namespace ERPASA.Frm_TabMaestra
                 return;
 
             DataGridViewRow fila = dataGridView6.Rows[e.RowIndex];
-            Boolean marcado = fila.Cells[0].Value != null && Convert.ToBoolean(fila.Cells[0].Value);
-            fila.Cells[0].Value = !marcado;
+            Boolean marcado = fila.Cells["Activo"].Value != null &&
+                              Convert.ToBoolean(fila.Cells["Activo"].Value);
+            fila.Cells["Activo"].Value = !marcado;
         }
 
         private void UbicarCheckTodosPermiso()
@@ -650,12 +656,16 @@ namespace ERPASA.Frm_TabMaestra
             if (check_TodosPermiso == null || dataGridView6.Columns.Count == 0)
                 return;
 
-            Rectangle celda = dataGridView6.GetCellDisplayRectangle(0, -1, true);
+            DataGridViewColumn columna = dataGridView6.Columns["Activo"];
+            if (columna == null)
+                return;
+
+            Rectangle celda = dataGridView6.GetCellDisplayRectangle(columna.Index, -1, true);
             if (celda.Width == 0)
                 return;
 
             // Al costado del texto "Check" de la cabecera.
-            int ancho = TextRenderer.MeasureText(dataGridView6.Columns[0].HeaderText,
+            int ancho = TextRenderer.MeasureText(columna.HeaderText,
                 dataGridView6.ColumnHeadersDefaultCellStyle.Font).Width;
 
             check_TodosPermiso.Location = new Point(
@@ -671,9 +681,11 @@ namespace ERPASA.Frm_TabMaestra
 
             dataGridView6.EndEdit();
 
+            // Solo las filas visibles: si hay un filtro activo, las que quedaron
+            // fuera conservan su marca.
             foreach (DataGridViewRow row in dataGridView6.Rows)
             {
-                row.Cells[0].Value = check_TodosPermiso.Checked;
+                row.Cells["Activo"].Value = check_TodosPermiso.Checked;
             }
         }
 
@@ -746,7 +758,31 @@ namespace ERPASA.Frm_TabMaestra
             dataGridView8.Columns[1].Visible = false;
         }
 
+        private void guna2TextBoxSearch_TextChanged(object sender, EventArgs e)
+        {
 
+            string filtro = guna2TextBoxSearch.Text.Trim().Replace("'", "''");
+
+            if (dtg != null)
+            {
+                DataView dv = dtg.DefaultView;
+
+                if (string.IsNullOrEmpty(filtro))
+                {
+                    dv.RowFilter = ""; // Quitar el filtro si el textbox está vacío
+                }
+                else
+                {
+                    // Generar condiciones para todas las columnas tipo string
+                    var condiciones = dtg.Columns
+                        .Cast<DataColumn>()
+                        .Where(col => col.DataType == typeof(string)) // Opcional: solo columnas de texto
+                        .Select(col => $"[{col.ColumnName}] LIKE '%{filtro}%'");
+
+                    dv.RowFilter = string.Join(" OR ", condiciones);
+                }
+            }
+        }
     }
 
 
