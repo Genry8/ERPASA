@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_EstadosPT));
             this.label_estado = new System.Windows.Forms.Label();
-            this.comboBox_EstadoPT = new System.Windows.Forms.ComboBox();
+            this.comboBox_EstadoPT = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -154,7 +154,7 @@
         #endregion
 
         private System.Windows.Forms.Label label_estado;
-        private System.Windows.Forms.ComboBox comboBox_EstadoPT;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_EstadoPT;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }

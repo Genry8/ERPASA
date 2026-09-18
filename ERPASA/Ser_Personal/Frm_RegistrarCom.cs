@@ -30,6 +30,8 @@ namespace ERPASA.Frm_Comedor
         public Frm_RegistrarCom()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_RegistrarCom_Load(object sender, EventArgs e)

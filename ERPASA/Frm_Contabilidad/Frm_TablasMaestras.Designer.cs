@@ -64,7 +64,7 @@ namespace ERPASA.Frm_Contabilidad
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
@@ -2087,7 +2087,7 @@ namespace ERPASA.Frm_Contabilidad
 
         #endregion
         public System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox textBox1;
+        private Guna.UI2.WinForms.Guna2TextBox textBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ToolStrip toolStrip2;

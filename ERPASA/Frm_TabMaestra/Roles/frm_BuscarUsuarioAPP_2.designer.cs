@@ -39,12 +39,12 @@ namespace ERPASA.Frm_TabMaestra
             this.pictureBox_titulo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox_TipoUsuarioAPP = new System.Windows.Forms.ComboBox();
+            this.comboBox_TipoUsuarioAPP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textbox_DescUsuarioAPP = new System.Windows.Forms.TextBox();
+            this.textbox_DescUsuarioAPP = new Guna.UI2.WinForms.Guna2TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.panel_titulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_titulo)).BeginInit();
@@ -240,7 +240,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textbox_DescUsuarioAPP
             // 
-            this.textbox_DescUsuarioAPP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_DescUsuarioAPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_DescUsuarioAPP.ForeColor = System.Drawing.Color.Black;
             this.textbox_DescUsuarioAPP.Location = new System.Drawing.Point(436, 32);
@@ -299,10 +298,10 @@ namespace ERPASA.Frm_TabMaestra
         private System.Windows.Forms.Button button_cerrar;
         private System.Windows.Forms.PictureBox pictureBox_titulo;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textbox_DescUsuarioAPP;
+        private Guna.UI2.WinForms.Guna2TextBox textbox_DescUsuarioAPP;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.ComboBox comboBox_TipoUsuarioAPP;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_TipoUsuarioAPP;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

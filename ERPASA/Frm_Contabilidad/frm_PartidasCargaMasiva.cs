@@ -20,6 +20,8 @@ namespace ERPASA.Frm_Contabilidad
         public frm_PartidasCargaMasiva()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void frm_PartidasCargaMasiva_Load(object sender, EventArgs e)

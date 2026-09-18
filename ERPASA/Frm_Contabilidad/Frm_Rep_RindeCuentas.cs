@@ -30,6 +30,8 @@ namespace ERPASA.Frm_Contabilidad
         public Frm_Rep_RindeCuentas()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_Rep_RindeCuentas_Load(object sender, EventArgs e)

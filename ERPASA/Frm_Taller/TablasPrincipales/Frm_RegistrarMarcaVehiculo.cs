@@ -25,6 +25,8 @@ namespace ERPASA.Frm_Taller
         public Frm_RegistrarMarcaVehiculo()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_RegistrarMarcaVehiculo_Load(object sender, EventArgs e)

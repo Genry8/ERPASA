@@ -25,6 +25,8 @@ namespace ERPASA.Frm_Taller
         public Frm_MantenimientoPreventivo()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_MantenimientoPreventivo_Load(object sender, EventArgs e)

@@ -176,22 +176,24 @@ namespace CapaDatos
                     {
                         while (reader.Read())
                         {
-                            ce_topico.dni_paciente = reader.GetString(0);
-                            ce_topico.apenom_paciente = reader.GetString(1);
-                            ce_topico.area_paciente = reader.GetString(2);
-                            ce_topico.jefearea_paciente = reader.GetString(3);
-                            ce_topico.hrentrada_paciente = reader.GetString(4);
-                            ce_topico.hrsalida_paciente = reader.GetString(5);
-                            ce_topico.patologia_paciente = reader.GetString(6);
-                            ce_topico.diagnostico_paciente = reader.GetString(7);
-                            ce_topico.tratamiento_paciente = reader.GetString(8);
-                            ce_topico.cantmedicamento_paciente = reader.GetString(9);
-                            ce_topico.accionrealizada_paciente = reader.GetString(10);
-                            ce_topico.localidad_paciente = reader.GetString(11);
-                            ce_topico.incidencia_paciente = reader.GetBoolean(12);
-                            ce_topico.parte_cuerpo = reader.GetString(13);
-                            ce_topico.labor = reader.GetString(14);
-
+                            ce_topico.dni_paciente = reader.IsDBNull(0) ? "" : reader.GetString(0);
+                            ce_topico.apenom_paciente = reader.IsDBNull(1) ? "" : reader.GetString(1);
+                            ce_topico.area_paciente = reader.IsDBNull(2) ? "" : reader.GetString(2);
+                            ce_topico.jefearea_paciente = reader.IsDBNull(3) ? "" : reader.GetString(3);
+                            ce_topico.hrentrada_paciente = reader.IsDBNull(4) ? "" : reader.GetString(4);
+                            ce_topico.hrsalida_paciente = reader.IsDBNull(5) ? "" : reader.GetString(5);
+                            ce_topico.patologia_paciente = reader.IsDBNull(6) ? "" : reader.GetString(6);
+                            ce_topico.diagnostico_paciente = reader.IsDBNull(7) ? "" : reader.GetString(7);
+                            ce_topico.tratamiento_paciente = reader.IsDBNull(8) ? "" : reader.GetString(8);
+                            ce_topico.cantmedicamento_paciente = reader.IsDBNull(9) ? "" : reader.GetString(9);
+                            ce_topico.accionrealizada_paciente = reader.IsDBNull(10) ? "" : reader.GetString(10);
+                            ce_topico.localidad_paciente = reader.IsDBNull(11) ? "" : reader.GetString(11);
+                            ce_topico.incidencia_paciente = reader.IsDBNull(12) ? false : reader.GetBoolean(12);
+                            ce_topico.parte_cuerpo = reader.IsDBNull(13) ? "" : reader.GetString(13);
+                            ce_topico.labor = reader.IsDBNull(14) ? "" : reader.GetString(14);
+                            ce_topico.hrcampo_paciente = reader.IsDBNull(15) ? "" : reader.GetString(15);
+                            ce_topico.hrtopico_paciente = reader.IsDBNull(16) ? "" : reader.GetString(16);
+                            ce_topico.nivelatencion_paciente = reader.IsDBNull(17) ? "" : reader.GetString(17);
                         }
                         conexion.Dispose();
                         conexion.Close();
@@ -993,7 +995,7 @@ namespace CapaDatos
 
         // MOSTRAR LISTA ORDEN
         public DataTable ListaReporteOrdProd(DateTime fecini, DateTime fecfin,
-            string emp, string sed,string cult)
+            string emp, string sed, string cult)
         {
             SqlDataReader resultado; //permite leer las filas
             DataTable tabla = new DataTable();

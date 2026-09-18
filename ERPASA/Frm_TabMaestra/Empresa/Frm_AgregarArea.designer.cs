@@ -36,15 +36,15 @@ namespace ERPASA.Frm_TabMaestra
             this.button_cerrar = new System.Windows.Forms.Button();
             this.pictureBox_titulo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox_Gerencia = new System.Windows.Forms.ComboBox();
+            this.comboBox_Gerencia = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox_DesArea = new System.Windows.Forms.TextBox();
+            this.textBox_DesArea = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_EstArea = new System.Windows.Forms.ComboBox();
+            this.comboBox_EstArea = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textbox_ObsArea = new System.Windows.Forms.TextBox();
+            this.textbox_ObsArea = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_CodArea = new System.Windows.Forms.TextBox();
+            this.textBox_CodArea = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_User = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_nuevo = new System.Windows.Forms.ToolStripButton();
@@ -198,7 +198,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_DesArea
             // 
-            this.textBox_DesArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_DesArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_DesArea.ForeColor = System.Drawing.Color.Black;
             this.textBox_DesArea.Location = new System.Drawing.Point(162, 166);
@@ -244,7 +243,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textbox_ObsArea
             // 
-            this.textbox_ObsArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_ObsArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_ObsArea.ForeColor = System.Drawing.Color.Black;
             this.textbox_ObsArea.Location = new System.Drawing.Point(162, 274);
@@ -268,7 +266,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_CodArea
             // 
-            this.textBox_CodArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_CodArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CodArea.ForeColor = System.Drawing.Color.Black;
             this.textBox_CodArea.Location = new System.Drawing.Point(162, 108);
@@ -501,15 +498,15 @@ namespace ERPASA.Frm_TabMaestra
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_aliminar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        public System.Windows.Forms.TextBox textBox_CodArea;
-        public System.Windows.Forms.TextBox textBox_DesArea;
-        public System.Windows.Forms.TextBox textbox_ObsArea;
-        public System.Windows.Forms.ComboBox comboBox_EstArea;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_CodArea;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_DesArea;
+        public Guna.UI2.WinForms.Guna2TextBox textbox_ObsArea;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_EstArea;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         public System.Windows.Forms.ToolStripButton toolStripButton_eliminar;
         public System.Windows.Forms.ToolStripButton toolStripButton_nuevo;
         public System.Windows.Forms.ToolStripButton toolStripButton_limpiar;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.ComboBox comboBox_Gerencia;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Gerencia;
     }
 }

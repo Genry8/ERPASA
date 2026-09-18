@@ -4,6 +4,7 @@ using CapaNegocio;
 using CapaUtilidad;
 using ERPASA.Frm_Contabilidad;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -34,6 +35,8 @@ namespace ERPASA.Frm_TabMaestra
         public Frm_RolesUser()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         //DsRepVentas dst = new DsRepVentas();
@@ -335,31 +338,32 @@ namespace ERPASA.Frm_TabMaestra
             DialogResult dialogResult = MessageBox.Show(MessageBoxContent, MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)
             {
+                Cursor = Cursors.WaitCursor;
+
+                // Toda la tanda se manda de una sola vez con SqlBulkCopy.
+                DataTable roles = new DataTable();
+                roles.Columns.Add("IdRol", typeof(int));
+                roles.Columns.Add("Nombre", typeof(string));
+
                 int filas = dataGridView1.Rows.Count; //Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString())
-                int a;
                 for (int i = 0; i <= filas - 1; i++)
                 //foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    var exrol = cn_rolesuser.BuscExisteROL(Convert.ToInt32(dataGridView1[0, i].Value.ToString()));
+                    // Fila en blanco (la de nuevo registro): no hay nada que grabar.
+                    if (dataGridView1[0, i].Value == null ||
+                        dataGridView1[0, i].Value.ToString().Trim() == "")
+                        continue;
 
-                    if (exrol == true)
-                    {
-                        objrolesbicn.ActualizaROL(
-                            Convert.ToInt32(dataGridView1[0, i].Value.ToString()),
-                            dataGridView1[1, i].Value.ToString()
-                            );
-                    }
-
-                    else //if (dr.Cells[0].Value.ToString() != ce_rolesbi.CodExiste)
-                    {
-                        objrolesbicn.GuardarROL(
-                            Convert.ToInt32(dataGridView1[0, i].Value.ToString()),
-                            dataGridView1[1, i].Value.ToString()
-                            );
-                    }
-
-
+                    roles.Rows.Add(
+                        Convert.ToInt32(dataGridView1[0, i].Value.ToString()),
+                        dataGridView1[1, i].Value == null ? "" : dataGridView1[1, i].Value.ToString()
+                        );
                 }
+
+                // El SP resuelve las altas y las actualizaciones en un solo MERGE.
+                objrolesbicn.GuardarActualizarROLMasivo(roles);
+
+                Cursor = Cursors.Default;
 
                 Msbox.Frm_Notificaciones ng = new Msbox.Frm_Notificaciones("REGISTRO AGREGADO", Color.FromArgb(13, 93, 140), 1);
                 ng.ShowDialog();
@@ -382,39 +386,36 @@ namespace ERPASA.Frm_TabMaestra
             if (dialogResult == DialogResult.Yes)
             {
 
+                Cursor = Cursors.WaitCursor;
+
+                DataTable menus = new DataTable();
+                menus.Columns.Add("IdMenu", typeof(int));
+                menus.Columns.Add("Nombre", typeof(string));
+                menus.Columns.Add("Icono", typeof(string));
+                menus.Columns.Add("IdApp", typeof(int));
+                menus.Columns.Add("App", typeof(string));
+
                 int filas = dataGridView3.Rows.Count; //Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString())
-                int a;
                 for (int i = 0; i <= filas - 1; i++)
                 //foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    var extmenu = cn_rolesuser.BuscExisteMenu(Convert.ToInt32(dataGridView3[0, i].Value.ToString()));
+                    // Fila en blanco (la de nuevo registro): no hay nada que grabar.
+                    if (dataGridView3[0, i].Value == null ||
+                        dataGridView3[0, i].Value.ToString().Trim() == "")
+                        continue;
 
-                    if (extmenu == true)
-                    {
-                        objrolesbicn.ActualizarMenu(
-                            Convert.ToInt32(dataGridView3[0, i].Value), //id
-                            dataGridView3[1, i].Value.ToString(), //nombre
-                            dataGridView3[2, i].Value.ToString(), //icono
-                            Convert.ToInt32(dataGridView3[3, i].Value.ToString()), //id app
-                            dataGridView3[4, i].Value.ToString()  //app
-                            );
-                    }
-
-                    else //if (dr.Cells[0].Value.ToString() != ce_rolesbi.CodExiste)
-                    {
-
-                        objrolesbicn.GuardarMenu(
-                            Convert.ToInt32(dataGridView3[0, i].Value),
-                            dataGridView3[1, i].Value.ToString(),
-                            dataGridView3[2, i].Value.ToString(),
-                            Convert.ToInt32(dataGridView3[3, i].Value.ToString()), //id app
-                            dataGridView3[4, i].Value.ToString()  //app
-                            );
-                    }
-
-
-
+                    menus.Rows.Add(
+                        Convert.ToInt32(dataGridView3[0, i].Value), //id
+                        dataGridView3[1, i].Value == null ? "" : dataGridView3[1, i].Value.ToString(), //nombre
+                        dataGridView3[2, i].Value == null ? "" : dataGridView3[2, i].Value.ToString(), //icono
+                        Convert.ToInt32(dataGridView3[3, i].Value.ToString()), //id app
+                        dataGridView3[4, i].Value == null ? "" : dataGridView3[4, i].Value.ToString()  //app
+                        );
                 }
+
+                objrolesbicn.GuardarActualizarMenuMasivo(menus);
+
+                Cursor = Cursors.Default;
 
                 Msbox.Frm_Notificaciones ng = new Msbox.Frm_Notificaciones("REGISTRO AGREGADO", Color.FromArgb(13, 93, 140), 1);
                 ng.ShowDialog();
@@ -503,35 +504,36 @@ namespace ERPASA.Frm_TabMaestra
             {
 
 
+                Cursor = Cursors.WaitCursor;
+
+                DataTable submenus = new DataTable();
+                submenus.Columns.Add("IdSubMenu", typeof(int));
+                submenus.Columns.Add("IdMenu", typeof(int));
+                submenus.Columns.Add("Nombre", typeof(string));
+                submenus.Columns.Add("NombreFormulario", typeof(string));
+
+                int idmenu = Convert.ToInt32(comboBox_menu.SelectedValue.ToString());
+
                 int filas = dataGridView4.Rows.Count; //Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString())
-                int a;
                 for (int i = 0; i <= filas - 1; i++)
                 //foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    var extmensub = cn_rolesuser.BuscExisteMenuSubMenu(Convert.ToInt32(comboBox_menu.SelectedValue.ToString()), Convert.ToInt32(dataGridView4[0, i].Value.ToString()));
+                    // Fila en blanco (la de nuevo registro): no hay nada que grabar.
+                    if (dataGridView4[0, i].Value == null ||
+                        dataGridView4[0, i].Value.ToString().Trim() == "")
+                        continue;
 
-                    if (extmensub == true)
-                    {
-                        objrolesbicn.ActualizarMenuSubmenu(
-                            Convert.ToInt32(dataGridView4[0, i].Value.ToString()),
-                            Convert.ToInt32(comboBox_menu.SelectedValue.ToString()),
-                            dataGridView4[1, i].Value.ToString(),
-                            dataGridView4[2, i].Value.ToString()
-                            );
-                    }
-
-                    else //if (dr.Cells[0].Value.ToString() != ce_rolesbi.CodExiste)
-                    {
-                        objrolesbicn.GuardarMenuSubmenu(
-                            Convert.ToInt32(dataGridView4[0, i].Value.ToString()),
-                            Convert.ToInt32(comboBox_menu.SelectedValue.ToString()),
-                            dataGridView4[1, i].Value.ToString(),
-                            dataGridView4[2, i].Value.ToString()
-                            );
-                    }
-
-
+                    submenus.Rows.Add(
+                        Convert.ToInt32(dataGridView4[0, i].Value.ToString()),
+                        idmenu,
+                        dataGridView4[1, i].Value == null ? "" : dataGridView4[1, i].Value.ToString(),
+                        dataGridView4[2, i].Value == null ? "" : dataGridView4[2, i].Value.ToString()
+                        );
                 }
+
+                objrolesbicn.GuardarActualizarMenuSubmenuMasivo(submenus);
+
+                Cursor = Cursors.Default;
 
                 Msbox.Frm_Notificaciones ng = new Msbox.Frm_Notificaciones("REGISTRO AGREGADO", Color.FromArgb(13, 93, 140), 1);
                 ng.ShowDialog();
@@ -623,33 +625,34 @@ namespace ERPASA.Frm_TabMaestra
             if (dialogResult == DialogResult.Yes)
             {
 
+                Cursor = Cursors.WaitCursor;
+
+                DataTable permisosrol = new DataTable();
+                permisosrol.Columns.Add("IdRol", typeof(int));
+                permisosrol.Columns.Add("IdSubMenu", typeof(int));
+                permisosrol.Columns.Add("Activo", typeof(Boolean));
+
+                int idrolsel = Convert.ToInt32(comboBox_Rol.SelectedValue.ToString());
+
                 int filas = dataGridView5.Rows.Count; //Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString())
-                int a;
                 for (int i = 0; i <= filas - 1; i++)
                 //foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    var extmensub = cn_rolesuser.BuscExisteMenuSubMenuRol(Convert.ToInt32(comboBox_Rol.SelectedValue.ToString()), Convert.ToInt32(dataGridView5[3, i].Value.ToString()));
+                    // Fila en blanco (la de nuevo registro): no hay nada que grabar.
+                    if (dataGridView5[3, i].Value == null ||
+                        dataGridView5[3, i].Value.ToString().Trim() == "")
+                        continue;
 
-                    if (extmensub == true)
-                    {
-                        objrolesbicn.ActualizarMenuSubmenuRol(
-                            Convert.ToInt32(comboBox_Rol.SelectedValue.ToString()),
-                            Convert.ToInt32(dataGridView5[3, i].Value.ToString()),
-                            Convert.ToBoolean(dataGridView5[0, i].Value)
-                            );
-                    }
-
-                    else //if (dr.Cells[0].Value.ToString() != ce_rolesbi.CodExiste)
-                    {
-                        objrolesbicn.GuardarMenuSubmenuRol(
-                            Convert.ToInt32(comboBox_Rol.SelectedValue.ToString()),
-                            Convert.ToInt32(dataGridView5[3, i].Value.ToString()),
-                            Convert.ToBoolean(dataGridView5[0, i].Value)
-                            );
-                    }
-
-
+                    permisosrol.Rows.Add(
+                        idrolsel,
+                        Convert.ToInt32(dataGridView5[3, i].Value.ToString()),
+                        dataGridView5[0, i].Value != null && Convert.ToBoolean(dataGridView5[0, i].Value)
+                        );
                 }
+
+                objrolesbicn.GuardarActualizarMenuSubmenuRolMasivo(permisosrol);
+
+                Cursor = Cursors.Default;
 
                 Msbox.Frm_Notificaciones ng = new Msbox.Frm_Notificaciones("REGISTRO AGREGADO", Color.FromArgb(13, 93, 140), 1);
                 ng.ShowDialog();
@@ -703,35 +706,32 @@ namespace ERPASA.Frm_TabMaestra
             if (dialogResult == DialogResult.Yes)
             {
 
+                Cursor = Cursors.WaitCursor;
+
+                DataTable apps = new DataTable();
+                apps.Columns.Add("Id_APP", typeof(int));
+                apps.Columns.Add("Nombre", typeof(string));
+                apps.Columns.Add("Icono", typeof(string));
+
                 int filas = dataGridView7.Rows.Count; //Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString())
-                int a;
                 for (int i = 0; i <= filas - 1; i++)
                 //foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    var extmenu = cn_rolesuser.BuscExisteMenuAPP(Convert.ToInt32(dataGridView7[0, i].Value.ToString()));
+                    // Fila en blanco (la de nuevo registro): no hay nada que grabar.
+                    if (dataGridView7[0, i].Value == null ||
+                        dataGridView7[0, i].Value.ToString().Trim() == "")
+                        continue;
 
-                    if (extmenu == true)
-                    {
-                        objrolesbicn.ActualizarMenuAPP(
-                            Convert.ToInt32(dataGridView7[0, i].Value),
-                            dataGridView7[1, i].Value.ToString(),
-                            dataGridView7[2, i].Value.ToString()
-                            );
-                    }
-
-                    else //if (dr.Cells[0].Value.ToString() != ce_rolesbi.CodExiste)
-                    {
-
-                        objrolesbicn.GuardarMenuAPP(
-                            Convert.ToInt32(dataGridView7[0, i].Value),
-                            dataGridView7[1, i].Value.ToString(),
-                            dataGridView7[2, i].Value.ToString()
-                            );
-                    }
-
-
-
+                    apps.Rows.Add(
+                        Convert.ToInt32(dataGridView7[0, i].Value),
+                        dataGridView7[1, i].Value == null ? "" : dataGridView7[1, i].Value.ToString(),
+                        dataGridView7[2, i].Value == null ? "" : dataGridView7[2, i].Value.ToString()
+                        );
                 }
+
+                objrolesbicn.GuardarActualizarMenuAPPMasivo(apps);
+
+                Cursor = Cursors.Default;
 
                 Msbox.Frm_Notificaciones ng = new Msbox.Frm_Notificaciones("REGISTRO AGREGADO", Color.FromArgb(13, 93, 140), 1);
                 ng.ShowDialog();
@@ -769,33 +769,34 @@ namespace ERPASA.Frm_TabMaestra
             if (dialogResult == DialogResult.Yes)
             {
 
+                Cursor = Cursors.WaitCursor;
+
+                DataTable permisosapp = new DataTable();
+                permisosapp.Columns.Add("Id_APP", typeof(int));
+                permisosapp.Columns.Add("Id_User", typeof(int));
+                permisosapp.Columns.Add("Activo", typeof(Boolean));
+
+                int iduserapp = Convert.ToInt32(textBox_CodUsuario_APP.Text.ToString());
+
                 int filas = dataGridView8.Rows.Count; //Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString())
-                int a;
                 for (int i = 0; i <= filas - 1; i++)
                 //foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    var extmensub = cn_rolesuser.BuscExisteMenuAPP_Usuario(Convert.ToInt32(textBox_CodUsuario_APP.Text.ToString()), Convert.ToInt32(dataGridView8[2, i].Value.ToString()));
+                    // Fila en blanco (la de nuevo registro): no hay nada que grabar.
+                    if (dataGridView8[2, i].Value == null ||
+                        dataGridView8[2, i].Value.ToString().Trim() == "")
+                        continue;
 
-                    if (extmensub == true)
-                    {
-                        objrolesbicn.ActualizarMenuAPP_Usuario(
-                            Convert.ToInt32(dataGridView8[2, i].Value.ToString()),
-                            Convert.ToInt32(textBox_CodUsuario_APP.Text.ToString()),
-                            Convert.ToBoolean(dataGridView8[0, i].Value)
-                            );
-                    }
-
-                    else //if (dr.Cells[0].Value.ToString() != ce_rolesbi.CodExiste)
-                    {
-                        objrolesbicn.GuardarMenuAPP_Usuario(
-                            Convert.ToInt32(dataGridView8[2, i].Value.ToString()),
-                            Convert.ToInt32(textBox_CodUsuario_APP.Text.ToString()),
-                            Convert.ToBoolean(dataGridView8[0, i].Value)
-                            );
-                    }
-
-
+                    permisosapp.Rows.Add(
+                        Convert.ToInt32(dataGridView8[2, i].Value.ToString()),
+                        iduserapp,
+                        dataGridView8[0, i].Value != null && Convert.ToBoolean(dataGridView8[0, i].Value)
+                        );
                 }
+
+                objrolesbicn.GuardarActualizarMenuAPP_UsuarioMasivo(permisosapp);
+
+                Cursor = Cursors.Default;
 
                 Msbox.Frm_Notificaciones ng = new Msbox.Frm_Notificaciones("REGISTRO AGREGADO", Color.FromArgb(13, 93, 140), 1);
                 ng.ShowDialog();

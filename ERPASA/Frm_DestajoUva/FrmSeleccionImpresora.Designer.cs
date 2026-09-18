@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSeleccionImpresora));
-            this.comboBoxImpresoras = new System.Windows.Forms.ComboBox();
+            this.comboBoxImpresoras = new Guna.UI2.WinForms.Guna2ComboBox();
             this.button_imprimir = new System.Windows.Forms.Button();
             this.button_cancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -81,7 +81,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBoxImpresoras;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxImpresoras;
         private System.Windows.Forms.Button button_imprimir;
         private System.Windows.Forms.Button button_cancelar;
     }

@@ -16,6 +16,8 @@ namespace ERPASA.Reportes
         public Frm_Reporte_Fotosheck()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_Reporte_Fotosheck_Load(object sender, EventArgs e)

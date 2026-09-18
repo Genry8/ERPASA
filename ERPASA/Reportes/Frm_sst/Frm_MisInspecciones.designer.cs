@@ -66,21 +66,21 @@ namespace ERPASA.Reportes.Frm_sst
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox_Placa = new Guna.UI2.WinForms.Guna2TextBox();
             this.label58 = new System.Windows.Forms.Label();
-            this.comboBox_detalle_tipo_inspeccion = new System.Windows.Forms.ComboBox();
+            this.comboBox_detalle_tipo_inspeccion = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label47 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.comboBox_detalle_area = new System.Windows.Forms.ComboBox();
-            this.comboBox_detalle_sede = new System.Windows.Forms.ComboBox();
-            this.comboBox_detalle_empresa = new System.Windows.Forms.ComboBox();
+            this.comboBox_detalle_area = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_detalle_sede = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_detalle_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox_TotalAnulado = new System.Windows.Forms.TextBox();
+            this.textBox_TotalAnulado = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox_TotalNoAnulado = new System.Windows.Forms.TextBox();
+            this.textBox_TotalNoAnulado = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox_total = new System.Windows.Forms.TextBox();
-            this.dateTimePicker_F_Fin = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker_F_ini = new System.Windows.Forms.DateTimePicker();
+            this.textBox_total = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dateTimePicker_F_Fin = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dateTimePicker_F_ini = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_titulo.SuspendLayout();
@@ -623,7 +623,6 @@ namespace ERPASA.Reportes.Frm_sst
             // 
             // textBox_TotalAnulado
             // 
-            this.textBox_TotalAnulado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_TotalAnulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_TotalAnulado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(70)))), ((int)(((byte)(0)))));
             this.textBox_TotalAnulado.Location = new System.Drawing.Point(1243, 33);
@@ -649,7 +648,6 @@ namespace ERPASA.Reportes.Frm_sst
             // 
             // textBox_TotalNoAnulado
             // 
-            this.textBox_TotalNoAnulado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_TotalNoAnulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_TotalNoAnulado.ForeColor = System.Drawing.Color.Black;
             this.textBox_TotalNoAnulado.Location = new System.Drawing.Point(1243, 76);
@@ -675,7 +673,6 @@ namespace ERPASA.Reportes.Frm_sst
             // 
             // textBox_total
             // 
-            this.textBox_total.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_total.ForeColor = System.Drawing.Color.Black;
             this.textBox_total.Location = new System.Drawing.Point(1243, 117);
@@ -786,14 +783,14 @@ namespace ERPASA.Reportes.Frm_sst
         private System.Windows.Forms.ToolStripLabel toolStripLabel_limpiar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_F_Fin;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_F_ini;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_F_Fin;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_F_ini;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox_total;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_total;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox_TotalAnulado;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_TotalAnulado;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox_TotalNoAnulado;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_TotalNoAnulado;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripButton toolStripButton_excel;
@@ -801,11 +798,11 @@ namespace ERPASA.Reportes.Frm_sst
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label45;
-        public System.Windows.Forms.ComboBox comboBox_detalle_area;
-        public System.Windows.Forms.ComboBox comboBox_detalle_sede;
-        public System.Windows.Forms.ComboBox comboBox_detalle_empresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_area;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_sede;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_empresa;
         private System.Windows.Forms.Label label58;
-        public System.Windows.Forms.ComboBox comboBox_detalle_tipo_inspeccion;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_tipo_inspeccion;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

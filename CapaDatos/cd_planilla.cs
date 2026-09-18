@@ -1817,6 +1817,81 @@ namespace CapaDatos
 
 
 
+
+        //
+        //
+        // CARGAS MASIVAS DE COMUNICACION (SqlBulkCopy)
+        //
+        //
+        // COM_ParticipacionEncuesta: el borrado por tipo de personal y año va
+        // antes, desde el formulario; aca solo se insertan las filas nuevas.
+        public void GuardarParticipacionEncuestaMasivo(DataTable datos)
+        {
+            CargaMasivaDirecta(datos, "COM_ParticipacionEncuesta");
+        }
+
+
+        // COM_MovimientoCanje: idem, el borrado por año va antes.
+        public void GuardarMovimientoCanjeMasivo(DataTable datos)
+        {
+            CargaMasivaDirecta(datos, "COM_MovimientoCanje");
+        }
+
+
+        // COM_MovimientoCanjePlanilla: alta o actualizacion por dni + Fecha_entrega.
+        public void GuardarActualizarSaldoPlanillaMasivo(DataTable datos)
+        {
+            CargaMasiva(datos, "#MovCanjePlanilla", @"CREATE TABLE #MovCanjePlanilla(
+                        empresa              varchar(180),
+                        dni                  varchar(20),
+                        nombre_completo      varchar(180),
+                        puntos               float,
+                        codigo_producto      varchar(180),
+                        descripcion_producto varchar(180),
+                        monto_planilla       float,
+                        IGV                  float,
+                        Total                float,
+                        estado_canje         varchar(180),
+                        Fecha_entrega        date,
+                        Hoja                 varchar(150),
+                        FecCre               datetime,
+                        UseReg               int,
+                        Hostname             varchar(50),
+                        FecEdit              datetime,
+                        UseEdit              int,
+                        UseElim              int)", "SP_GUARDAR_ACTUALIZAR_MovCanjePlanilla_MASIVO");
+        }
+
+
+        // COM_Saldo: alta o actualizacion por dni + sede + fecha.
+        public void GuardarActualizarSaldoMasivo(DataTable datos)
+        {
+            CargaMasiva(datos, "#Saldo", @"CREATE TABLE #Saldo(
+                        fecha            date,
+                        empresa          varchar(180),
+                        Sede             varchar(180),
+                        nombres          varchar(180),
+                        dni              varchar(15),
+                        correo           varchar(180),
+                        telefono         varchar(20),
+                        saldo            decimal(18,4),
+                        activo           varchar(180),
+                        estado_plantilla varchar(180),
+                        acceso           varchar(180),
+                        Semana           int,
+                        Año              int,
+                        Obs              varchar(500),
+                        Hoja             varchar(50),
+                        Estado           varchar(10),
+                        FecCre           datetime,
+                        UseReg           int,
+                        Hostname         varchar(50),
+                        FecEdit          datetime,
+                        UseEdit          int,
+                        UseElim          int)", "SP_GUARDAR_ACTUALIZAR_SALDO_MASIVO");
+        }
+
+
         // METODO PARA GUARDAR Y ACTUALIZAR SALDO
         public void GuardarActualizarSaldo(DateTime fecha,
             string emp, string sed, string nombres, string dni, string correo

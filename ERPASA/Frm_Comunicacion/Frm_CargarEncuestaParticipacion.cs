@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaUtilidad;
 using ExcelDataReader;
 using System;
 using System.Data;
@@ -19,6 +20,8 @@ namespace ERPASA.Frm_Comunicacion
         public Frm_CargarEncuestaParticipacion()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_CargarEncuestaParticipacion_Load(object sender, EventArgs e)
@@ -175,33 +178,55 @@ namespace ERPASA.Frm_Comunicacion
                         dateTimePicker_FecEncuesta.Value.Date //item
                         );
 
-                int filas = dataGridView1.Rows.Count; //Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString())
-                int a;
+                Cursor = Cursors.WaitCursor;
+
+                // Toda la tanda va de una sola vez con SqlBulkCopy. El borrado
+                // por tipo de trabajador y año ya corrio arriba.
+                DataTable datos = new DataTable();
+                datos.Columns.Add("fecha", typeof(DateTime));
+                foreach (string c in new string[] { "empresa", "sede", "tipo_trabajador",
+                    "sexo", "gerencia", "area" })
+                    datos.Columns.Add(c, typeof(string));
+                datos.Columns.Add("cantidad", typeof(double));
+                foreach (string c in new string[] { "Obs", "Hoja", "Estado" })
+                    datos.Columns.Add(c, typeof(string));
+                datos.Columns.Add("FecCre", typeof(DateTime));
+                datos.Columns.Add("UseReg", typeof(int));
+                datos.Columns.Add("Hostname", typeof(string));
+
+                DateTime fechaSis = ce_usuario.FechaSistema();
+                string hostname = ce_usuario.HostName();
+                DateTime fechaEncuesta = dateTimePicker_FecEncuesta.Value.Date;
+
+                int filas = dataGridView1.Rows.Count;
                 for (int i = 0; i <= filas - 1; i++)
-                //foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    objcnlog.GuardarActualizarParticipacionEncuesta(
-                        dateTimePicker_FecEncuesta.Value.Date,
-                        "",//empresa
-                        dataGridView1[0, i].Value.ToString().Trim(),//Sede
-                        dataGridView1[1, i].Value.ToString().Trim(),//tipo trab
-                        dataGridView1[2, i].Value.ToString().ToUpper().Trim(),//sexo
-                        dataGridView1[3, i].Value.ToString().ToUpper().Trim(),//gerencia
-                        dataGridView1[4, i].Value.ToString().ToUpper().Trim(),//area
-                        dataGridView1[5, i].Value.ToString().Trim(),//cantidad
-                        "",//OBS
+                    if (dataGridView1.Rows[i].IsNewRow)
+                        continue;
 
-                        comboBox_Hojas.Text,
-                        "S",
-                        ce_usuario.FechaSistema(),
-                        ce_usuario.usecod,
-                        ce_usuario.HostName(),
-                        ce_usuario.FechaSistema(),
-                        ce_usuario.usecod,
-                        ce_usuario.usecod
-                        );
-
+                    DataRow fila = datos.NewRow();
+                    fila["fecha"] = fechaEncuesta;
+                    fila["empresa"] = "";
+                    fila["sede"] = cu_valores.Texto(dataGridView1[0, i].Value);
+                    fila["tipo_trabajador"] = cu_valores.Texto(dataGridView1[1, i].Value);
+                    fila["sexo"] = cu_valores.TextoMayus(dataGridView1[2, i].Value);
+                    fila["gerencia"] = cu_valores.TextoMayus(dataGridView1[3, i].Value);
+                    fila["area"] = cu_valores.TextoMayus(dataGridView1[4, i].Value);
+                    fila["cantidad"] = cu_valores.Numero(dataGridView1[5, i].Value);
+                    fila["Obs"] = "";
+                    fila["Hoja"] = comboBox_Hojas.Text;
+                    fila["Estado"] = "S";
+                    fila["FecCre"] = fechaSis;
+                    fila["UseReg"] = ce_usuario.usecod;
+                    fila["Hostname"] = hostname;
+                    // FecEdit, UseEdit y UseElim quedan nulos en el alta, igual
+                    // que los dejaba el INSERT del SP.
+                    datos.Rows.Add(fila);
                 }
+
+                objcnlog.GuardarParticipacionEncuestaMasivo(datos);
+
+                Cursor = Cursors.Default;
 
                 Msbox.Frm_NotificacionesPeligro ng = new Msbox.Frm_NotificacionesPeligro("GUARDADO CORRECTAMENTE", Color.FromArgb(12, 19, 214), 1);
                 ng.ShowDialog();

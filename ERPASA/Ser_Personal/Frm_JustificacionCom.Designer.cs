@@ -63,15 +63,15 @@ namespace ERPASA.Frm_Comedor
             this.label_cant_desayuno = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker_Comedor_F_Justif = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_Comedor_F_Justif = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label_nombre_usuario = new System.Windows.Forms.Label();
-            this.comboBox_tipo = new System.Windows.Forms.ComboBox();
+            this.comboBox_tipo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox_CodSede_Comedor = new System.Windows.Forms.ComboBox();
+            this.comboBox_CodSede_Comedor = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_Dni = new System.Windows.Forms.TextBox();
+            this.textBox_Dni = new Guna.UI2.WinForms.Guna2TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -665,9 +665,9 @@ namespace ERPASA.Frm_Comedor
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label_cantreg;
-        public System.Windows.Forms.ComboBox comboBox_tipo;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_tipo;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox_Dni;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_Dni;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripButton toolStripButton_excel;
         private System.Windows.Forms.ToolStripButton toolStripButton_imprimir;
@@ -678,7 +678,7 @@ namespace ERPASA.Frm_Comedor
         private System.Windows.Forms.ToolStripLabel toolStripLabel_buscar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
-        public System.Windows.Forms.ComboBox comboBox_CodSede_Comedor;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_CodSede_Comedor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -698,7 +698,7 @@ namespace ERPASA.Frm_Comedor
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label label_nombre_usuario;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_Comedor_F_Justif;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_Comedor_F_Justif;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label13;
     }

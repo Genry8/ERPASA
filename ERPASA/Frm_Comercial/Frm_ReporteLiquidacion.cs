@@ -26,6 +26,8 @@ namespace ERPASA.Frm_Comercial
         public Frm_ReporteLiquidacion()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_ReporteLiquidacion_Load(object sender, EventArgs e)

@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="cu_encriptar.cs" />
     <Compile Include="cu_excel.cs" />
+    <Compile Include="cu_valores.cs" />
     <Compile Include="cu_excel_progress.cs" />
     <Compile Include="cu_NumeroALetras.cs" />
     <Compile Include="cu_numeros.cs" />

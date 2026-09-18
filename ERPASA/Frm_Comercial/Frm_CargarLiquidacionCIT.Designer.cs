@@ -59,7 +59,7 @@ namespace ERPASA.Frm_Comercial
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTimePicker_fecha = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_fecha = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label_nombreExcel = new System.Windows.Forms.Label();
             this.guna2ComboBox_TipoProveedor = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -483,7 +483,7 @@ namespace ERPASA.Frm_Comercial
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_fecha;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_fecha;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label_nombreExcel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

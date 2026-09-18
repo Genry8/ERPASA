@@ -64,6 +64,8 @@ namespace ERPASA.Frm_TabMaestra
             this.Padding = new Padding(borderSize);//Border size
             //this.BackColor = Color.FromArgb(98, 102, 244);//Border color
             //
+
+            toolStrip1.Renderer = new Estilos.BarraAccionesRenderer();
         }
 
         public void cargarcombobox()

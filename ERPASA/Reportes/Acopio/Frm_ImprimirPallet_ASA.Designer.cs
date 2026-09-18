@@ -50,14 +50,14 @@ namespace ERPASA.Reportes.Acopio
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox_detalle_Cultivo = new System.Windows.Forms.ComboBox();
+            this.comboBox_detalle_Cultivo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.comboBox_detalle_sede = new System.Windows.Forms.ComboBox();
-            this.comboBox_detalle_empresa = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker_FecFin = new System.Windows.Forms.DateTimePicker();
+            this.comboBox_detalle_sede = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_detalle_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dateTimePicker_FecFin = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker_FecInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_FecInicio = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Imprimir = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -417,7 +417,7 @@ namespace ERPASA.Reportes.Acopio
         public System.Windows.Forms.ToolStripButton toolStripButton_limpiar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_FecInicio;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_FecInicio;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStripButton toolStripButton_buscar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_buscar;
@@ -428,18 +428,18 @@ namespace ERPASA.Reportes.Acopio
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         public System.Windows.Forms.DataGridView dataGridView2;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_FecFin;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_FecFin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label45;
-        public System.Windows.Forms.ComboBox comboBox_detalle_empresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_empresa;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton_imprimir;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_imprimir;
         private System.Windows.Forms.Label label46;
-        public System.Windows.Forms.ComboBox comboBox_detalle_sede;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_sede;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Imprimir;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.ComboBox comboBox_detalle_Cultivo;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_Cultivo;
     }
 }

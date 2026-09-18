@@ -5,6 +5,7 @@ using ERPASA.Reportes.Acopio;
 using Guna.UI2.WinForms;
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -49,10 +50,7 @@ namespace ERPASA
             }
 
 
-            menuStrip1.Renderer = new CustomRenderer();
-            menuStrip1.BackColor = Color.White;
-            menuStrip1.ForeColor = Color.Black;
-            menuStrip1.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            AplicarEstiloMenu();
             //
             //textBox_bienvenida.Text = "BIENVENIDO :  " + ce_usuario.usenam;
             label_Bienvenido.Text = "BIENVENIDO :  " + ce_usuario.usenam;
@@ -87,23 +85,270 @@ namespace ERPASA
             ConsultarRol(button_tablas_maestras);//10
 
             this.Padding = new Padding(borderSize);
-            this.BackColor = Color.FromArgb(45, 66, 90);//Border color
+            this.BackColor = PaletaMenu.Borde;//Border color
 
         }
 
+        /// <summary>
+        /// Paleta del ERP, compartida con el login y la pantalla de bienvenida.
+        /// </summary>
+        public static class PaletaMenu
+        {
+            public static readonly Color Barra = Color.White;                     // barra de menús
+            public static readonly Color BordeBarra = Color.FromArgb(227, 232, 239);
+            public static readonly Color TextoBarra = Color.FromArgb(37, 48, 66);
+            public static readonly Color Borde = Color.FromArgb(18, 74, 94);      // borde de la ventana
+            public static readonly Color Acento = Color.FromArgb(46, 139, 163);   // teal corporativo
+            public static readonly Color AcentoOscuro = Color.FromArgb(31, 107, 128);
+            // Para texto y flechas sobre fondo claro, donde el teal no contrasta.
+            public static readonly Color AcentoTexto = Color.FromArgb(31, 107, 128);
+            public static readonly Color Desplegable = Color.White;
+            public static readonly Color HoverDesplegable = Color.FromArgb(228, 241, 244);
+            public static readonly Color BordeDesplegable = Color.FromArgb(221, 227, 235);
+            public static readonly Color Texto = Color.FromArgb(37, 48, 66);
+            public static readonly Color TextoDeshabilitado = Color.FromArgb(166, 175, 188);
+            public static readonly Color Separador = Color.FromArgb(235, 239, 244);
+        }
+
+        // El MenuStrip se autoajusta al alto del texto (39 px) y deja los iconos
+        // de 32 px pegados a los bordes. Fijamos el alto de la barra a mano.
+        private const int AltoBarraMenu = 54;
+
+        private void AplicarEstiloMenu()
+        {
+            menuStrip1.Renderer = new CustomRenderer();
+            menuStrip1.BackColor = PaletaMenu.Barra;
+            menuStrip1.ForeColor = PaletaMenu.TextoBarra;
+            menuStrip1.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            menuStrip1.AutoSize = false;
+            menuStrip1.Padding = new Padding(8, 0, 8, 0);
+            panel_titulo2.Height = AltoBarraMenu;
+            menuStrip1.Height = AltoBarraMenu;
+            CentrarBotonesVentana();
+
+            // Si la ventana se achica y los módulos no entran, se agrupan en el
+            // botón de desbordamiento (») al final de la barra en lugar de perderse.
+            menuStrip1.CanOverflow = true;
+            menuStrip1.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            menuStrip1.OverflowButton.DropDown.Renderer = menuStrip1.Renderer;
+
+            foreach (ToolStripMenuItem raiz in menuStrip1.Items.OfType<ToolStripMenuItem>())
+            {
+                raiz.Overflow = ToolStripItemOverflow.AsNeeded;
+                EstilizarItem(raiz, true);
+            }
+        }
+
+        /// <summary>
+        /// Los botones de ventana están anclados arriba a la derecha con una Y
+        /// fija del diseñador; al crecer la barra hay que recentrarlos.
+        /// </summary>
+        private void CentrarBotonesVentana()
+        {
+            foreach (Control b in new Control[] { button_cerrar, button_min_max, button_minimizar })
+            {
+                if (b != null)
+                    b.Top = (panel_titulo2.Height - b.Height) / 2;
+            }
+        }
+
+        private void EstilizarItem(ToolStripMenuItem item, bool esRaiz)
+        {
+            item.ForeColor = esRaiz ? PaletaMenu.TextoBarra : PaletaMenu.Texto;
+
+            if (esRaiz)
+            {
+                // Sin AutoSize el item conserva el alto que le damos, así el
+                // icono de 32 px queda centrado con aire arriba y abajo.
+                int ancho = item.Width;
+                item.AutoSize = false;
+                item.Padding = new Padding(8, 0, 8, 0);
+                item.Size = new Size(ancho + 8, AltoBarraMenu - 10);
+            }
+
+            foreach (ToolStripMenuItem hijo in item.DropDownItems.OfType<ToolStripMenuItem>())
+            {
+                EstilizarItem(hijo, false);
+            }
+        }
+
+        /// <summary>
+        /// Dibuja la barra de menús: los items de primer nivel se resaltan con un
+        /// fondo celeste claro y subrayado teal, y los de los desplegables con ese
+        /// mismo fondo más una franja de acento a la izquierda.
+        /// </summary>
         public class CustomRenderer : ToolStripProfessionalRenderer
         {
-            public CustomRenderer() : base(new LightColorTable()) { }
-
-            protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
+            public CustomRenderer() : base(new LightColorTable())
             {
-                if (e.Item.Selected || e.Item.Pressed)
+                this.RoundedEdges = false;
+            }
+
+            private static GraphicsPath RectanguloRedondeado(Rectangle r, int radio)
+            {
+                var path = new GraphicsPath();
+                int d = radio * 2;
+                path.AddArc(r.X, r.Y, d, d, 180, 90);
+                path.AddArc(r.Right - d, r.Y, d, d, 270, 90);
+                path.AddArc(r.Right - d, r.Bottom - d, d, d, 0, 90);
+                path.AddArc(r.X, r.Bottom - d, d, d, 90, 90);
+                path.CloseFigure();
+                return path;
+            }
+
+            protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
+            {
+                if (e.ToolStrip is MenuStrip)
                 {
-                    e.TextColor = Color.White;
+                    var g = e.Graphics;
+                    using (var b = new SolidBrush(PaletaMenu.Barra))
+                        g.FillRectangle(b, e.AffectedBounds);
+
+                    // Línea fina que separa la barra del área de trabajo.
+                    using (var p = new Pen(PaletaMenu.BordeBarra))
+                        g.DrawLine(p, 0, e.ToolStrip.Height - 1, e.ToolStrip.Width, e.ToolStrip.Height - 1);
+                    return;
+                }
+
+                base.OnRenderToolStripBackground(e);
+            }
+
+            protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
+            {
+                // La barra principal va sin borde; los desplegables llevan un borde fino.
+                if (!(e.ToolStrip is ToolStripDropDown)) return;
+
+                using (var p = new Pen(PaletaMenu.BordeDesplegable))
+                {
+                    e.Graphics.DrawRectangle(p, 0, 0,
+                        e.AffectedBounds.Width - 1, e.AffectedBounds.Height - 1);
+                }
+            }
+
+            protected override void OnRenderImageMargin(ToolStripRenderEventArgs e)
+            {
+                using (var b = new SolidBrush(PaletaMenu.Desplegable))
+                    e.Graphics.FillRectangle(b, e.AffectedBounds);
+            }
+
+            protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
+            {
+                var g = e.Graphics;
+                bool resaltado = e.Item.Selected || e.Item.Pressed;
+
+                if (!e.Item.IsOnDropDown)
+                {
+                    // Item de primer nivel: fondo celeste redondeado + subrayado de acento.
+                    if (!resaltado || !e.Item.Enabled) return;
+
+                    var r = new Rectangle(2, 2, e.Item.Width - 4, e.Item.Height - 4);
+
+                    var modo = g.SmoothingMode;
+                    g.SmoothingMode = SmoothingMode.AntiAlias;
+                    using (var path = RectanguloRedondeado(r, 6))
+                    using (var b = new SolidBrush(PaletaMenu.HoverDesplegable))
+                        g.FillPath(b, path);
+                    g.SmoothingMode = modo;
+
+                    var acento = e.Item.Pressed ? PaletaMenu.AcentoOscuro : PaletaMenu.Acento;
+                    using (var b = new SolidBrush(acento))
+                        g.FillRectangle(b, new Rectangle(r.X + 4, r.Bottom - 3, r.Width - 8, 3));
+                    return;
+                }
+
+                // Item dentro de un desplegable.
+                var fondo = new Rectangle(Point.Empty, e.Item.Size);
+
+                if (resaltado && e.Item.Enabled)
+                {
+                    using (var b = new SolidBrush(PaletaMenu.HoverDesplegable))
+                        g.FillRectangle(b, fondo);
+
+                    using (var b = new SolidBrush(PaletaMenu.Acento))
+                        g.FillRectangle(b, new Rectangle(0, 0, 3, e.Item.Height));
                 }
                 else
                 {
-                    e.TextColor = e.Item.ForeColor;
+                    using (var b = new SolidBrush(PaletaMenu.Desplegable))
+                        g.FillRectangle(b, fondo);
+                }
+            }
+
+            protected override void OnRenderOverflowButtonBackground(ToolStripItemRenderEventArgs e)
+            {
+                var g = e.Graphics;
+                var r = new Rectangle(0, 0, e.Item.Width, e.Item.Height);
+
+                using (var b = new SolidBrush(PaletaMenu.Barra))
+                    g.FillRectangle(b, r);
+
+                bool resaltado = e.Item.Selected || e.Item.Pressed;
+                var modo = g.SmoothingMode;
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+
+                if (resaltado)
+                {
+                    var interior = new Rectangle(2, 2, r.Width - 4, r.Height - 4);
+                    using (var path = RectanguloRedondeado(interior, 6))
+                    using (var b = new SolidBrush(PaletaMenu.HoverDesplegable))
+                        g.FillPath(b, path);
+                }
+
+                // Doble chevron « » que indica que hay más módulos.
+                var color = resaltado ? PaletaMenu.Acento : PaletaMenu.TextoBarra;
+                int cx = r.Width / 2;
+                int cy = r.Height / 2;
+
+                using (var p = new Pen(color, 2f))
+                {
+                    p.StartCap = LineCap.Round;
+                    p.EndCap = LineCap.Round;
+
+                    for (int k = 0; k < 2; k++)
+                    {
+                        int x = cx - 6 + k * 6;
+                        g.DrawLine(p, x, cy - 4, x + 4, cy);
+                        g.DrawLine(p, x + 4, cy, x, cy + 4);
+                    }
+                }
+
+                g.SmoothingMode = modo;
+            }
+
+            protected override void OnRenderSeparator(ToolStripSeparatorRenderEventArgs e)
+            {
+                var r = e.Item.ContentRectangle;
+                using (var p = new Pen(PaletaMenu.Separador))
+                {
+                    int y = r.Top + r.Height / 2;
+                    e.Graphics.DrawLine(p, r.Left + 8, y, r.Right - 8, y);
+                }
+            }
+
+            protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
+            {
+                bool marcado = e.Item.Selected || e.Item.Pressed;
+
+                e.ArrowColor = !e.Item.Enabled
+                    ? PaletaMenu.TextoDeshabilitado
+                    : (e.Item.IsOnDropDown || marcado ? PaletaMenu.AcentoTexto : PaletaMenu.TextoBarra);
+
+                base.OnRenderArrow(e);
+            }
+
+            protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
+            {
+                if (!e.Item.Enabled)
+                {
+                    e.TextColor = PaletaMenu.TextoDeshabilitado;
+                }
+                else if (e.Item.Selected || e.Item.Pressed)
+                {
+                    e.TextColor = PaletaMenu.AcentoTexto;
+                }
+                else
+                {
+                    e.TextColor = e.Item.IsOnDropDown ? PaletaMenu.Texto : PaletaMenu.TextoBarra;
                 }
 
                 base.OnRenderItemText(e);
@@ -113,19 +358,20 @@ namespace ERPASA
 
         public class LightColorTable : ProfessionalColorTable
         {
-            private Color _activeBackground = Color.FromArgb(50, 123, 153); // Azul deseado
+            public override Color MenuItemSelected => PaletaMenu.Acento;
+            public override Color MenuItemBorder => PaletaMenu.Acento;
+            public override Color MenuBorder => PaletaMenu.BordeDesplegable;
+            public override Color MenuItemSelectedGradientBegin => PaletaMenu.Acento;
+            public override Color MenuItemSelectedGradientEnd => PaletaMenu.Acento;
+            public override Color MenuItemPressedGradientBegin => PaletaMenu.AcentoOscuro;
+            public override Color MenuItemPressedGradientEnd => PaletaMenu.AcentoOscuro;
 
-            public override Color MenuItemSelected => _activeBackground;
-            public override Color MenuItemBorder => Color.LightGray;
-            public override Color MenuItemSelectedGradientBegin => _activeBackground;
-            public override Color MenuItemSelectedGradientEnd => _activeBackground;
-            public override Color MenuItemPressedGradientBegin => _activeBackground;
-            public override Color MenuItemPressedGradientEnd => _activeBackground;
-
-            public override Color ToolStripDropDownBackground => Color.White;
-            public override Color ImageMarginGradientBegin => Color.White;
-            public override Color ImageMarginGradientMiddle => Color.White;
-            public override Color ImageMarginGradientEnd => Color.White;
+            public override Color ToolStripDropDownBackground => PaletaMenu.Desplegable;
+            public override Color ImageMarginGradientBegin => PaletaMenu.Desplegable;
+            public override Color ImageMarginGradientMiddle => PaletaMenu.Desplegable;
+            public override Color ImageMarginGradientEnd => PaletaMenu.Desplegable;
+            public override Color SeparatorDark => PaletaMenu.Separador;
+            public override Color SeparatorLight => PaletaMenu.Separador;
         }
 
 
@@ -413,6 +659,11 @@ namespace ERPASA
         private void TabMaest_RolesUsuario_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo<Frm_TabMaestra.Frm_RolesUser>();
+        }
+
+        private void TabMaest_Roles_AppMovil_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_TabMaestra.Frm_RolesUserAppMovil>();
         }
 
         private void TabMaest_PowerBI_Click(object sender, EventArgs e)

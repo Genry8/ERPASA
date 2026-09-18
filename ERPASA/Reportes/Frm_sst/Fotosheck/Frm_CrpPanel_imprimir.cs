@@ -7,6 +7,8 @@ namespace ERPASA.Reportes
         public Frm_CrpPanel_imprimir()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
     }
 }

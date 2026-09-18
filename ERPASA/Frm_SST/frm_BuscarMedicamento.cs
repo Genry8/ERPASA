@@ -26,6 +26,8 @@ namespace ERPASA.Frm_SST
         public frm_BuscarMedicamento()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
             //FormBorderStyle = FormBorderStyle.None;            
         }
 

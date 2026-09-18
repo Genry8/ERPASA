@@ -27,6 +27,8 @@ namespace ERPASA.Reportes.Acopio
         public Frm_Reporte_RecepcionAcopio()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_Reporte_AtenMed_Load(object sender, EventArgs e)

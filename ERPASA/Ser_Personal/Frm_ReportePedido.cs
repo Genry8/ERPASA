@@ -26,6 +26,8 @@ namespace ERPASA.Frm_Comedor
         public Frm_ReportePedido()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_ReportePedido_Load(object sender, EventArgs e)

@@ -52,7 +52,7 @@ namespace ERPASA.Frm_Logistica
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.label_cantreg = new System.Windows.Forms.ToolStripLabel();
-            this.textBox_marc = new System.Windows.Forms.TextBox();
+            this.textBox_marc = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.guna2ComboBox_Curso = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -590,7 +590,7 @@ namespace ERPASA.Frm_Logistica
         public System.Windows.Forms.ToolStripButton toolStripButton_credenciales_limpiar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.TextBox textBox_marc;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_marc;
         private System.Windows.Forms.ToolStripButton toolStripButton_buscar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_buscar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;

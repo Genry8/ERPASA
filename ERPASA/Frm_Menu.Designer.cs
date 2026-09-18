@@ -255,6 +255,8 @@ namespace ERPASA
             this.button_packing_cierre_proceso_PT = new System.Windows.Forms.ToolStripMenuItem();
             this.button_packing_rrhh = new System.Windows.Forms.ToolStripMenuItem();
             this.button_packing_rrhh_tareodetallado = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_rrhh_progrSemanalPersonal = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_rrhh_progrAnualPersonal = new System.Windows.Forms.ToolStripMenuItem();
             this.button_tablas_maestras = new System.Windows.Forms.ToolStripMenuItem();
             this.button_tablas_maestras_usuario = new System.Windows.Forms.ToolStripMenuItem();
             this.button_tablas_maestras_usuario_registrar = new System.Windows.Forms.ToolStripMenuItem();
@@ -298,8 +300,7 @@ namespace ERPASA
             this.label_Hora_Centro = new System.Windows.Forms.Label();
             this.label_Fecha_Centro = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button_packing_rrhh_progrSemanalPersonal = new System.Windows.Forms.ToolStripMenuItem();
-            this.button_packing_rrhh_progrAnualPersonal = new System.Windows.Forms.ToolStripMenuItem();
+            this.TabMaest_Roles_AppMovil = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_titulo2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -308,7 +309,7 @@ namespace ERPASA
             // 
             // panel_titulo2
             // 
-            this.panel_titulo2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.panel_titulo2.BackColor = System.Drawing.Color.White;
             this.panel_titulo2.Controls.Add(this.button_minimizar);
             this.panel_titulo2.Controls.Add(this.button_min_max);
             this.panel_titulo2.Controls.Add(this.button_cerrar);
@@ -317,7 +318,7 @@ namespace ERPASA
             this.panel_titulo2.Location = new System.Drawing.Point(0, 0);
             this.panel_titulo2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel_titulo2.Name = "panel_titulo2";
-            this.panel_titulo2.Size = new System.Drawing.Size(1924, 62);
+            this.panel_titulo2.Size = new System.Drawing.Size(1924, 60);
             this.panel_titulo2.TabIndex = 1;
             this.panel_titulo2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_titulo2_MouseDown);
             // 
@@ -383,7 +384,11 @@ namespace ERPASA
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.CanOverflow = true;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(66)))));
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -402,8 +407,8 @@ namespace ERPASA
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 40);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 60);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -424,7 +429,7 @@ namespace ERPASA
             this.mAESTROSToolStripMenuItem});
             this.button_RRHH.Image = ((System.Drawing.Image)(resources.GetObject("button_RRHH.Image")));
             this.button_RRHH.Name = "button_RRHH";
-            this.button_RRHH.Size = new System.Drawing.Size(114, 36);
+            this.button_RRHH.Size = new System.Drawing.Size(114, 44);
             this.button_RRHH.Text = "RRHH";
             // 
             // RRHH_SST
@@ -1027,7 +1032,7 @@ namespace ERPASA
             this.button_sistema_mas});
             this.button_sistema.Image = ((System.Drawing.Image)(resources.GetObject("button_sistema.Image")));
             this.button_sistema.Name = "button_sistema";
-            this.button_sistema.Size = new System.Drawing.Size(164, 36);
+            this.button_sistema.Size = new System.Drawing.Size(164, 44);
             this.button_sistema.Text = "SISTEMAS";
             // 
             // button_sistema_activos
@@ -1125,7 +1130,7 @@ namespace ERPASA
             this.button_taller_reportes});
             this.button_taller.Image = ((System.Drawing.Image)(resources.GetObject("button_taller.Image")));
             this.button_taller.Name = "button_taller";
-            this.button_taller.Size = new System.Drawing.Size(135, 36);
+            this.button_taller.Size = new System.Drawing.Size(135, 44);
             this.button_taller.Text = "TALLER";
             // 
             // button_taller_mantenimiento
@@ -1255,7 +1260,7 @@ namespace ERPASA
             this.button_almacen_reporte});
             this.button_almacen.Image = ((System.Drawing.Image)(resources.GetObject("button_almacen.Image")));
             this.button_almacen.Name = "button_almacen";
-            this.button_almacen.Size = new System.Drawing.Size(158, 36);
+            this.button_almacen.Size = new System.Drawing.Size(158, 44);
             this.button_almacen.Text = "ALMACEN";
             // 
             // button_almacen_cargarBI
@@ -1308,7 +1313,7 @@ namespace ERPASA
             this.button_comercial_reportes});
             this.button_comercial.Image = ((System.Drawing.Image)(resources.GetObject("button_comercial.Image")));
             this.button_comercial.Name = "button_comercial";
-            this.button_comercial.Size = new System.Drawing.Size(193, 36);
+            this.button_comercial.Size = new System.Drawing.Size(193, 44);
             this.button_comercial.Tag = "";
             this.button_comercial.Text = "OFICINA LIMA";
             // 
@@ -1509,7 +1514,7 @@ namespace ERPASA
             this.button_comedor_reporte});
             this.button_serpersonal.Image = ((System.Drawing.Image)(resources.GetObject("button_serpersonal.Image")));
             this.button_serpersonal.Name = "button_serpersonal";
-            this.button_serpersonal.Size = new System.Drawing.Size(268, 36);
+            this.button_serpersonal.Size = new System.Drawing.Size(268, 44);
             this.button_serpersonal.Tag = "";
             this.button_serpersonal.Text = "SERVICIO PERSONAL";
             // 
@@ -1713,7 +1718,7 @@ namespace ERPASA
             this.button_administracion_sanidad});
             this.button_administracion.Image = ((System.Drawing.Image)(resources.GetObject("button_administracion.Image")));
             this.button_administracion.Name = "button_administracion";
-            this.button_administracion.Size = new System.Drawing.Size(233, 36);
+            this.button_administracion.Size = new System.Drawing.Size(233, 44);
             this.button_administracion.Text = "ADMINISTRACION";
             // 
             // button_administracion_presupuesto
@@ -1890,7 +1895,7 @@ namespace ERPASA
             this.button_packing_rrhh});
             this.button_packing.Image = ((System.Drawing.Image)(resources.GetObject("button_packing.Image")));
             this.button_packing.Name = "button_packing";
-            this.button_packing.Size = new System.Drawing.Size(135, 36);
+            this.button_packing.Size = new System.Drawing.Size(135, 44);
             this.button_packing.Text = "PAKING";
             // 
             // button_packing_mantenimiento
@@ -2207,6 +2212,20 @@ namespace ERPASA
             this.button_packing_rrhh_tareodetallado.Text = "CARGAR TAREO DETALLADO";
             this.button_packing_rrhh_tareodetallado.Click += new System.EventHandler(this.button_packing_rrhh_tareodetallado_Click);
             // 
+            // button_packing_rrhh_progrSemanalPersonal
+            // 
+            this.button_packing_rrhh_progrSemanalPersonal.Name = "button_packing_rrhh_progrSemanalPersonal";
+            this.button_packing_rrhh_progrSemanalPersonal.Size = new System.Drawing.Size(526, 34);
+            this.button_packing_rrhh_progrSemanalPersonal.Text = "PROGRAMACION SEMANAL DE PERSONAL";
+            this.button_packing_rrhh_progrSemanalPersonal.Click += new System.EventHandler(this.button_packing_rrhh_progrSemanalPersonal_Click);
+            // 
+            // button_packing_rrhh_progrAnualPersonal
+            // 
+            this.button_packing_rrhh_progrAnualPersonal.Name = "button_packing_rrhh_progrAnualPersonal";
+            this.button_packing_rrhh_progrAnualPersonal.Size = new System.Drawing.Size(526, 34);
+            this.button_packing_rrhh_progrAnualPersonal.Text = "PROGRAMACION ANUAL DE PERSONAL";
+            this.button_packing_rrhh_progrAnualPersonal.Click += new System.EventHandler(this.button_packing_rrhh_progrAnualPersonal_Click);
+            // 
             // button_tablas_maestras
             // 
             this.button_tablas_maestras.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2218,7 +2237,7 @@ namespace ERPASA
             this.cIERREYFACTURACIONToolStripMenuItem});
             this.button_tablas_maestras.Image = ((System.Drawing.Image)(resources.GetObject("button_tablas_maestras.Image")));
             this.button_tablas_maestras.Name = "button_tablas_maestras";
-            this.button_tablas_maestras.Size = new System.Drawing.Size(174, 36);
+            this.button_tablas_maestras.Size = new System.Drawing.Size(174, 44);
             this.button_tablas_maestras.Text = "MAESTROS";
             this.button_tablas_maestras.Click += new System.EventHandler(this.button_tablas_maestras_Click_1);
             // 
@@ -2250,6 +2269,7 @@ namespace ERPASA
             // 
             this.button_tablas_maestras_roles.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TabMaest_RolesUsuario,
+            this.TabMaest_Roles_AppMovil,
             this.TabMaest_PowerBI,
             this.TabMaest_VersionAPP});
             this.button_tablas_maestras_roles.Name = "button_tablas_maestras_roles";
@@ -2260,21 +2280,21 @@ namespace ERPASA
             // TabMaest_RolesUsuario
             // 
             this.TabMaest_RolesUsuario.Name = "TabMaest_RolesUsuario";
-            this.TabMaest_RolesUsuario.Size = new System.Drawing.Size(248, 34);
+            this.TabMaest_RolesUsuario.Size = new System.Drawing.Size(317, 34);
             this.TabMaest_RolesUsuario.Text = "USUARIO";
             this.TabMaest_RolesUsuario.Click += new System.EventHandler(this.TabMaest_RolesUsuario_Click);
             // 
             // TabMaest_PowerBI
             // 
             this.TabMaest_PowerBI.Name = "TabMaest_PowerBI";
-            this.TabMaest_PowerBI.Size = new System.Drawing.Size(248, 34);
+            this.TabMaest_PowerBI.Size = new System.Drawing.Size(317, 34);
             this.TabMaest_PowerBI.Text = "POWER BI";
             this.TabMaest_PowerBI.Click += new System.EventHandler(this.TabMaest_PowerBI_Click);
             // 
             // TabMaest_VersionAPP
             // 
             this.TabMaest_VersionAPP.Name = "TabMaest_VersionAPP";
-            this.TabMaest_VersionAPP.Size = new System.Drawing.Size(248, 34);
+            this.TabMaest_VersionAPP.Size = new System.Drawing.Size(317, 34);
             this.TabMaest_VersionAPP.Text = "VERSION APP";
             this.TabMaest_VersionAPP.Click += new System.EventHandler(this.TabMaest_VersionAPP_Click);
             // 
@@ -2446,20 +2466,21 @@ namespace ERPASA
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(16, 36);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(16, 44);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(16, 36);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(16, 44);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(16, 36);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(16, 44);
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(74)))), ((int)(((byte)(94)))));
             this.panel2.Controls.Add(this.label_sede);
             this.panel2.Controls.Add(this.label_fechasistema);
             this.panel2.Controls.Add(this.label_version);
@@ -2470,122 +2491,138 @@ namespace ERPASA
             this.panel2.Location = new System.Drawing.Point(0, 553);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
             this.panel2.Size = new System.Drawing.Size(1924, 35);
             this.panel2.TabIndex = 3;
             // 
             // label_sede
             // 
-            this.label_sede.AutoSize = true;
-            this.label_sede.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.label_sede.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label_sede.ForeColor = System.Drawing.Color.White;
-            this.label_sede.Location = new System.Drawing.Point(1401, 3);
+            this.label_sede.AutoEllipsis = true;
+            this.label_sede.BackColor = System.Drawing.Color.Transparent;
+            this.label_sede.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_sede.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label_sede.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(206)))), ((int)(((byte)(214)))));
+            this.label_sede.Location = new System.Drawing.Point(155, 0);
             this.label_sede.Name = "label_sede";
-            this.label_sede.Size = new System.Drawing.Size(57, 28);
+            this.label_sede.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.label_sede.Size = new System.Drawing.Size(1301, 35);
             this.label_sede.TabIndex = 17;
             this.label_sede.Text = "Sede";
+            this.label_sede.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label_fechasistema
             // 
             this.label_fechasistema.AutoSize = true;
-            this.label_fechasistema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.label_fechasistema.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label_fechasistema.ForeColor = System.Drawing.Color.White;
-            this.label_fechasistema.Location = new System.Drawing.Point(1156, 3);
+            this.label_fechasistema.BackColor = System.Drawing.Color.Transparent;
+            this.label_fechasistema.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label_fechasistema.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label_fechasistema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(206)))), ((int)(((byte)(214)))));
+            this.label_fechasistema.Location = new System.Drawing.Point(1456, 0);
             this.label_fechasistema.Name = "label_fechasistema";
-            this.label_fechasistema.Size = new System.Drawing.Size(109, 28);
+            this.label_fechasistema.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.label_fechasistema.Size = new System.Drawing.Size(127, 28);
             this.label_fechasistema.TabIndex = 16;
             this.label_fechasistema.Text = "fecha hora";
+            this.label_fechasistema.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_version
             // 
             this.label_version.AutoSize = true;
-            this.label_version.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.label_version.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label_version.ForeColor = System.Drawing.Color.White;
-            this.label_version.Location = new System.Drawing.Point(998, 3);
+            this.label_version.BackColor = System.Drawing.Color.Transparent;
+            this.label_version.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label_version.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label_version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(206)))), ((int)(((byte)(214)))));
+            this.label_version.Location = new System.Drawing.Point(1583, 0);
             this.label_version.Name = "label_version";
-            this.label_version.Size = new System.Drawing.Size(79, 28);
+            this.label_version.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.label_version.Size = new System.Drawing.Size(99, 28);
             this.label_version.TabIndex = 15;
             this.label_version.Text = "version";
+            this.label_version.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_ip
             // 
             this.label_ip.AutoSize = true;
-            this.label_ip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.label_ip.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label_ip.ForeColor = System.Drawing.Color.White;
-            this.label_ip.Location = new System.Drawing.Point(824, 5);
+            this.label_ip.BackColor = System.Drawing.Color.Transparent;
+            this.label_ip.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label_ip.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label_ip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(206)))), ((int)(((byte)(214)))));
+            this.label_ip.Location = new System.Drawing.Point(1682, 0);
             this.label_ip.Name = "label_ip";
-            this.label_ip.Size = new System.Drawing.Size(72, 28);
+            this.label_ip.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.label_ip.Size = new System.Drawing.Size(103, 28);
             this.label_ip.TabIndex = 14;
             this.label_ip.Text = "10.0.0.0";
+            this.label_ip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_hostname
             // 
             this.label_hostname.AutoSize = true;
-            this.label_hostname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.label_hostname.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label_hostname.ForeColor = System.Drawing.Color.White;
-            this.label_hostname.Location = new System.Drawing.Point(600, 5);
+            this.label_hostname.BackColor = System.Drawing.Color.Transparent;
+            this.label_hostname.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label_hostname.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label_hostname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(206)))), ((int)(((byte)(214)))));
+            this.label_hostname.Location = new System.Drawing.Point(1785, 0);
             this.label_hostname.Name = "label_hostname";
-            this.label_hostname.Size = new System.Drawing.Size(103, 28);
+            this.label_hostname.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.label_hostname.Size = new System.Drawing.Size(125, 28);
             this.label_hostname.TabIndex = 13;
             this.label_hostname.Text = "Hostname";
+            this.label_hostname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_Bienvenido
             // 
             this.label_Bienvenido.AutoSize = true;
-            this.label_Bienvenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.label_Bienvenido.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label_Bienvenido.BackColor = System.Drawing.Color.Transparent;
+            this.label_Bienvenido.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label_Bienvenido.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label_Bienvenido.ForeColor = System.Drawing.Color.White;
-            this.label_Bienvenido.Location = new System.Drawing.Point(3, 5);
+            this.label_Bienvenido.Location = new System.Drawing.Point(14, 0);
             this.label_Bienvenido.Name = "label_Bienvenido";
-            this.label_Bienvenido.Size = new System.Drawing.Size(120, 28);
+            this.label_Bienvenido.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
+            this.label_Bienvenido.Size = new System.Drawing.Size(141, 28);
             this.label_Bienvenido.TabIndex = 0;
             this.label_Bienvenido.Text = "Bienvenido: ";
+            this.label_Bienvenido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel_contenedor
             // 
-            this.panel_contenedor.AutoSize = true;
-            this.panel_contenedor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_contenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.panel_contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel_contenedor.CausesValidation = false;
             this.panel_contenedor.Controls.Add(this.label_Hora_Centro);
             this.panel_contenedor.Controls.Add(this.label_Fecha_Centro);
             this.panel_contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_contenedor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel_contenedor.Location = new System.Drawing.Point(0, 62);
+            this.panel_contenedor.Location = new System.Drawing.Point(0, 60);
             this.panel_contenedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel_contenedor.Name = "panel_contenedor";
-            this.panel_contenedor.Size = new System.Drawing.Size(1924, 491);
+            this.panel_contenedor.Size = new System.Drawing.Size(1924, 493);
             this.panel_contenedor.TabIndex = 105;
             // 
             // label_Hora_Centro
             // 
-            this.label_Hora_Centro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_Hora_Centro.AutoSize = true;
+            this.label_Hora_Centro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Hora_Centro.BackColor = System.Drawing.Color.Transparent;
-            this.label_Hora_Centro.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Hora_Centro.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label_Hora_Centro.Location = new System.Drawing.Point(1492, 333);
+            this.label_Hora_Centro.Font = new System.Drawing.Font("Segoe UI Semilight", 58F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Hora_Centro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.label_Hora_Centro.Location = new System.Drawing.Point(1324, 320);
             this.label_Hora_Centro.Name = "label_Hora_Centro";
-            this.label_Hora_Centro.Size = new System.Drawing.Size(319, 144);
+            this.label_Hora_Centro.Size = new System.Drawing.Size(560, 140);
             this.label_Hora_Centro.TabIndex = 18;
             this.label_Hora_Centro.Text = "HORA";
+            this.label_Hora_Centro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label_Fecha_Centro
             // 
-            this.label_Fecha_Centro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Fecha_Centro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label_Fecha_Centro.AutoSize = true;
             this.label_Fecha_Centro.BackColor = System.Drawing.Color.Transparent;
-            this.label_Fecha_Centro.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Fecha_Centro.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label_Fecha_Centro.Location = new System.Drawing.Point(12, 357);
+            this.label_Fecha_Centro.Font = new System.Drawing.Font("Segoe UI Semilight", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Fecha_Centro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.label_Fecha_Centro.Location = new System.Drawing.Point(28, 352);
             this.label_Fecha_Centro.Name = "label_Fecha_Centro";
-            this.label_Fecha_Centro.Size = new System.Drawing.Size(295, 115);
+            this.label_Fecha_Centro.Size = new System.Drawing.Size(279, 106);
             this.label_Fecha_Centro.TabIndex = 17;
             this.label_Fecha_Centro.Text = "FECHA";
             this.label_Fecha_Centro.Visible = false;
@@ -2595,19 +2632,12 @@ namespace ERPASA
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button_packing_rrhh_progrSemanalPersonal
+            // TabMaest_Roles_AppMovil
             // 
-            this.button_packing_rrhh_progrSemanalPersonal.Name = "button_packing_rrhh_progrSemanalPersonal";
-            this.button_packing_rrhh_progrSemanalPersonal.Size = new System.Drawing.Size(526, 34);
-            this.button_packing_rrhh_progrSemanalPersonal.Text = "PROGRAMACION SEMANAL DE PERSONAL";
-            this.button_packing_rrhh_progrSemanalPersonal.Click += new System.EventHandler(this.button_packing_rrhh_progrSemanalPersonal_Click);
-            // 
-            // button_packing_rrhh_progrAnualPersonal
-            // 
-            this.button_packing_rrhh_progrAnualPersonal.Name = "button_packing_rrhh_progrAnualPersonal";
-            this.button_packing_rrhh_progrAnualPersonal.Size = new System.Drawing.Size(526, 34);
-            this.button_packing_rrhh_progrAnualPersonal.Text = "PROGRAMACION ANUAL DE PERSONAL";
-            this.button_packing_rrhh_progrAnualPersonal.Click += new System.EventHandler(this.button_packing_rrhh_progrAnualPersonal_Click);
+            this.TabMaest_Roles_AppMovil.Name = "TabMaest_Roles_AppMovil";
+            this.TabMaest_Roles_AppMovil.Size = new System.Drawing.Size(317, 34);
+            this.TabMaest_Roles_AppMovil.Text = "USUARIO APP MOVIL";
+            this.TabMaest_Roles_AppMovil.Click += new System.EventHandler(this.TabMaest_Roles_AppMovil_Click);
             // 
             // Frm_Menu
             // 
@@ -2637,7 +2667,6 @@ namespace ERPASA
             this.panel_contenedor.ResumeLayout(false);
             this.panel_contenedor.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -2912,5 +2941,6 @@ namespace ERPASA
         private System.Windows.Forms.ToolStripMenuItem button_packing_rrhh_tareodetallado;
         private System.Windows.Forms.ToolStripMenuItem button_packing_rrhh_progrSemanalPersonal;
         private System.Windows.Forms.ToolStripMenuItem button_packing_rrhh_progrAnualPersonal;
+        private System.Windows.Forms.ToolStripMenuItem TabMaest_Roles_AppMovil;
     }
 }

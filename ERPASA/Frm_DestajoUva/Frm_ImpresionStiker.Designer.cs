@@ -43,15 +43,15 @@ namespace ERPASA.Frm_DestajoUva
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.guna2TextBox_Cantidad = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox_Puestotrabajo = new System.Windows.Forms.ComboBox();
+            this.comboBox_Puestotrabajo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.dataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2TextBoxSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBoxImpresoras = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBoxImpresoras = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -370,17 +370,17 @@ namespace ERPASA.Frm_DestajoUva
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.ComboBox comboBox_Puestotrabajo;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Puestotrabajo;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxSearch;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox_Cantidad;
         private System.Windows.Forms.ToolStripButton toolStripButton_imprimir;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBoxImpresoras;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxImpresoras;
     }
 }

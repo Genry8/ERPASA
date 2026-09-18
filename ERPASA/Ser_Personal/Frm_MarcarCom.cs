@@ -21,6 +21,8 @@ namespace ERPASA.Frm_Comedor
         public Frm_MarcarCom()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
             //BuscarUsuarioPedateado();
             //dataGridView1.ClearSelection();
         }

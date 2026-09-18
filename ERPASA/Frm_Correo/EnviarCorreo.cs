@@ -21,6 +21,8 @@ namespace ERPASA.Frm_Correo
         public EnviarCorreo()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, campos y botón).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void EnviarCorreo_Load(object sender, EventArgs e)

@@ -530,6 +530,65 @@ namespace CapaDatos
 
 
         // METODO PARA GUARDAR DETALLE COSECHADOR
+
+        //
+        //
+        // CARGAS MASIVAS (SqlBulkCopy)
+        //
+        //
+        // Las pantallas que borran y vuelven a insertar todo van directo contra
+        // la tabla real; las que hacen alta o actualizacion pasan por una tabla
+        // temporal y un MERGE.
+
+        // COM_CosechandoGanadores: el SP de borrado corre antes, desde el formulario.
+        public void GuardarCosechandoGanadoresMasivo(DataTable datos)
+        {
+            CargaMasivaDirecta(datos, "COM_CosechandoGanadores");
+        }
+
+
+        // COM_PotenciandoLideres: idem, el borrado por empresa y sede va antes.
+        public void GuardarPotenciandoLideresMasivo(DataTable datos)
+        {
+            CargaMasivaDirecta(datos, "COM_PotenciandoLideres");
+        }
+
+
+        // COM_EncuestaClima: idem, el borrado por tipo de personal y año va antes.
+        public void GuardarEncuestaClimaMasivo(DataTable datos)
+        {
+            CargaMasivaDirecta(datos, "COM_EncuestaClima");
+        }
+
+
+        // COM_LideresEnAccion: aca si hay alta y actualizacion por
+        // Empresa + Sede + Fecha + Item, asi que va con MERGE.
+        public void GuardarActualizarLideresEnAccionMasivo(DataTable datos)
+        {
+            CargaMasiva(datos, "#LideresEnAccion", @"CREATE TABLE #LideresEnAccion(
+                        Item      int,
+                        Fecha     date,
+                        Ape_Nom   varchar(80),
+                        Dni       varchar(15),
+                        Empresa   varchar(50),
+                        Sede      varchar(30),
+                        Area      varchar(80),
+                        Labor     varchar(180),
+                        Jefe      varchar(80),
+                        Puntaje   decimal(10,2),
+                        Categoria varchar(50),
+                        Estrellas int,
+                        Premio    varchar(80),
+                        Hoja      varchar(150),
+                        Estado    varchar(10),
+                        FecCre    datetime,
+                        UseReg    int,
+                        Hostname  varchar(50),
+                        FecEdit   datetime,
+                        UseEdit   int)", "SP_GUARDAR_ACTUALIZAR_COM_LIDERESACCION_MASIVO");
+        }
+
+
         public void GuardarCosechandoGanadores(int item, DateTime Fecha
             , string Situacion, string Sol_Reconoce, string Sol_Empresa, string Sol_Gerencia
             , string Sol_Sede, string Sol_Cargo, string Sol_Area, string Rec_Reconocido
@@ -1149,7 +1208,7 @@ namespace CapaDatos
         {
             using (var conexion = leerconexion())
             {
-                string sql = "UPDATE TR_ListaVehiculos SET Activo='NO'";
+                string sql = "DELETE FROM TR_ListaVehiculos ";
 
                 using (var comando = new SqlCommand(sql, conexion))
                 {
@@ -1163,7 +1222,7 @@ namespace CapaDatos
         {
             using (var conexion = leerconexion())
             {
-                string sql = "UPDATE TR_Listaconductores SET Activo='NO'";
+                string sql = " DELETE FROM TR_Listaconductores ";
 
                 using (var comando = new SqlCommand(sql, conexion))
                 {

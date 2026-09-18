@@ -36,11 +36,11 @@ namespace ERPASA.Frm_DestajoUva
             this.label_estado_reg = new System.Windows.Forms.Label();
             this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_linea = new System.Windows.Forms.ComboBox();
+            this.comboBox_linea = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox_nave = new System.Windows.Forms.ComboBox();
+            this.comboBox_nave = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2TextBox_LecturaSticker = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Fecha_Proceso = new System.Windows.Forms.DateTimePicker();
+            this.Fecha_Proceso = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.pictureBox_agregarErrores = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label_totalCajas = new System.Windows.Forms.Label();
@@ -199,7 +199,6 @@ namespace ERPASA.Frm_DestajoUva
             // 
             // Fecha_Proceso
             // 
-            this.Fecha_Proceso.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fecha_Proceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fecha_Proceso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.Fecha_Proceso.Location = new System.Drawing.Point(23, 12);
@@ -345,11 +344,11 @@ namespace ERPASA.Frm_DestajoUva
         private System.Windows.Forms.Label label_estado_reg;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.ComboBox comboBox_linea;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_linea;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.ComboBox comboBox_nave;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_nave;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox_LecturaSticker;
-        private System.Windows.Forms.DateTimePicker Fecha_Proceso;
+        private Guna.UI2.WinForms.Guna2DateTimePicker Fecha_Proceso;
         private System.Windows.Forms.PictureBox pictureBox_agregarErrores;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_totalCajas;

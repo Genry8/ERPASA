@@ -36,13 +36,13 @@ namespace ERPASA.Frm_TabMaestra
             this.button_cerrar = new System.Windows.Forms.Button();
             this.pictureBox_titulo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox_DesMemoria = new System.Windows.Forms.TextBox();
+            this.textBox_DesMemoria = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_Memoria = new System.Windows.Forms.ComboBox();
+            this.comboBox_Memoria = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textbox_ObsMemoria = new System.Windows.Forms.TextBox();
+            this.textbox_ObsMemoria = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_CodMemoria = new System.Windows.Forms.TextBox();
+            this.textBox_CodMemoria = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_User = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_nuevo = new System.Windows.Forms.ToolStripButton();
@@ -172,7 +172,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_DesMemoria
             // 
-            this.textBox_DesMemoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_DesMemoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_DesMemoria.ForeColor = System.Drawing.Color.Black;
             this.textBox_DesMemoria.Location = new System.Drawing.Point(216, 208);
@@ -218,7 +217,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textbox_ObsMemoria
             // 
-            this.textbox_ObsMemoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_ObsMemoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_ObsMemoria.ForeColor = System.Drawing.Color.Black;
             this.textbox_ObsMemoria.Location = new System.Drawing.Point(216, 277);
@@ -242,7 +240,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_CodMemoria
             // 
-            this.textBox_CodMemoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_CodMemoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CodMemoria.ForeColor = System.Drawing.Color.Black;
             this.textBox_CodMemoria.Location = new System.Drawing.Point(216, 135);
@@ -475,10 +472,10 @@ namespace ERPASA.Frm_TabMaestra
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_aliminar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        public System.Windows.Forms.TextBox textBox_CodMemoria;
-        public System.Windows.Forms.TextBox textBox_DesMemoria;
-        public System.Windows.Forms.TextBox textbox_ObsMemoria;
-        public System.Windows.Forms.ComboBox comboBox_Memoria;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_CodMemoria;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_DesMemoria;
+        public Guna.UI2.WinForms.Guna2TextBox textbox_ObsMemoria;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Memoria;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         public System.Windows.Forms.ToolStripButton toolStripButton_eliminar;
         public System.Windows.Forms.ToolStripButton toolStripButton_nuevo;

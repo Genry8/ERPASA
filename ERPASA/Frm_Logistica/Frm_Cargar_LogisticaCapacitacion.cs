@@ -20,6 +20,8 @@ namespace ERPASA.Frm_Logistica
         public Frm_Cargar_LogisticaCapacitacion()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_Cargar_LogisticaCapacitacion_Load(object sender, EventArgs e)

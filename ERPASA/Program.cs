@@ -13,12 +13,8 @@ namespace ERPASA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Reportes.Acopio.Frm_ReporteGuiaRecepcion());
-            //Application.Run(new Frm_Logistica.Frm_ProgramarCursoProveedor());
-            //Application.Run(new Frm_Logistica.Frm_ProgramarCursos());
-            //Application.Run(new Reportes.AcopioRRHH.Frm_CargarReqPersonalSemanal());
-            //Application.Run(new Reportes.AcopioRRHH.Frm_CargarReqPersonalAnual());
-            //Application.Run(new Frm_SST.Frm_Registrar_AtenMed());
+            //Application.Run(new Frm_TabMaestra.Frm_RolesUserAppMovil());
+            //Application.Run(new Frm_Comunicacion.Frm_CargarSaldoPuntos());
             Application.Run(new Frm_Login());
         }
 

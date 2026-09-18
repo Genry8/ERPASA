@@ -16,6 +16,8 @@ namespace ERPASA.Frm_Taller
         public frm_EditarModeloVehiculo()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void frm_EditarModeloVehiculo_Load(object sender, EventArgs e)

@@ -16,6 +16,8 @@ namespace ERPASA.Reportes.Acopio
         public frm_AgregarMerma()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void frm_AgregarMerma_Load(object sender, EventArgs e)

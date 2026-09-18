@@ -1,9 +1,6 @@
 ﻿using CapaDatos;
 using CapaEntidad;
 using CapaNegocio;
-using ERPASA.Reportes.Acopio;
-using Guna.UI2.WinForms;
-using MetroFramework.Forms;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -29,40 +26,29 @@ namespace ERPASA
         private void Frm_Login_Load(object sender, EventArgs e)
         {
             //MOSTRAR LA VERSION DE ACTUALIZACION VESION_IPRESSREPORTE
-
-            var con = Conexio.leerconexion();
-            //CapaPresentacion.Msbox.Frm_NotificacionesPeligro ng = new CapaPresentacion.Msbox.Frm_NotificacionesPeligro("GUARDADO CORRECTAMENTE", Color.FromArgb(12, 19, 214), 1);
-            //ng.ShowDialog();
-
-            var comando = new SqlCommand("[sp_version_DaPro]", con);
-            comando.Connection = con;
-            comando.CommandType = CommandType.StoredProcedure;
-            con.Open();
-            comando.ExecuteNonQuery();
-            SqlDataReader reader = comando.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    label_version_call.Text = reader.GetString(0);
-                    label_desarrollo.Text = reader.GetString(1);
-                    //label_version_actual.Text = reader.GetString(2);
-                    ce_usuario.version_actual = reader.GetString(2);
-                }
-                con.Dispose();
-                con.Close();
-                return;
-            }
-
-            DiseñoButton();
+            CargarVersion();
 
             TEXT_USUARIO.Focus();
         }
 
-        public void DiseñoButton()
+        private void CargarVersion()
         {
+            using (var con = Conexio.leerconexion())
+            using (var comando = new SqlCommand("[sp_version_DaPro]", con))
+            {
+                comando.CommandType = CommandType.StoredProcedure;
+                con.Open();
 
+                using (SqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        label_version_call.Text = reader.GetString(0);
+                        label_desarrollo.Text = reader.GetString(1);
+                        ce_usuario.version_actual = reader.GetString(2);
+                    }
+                }
+            }
         }
 
         private void button_login_Click(object sender, EventArgs e)
@@ -73,121 +59,82 @@ namespace ERPASA
 
         private void logear()
         {
-
-            if (TEXT_USUARIO.Text != "Ingrese su usuario")
-
-            {
-                if (TEXT_CONTRASEÑA.Text != "Ingrese su contraseña")
-
-                {
-                    //if (TEXT_USUARIO.Text == "12345" && TEXT_CONTRASEÑA.Text == "Administrato***")
-                    //{
-                    //    log = new Frm_presentacion();
-                    //    this.Hide();
-                    //    log.ShowDialog();
-                    //    return;
-                    //}
-
-                    var login = objnegUsuarios.BuscUser(Int32.Parse(TEXT_USUARIO.Text), TEXT_CONTRASEÑA.Text, "APP ASA");
-                    //MessageBox.Show(" " + ce_usuario.permiso_app);
-                    ce_version.version_act = label_version_actual.Text;
-                    if (ce_usuario.permiso_app != "")
-                    {
-                        if (ce_usuario.estado == "N")
-                        {
-                            Msbox.Frm_Notificaciones ng = new Msbox.Frm_Notificaciones("Usuario Cesado", Color.OrangeRed, 3);
-                            ng.ShowDialog();
-                            ce_usuario.estado = "";
-                        }
-                        else if (login == true)
-                        {
-                            //GuardarUser();
-                            //label_version_actual.Text = ce_usuario.version_anterior;
-
-                            if (label_version_actual.Text == ce_usuario.version_actual)
-                            {
-                                log = new Frm_presentacion();
-                                this.Hide();
-                                log.ShowDialog();
-                            }
-                            else
-                            {
-                                DialogResult result = MessageBox.Show("Hay una nueva versión disponible. ¿Deseas descargarla?",
-                                                  "", MessageBoxButtons.YesNo);
-
-                                if (result == DialogResult.Yes)
-                                {
-                                    Frm_Actualizacion frbm = new Frm_Actualizacion();
-                                    AddOwnedForm(frbm);
-                                    frbm.ShowDialog();
-                                    //System.Diagnostics.Process.Start("https://agsantaazul.netlify.app/");
-                                }
-                            }
-
-                            //timer1.Start(); USAR PARA BARRA DE CARGA EN LA PARTE INFERIOR DE INICIO DE SESION
-
-                            //nuevo1.ActualizarMedicamento();
-
-                        }
-                        else
-                        {
-                            //MessageBox.Show("Usuario o contraseña incorrecta");
-                            Msbox.Frm_Notificaciones_IS ng = new Msbox.Frm_Notificaciones_IS("Usuario o contraseña incorrecta", Color.Goldenrod, 4);
-                            ng.ShowDialog();
-
-                            //TEXT_USUARIO.Text = "Ingrese su usuario";
-                            //TEXT_USUARIO.ForeColor = Color.DarkGray;
-
-                            //TEXT_CONTRASEÑA.UseSystemPasswordChar = false;
-                            //TEXT_CONTRASEÑA.Text = "Ingrese su contraseña";
-                            //TEXT_CONTRASEÑA.ForeColor = Color.DarkGray;
-
-                            TEXT_CONTRASEÑA.Focus();
-                        }
-                    }
-                    else
-                    {
-                        Msbox.Frm_Notificaciones_IS ng = new Msbox.Frm_Notificaciones_IS("USUARIO SIN ACCESO", Color.Goldenrod, 4);
-                        ng.ShowDialog();
-                    }
-                }
-                else
-                {
-                    Msbox.Frm_Notificaciones ng = new Msbox.Frm_Notificaciones("INGRESE CONTRASEÑA", Color.Goldenrod, 4);
-                    ng.ShowDialog();
-                }
-            }
-            else
+            if (string.IsNullOrWhiteSpace(TEXT_USUARIO.Text))
             {
                 Msbox.Frm_Notificaciones ng = new Msbox.Frm_Notificaciones("INGRESE USUARIO", Color.Goldenrod, 4);
                 ng.ShowDialog();
-
+                TEXT_USUARIO.Focus();
+                return;
             }
 
-        }
-        private void TEXT_USUARIO_Enter(object sender, EventArgs e)
-        {
-            if (TEXT_USUARIO.Text == "Ingrese su usuario")
+            if (string.IsNullOrEmpty(TEXT_CONTRASEÑA.Text))
             {
-                TEXT_USUARIO.Text = "";
-                TEXT_USUARIO.ForeColor = Color.FromArgb(35, 66, 90);
-                TEXT_USUARIO.Font = new Font(TEXT_USUARIO.Font, FontStyle.Regular);
+                Msbox.Frm_Notificaciones ng = new Msbox.Frm_Notificaciones("INGRESE CONTRASEÑA", Color.Goldenrod, 4);
+                ng.ShowDialog();
+                TEXT_CONTRASEÑA.Focus();
+                return;
             }
-        }
 
-        private void TEXT_USUARIO_Leave(object sender, EventArgs e)
-        {
-            if (TEXT_USUARIO.Text == "")
+            int codigoUsuario;
+            if (!Int32.TryParse(TEXT_USUARIO.Text.Trim(), out codigoUsuario))
             {
-                TEXT_USUARIO.Text = "Ingrese su usuario";
-                TEXT_USUARIO.ForeColor = Color.DarkGray;
-                TEXT_USUARIO.Font = new Font(TEXT_USUARIO.Font, FontStyle.Italic);
+                Msbox.Frm_Notificaciones ng = new Msbox.Frm_Notificaciones("USUARIO NO VÁLIDO", Color.Goldenrod, 4);
+                ng.ShowDialog();
+                TEXT_USUARIO.Focus();
+                return;
             }
+
+            var login = objnegUsuarios.BuscUser(codigoUsuario, TEXT_CONTRASEÑA.Text, "APP ASA");
+            ce_version.version_act = label_version_actual.Text;
+
+            if (ce_usuario.permiso_app == "")
+            {
+                Msbox.Frm_Notificaciones_IS ng = new Msbox.Frm_Notificaciones_IS("USUARIO SIN ACCESO", Color.Goldenrod, 4);
+                ng.ShowDialog();
+                return;
+            }
+
+            if (ce_usuario.estado == "N")
+            {
+                Msbox.Frm_Notificaciones ng = new Msbox.Frm_Notificaciones("Usuario Cesado", Color.OrangeRed, 3);
+                ng.ShowDialog();
+                ce_usuario.estado = "";
+                return;
+            }
+
+            if (login != true)
+            {
+                Msbox.Frm_Notificaciones_IS ng = new Msbox.Frm_Notificaciones_IS("Usuario o contraseña incorrecta", Color.Goldenrod, 4);
+                ng.ShowDialog();
+
+                TEXT_CONTRASEÑA.Focus();
+                return;
+            }
+
+            if (label_version_actual.Text == ce_usuario.version_actual)
+            {
+                log = new Frm_presentacion();
+                this.Hide();
+                log.ShowDialog();
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Hay una nueva versión disponible. ¿Deseas descargarla?",
+                                  "", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    Frm_Actualizacion frbm = new Frm_Actualizacion();
+                    AddOwnedForm(frbm);
+                    frbm.ShowDialog();
+                }
+            }
+
+            //timer1.Start(); USAR PARA BARRA DE CARGA EN LA PARTE INFERIOR DE INICIO DE SESION
         }
 
         private void TEXT_USUARIO_KeyPress(object sender, KeyPressEventArgs e)
         {
-            /// if (char.IsLetter(e.KeyChar)) { e.Handled = true;}
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
                 logear();
@@ -214,43 +161,6 @@ namespace ERPASA
             }
         }
 
-        private void TEXT_CONTRASEÑA_Enter(object sender, EventArgs e)
-        {
-            if (TEXT_CONTRASEÑA.Text == "Ingrese su contraseña")
-            {
-                TEXT_CONTRASEÑA.Text = "";
-                TEXT_CONTRASEÑA.ForeColor = Color.FromArgb(35, 66, 90);
-                TEXT_CONTRASEÑA.Font = new Font(TEXT_CONTRASEÑA.Font, FontStyle.Regular);
-                TEXT_CONTRASEÑA.UseSystemPasswordChar = true;
-                //pictureBox_VerContraseña.Visible = true;
-
-            }
-        }
-
-        private void TEXT_CONTRASEÑA_Leave(object sender, EventArgs e)
-        {
-            if (TEXT_CONTRASEÑA.Text == "")
-            {
-                TEXT_CONTRASEÑA.Text = "Ingrese su contraseña";
-                TEXT_CONTRASEÑA.ForeColor = Color.DarkGray;
-                TEXT_CONTRASEÑA.Font = new Font(TEXT_CONTRASEÑA.Font, FontStyle.Italic);
-                TEXT_CONTRASEÑA.UseSystemPasswordChar = false;
-                pictureBox_VerContraseña.Visible = false;
-            }
-        }
-
-        private void TEXT_CONTRASEÑA_TextChanged(object sender, EventArgs e)
-        {
-            if (TEXT_CONTRASEÑA.Text == "")
-            {
-                pictureBox_VerContraseña.Visible = false;
-            }
-
-            else if (TEXT_CONTRASEÑA.Text != "")
-            {
-                pictureBox_VerContraseña.Visible = true;
-            }
-        }
         private void TEXT_CONTRASEÑA_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
@@ -259,20 +169,10 @@ namespace ERPASA
             }
         }
 
-        private void pictureBox_VerContraseña_MouseLeave(object sender, EventArgs e)
+        private void TEXT_CONTRASEÑA_IconRightClick(object sender, EventArgs e)
         {
-            if (TEXT_CONTRASEÑA.Text != "Ingrese su contraseña")
-            {
-                TEXT_CONTRASEÑA.UseSystemPasswordChar = true;
-            }
-        }
-
-        private void pictureBox_VerContraseña_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (TEXT_CONTRASEÑA.Text != "Ingrese su contraseña")
-            {
-                TEXT_CONTRASEÑA.UseSystemPasswordChar = false;
-            }
+            TEXT_CONTRASEÑA.UseSystemPasswordChar = !TEXT_CONTRASEÑA.UseSystemPasswordChar;
+            TEXT_CONTRASEÑA.Focus();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -280,15 +180,11 @@ namespace ERPASA
             if (progressBar1.Value < 100)
             {
                 progressBar1.Value = progressBar1.Value += 1;
-
-                //label1.Text = progressBar1.Value.ToString() + "%";
-
             }
 
             else
             {
                 timer1.Stop();
-                //MessageBox.Show("biz");
                 log = new Frm_presentacion();
                 this.Hide();
                 log.ShowDialog();
@@ -301,21 +197,12 @@ namespace ERPASA
             MessageBox.Show("Para actualizar póngase en contacto con el administrador");
         }
 
-        private void linkLabel1_LinkClicked(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //MessageBox.Show("Nosotros tampoco recordamos, siga pensando gracias.");
             Frm_TabMaestra.Usuario.RecuperarContraseña frbm =
                 new Frm_TabMaestra.Usuario.RecuperarContraseña();
             AddOwnedForm(frbm);
             frbm.ShowDialog();
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            //Frm_TabMaestra.Usuario.RecuperarContraseña frbm =
-            //    new Frm_TabMaestra.Usuario.RecuperarContraseña();
-            //AddOwnedForm(frbm);
-            //frbm.ShowDialog();
         }
     }
 }

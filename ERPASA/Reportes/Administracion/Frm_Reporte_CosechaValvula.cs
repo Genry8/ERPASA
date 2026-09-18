@@ -27,6 +27,8 @@ namespace ERPASA.Reportes.Administracion
         public Frm_Reporte_CosechaValvula()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_Reporte_CosechaValvula_Load(object sender, EventArgs e)

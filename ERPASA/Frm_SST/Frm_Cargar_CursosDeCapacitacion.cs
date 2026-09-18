@@ -30,6 +30,8 @@ namespace ERPASA.Frm_SST
         public Frm_Cargar_CursosDeCapacitacion()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_Cargar_CursosDeCapacitacion_Load(object sender, EventArgs e)

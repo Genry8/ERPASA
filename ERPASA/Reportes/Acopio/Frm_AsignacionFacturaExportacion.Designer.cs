@@ -50,15 +50,15 @@ namespace ERPASA.Reportes.Acopio
             this.toolStripLabel_Reporte = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_Cultivo = new System.Windows.Forms.ComboBox();
+            this.comboBox_Cultivo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2TextBoxSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.comboBox_detalle_sede = new System.Windows.Forms.ComboBox();
-            this.comboBox_detalle_empresa = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker_FecFin = new System.Windows.Forms.DateTimePicker();
+            this.comboBox_detalle_sede = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_detalle_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dateTimePicker_FecFin = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker_FecInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_FecInicio = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label_total_peso = new System.Windows.Forms.Label();
             this.dataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -608,7 +608,7 @@ namespace ERPASA.Reportes.Acopio
 
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_FecInicio;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_FecInicio;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStripButton toolStripButton_buscar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_buscar;
@@ -616,16 +616,16 @@ namespace ERPASA.Reportes.Acopio
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripButton toolStripButton_excel;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_FecFin;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_FecFin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label45;
-        public System.Windows.Forms.ComboBox comboBox_detalle_empresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_empresa;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton_imprimir;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_imprimir;
         private System.Windows.Forms.Label label46;
-        public System.Windows.Forms.ComboBox comboBox_detalle_sede;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_sede;
         private System.Windows.Forms.Label label_total_peso;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxSearch;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView2;
@@ -633,7 +633,7 @@ namespace ERPASA.Reportes.Acopio
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.ComboBox comboBox_Cultivo;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Cultivo;
         private System.Windows.Forms.Label label_catidad_registros;
         private System.Windows.Forms.Label label_cant_jabas;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;

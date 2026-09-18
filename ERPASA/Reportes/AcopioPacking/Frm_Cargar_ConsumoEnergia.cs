@@ -19,6 +19,8 @@ namespace ERPASA.Reportes.AcopioPacking
         public Frm_Cargar_ConsumoEnergia()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_Cargar_ConsumoEnergia_Load(object sender, EventArgs e)

@@ -24,6 +24,8 @@ namespace ERPASA.Reportes.Frm_Comedor
         public Frm_ImprimirQRVehiculo()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_ImprimirQRVehiculo_Load(object sender, EventArgs e)

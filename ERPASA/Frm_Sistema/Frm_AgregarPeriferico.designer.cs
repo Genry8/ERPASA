@@ -36,19 +36,19 @@ namespace ERPASA.Frm_Sistema
             this.button_cerrar = new System.Windows.Forms.Button();
             this.pictureBox_titulo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox_DesPerMod = new System.Windows.Forms.TextBox();
+            this.textBox_DesPerMod = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox_DesPerIMEI = new System.Windows.Forms.TextBox();
+            this.textBox_DesPerIMEI = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox_DesPerSerie = new System.Windows.Forms.TextBox();
+            this.textBox_DesPerSerie = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox_DesPer = new System.Windows.Forms.TextBox();
+            this.textBox_DesPer = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_Est = new System.Windows.Forms.ComboBox();
+            this.comboBox_Est = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textbox_ObsPer = new System.Windows.Forms.TextBox();
+            this.textbox_ObsPer = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_CodPer = new System.Windows.Forms.TextBox();
+            this.textBox_CodPer = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_User = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_nuevo = new System.Windows.Forms.ToolStripButton();
@@ -189,7 +189,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_DesPerMod
             // 
-            this.textBox_DesPerMod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_DesPerMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_DesPerMod.ForeColor = System.Drawing.Color.Black;
             this.textBox_DesPerMod.Location = new System.Drawing.Point(305, 344);
@@ -213,7 +212,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_DesPerIMEI
             // 
-            this.textBox_DesPerIMEI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_DesPerIMEI.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_DesPerIMEI.ForeColor = System.Drawing.Color.Black;
             this.textBox_DesPerIMEI.Location = new System.Drawing.Point(305, 288);
@@ -237,7 +235,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_DesPerSerie
             // 
-            this.textBox_DesPerSerie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_DesPerSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_DesPerSerie.ForeColor = System.Drawing.Color.Black;
             this.textBox_DesPerSerie.Location = new System.Drawing.Point(303, 232);
@@ -262,7 +259,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_DesPer
             // 
-            this.textBox_DesPer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_DesPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_DesPer.ForeColor = System.Drawing.Color.Black;
             this.textBox_DesPer.Location = new System.Drawing.Point(303, 176);
@@ -308,7 +304,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textbox_ObsPer
             // 
-            this.textbox_ObsPer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_ObsPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_ObsPer.ForeColor = System.Drawing.Color.Black;
             this.textbox_ObsPer.Location = new System.Drawing.Point(305, 400);
@@ -332,7 +327,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textBox_CodPer
             // 
-            this.textBox_CodPer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_CodPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CodPer.ForeColor = System.Drawing.Color.Black;
             this.textBox_CodPer.Location = new System.Drawing.Point(305, 118);
@@ -586,19 +580,19 @@ namespace ERPASA.Frm_Sistema
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_aliminar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        public System.Windows.Forms.TextBox textBox_CodPer;
-        public System.Windows.Forms.TextBox textBox_DesPer;
-        public System.Windows.Forms.TextBox textbox_ObsPer;
-        public System.Windows.Forms.ComboBox comboBox_Est;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_CodPer;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_DesPer;
+        public Guna.UI2.WinForms.Guna2TextBox textbox_ObsPer;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Est;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         public System.Windows.Forms.ToolStripButton toolStripButton_eliminar;
         public System.Windows.Forms.ToolStripButton toolStripButton_nuevo;
         public System.Windows.Forms.ToolStripButton toolStripButton_limpiar;
-        public System.Windows.Forms.TextBox textBox_DesPerMod;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_DesPerMod;
         private System.Windows.Forms.Label label7;
-        public System.Windows.Forms.TextBox textBox_DesPerIMEI;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_DesPerIMEI;
         private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.TextBox textBox_DesPerSerie;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_DesPerSerie;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.PictureBox pictureBox_Periferico_QR;

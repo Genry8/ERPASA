@@ -35,11 +35,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
-            this.comboBox_TipoTrabajador = new System.Windows.Forms.ComboBox();
+            this.comboBox_TipoTrabajador = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.comboBox_sede = new System.Windows.Forms.ComboBox();
-            this.comboBox_empresa = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker_FechaInd = new System.Windows.Forms.DateTimePicker();
+            this.comboBox_sede = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dateTimePicker_FechaInd = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
@@ -57,11 +57,11 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox_Hojas = new System.Windows.Forms.ComboBox();
+            this.comboBox_Hojas = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textRuta = new System.Windows.Forms.TextBox();
+            this.textRuta = new Guna.UI2.WinForms.Guna2TextBox();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox2.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -473,8 +473,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label45;
-        public System.Windows.Forms.ComboBox comboBox_sede;
-        public System.Windows.Forms.ComboBox comboBox_empresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_sede;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_empresa;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_imprimir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
@@ -486,20 +486,20 @@
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_FechaInd;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_FechaInd;
         private System.Windows.Forms.Label label8;
-        public System.Windows.Forms.ComboBox comboBox_TipoTrabajador;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_TipoTrabajador;
         private System.Windows.Forms.GroupBox groupBox1;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox_Hojas;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Hojas;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textRuta;
+        private Guna.UI2.WinForms.Guna2TextBox textRuta;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }

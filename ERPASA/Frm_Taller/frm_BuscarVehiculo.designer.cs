@@ -39,14 +39,14 @@ namespace ERPASA.Frm_Taller
             this.pictureBox_titulo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox_Tipos = new System.Windows.Forms.ComboBox();
+            this.comboBox_Tipos = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textbox_DescVehiculo = new System.Windows.Forms.TextBox();
+            this.textbox_DescVehiculo = new Guna.UI2.WinForms.Guna2TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.panel_titulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_titulo)).BeginInit();
@@ -257,7 +257,6 @@ namespace ERPASA.Frm_Taller
             // 
             // textbox_DescVehiculo
             // 
-            this.textbox_DescVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_DescVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_DescVehiculo.ForeColor = System.Drawing.Color.Black;
             this.textbox_DescVehiculo.Location = new System.Drawing.Point(399, 32);
@@ -316,10 +315,10 @@ namespace ERPASA.Frm_Taller
         private System.Windows.Forms.Button button_cerrar;
         private System.Windows.Forms.PictureBox pictureBox_titulo;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textbox_DescVehiculo;
+        private Guna.UI2.WinForms.Guna2TextBox textbox_DescVehiculo;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.ComboBox comboBox_Tipos;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Tipos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

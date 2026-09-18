@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CargarFoto));
-            this.textBox_dni = new System.Windows.Forms.TextBox();
-            this.textBox_apellidos = new System.Windows.Forms.TextBox();
-            this.textBox_nombres = new System.Windows.Forms.TextBox();
+            this.textBox_dni = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox_apellidos = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox_nombres = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -176,9 +176,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox_dni;
-        private System.Windows.Forms.TextBox textBox_apellidos;
-        private System.Windows.Forms.TextBox textBox_nombres;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_dni;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_apellidos;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_nombres;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

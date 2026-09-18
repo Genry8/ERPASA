@@ -33,18 +33,18 @@ namespace ERPASA.Frm_Contabilidad
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CargarCumplimiento));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.comboBox_mes = new System.Windows.Forms.ComboBox();
+            this.comboBox_mes = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_año = new System.Windows.Forms.ComboBox();
+            this.comboBox_año = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox_gerencia = new System.Windows.Forms.ComboBox();
+            this.comboBox_gerencia = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox_Area = new System.Windows.Forms.ComboBox();
+            this.comboBox_Area = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox_empresa = new System.Windows.Forms.ComboBox();
+            this.comboBox_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -471,7 +471,7 @@ namespace ERPASA.Frm_Contabilidad
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+        private Guna.UI2.WinForms.Guna2TextBox textBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
         public System.Windows.Forms.DataGridView dataGridView1;
@@ -489,19 +489,19 @@ namespace ERPASA.Frm_Contabilidad
         public System.Windows.Forms.ToolStripButton toolStripButtonGuardarClasif;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        public System.Windows.Forms.ComboBox comboBox_Area;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Area;
         private System.Windows.Forms.Label label7;
-        public System.Windows.Forms.ComboBox comboBox_empresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_empresa;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         public System.Windows.Forms.ToolStripButton toolStripButton_CargaMasiva;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
-        public System.Windows.Forms.ComboBox comboBox_gerencia;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_gerencia;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.ComboBox comboBox_año;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_año;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.ComboBox comboBox_mes;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_mes;
         private System.Windows.Forms.Label label3;
     }
 }

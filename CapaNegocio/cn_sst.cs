@@ -205,10 +205,10 @@ namespace CapaNegocio
         }
 
         public static DataTable ListaReporteOrdProd(DateTime fecini,
-            DateTime fecfin, string emp, string sed,string cult)
+            DateTime fecfin, string emp, string sed, string cult)
         {
             cd_sst datos = new cd_sst();
-            return datos.ListaReporteOrdProd(fecini, fecfin, emp, sed,cult);
+            return datos.ListaReporteOrdProd(fecini, fecfin, emp, sed, cult);
         }
 
         public static DataTable ListaReporteControlProceso(DateTime fecini,

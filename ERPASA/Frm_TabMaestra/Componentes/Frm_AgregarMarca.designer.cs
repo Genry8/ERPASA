@@ -36,13 +36,13 @@ namespace ERPASA.Frm_TabMaestra
             this.button_cerrar = new System.Windows.Forms.Button();
             this.pictureBox_titulo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox_DesMarca = new System.Windows.Forms.TextBox();
+            this.textBox_DesMarca = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_Estado = new System.Windows.Forms.ComboBox();
+            this.comboBox_Estado = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textbox_ObsMarca = new System.Windows.Forms.TextBox();
+            this.textbox_ObsMarca = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_CodMarca = new System.Windows.Forms.TextBox();
+            this.textBox_CodMarca = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_User = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_nuevo = new System.Windows.Forms.ToolStripButton();
@@ -172,7 +172,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_DesMarca
             // 
-            this.textBox_DesMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_DesMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_DesMarca.ForeColor = System.Drawing.Color.Black;
             this.textBox_DesMarca.Location = new System.Drawing.Point(216, 208);
@@ -218,7 +217,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textbox_ObsMarca
             // 
-            this.textbox_ObsMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_ObsMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_ObsMarca.ForeColor = System.Drawing.Color.Black;
             this.textbox_ObsMarca.Location = new System.Drawing.Point(216, 277);
@@ -242,7 +240,6 @@ namespace ERPASA.Frm_TabMaestra
             // 
             // textBox_CodMarca
             // 
-            this.textBox_CodMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_CodMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CodMarca.ForeColor = System.Drawing.Color.Black;
             this.textBox_CodMarca.Location = new System.Drawing.Point(216, 135);
@@ -475,10 +472,10 @@ namespace ERPASA.Frm_TabMaestra
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_aliminar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        public System.Windows.Forms.TextBox textBox_CodMarca;
-        public System.Windows.Forms.TextBox textBox_DesMarca;
-        public System.Windows.Forms.TextBox textbox_ObsMarca;
-        public System.Windows.Forms.ComboBox comboBox_Estado;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_CodMarca;
+        public Guna.UI2.WinForms.Guna2TextBox textBox_DesMarca;
+        public Guna.UI2.WinForms.Guna2TextBox textbox_ObsMarca;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Estado;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         public System.Windows.Forms.ToolStripButton toolStripButton_eliminar;
         public System.Windows.Forms.ToolStripButton toolStripButton_nuevo;

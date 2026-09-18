@@ -28,6 +28,8 @@ namespace ERPASA.Frm_Logistica
         public Frm_AgregarCursosProvMasivo()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_AgregarCursosProvMasivo_Load(object sender, EventArgs e)
@@ -162,7 +164,7 @@ namespace ERPASA.Frm_Logistica
                             //    continue;
 
                             bool existe = cn_logistica.BuscExisteCursoProgramado(
-                                                dni+""+idCurso,
+                                                dni + "" + idCurso,
                                                 dateTimePicker_FechaInd.Value.Date,
                                                 3);
 
@@ -211,7 +213,7 @@ namespace ERPASA.Frm_Logistica
                     ng.ShowDialog();
 
                 }
-            
+
             }
         }
 

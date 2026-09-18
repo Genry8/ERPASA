@@ -29,6 +29,8 @@ namespace ERPASA.Frm_Sistema
         public Frm_RegInventarios()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_RegOrdenVenta_Load(object sender, EventArgs e)

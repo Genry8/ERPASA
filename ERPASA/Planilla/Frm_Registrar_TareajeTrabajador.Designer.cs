@@ -46,10 +46,10 @@ namespace ERPASA.Planilla
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.label_cantreg = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dateTimePicker_Tareaje_trabajador = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_Tareaje_trabajador = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox_empresa = new System.Windows.Forms.ComboBox();
+            this.comboBox_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textRuta = new Guna.UI2.WinForms.Guna2TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -423,12 +423,12 @@ namespace ERPASA.Planilla
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.Label label_cantreg;
         private System.Windows.Forms.Button btnBuscar;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_Tareaje_trabajador;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_Tareaje_trabajador;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_guardar;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.ComboBox comboBox_empresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_empresa;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2TextBox textRuta;
         private System.Windows.Forms.Label label16;

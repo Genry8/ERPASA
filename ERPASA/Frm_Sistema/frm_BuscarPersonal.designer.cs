@@ -39,7 +39,7 @@ namespace ERPASA.Frm_Sistema
             this.pictureBox_titulo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox_TiposPer = new System.Windows.Forms.ComboBox();
+            this.comboBox_TiposPer = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +50,7 @@ namespace ERPASA.Frm_Sistema
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textbox_PersonalDesc = new System.Windows.Forms.TextBox();
+            this.textbox_PersonalDesc = new Guna.UI2.WinForms.Guna2TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.panel_titulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_titulo)).BeginInit();
@@ -306,7 +306,6 @@ namespace ERPASA.Frm_Sistema
             // 
             // textbox_PersonalDesc
             // 
-            this.textbox_PersonalDesc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_PersonalDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_PersonalDesc.ForeColor = System.Drawing.Color.Black;
             this.textbox_PersonalDesc.Location = new System.Drawing.Point(399, 32);
@@ -366,10 +365,10 @@ namespace ERPASA.Frm_Sistema
         private System.Windows.Forms.Button button_cerrar;
         private System.Windows.Forms.PictureBox pictureBox_titulo;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textbox_PersonalDesc;
+        private Guna.UI2.WinForms.Guna2TextBox textbox_PersonalDesc;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.ComboBox comboBox_TiposPer;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_TiposPer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

@@ -13,6 +13,9 @@ namespace CapaEntidad
         public static string jefearea_paciente { get; set; }
         public static string hrentrada_paciente { get; set; }
         public static string hrsalida_paciente { get; set; }
+        public static string hrcampo_paciente { get; set; }
+        public static string hrtopico_paciente { get; set; }
+        public static string nivelatencion_paciente { get; set; }
         public static string patologia_paciente { get; set; }
         public static string diagnostico_paciente { get; set; }
         public static string tratamiento_paciente { get; set; }

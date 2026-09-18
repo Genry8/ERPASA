@@ -9,116 +9,6 @@ namespace CapaDatos
 {
     public class cd_rolesuser : cd_conexion
     {
-        //
-        //
-        // PAGINA BI
-        //
-        //
-        // METODO PARA LLAMAR SI EXISTE EL CODIGO DE USUARIO PB
-        public bool BuscExisteCodigoUsuarioROL(int idmenu, int idsubmenu)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_CODIGO_MENU_SUBMENU"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@IdMenu", SqlDbType.Int).Value = idmenu;
-                    comando.Parameters.AddWithValue("@IdSubmenu", SqlDbType.Int).Value = idsubmenu;
-                    comando.ExecuteNonQuery();
-                    SqlDataReader reader = comando.ExecuteReader();
-
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            //ce_rolesbi.CodExiste = reader.GetString(0);
-                        }
-                        conexion.Dispose();
-                        conexion.Close();
-
-                        return true;
-
-                    }
-                    else
-
-                        return false;
-                }
-            }
-        }
-
-        // METODO PARA LLAMAR SI EXISTE EL CODIGO DE USUARIO PB BuscExisteMenuAPP_Usuario
-        public bool BuscExisteMenuSubMenuRol(int idrol, int idsubmenu)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_CODIGO_MENU_SUBMENU_ROL"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@IdRol", SqlDbType.Int).Value = idrol;
-                    comando.Parameters.AddWithValue("@IdSubMenu", SqlDbType.Int).Value = idsubmenu;
-                    comando.ExecuteNonQuery();
-                    SqlDataReader reader = comando.ExecuteReader();
-
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            //ce_rolesbi.CodExiste = reader.GetString(0);
-                        }
-                        conexion.Dispose();
-                        conexion.Close();
-
-                        return true;
-
-                    }
-                    else
-
-                        return false;
-                }
-            }
-        }
-
-
-        // METODO PARA LLAMAR SI EXISTE EL CODIGO DE USUARIO PB 
-        public bool BuscExisteMenuAPP_Usuario(int idusuario, int idapp)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_CODIGO_MENU_USUARIO_APP"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@IdUser", SqlDbType.Int).Value = idusuario;
-                    comando.Parameters.AddWithValue("@IdAPP", SqlDbType.Int).Value = idapp;
-                    comando.ExecuteNonQuery();
-                    SqlDataReader reader = comando.ExecuteReader();
-
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            //ce_rolesbi.CodExiste = reader.GetString(0);
-                        }
-                        conexion.Dispose();
-                        conexion.Close();
-
-                        return true;
-
-                    }
-                    else
-
-                        return false;
-                }
-            }
-        }
-
-
-
         // METODO PARA LLAMAR EXISTE PERMISO ROL USUARIO
         public bool BuscExistePermisoRol(int idrol)
         {
@@ -229,70 +119,6 @@ namespace CapaDatos
 
 
         // METODO PARA GUARDAR USUARIO BI
-        public void GuardarMenuSubmenu(int idsubmenu, int idmenu, string nombre, string nombreformulario)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_GUARDAR_MENU_SUBMENU"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@idsubmenu", SqlDbType.Int).Value = idsubmenu;
-                    comando.Parameters.AddWithValue("@idmenu", SqlDbType.Int).Value = idmenu;
-                    comando.Parameters.AddWithValue("@nombre", SqlDbType.VarChar).Value = nombre;
-                    comando.Parameters.AddWithValue("@nombreformulario", SqlDbType.VarChar).Value = nombreformulario;
-
-                    comando.ExecuteNonQuery();
-
-                }
-            }
-        }
-
-
-
-        // METODO PARA GUARDAR USUARIO
-        public void GuardarMenuSubmenuRol(int idrol, int idsubmenu, Boolean activo)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_GUARDAR_MENU_SUBMENU_ROL"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@idrol", SqlDbType.Int).Value = idrol;
-                    comando.Parameters.AddWithValue("@idsubmenu", SqlDbType.Int).Value = idsubmenu;
-                    comando.Parameters.AddWithValue("@activo", SqlDbType.Bit).Value = activo;
-
-                    comando.ExecuteNonQuery();
-
-                }
-            }
-        }
-
-        // METODO PARA GUARDAR USUARIO BI GuardarMenuAPP_Usuario
-        public void GuardarMenuAPP_Usuario(int idapp, int iduser, Boolean activo)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_GUARDAR_MENU_USUARIO_APP"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@idapp", SqlDbType.Int).Value = idapp;
-                    comando.Parameters.AddWithValue("@iduser", SqlDbType.Int).Value = iduser;
-                    comando.Parameters.AddWithValue("@activo", SqlDbType.Bit).Value = activo;
-
-                    comando.ExecuteNonQuery();
-
-                }
-            }
-        }
-
-
-        // METODO PARA GUARDAR USUARIO BI
         public void GuardarUsuario(int cod, string nombre, string usuario, string clave, int idrol)
         {
             using (var conexion = leerconexion())
@@ -313,69 +139,6 @@ namespace CapaDatos
                 }
             }
         }
-
-        // METODO PARA ACTUALIZAR USUARIO BI
-        public void ActualizarMenuSubmenu(int idsubmenu, int idmenu, string nombre, string nombreformulario)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_ACTUALIZAR_MENU_SUBMENU"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@idsubmenu", SqlDbType.Int).Value = idsubmenu;
-                    comando.Parameters.AddWithValue("@idmenu", SqlDbType.Int).Value = idmenu;
-                    comando.Parameters.AddWithValue("@nombre", SqlDbType.VarChar).Value = nombre;
-                    comando.Parameters.AddWithValue("@nombreformulario", SqlDbType.VarChar).Value = nombreformulario;
-
-                    comando.ExecuteNonQuery();
-
-                }
-            }
-        }
-
-
-        // METODO PARA ACTUALIZAR Menu rol 
-        public void ActualizarMenuSubmenuRol(int idrol, int idsubmenu, Boolean activo)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_ACTUALIZAR_MENU_SUBMENU_ROL"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@idrol", SqlDbType.Int).Value = idrol;
-                    comando.Parameters.AddWithValue("@idsubmenu", SqlDbType.Int).Value = idsubmenu;
-                    comando.Parameters.AddWithValue("@activo", SqlDbType.Bit).Value = activo;
-
-                    comando.ExecuteNonQuery();
-
-                }
-            }
-        }
-
-        // METODO PARA ACTUALIZAR Menu rol ActualizarMenuAPP_Usuario
-        public void ActualizarMenuAPP_Usuario(int idapp, int idusuario, Boolean activo)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_ACTUALIZAR_MENU_USUARIO_APP"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@idapp", SqlDbType.Int).Value = idapp;
-                    comando.Parameters.AddWithValue("@iduser", SqlDbType.Int).Value = idusuario;
-                    comando.Parameters.AddWithValue("@activo", SqlDbType.Bit).Value = activo;
-
-                    comando.ExecuteNonQuery();
-
-                }
-            }
-        }
-
 
         // METODO PARA ACTUALIZAR USUARIO BI
         public void ActualizarUsuario(int cod, string nombre, string usuario, string clave)
@@ -514,82 +277,6 @@ namespace CapaDatos
         }
 
 
-        //
-        //
-        // PAGINA BI
-        //
-        //
-        // METODO PARA LLAMAR SI EXISTE EL CODIGO DE USUARIO PB
-        public bool BuscExisteCodigoROL(int cod)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_CODIGO_USUARIO_ROL"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@Cod", SqlDbType.Int).Value = cod;
-                    comando.ExecuteNonQuery();
-                    SqlDataReader reader = comando.ExecuteReader();
-
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            //ce_rolesuser.CodExiste = reader.GetInt32(0);
-                        }
-                        conexion.Dispose();
-                        conexion.Close();
-
-                        return true;
-
-                    }
-                    else
-
-                        return false;
-                }
-            }
-        }
-
-        // METODO PARA GUARDAR USUARIO BI
-        public void GuardarROL(int codigo, string nombre)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_GUARDAR_ROL"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@Cod", SqlDbType.Int).Value = codigo;
-                    comando.Parameters.AddWithValue("@Des", SqlDbType.VarChar).Value = nombre;
-
-                    comando.ExecuteNonQuery();
-
-                }
-            }
-        }
-
-        // METODO PARA ACTUALIZAR USUARIO BI
-        public void ActualizarROL(int codigo, string nombre)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_ACTUALIZAR_ROL"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@Cod", SqlDbType.Int).Value = codigo;
-                    comando.Parameters.AddWithValue("@Des", SqlDbType.VarChar).Value = nombre;
-
-                    comando.ExecuteNonQuery();
-
-                }
-            }
-        }
-
         // MOSTRAR LISTA DE USUARIOSBI
         public DataTable ListaERP_MENU()
         {
@@ -649,77 +336,6 @@ namespace CapaDatos
         }
 
 
-        //
-        //
-        // GRUPO BI
-        //
-        //
-        // METODO PARA LLAMAR SI EXISTE EL CODIGO DE USUARIO PB
-        public bool BuscExisteMenu(int cod)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_CODIGO_MENU"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@Cod", SqlDbType.Int).Value = cod;
-                    comando.ExecuteNonQuery();
-                    SqlDataReader reader = comando.ExecuteReader();
-
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            //ce_rolesuser.CodExiste = reader.GetInt32(0);
-                            //ce_rolesuser.CodExisteOpc = reader.GetString(1);
-                        }
-                        conexion.Dispose();
-                        conexion.Close();
-
-                        return true;
-
-                    }
-                    else
-
-                        return false;
-                }
-            }
-        }
-        public bool BuscExisteMenuAPP(int cod)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_CODIGO_MENU_APP"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@Cod", SqlDbType.Int).Value = cod;
-                    comando.ExecuteNonQuery();
-                    SqlDataReader reader = comando.ExecuteReader();
-
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            //ce_rolesuser.CodExiste = reader.GetInt32(0);
-                            //ce_rolesuser.CodExisteOpc = reader.GetString(1);
-                        }
-                        conexion.Dispose();
-                        conexion.Close();
-
-                        return true;
-
-                    }
-                    else
-
-                        return false;
-                }
-            }
-        }
-
         // METODO PARA LLAMAR SI EXISTE EL CODIGO DE USUARIO PB
         public bool BuscExisteCodigoOpcionMasUnoROL()
         {
@@ -755,94 +371,6 @@ namespace CapaDatos
 
 
 
-        // METODO PARA GUARDAR USUARIO BI
-        public void GuardarMenu(int codigo, string des, string icono,
-            int idapp, string app)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_GUARDAR_MENU"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@Cod", SqlDbType.Int).Value = codigo;
-                    comando.Parameters.AddWithValue("@Des", SqlDbType.VarChar).Value = des;
-                    comando.Parameters.AddWithValue("@Icono", SqlDbType.Int).Value = icono;
-                    comando.Parameters.AddWithValue("@IdApp", SqlDbType.Int).Value = idapp;
-                    comando.Parameters.AddWithValue("@App", SqlDbType.VarChar).Value = app;
-
-                    comando.ExecuteNonQuery();
-
-                }
-            }
-        }
-
-
-        // METODO PARA GUARDAR USUARIO BI
-        public void GuardarMenuAPP(int codigo, string des, string icono)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_GUARDAR_MENU_APP"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@Cod", SqlDbType.Int).Value = codigo;
-                    comando.Parameters.AddWithValue("@Des", SqlDbType.VarChar).Value = des;
-                    comando.Parameters.AddWithValue("@Icono", SqlDbType.Int).Value = icono;
-
-                    comando.ExecuteNonQuery();
-
-                }
-            }
-        }
-
-
-        // METODO PARA ACTUALIZAR USUARIO BI
-        public void ActualizarMenu(int codigo, string des, string icono,
-            int idapp, string app)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_ACTUALIZAR_MENU"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@Cod", SqlDbType.Int).Value = codigo;
-                    comando.Parameters.AddWithValue("@Des", SqlDbType.VarChar).Value = des;
-                    comando.Parameters.AddWithValue("@Icono", SqlDbType.VarChar).Value = icono;
-                    comando.Parameters.AddWithValue("@IdApp", SqlDbType.Int).Value = idapp;
-                    comando.Parameters.AddWithValue("@App", SqlDbType.VarChar).Value = app;
-
-                    comando.ExecuteNonQuery();
-
-                }
-            }
-        }
-
-
-        // METODO PARA ACTUALIZAR MENU APP
-        public void ActualizarMenuAPP(int codigo, string des, string icono)
-        {
-            using (var conexion = leerconexion())
-            {
-                using (var comando = new SqlCommand("SP_ACTUALIZAR_MENU_APP"))
-                {
-                    comando.Connection = conexion;
-                    comando.CommandType = CommandType.StoredProcedure;
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@Cod", SqlDbType.Int).Value = codigo;
-                    comando.Parameters.AddWithValue("@Des", SqlDbType.VarChar).Value = des;
-                    comando.Parameters.AddWithValue("@Icono", SqlDbType.VarChar).Value = icono;
-
-                    comando.ExecuteNonQuery();
-
-                }
-            }
-        }
         // MOSTRAR LISTA DE USUARIOSBI
         public DataTable ListaModuloOPCROL()
         {
@@ -1300,8 +828,189 @@ namespace CapaDatos
             }
         }
 
+        //
+        //
+        // CARGAS MASIVAS DE ROLES, MENUS Y PERMISOS
+        //
+        //
+        // Todas siguen el mismo esquema: SqlBulkCopy a una tabla temporal de la
+        // sesion y un solo MERGE en el SP. Reemplazan al ciclo que hacia una
+        // consulta de existencia y un INSERT/UPDATE por cada fila de la grilla.
+
+        // ERP_Rol
+        public void GuardarActualizarROLMasivo(DataTable roles)
+        {
+            CargaMasiva(roles, "#Rol", @"CREATE TABLE #Rol(
+                        IdRol  int,
+                        Nombre varchar(80))", "SP_GUARDAR_ACTUALIZAR_ROL_MASIVO");
+        }
 
 
+        // ERP_Menu
+        public void GuardarActualizarMenuMasivo(DataTable menus)
+        {
+            CargaMasiva(menus, "#Menu", @"CREATE TABLE #Menu(
+                        IdMenu int,
+                        Nombre varchar(80),
+                        Icono  varchar(80),
+                        IdApp  int,
+                        App    varchar(80))", "SP_GUARDAR_ACTUALIZAR_MENU_MASIVO");
+        }
+
+
+        // ERP_SubMenu
+        public void GuardarActualizarMenuSubmenuMasivo(DataTable submenus)
+        {
+            CargaMasiva(submenus, "#SubMenu", @"CREATE TABLE #SubMenu(
+                        IdSubMenu        int,
+                        IdMenu           int,
+                        Nombre           varchar(150),
+                        NombreFormulario varchar(150))", "SP_GUARDAR_ACTUALIZAR_MENU_SUBMENU_MASIVO");
+        }
+
+
+        // ERP_Permiso (submenus habilitados por rol)
+        public void GuardarActualizarMenuSubmenuRolMasivo(DataTable permisos)
+        {
+            CargaMasiva(permisos, "#PermisoRol", @"CREATE TABLE #PermisoRol(
+                        IdRol     int,
+                        IdSubMenu int,
+                        Activo    bit)", "SP_GUARDAR_ACTUALIZAR_MENU_SUBMENU_ROL_MASIVO");
+        }
+
+
+        // ERP_Menu_APP
+        public void GuardarActualizarMenuAPPMasivo(DataTable apps)
+        {
+            CargaMasiva(apps, "#MenuApp", @"CREATE TABLE #MenuApp(
+                        Id_APP int,
+                        Nombre varchar(80),
+                        Icono  varchar(80))", "SP_GUARDAR_ACTUALIZAR_MENU_APP_MASIVO");
+        }
+
+
+        // ERP_Permiso_APP (apps habilitadas por usuario)
+        public void GuardarActualizarMenuAPP_UsuarioMasivo(DataTable permisos)
+        {
+            CargaMasiva(permisos, "#PermisoApp", @"CREATE TABLE #PermisoApp(
+                        Id_APP  int,
+                        Id_User int,
+                        Activo  bit)", "SP_GUARDAR_ACTUALIZAR_MENU_USUARIO_APP_MASIVO");
+        }
+
+
+        //
+        //
+        // APP OPCIONES (ERP_AppOpciones)
+        //
+        //
+        // METODO PARA GUARDAR O ACTUALIZAR LAS OPCIONES DE APP EN BLOQUE
+        // Se suben todas las filas con SqlBulkCopy a una tabla temporal de la
+        // sesion y el SP resuelve las altas y actualizaciones en un solo MERGE.
+        public void GuardarActualizarAppOpcionesMasivo(DataTable opciones)
+        {
+            CargaMasiva(opciones, "#AppOpciones", @"CREATE TABLE #AppOpciones(
+                        IdAppOpc   int,
+                        IdApp      int,
+                        Nombre     varchar(180),
+                        Comentario varchar(500),
+                        Obs        varchar(1000),
+                        Estado     varchar(1),
+                        EstadoP    varchar(80),
+                        FecCre     datetime2(7),
+                        UseReg     int,
+                        Hostname   varchar(50),
+                        FecEdit    datetime2(7),
+                        UseEdit    int,
+                        UseElim    int)", "SP_GUARDAR_ACTUALIZAR_APP_OPCIONES_MASIVO");
+        }
+
+
+        // MOSTRAR LAS OPCIONES DE UNA APP
+        public DataTable ListaOpcionApp(int cod)
+        {
+            SqlDataReader resultado; //permite leer las filas
+            DataTable tabla = new DataTable();
+            SqlConnection conex = new SqlConnection();
+
+            try
+            {
+                conex = cd_conexion.CrearInstancia().leerconexion();
+                SqlCommand comando = new SqlCommand("SP_MOSTRAR_OPCION_APP", conex);
+                comando.CommandType = CommandType.StoredProcedure;
+                conex.Open();
+                comando.Parameters.AddWithValue("@Cod", SqlDbType.Int).Value = cod;
+                resultado = comando.ExecuteReader();
+                tabla.Load(resultado);
+                return tabla;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                if (conex.State == ConnectionState.Open) conex.Close(); // CERRAMOS LA CONEXION
+            }
+        }
+
+
+        //
+        //
+        // PERMISO APP MOVIL (ERP_PermisoAppMovil)
+        //
+        //
+        // METODO PARA GUARDAR O ACTUALIZAR LOS PERMISOS EN BLOQUE
+        // Mismo esquema que las opciones de app: SqlBulkCopy + un solo MERGE.
+        public void GuardarActualizarPermisoAppMovilMasivo(DataTable permisos)
+        {
+            CargaMasiva(permisos, "#PermisoAppMovil", @"CREATE TABLE #PermisoAppMovil(
+                        IdUser   int,
+                        IdAppOpc int,
+                        Activo   bit,
+                        Obs      varchar(1000),
+                        Estado   varchar(1),
+                        EstadoP  varchar(80),
+                        FecCre   datetime2(7),
+                        UseReg   int,
+                        Hostname varchar(50),
+                        FecEdit  datetime2(7),
+                        UseEdit  int,
+                        UseElim  int)", "SP_GUARDAR_ACTUALIZAR_PERMISO_APP_MOVIL_MASIVO");
+        }
+
+
+        // MOSTRAR LAS OPCIONES DE APP CON EL ACCESO DE UN USUARIO
+        public DataTable ListaAppOpciones(int cod)
+        {
+            SqlDataReader resultado; //permite leer las filas
+            DataTable tabla = new DataTable();
+            SqlConnection conex = new SqlConnection();
+
+            try
+            {
+                conex = cd_conexion.CrearInstancia().leerconexion();
+                SqlCommand comando = new SqlCommand("SP_MOSTRAR_APP_OPCIONES_USUARIO", conex);
+                comando.CommandType = CommandType.StoredProcedure;
+                conex.Open();
+                comando.Parameters.AddWithValue("@Cod", SqlDbType.Int).Value = cod;
+                resultado = comando.ExecuteReader();
+                tabla.Load(resultado);
+                return tabla;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                if (conex.State == ConnectionState.Open) conex.Close(); // CERRAMOS LA CONEXION
+            }
+        }
 
 
     }

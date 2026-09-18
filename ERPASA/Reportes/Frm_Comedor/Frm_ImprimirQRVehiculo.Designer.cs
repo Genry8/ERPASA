@@ -50,7 +50,7 @@ namespace ERPASA.Reportes.Frm_Comedor
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.comboBox_transportista = new System.Windows.Forms.ComboBox();
+            this.comboBox_transportista = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Imprimir = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -331,7 +331,7 @@ namespace ERPASA.Reportes.Frm_Comedor
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         public System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label45;
-        public System.Windows.Forms.ComboBox comboBox_transportista;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_transportista;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton_imprimir;

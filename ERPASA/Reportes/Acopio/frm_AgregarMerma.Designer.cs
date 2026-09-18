@@ -34,21 +34,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_AgregarMerma));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker_FechaPorceso = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_FechaPorceso = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.comboBox_detalle_sede = new System.Windows.Forms.ComboBox();
-            this.comboBox_detalle_empresa = new System.Windows.Forms.ComboBox();
-            this.comboBox_Cultivo = new System.Windows.Forms.ComboBox();
+            this.comboBox_detalle_sede = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_detalle_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_Cultivo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox_Campana = new System.Windows.Forms.ComboBox();
-            this.textBox_Obs = new System.Windows.Forms.TextBox();
+            this.comboBox_Campana = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.textBox_Obs = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_estado = new System.Windows.Forms.Label();
-            this.comboBox_TipoMerma = new System.Windows.Forms.ComboBox();
+            this.comboBox_TipoMerma = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Correo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker_Fecha = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_Fecha = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
@@ -463,22 +463,22 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox_Obs;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_Obs;
         private System.Windows.Forms.Label label_estado;
-        private System.Windows.Forms.ComboBox comboBox_TipoMerma;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_TipoMerma;
         private System.Windows.Forms.Label Correo;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_Fecha;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_Fecha;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.ComboBox comboBox_Campana;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Campana;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox_Cultivo;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Cultivo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label45;
-        public System.Windows.Forms.ComboBox comboBox_detalle_sede;
-        public System.Windows.Forms.ComboBox comboBox_detalle_empresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_sede;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_empresa;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_imprimir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
@@ -491,6 +491,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_FechaPorceso;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_FechaPorceso;
     }
 }

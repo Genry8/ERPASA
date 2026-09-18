@@ -44,7 +44,7 @@ namespace ERPASA.Reportes
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textbox_usuariodes = new System.Windows.Forms.TextBox();
+            this.textbox_usuariodes = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel_titulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_titulo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -212,7 +212,6 @@ namespace ERPASA.Reportes
             // 
             // textbox_usuariodes
             // 
-            this.textbox_usuariodes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_usuariodes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_usuariodes.ForeColor = System.Drawing.Color.Black;
             this.textbox_usuariodes.Location = new System.Drawing.Point(119, 22);
@@ -255,7 +254,7 @@ namespace ERPASA.Reportes
         private System.Windows.Forms.Button button_cerrar;
         private System.Windows.Forms.PictureBox pictureBox_titulo;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textbox_usuariodes;
+        private Guna.UI2.WinForms.Guna2TextBox textbox_usuariodes;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

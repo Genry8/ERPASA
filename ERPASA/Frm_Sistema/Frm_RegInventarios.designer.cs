@@ -42,11 +42,11 @@ namespace ERPASA.Frm_Sistema
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_Tipo = new System.Windows.Forms.ComboBox();
+            this.comboBox_Tipo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label_sexo = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox_Sede = new System.Windows.Forms.ComboBox();
-            this.comboBox_Empresa = new System.Windows.Forms.ComboBox();
+            this.comboBox_Sede = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_Empresa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_nuevo = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel_nuevo = new System.Windows.Forms.ToolStripLabel();
@@ -76,9 +76,9 @@ namespace ERPASA.Frm_Sistema
             this.toolStripLabel_limpiar = new System.Windows.Forms.ToolStripLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox_Area = new System.Windows.Forms.ComboBox();
+            this.comboBox_Area = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label_tipodocidentidad = new System.Windows.Forms.Label();
-            this.comboBox_Gerencia = new System.Windows.Forms.ComboBox();
+            this.comboBox_Gerencia = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label_detalleventa = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -726,7 +726,7 @@ namespace ERPASA.Frm_Sistema
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label_sexo;
-        private System.Windows.Forms.ComboBox comboBox_Sede;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Sede;
         private System.Windows.Forms.Label label_detalleventa;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -749,10 +749,10 @@ namespace ERPASA.Frm_Sistema
         private System.Windows.Forms.ToolStripButton toolStripButton_limpiar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_limpiar;
         private System.Windows.Forms.Label label_tipodocidentidad;
-        private System.Windows.Forms.ComboBox comboBox_Gerencia;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Gerencia;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox_Empresa;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Empresa;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
         private System.Windows.Forms.ToolStripButton toolStripButton_imprimir;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_imprimir;
@@ -762,13 +762,13 @@ namespace ERPASA.Frm_Sistema
         private System.Windows.Forms.ToolStripLabel toolStripLabel_Excel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox_Area;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Area;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox_Tipo;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Tipo;
     }
 }

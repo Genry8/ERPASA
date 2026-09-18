@@ -23,6 +23,8 @@ namespace ERPASA.Frm_Contabilidad
         public frm_BuscarApp()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void guna2TextBoxSearch_TextChanged(object sender, EventArgs e)

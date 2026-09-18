@@ -28,6 +28,8 @@ namespace ERPASA.Frm_DestajoUva
         public Frm_RegistrarHomologacionPresent()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_RegistrarPesoPresentacionDest_Load(object sender, EventArgs e)

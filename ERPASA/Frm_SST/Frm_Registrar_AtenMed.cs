@@ -18,6 +18,8 @@ namespace ERPASA.Frm_SST
         public Frm_Registrar_AtenMed()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_Registrar_AtenMed_Load(object sender, EventArgs e)
@@ -485,6 +487,9 @@ namespace ERPASA.Frm_SST
                 textBox_JefeArea.Text = ce_topico.jefearea_paciente;
                 textBox_HoraEntrada.Text = ce_topico.hrentrada_paciente;
                 textBox_HoraSalida.Text = ce_topico.hrsalida_paciente;
+                textBox_HoraCampo.Text = ce_topico.hrcampo_paciente;
+                textBox_HoraTopico.Text = ce_topico.hrtopico_paciente;
+                comboBox_NivelAtencion.Text = ce_topico.nivelatencion_paciente;
                 textBox_Patologia.Text = ce_topico.patologia_paciente;
                 textBox_Diagnóstico.Text = ce_topico.diagnostico_paciente;
                 textBox_Sintomas.Text = ce_topico.tratamiento_paciente;

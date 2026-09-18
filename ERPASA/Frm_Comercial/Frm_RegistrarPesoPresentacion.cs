@@ -28,6 +28,8 @@ namespace ERPASA.Frm_Comercial
         public Frm_RegistrarPesoPresentacion()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_RegistrarPesoPresentacion_Load(object sender, EventArgs e)

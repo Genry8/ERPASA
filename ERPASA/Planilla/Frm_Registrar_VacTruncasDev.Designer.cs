@@ -46,9 +46,9 @@ namespace ERPASA.Planilla
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.label_cantreg = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.comboBox_Mes = new System.Windows.Forms.ComboBox();
+            this.comboBox_Mes = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox_Año = new System.Windows.Forms.ComboBox();
+            this.comboBox_Año = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textRuta = new Guna.UI2.WinForms.Guna2TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@ namespace ERPASA.Planilla
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox_empresa = new System.Windows.Forms.ComboBox();
+            this.comboBox_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -466,11 +466,11 @@ namespace ERPASA.Planilla
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.Label label_cantreg;
         private System.Windows.Forms.Button btnBuscar;
-        public System.Windows.Forms.ComboBox comboBox_Mes;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Mes;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.ToolStripButton toolStripButton_guardar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_guardar;
-        public System.Windows.Forms.ComboBox comboBox_Año;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Año;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox textRuta;
         private System.Windows.Forms.Label label16;
@@ -479,7 +479,7 @@ namespace ERPASA.Planilla
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        public System.Windows.Forms.ComboBox comboBox_empresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_empresa;
         private System.Windows.Forms.Label label7;
     }
 }

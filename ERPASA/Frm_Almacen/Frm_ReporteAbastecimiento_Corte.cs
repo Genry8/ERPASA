@@ -22,6 +22,8 @@ namespace ERPASA.Frm_Almacen
         public Frm_ReporteAbastecimiento_Corte()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
             //BuscarUsuarioPedateado();
             //dataGridView1.ClearSelection();
         }

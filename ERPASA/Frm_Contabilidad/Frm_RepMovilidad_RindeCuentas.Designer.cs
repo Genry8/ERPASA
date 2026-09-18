@@ -43,17 +43,17 @@ namespace ERPASA.Frm_Contabilidad
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_estado = new System.Windows.Forms.ComboBox();
+            this.comboBox_estado = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox_area = new System.Windows.Forms.ComboBox();
+            this.comboBox_area = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2TextBoxSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.comboBox_Gerencia = new System.Windows.Forms.ComboBox();
+            this.comboBox_Gerencia = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.comboBox_empresa = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker_FecFin = new System.Windows.Forms.DateTimePicker();
+            this.comboBox_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dateTimePicker_FecFin = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker_FecInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_FecInicio = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -433,7 +433,7 @@ namespace ERPASA.Frm_Contabilidad
 
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_FecInicio;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_FecInicio;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStripButton toolStripButton_buscar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_buscar;
@@ -441,12 +441,12 @@ namespace ERPASA.Frm_Contabilidad
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripButton toolStripButton_excel;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        public System.Windows.Forms.DateTimePicker dateTimePicker_FecFin;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker_FecFin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label45;
-        public System.Windows.Forms.ComboBox comboBox_empresa;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_empresa;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
-        private System.Windows.Forms.ComboBox comboBox_Gerencia;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_Gerencia;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxSearch;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView2;
@@ -454,8 +454,8 @@ namespace ERPASA.Frm_Contabilidad
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.ComboBox comboBox_area;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_area;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.ComboBox comboBox_estado;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_estado;
     }
 }

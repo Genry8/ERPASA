@@ -29,6 +29,8 @@ namespace ERPASA.Ser_personal
         public Frm_CargarAsistenciaPersonal()
         {
             InitializeComponent();
+            // Identidad visual del ERP (barra de título, acciones, campos y grilla).
+            this.Load += delegate { Estilos.EstilizadorErp.Aplicar(this); };
         }
 
         private void Frm_CargarAsistenciaPersonal_Load(object sender, EventArgs e)
