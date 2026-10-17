@@ -129,6 +129,11 @@ namespace CapaDatos
         public const string baseUrlIndustrial = "http://101.44.10.88:8098";
 
         /// <summary>
+        /// Base URL del API REST de NISIRA (ver Manual del Programador - NISIRA API).
+        /// </summary>
+        public const string baseUrlNisira = "http://172.22.1.89:8081";
+
+        /// <summary>
         /// Tiempo máximo de espera para peticiones.
         /// </summary>
         public static readonly TimeSpan timeout = TimeSpan.FromMinutes(20);

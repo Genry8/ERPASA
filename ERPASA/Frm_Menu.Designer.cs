@@ -263,6 +263,7 @@ namespace ERPASA
             this.button_tablas_maestras_usuario_app = new System.Windows.Forms.ToolStripMenuItem();
             this.button_tablas_maestras_roles = new System.Windows.Forms.ToolStripMenuItem();
             this.TabMaest_RolesUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.TabMaest_Roles_AppMovil = new System.Windows.Forms.ToolStripMenuItem();
             this.TabMaest_PowerBI = new System.Windows.Forms.ToolStripMenuItem();
             this.TabMaest_VersionAPP = new System.Windows.Forms.ToolStripMenuItem();
             this.button_tablas_maestras_empresa = new System.Windows.Forms.ToolStripMenuItem();
@@ -300,7 +301,7 @@ namespace ERPASA
             this.label_Hora_Centro = new System.Windows.Forms.Label();
             this.label_Fecha_Centro = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.TabMaest_Roles_AppMovil = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_comercial_contabilidad_EnvioGastoApiNisira = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_titulo2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -1393,7 +1394,8 @@ namespace ERPASA
             this.button_comercial_contabilidad_RepDetalleRindGasto,
             this.button_comercial_contabilidad_InfRindeGasto,
             this.button_comercial_contabilidad_RepPlanillaMovilidad,
-            this.button_comercial_contabilidad_RepResumenNisira});
+            this.button_comercial_contabilidad_RepResumenNisira,
+            this.button_comercial_contabilidad_EnvioGastoApiNisira});
             this.button_comercial_contabilidad.Name = "button_comercial_contabilidad";
             this.button_comercial_contabilidad.Size = new System.Drawing.Size(287, 34);
             this.button_comercial_contabilidad.Tag = "123";
@@ -1402,77 +1404,77 @@ namespace ERPASA
             // button_comercial_contabilidad_campaña
             // 
             this.button_comercial_contabilidad_campaña.Name = "button_comercial_contabilidad_campaña";
-            this.button_comercial_contabilidad_campaña.Size = new System.Drawing.Size(459, 34);
+            this.button_comercial_contabilidad_campaña.Size = new System.Drawing.Size(472, 34);
             this.button_comercial_contabilidad_campaña.Text = "CARGA CAMPAÑA";
             this.button_comercial_contabilidad_campaña.Click += new System.EventHandler(this.button_comercial_contabilidad_campaña_Click);
             // 
             // button_comercial_contabilidad_PartSinClasi
             // 
             this.button_comercial_contabilidad_PartSinClasi.Name = "button_comercial_contabilidad_PartSinClasi";
-            this.button_comercial_contabilidad_PartSinClasi.Size = new System.Drawing.Size(459, 34);
+            this.button_comercial_contabilidad_PartSinClasi.Size = new System.Drawing.Size(472, 34);
             this.button_comercial_contabilidad_PartSinClasi.Text = "CLASIFICACION DE PARTIDAS";
             this.button_comercial_contabilidad_PartSinClasi.Click += new System.EventHandler(this.button_comercial_contabilidad_PartSinClasi_Click);
             // 
             // button_comercial_contabilidad_ClasifCeco
             // 
             this.button_comercial_contabilidad_ClasifCeco.Name = "button_comercial_contabilidad_ClasifCeco";
-            this.button_comercial_contabilidad_ClasifCeco.Size = new System.Drawing.Size(459, 34);
+            this.button_comercial_contabilidad_ClasifCeco.Size = new System.Drawing.Size(472, 34);
             this.button_comercial_contabilidad_ClasifCeco.Text = "CLASIFICACION CECO";
             this.button_comercial_contabilidad_ClasifCeco.Click += new System.EventHandler(this.button_comercial_contabilidad_ClasifCeco_Click);
             // 
             // button_comercial_contabilidad_TablasMaestras
             // 
             this.button_comercial_contabilidad_TablasMaestras.Name = "button_comercial_contabilidad_TablasMaestras";
-            this.button_comercial_contabilidad_TablasMaestras.Size = new System.Drawing.Size(459, 34);
+            this.button_comercial_contabilidad_TablasMaestras.Size = new System.Drawing.Size(472, 34);
             this.button_comercial_contabilidad_TablasMaestras.Text = "TABLAS MAESTRAS";
             this.button_comercial_contabilidad_TablasMaestras.Click += new System.EventHandler(this.button_comercial_contabilidad_TablasMaestras_Click);
             // 
             // button_comercial_contabilidad_ControlCumplimiento
             // 
             this.button_comercial_contabilidad_ControlCumplimiento.Name = "button_comercial_contabilidad_ControlCumplimiento";
-            this.button_comercial_contabilidad_ControlCumplimiento.Size = new System.Drawing.Size(459, 34);
+            this.button_comercial_contabilidad_ControlCumplimiento.Size = new System.Drawing.Size(472, 34);
             this.button_comercial_contabilidad_ControlCumplimiento.Text = "CARGAR CONTROL CUMPLIMIENTO";
             this.button_comercial_contabilidad_ControlCumplimiento.Click += new System.EventHandler(this.button_comercial_contabilidad_ControlCumplimiento_Click);
             // 
             // button_comercial_contabilidad_KilosProyectado
             // 
             this.button_comercial_contabilidad_KilosProyectado.Name = "button_comercial_contabilidad_KilosProyectado";
-            this.button_comercial_contabilidad_KilosProyectado.Size = new System.Drawing.Size(459, 34);
+            this.button_comercial_contabilidad_KilosProyectado.Size = new System.Drawing.Size(472, 34);
             this.button_comercial_contabilidad_KilosProyectado.Text = "CARGAR KILOS PROYECTADO";
             this.button_comercial_contabilidad_KilosProyectado.Click += new System.EventHandler(this.button_comercial_contabilidad_KilosProyectado_Click);
             // 
             // button_comercial_contabilidad_TablasMaestrasRendicion
             // 
             this.button_comercial_contabilidad_TablasMaestrasRendicion.Name = "button_comercial_contabilidad_TablasMaestrasRendicion";
-            this.button_comercial_contabilidad_TablasMaestrasRendicion.Size = new System.Drawing.Size(459, 34);
+            this.button_comercial_contabilidad_TablasMaestrasRendicion.Size = new System.Drawing.Size(472, 34);
             this.button_comercial_contabilidad_TablasMaestrasRendicion.Text = "TABLAS MAESTRAS RENDICION";
             this.button_comercial_contabilidad_TablasMaestrasRendicion.Click += new System.EventHandler(this.button_comercial_contabilidad_TablasMaestrasRendicion_Click);
             // 
             // button_comercial_contabilidad_RepDetalleRindGasto
             // 
             this.button_comercial_contabilidad_RepDetalleRindGasto.Name = "button_comercial_contabilidad_RepDetalleRindGasto";
-            this.button_comercial_contabilidad_RepDetalleRindGasto.Size = new System.Drawing.Size(459, 34);
+            this.button_comercial_contabilidad_RepDetalleRindGasto.Size = new System.Drawing.Size(472, 34);
             this.button_comercial_contabilidad_RepDetalleRindGasto.Text = "REPORTE DETALLE RINDE GASTO";
             this.button_comercial_contabilidad_RepDetalleRindGasto.Click += new System.EventHandler(this.button_comercial_contabilidad_RepDetalleRindGasto_Click);
             // 
             // button_comercial_contabilidad_InfRindeGasto
             // 
             this.button_comercial_contabilidad_InfRindeGasto.Name = "button_comercial_contabilidad_InfRindeGasto";
-            this.button_comercial_contabilidad_InfRindeGasto.Size = new System.Drawing.Size(459, 34);
+            this.button_comercial_contabilidad_InfRindeGasto.Size = new System.Drawing.Size(472, 34);
             this.button_comercial_contabilidad_InfRindeGasto.Text = "INFORME RINDE GASTO";
             this.button_comercial_contabilidad_InfRindeGasto.Click += new System.EventHandler(this.button_comercial_contabilidad_InfRindeGasto_Click);
             // 
             // button_comercial_contabilidad_RepPlanillaMovilidad
             // 
             this.button_comercial_contabilidad_RepPlanillaMovilidad.Name = "button_comercial_contabilidad_RepPlanillaMovilidad";
-            this.button_comercial_contabilidad_RepPlanillaMovilidad.Size = new System.Drawing.Size(459, 34);
+            this.button_comercial_contabilidad_RepPlanillaMovilidad.Size = new System.Drawing.Size(472, 34);
             this.button_comercial_contabilidad_RepPlanillaMovilidad.Text = "INFORME PLANILLA MOVILIDAD";
             this.button_comercial_contabilidad_RepPlanillaMovilidad.Click += new System.EventHandler(this.button_comercial_contabilidad_RepPlanillaMovilidad_Click);
             // 
             // button_comercial_contabilidad_RepResumenNisira
             // 
             this.button_comercial_contabilidad_RepResumenNisira.Name = "button_comercial_contabilidad_RepResumenNisira";
-            this.button_comercial_contabilidad_RepResumenNisira.Size = new System.Drawing.Size(459, 34);
+            this.button_comercial_contabilidad_RepResumenNisira.Size = new System.Drawing.Size(472, 34);
             this.button_comercial_contabilidad_RepResumenNisira.Text = "REPORTE PARA NISIRA";
             this.button_comercial_contabilidad_RepResumenNisira.Click += new System.EventHandler(this.button_comercial_contabilidad_RepResumenRindGasto_Click);
             // 
@@ -2284,6 +2286,13 @@ namespace ERPASA
             this.TabMaest_RolesUsuario.Text = "USUARIO";
             this.TabMaest_RolesUsuario.Click += new System.EventHandler(this.TabMaest_RolesUsuario_Click);
             // 
+            // TabMaest_Roles_AppMovil
+            // 
+            this.TabMaest_Roles_AppMovil.Name = "TabMaest_Roles_AppMovil";
+            this.TabMaest_Roles_AppMovil.Size = new System.Drawing.Size(317, 34);
+            this.TabMaest_Roles_AppMovil.Text = "USUARIO APP MOVIL";
+            this.TabMaest_Roles_AppMovil.Click += new System.EventHandler(this.TabMaest_Roles_AppMovil_Click);
+            // 
             // TabMaest_PowerBI
             // 
             this.TabMaest_PowerBI.Name = "TabMaest_PowerBI";
@@ -2632,12 +2641,12 @@ namespace ERPASA
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // TabMaest_Roles_AppMovil
+            // button_comercial_contabilidad_EnvioGastoApiNisira
             // 
-            this.TabMaest_Roles_AppMovil.Name = "TabMaest_Roles_AppMovil";
-            this.TabMaest_Roles_AppMovil.Size = new System.Drawing.Size(317, 34);
-            this.TabMaest_Roles_AppMovil.Text = "USUARIO APP MOVIL";
-            this.TabMaest_Roles_AppMovil.Click += new System.EventHandler(this.TabMaest_Roles_AppMovil_Click);
+            this.button_comercial_contabilidad_EnvioGastoApiNisira.Name = "button_comercial_contabilidad_EnvioGastoApiNisira";
+            this.button_comercial_contabilidad_EnvioGastoApiNisira.Size = new System.Drawing.Size(472, 34);
+            this.button_comercial_contabilidad_EnvioGastoApiNisira.Text = "ENVIO DE GASTOS POR API A NISIRA";
+            this.button_comercial_contabilidad_EnvioGastoApiNisira.Click += new System.EventHandler(this.button_comercial_contabilidad_EnvioGastoApiNisira_Click);
             // 
             // Frm_Menu
             // 
@@ -2942,5 +2951,6 @@ namespace ERPASA
         private System.Windows.Forms.ToolStripMenuItem button_packing_rrhh_progrSemanalPersonal;
         private System.Windows.Forms.ToolStripMenuItem button_packing_rrhh_progrAnualPersonal;
         private System.Windows.Forms.ToolStripMenuItem TabMaest_Roles_AppMovil;
+        private System.Windows.Forms.ToolStripMenuItem button_comercial_contabilidad_EnvioGastoApiNisira;
     }
 }

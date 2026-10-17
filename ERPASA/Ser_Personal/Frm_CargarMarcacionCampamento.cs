@@ -415,23 +415,30 @@ namespace ERPASA.Ser_personal
                     SperMarcacionCampamento entidad = new SperMarcacionCampamento
                     {
                         // Asumiendo que las celdas en el DataGridView están en el mismo orden que las propiedades de la clase
-                        FechaMarcacion = row.Cells[0].Value != null ? Convert.ToDateTime(row.Cells[0].Value) : default(DateTime), // Asignación de la fecha
-                        HoraMarca = row.Cells[1].Value != null ? TimeSpan.Parse(row.Cells[1].Value.ToString()) : default(TimeSpan), // Asignación de la hora
+                        FechaMarcacion = row.Cells[0].Value != null ? Convert.ToDateTime(row.Cells[0].Value).Date : default(DateTime), // Asignación de la fecha
+                        // La celda de hora llega como 31/12/1899 hh:mm:ss, porque
+                        // Excel guarda la hora como fracción de día. cu_valores.Hora
+                        // se queda solo con la parte horaria.
+                        HoraMarca = cu_valores.Hora(row.Cells[1].Value), // Asignación de la hora
                         TipoMarcacion = row.Cells[2].Value?.ToString(),  // "TipoMarcacion"
-                        Marcador = row.Cells[3].Value?.ToString(),      // "Marcador"
-                        Empresa = row.Cells[4].Value?.ToString(),       // "Empresa"
-                        Sede = row.Cells[5].Value?.ToString(),          // "Sede"
-                        CodCampamento = row.Cells[6].Value?.ToString(), // "CodCampamento"
-                        Campamento = row.Cells[7].Value?.ToString(),    // "Campamento"
-                        CodCarpa = row.Cells[8].Value?.ToString(),      // "CodCarpa"
-                        Carpa = row.Cells[9].Value?.ToString(),         // "Carpa"
-                        CodEspacio = row.Cells[10].Value?.ToString(),   // "CodEspacio"
-                        Espacio = row.Cells[11].Value?.ToString(),      // "Espacio"
-                        DNI = row.Cells[12].Value?.ToString(),          // "DNI"
-                        NombreCompleto = row.Cells[13].Value?.ToString(), // "NombreCompleto"
-                        EmpresaTrabajador = row.Cells[14].Value?.ToString(), // "EmpresaTrabajador"
-                        Gerencia = row.Cells[15].Value?.ToString(),     // "Gerencia"
-                        Area = row.Cells[16].Value?.ToString(),         // "Area"
+                        // Resultado y Motivo son columnas nuevas del reporte y
+                        // entran en la posicion 4 y 5: todo lo de abajo corrio.
+                        Resultado = row.Cells[3].Value?.ToString(),     // "Resultado"
+                        Motivo = row.Cells[4].Value?.ToString(),        // "Motivo"
+                        Marcador = row.Cells[5].Value?.ToString(),      // "Marcador"
+                        Empresa = row.Cells[6].Value?.ToString(),       // "Empresa"
+                        Sede = row.Cells[7].Value?.ToString(),          // "Sede"
+                        CodCampamento = row.Cells[8].Value?.ToString(), // "CodCampamento"
+                        Campamento = row.Cells[9].Value?.ToString(),    // "Campamento"
+                        CodCarpa = row.Cells[10].Value?.ToString(),     // "CodCarpa"
+                        Carpa = row.Cells[11].Value?.ToString(),        // "Carpa"
+                        CodEspacio = row.Cells[12].Value?.ToString(),   // "CodEspacio"
+                        Espacio = row.Cells[13].Value?.ToString(),      // "Espacio"
+                        DNI = row.Cells[14].Value?.ToString(),          // "DNI"
+                        NombreCompleto = row.Cells[15].Value?.ToString(), // "NombreCompleto"
+                        EmpresaTrabajador = row.Cells[16].Value?.ToString(), // "EmpresaTrabajador"
+                        Gerencia = row.Cells[17].Value?.ToString(),     // "Gerencia"
+                        Area = row.Cells[18].Value?.ToString(),         // "Area"
                         Ano = int.TryParse(añoText, out int _ano) ? _ano : 0,
                         Semana = int.TryParse(semText, out int _sem) ? _sem : 0,
                         Hoja = hojaText,        // "Hoja" (puede ser NULL)

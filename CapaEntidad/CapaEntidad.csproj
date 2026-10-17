@@ -70,6 +70,7 @@
     <Compile Include="ce_fotofotosheck.cs" />
     <Compile Include="ce_logistica.cs" />
     <Compile Include="ce_nisira.cs" />
+    <Compile Include="ce_nisira_api.cs" />
     <Compile Include="ce_planilla.cs" />
     <Compile Include="ce_regproducto.cs" />
     <Compile Include="ce_reportes.cs" />

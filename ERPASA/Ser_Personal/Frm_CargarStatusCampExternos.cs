@@ -431,13 +431,24 @@ namespace ERPASA.Ser_personal
                         EstadoEspacio = GetString(row, 11),
 
                         Situacion = GetString(row, 12),
-                        Dni = GetString(row, 13),
-                        NombreCompleto = GetString(row, 14),
-                        EmpresaTrabajador = GetString(row, 15),
-                        Gerencia = GetString(row, 16),
-                        Area = GetString(row, 17),
 
-                        FechaAsignacion = GetDate(row, 18),
+                        // Columnas nuevas del reporte: Programado y Fecha
+                        // Programada entran entre Situacion y Dni, asi que
+                        // todo lo que sigue corrio de posicion.
+                        Programado = GetString(row, 13),
+                        FechaProgramada = GetDate(row, 14),
+
+                        Dni = GetString(row, 15),
+                        NombreCompleto = GetString(row, 16),
+
+                        Vigencia = GetString(row, 17),
+                        Motivo = GetString(row, 18),
+
+                        EmpresaTrabajador = GetString(row, 19),
+                        Gerencia = GetString(row, 20),
+                        Area = GetString(row, 21),
+
+                        FechaAsignacion = GetDate(row, 22),
 
                         Ano = int.TryParse(añoText, out int _ano) ? _ano : (int?)null,
                         Semana = int.TryParse(semText, out int _sem) ? _sem : (int?)null,

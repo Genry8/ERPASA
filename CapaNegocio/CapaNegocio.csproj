@@ -56,6 +56,7 @@
     <Compile Include="cn_correo.cs" />
     <Compile Include="cn_almacen.cs" />
     <Compile Include="cn_apiservices.cs" />
+    <Compile Include="cn_apinisira.cs" />
     <Compile Include="cn_apisperu.cs" />
     <Compile Include="cn_comercial.cs" />
     <Compile Include="cn_compraproducto.cs" />

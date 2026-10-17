@@ -898,19 +898,7 @@ namespace ERPASA.Frm_Contabilidad
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                bool valor = false;
 
-                if (dataGridView2.Rows[e.RowIndex].Cells[0].Value != DBNull.Value &&
-                    dataGridView2.Rows[e.RowIndex].Cells[0].Value != null)
-                {
-                    valor = Convert.ToBoolean(
-                        dataGridView2.Rows[e.RowIndex].Cells[0].Value);
-                }
-
-                dataGridView2.Rows[e.RowIndex].Cells[0].Value = !valor;
-            }
         }
 
         private void dataGridView2_Paint(object sender, PaintEventArgs e)

@@ -369,6 +369,10 @@ namespace ERPASA.Reportes.Frm_sst.Cursos {
             
             private global::System.Data.DataColumn columnRegistrosDTG;
             
+            private global::System.Data.DataColumn columnFechaInicio;
+            
+            private global::System.Data.DataColumn columnFechaFin;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DT1_GeneralesDataTable() {
@@ -484,6 +488,22 @@ namespace ERPASA.Reportes.Frm_sst.Cursos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FechaInicioColumn {
+                get {
+                    return this.columnFechaInicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FechaFinColumn {
+                get {
+                    return this.columnFechaFin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -519,7 +539,7 @@ namespace ERPASA.Reportes.Frm_sst.Cursos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DT1_GeneralesRow AddDT1_GeneralesRow(string IdCurso, string Curso, string Descripcion, string Obs, string Estado, string Tema, string Contenido, string TemaIA, string ContenidoIA, string RegistrosDTG) {
+            public DT1_GeneralesRow AddDT1_GeneralesRow(string IdCurso, string Curso, string Descripcion, string Obs, string Estado, string Tema, string Contenido, string TemaIA, string ContenidoIA, string RegistrosDTG, string FechaInicio, string FechaFin) {
                 DT1_GeneralesRow rowDT1_GeneralesRow = ((DT1_GeneralesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IdCurso,
@@ -531,7 +551,9 @@ namespace ERPASA.Reportes.Frm_sst.Cursos {
                         Contenido,
                         TemaIA,
                         ContenidoIA,
-                        RegistrosDTG};
+                        RegistrosDTG,
+                        FechaInicio,
+                        FechaFin};
                 rowDT1_GeneralesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT1_GeneralesRow);
                 return rowDT1_GeneralesRow;
@@ -564,6 +586,8 @@ namespace ERPASA.Reportes.Frm_sst.Cursos {
                 this.columnTemaIA = base.Columns["TemaIA"];
                 this.columnContenidoIA = base.Columns["ContenidoIA"];
                 this.columnRegistrosDTG = base.Columns["RegistrosDTG"];
+                this.columnFechaInicio = base.Columns["FechaInicio"];
+                this.columnFechaFin = base.Columns["FechaFin"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -589,6 +613,10 @@ namespace ERPASA.Reportes.Frm_sst.Cursos {
                 base.Columns.Add(this.columnContenidoIA);
                 this.columnRegistrosDTG = new global::System.Data.DataColumn("RegistrosDTG", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRegistrosDTG);
+                this.columnFechaInicio = new global::System.Data.DataColumn("FechaInicio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaInicio);
+                this.columnFechaFin = new global::System.Data.DataColumn("FechaFin", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaFin);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1655,6 +1683,38 @@ namespace ERPASA.Reportes.Frm_sst.Cursos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string FechaInicio {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT1_Generales.FechaInicioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechaInicio\' de la tabla \'DT1_Generales\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT1_Generales.FechaInicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string FechaFin {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT1_Generales.FechaFinColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechaFin\' de la tabla \'DT1_Generales\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT1_Generales.FechaFinColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsIdCursoNull() {
                 return this.IsNull(this.tableDT1_Generales.IdCursoColumn);
             }
@@ -1771,6 +1831,30 @@ namespace ERPASA.Reportes.Frm_sst.Cursos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetRegistrosDTGNull() {
                 this[this.tableDT1_Generales.RegistrosDTGColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFechaInicioNull() {
+                return this.IsNull(this.tableDT1_Generales.FechaInicioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFechaInicioNull() {
+                this[this.tableDT1_Generales.FechaInicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFechaFinNull() {
+                return this.IsNull(this.tableDT1_Generales.FechaFinColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFechaFinNull() {
+                this[this.tableDT1_Generales.FechaFinColumn] = global::System.Convert.DBNull;
             }
         }
         

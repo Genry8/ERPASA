@@ -34,6 +34,8 @@ namespace ERPASA.Frm_Logistica
 
         private void Frm_ProgramarCursos_Load(object sender, EventArgs e)
         {
+            AgregarBotonLimpiarHuerfanos();
+
             //ALTO RIESGO
             //MAYUSCULA
             PonerOscuroComboBox();
@@ -458,6 +460,134 @@ namespace ERPASA.Frm_Logistica
             }
         }
 
+
+
+        // ----------------------------------------------------------------
+        // LIMPIEZA DE PDF HUERFANOS
+        // ----------------------------------------------------------------
+        // Cada vez que se reemplaza el documento de un curso se sube un archivo
+        // nuevo al servidor y el anterior queda sin que ningun registro lo
+        // apunte. Esto los junta y los borra.
+
+        private cn_apiservices apiServiceCursos = new cn_apiservices();
+
+        private void AgregarBotonLimpiarHuerfanos()
+        {
+            // Se agrega por codigo y antes de que corra el estilizador, para que
+            // quede con el mismo aspecto que el resto de la barra.
+            ToolStripButton boton = new ToolStripButton();
+            boton.Name = "toolStripButton_huerfanos";
+            boton.Text = "Limpiar PDF sin uso";
+            boton.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            boton.ToolTipText = "Borra del servidor los PDF de curso que ya no usa ningún registro";
+            boton.Click += async delegate { await LimpiarHuerfanos(); };
+
+            toolStrip2.Items.Add(boton);
+        }
+
+        private async Task LimpiarHuerfanos()
+        {
+            UseWaitCursor = true;
+            Cursor = Cursors.WaitCursor;
+
+            try
+            {
+                // 1) lo que hay hoy en la carpeta del servidor
+                var enServidor = await apiServiceCursos.ListarArchivosCursoAsync();
+
+                if (enServidor.Count == 0)
+                {
+                    MessageBox.Show(
+                        "No se pudo obtener la lista de archivos del servidor, " +
+                        "o la carpeta está vacía. No se borró nada.",
+                        "LIMPIAR PDF SIN USO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // 2) lo que esta en uso segun la base, sin importar el estado
+                DataTable rutas = cn_logistica.ListaRutasServerCursos();
+
+                var enUso = new System.Collections.Generic.HashSet<string>(
+                    StringComparer.OrdinalIgnoreCase);
+
+                foreach (DataRow fila in rutas.Rows)
+                {
+                    string ruta = Convert.ToString(fila["RutaServer"]).Trim();
+                    if (ruta == "") continue;
+
+                    // En la base puede estar la ruta completa o solo el nombre.
+                    enUso.Add(Path.GetFileName(ruta));
+                }
+
+                // 3) la diferencia
+                var huerfanos = enServidor
+                    .Where(n => !enUso.Contains(n))
+                    .OrderBy(n => n)
+                    .ToList();
+
+                if (huerfanos.Count == 0)
+                {
+                    MessageBox.Show(
+                        "No hay archivos sin uso. Los " + enServidor.Count +
+                        " PDF del servidor están referenciados por algún curso.",
+                        "LIMPIAR PDF SIN USO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // 4) confirmar mostrando que se va a borrar
+                string muestra = string.Join(Environment.NewLine,
+                    huerfanos.Take(15).Select(n => "   • " + n));
+
+                if (huerfanos.Count > 15)
+                    muestra += Environment.NewLine + "   ... y " + (huerfanos.Count - 15) + " más";
+
+                string aviso =
+                    "Se encontraron " + huerfanos.Count + " archivos que ningún curso usa, " +
+                    "de un total de " + enServidor.Count + " en el servidor:" +
+                    Environment.NewLine + Environment.NewLine + muestra +
+                    Environment.NewLine + Environment.NewLine +
+                    "Se borrarán del servidor y no se pueden recuperar. ¿Continuar?";
+
+                if (MessageBox.Show(aviso, "LIMPIAR PDF SIN USO",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+                    return;
+
+                // 5) borrar
+                int borrados = 0;
+                var fallidos = new System.Collections.Generic.List<string>();
+
+                foreach (string nombre in huerfanos)
+                {
+                    string error = await apiServiceCursos.EliminarArchivoCursoAsync(nombre);
+
+                    if (error == null) borrados++;
+                    else fallidos.Add(nombre + "  ->  " + error);
+                }
+
+                string resumen = "Archivos borrados: " + borrados;
+
+                if (fallidos.Count > 0)
+                {
+                    resumen += Environment.NewLine + Environment.NewLine +
+                        "No se pudieron borrar " + fallidos.Count + ":" + Environment.NewLine +
+                        string.Join(Environment.NewLine, fallidos.Take(10));
+                }
+
+                MessageBox.Show(resumen, "LIMPIAR PDF SIN USO",
+                    MessageBoxButtons.OK,
+                    fallidos.Count > 0 ? MessageBoxIcon.Warning : MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al limpiar: " + ex.Message, "LIMPIAR PDF SIN USO",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                UseWaitCursor = false;
+                Cursor = Cursors.Default;
+            }
+        }
 
     }
 }

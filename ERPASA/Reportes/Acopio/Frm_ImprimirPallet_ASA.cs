@@ -425,7 +425,23 @@ namespace ERPASA.Reportes.Acopio
                         empresa = "IA GALLOS";
                         break;
 
+                    case "Fundo Nonaka":
+                        inicial = "N";
+                        empresa = "IA NONAKA";
+                        break;
+
+                    case "Fundo Playa Baja":
+                        inicial = "PB";
+                        empresa = "IA PlayaBaja";
+                        break;
+
+                    case "FAMILY FARMS":
+                        inicial = "FF";
+                        empresa = "FF";
+                        break;
+
                     default:
+                        inicial = "T";
                         empresa = "TERCERO";
                         break;
                 }

@@ -61,6 +61,11 @@ namespace CapaEntidad
         public DateTime? FechaMarcacion { get; set; }     // date NULL
         public TimeSpan? HoraMarca { get; set; }          // time NULL
         public string TipoMarcacion { get; set; }         // varchar NULL
+        // El orden de estas propiedades es el que usa SqlBulkCopy para
+        // mapear contra la tabla: no lleva ColumnMappings, asi que la
+        // correspondencia es por POSICION, no por nombre.
+        public string Resultado { get; set; }             // varchar NULL  (col 4 del Excel)
+        public string Motivo { get; set; }                // varchar NULL  (col 5 del Excel)
         public string Marcador { get; set; }              // varchar NULL
         public string Empresa { get; set; }               // varchar NULL
         public string Sede { get; set; }                  // varchar NULL
@@ -165,6 +170,13 @@ namespace CapaEntidad
     {
         public DateTime? FechaMovimiento { get; set; }
         public string TipoMovimiento { get; set; }
+        // El orden de estas propiedades es el que usa SqlBulkCopy para
+        // mapear contra la tabla: no lleva ColumnMappings, asi que la
+        // correspondencia es por POSICION, no por nombre.
+        public string Detalle { get; set; }               // col 3 del Excel
+        // Se llama EstadoMovimiento y no Estado porque la tabla ya tiene una
+        // columna Estado, la de auditoria que vale "S".
+        public string EstadoMovimiento { get; set; }      // col 4 del Excel
         public string Origen { get; set; }
 
         public string Empresa { get; set; }
@@ -191,6 +203,9 @@ namespace CapaEntidad
 
         public string Usuario { get; set; }
         public DateTime? FechaHoraRegistro { get; set; }
+
+        public string ModificadoAnuladoPor { get; set; }  // col 24 del Excel
+        public DateTime? FechaModificacion { get; set; }  // col 25 del Excel
 
         public int? Ano { get; set; }
         public int? Semana { get; set; }
@@ -225,8 +240,18 @@ namespace CapaEntidad
         public string EstadoEspacio { get; set; }
 
         public string Situacion { get; set; }
+        // El orden de estas propiedades es el que usa SqlBulkCopy para
+        // mapear contra la tabla: no lleva ColumnMappings, asi que la
+        // correspondencia es por POSICION, no por nombre.
+        public string Programado { get; set; }            // col 14 del Excel
+        public DateTime? FechaProgramada { get; set; }    // col 15 del Excel
+
         public string Dni { get; set; }
         public string NombreCompleto { get; set; }
+
+        public string Vigencia { get; set; }              // col 18 del Excel
+        public string Motivo { get; set; }                // col 19 del Excel
+
         public string EmpresaTrabajador { get; set; }
         public string Gerencia { get; set; }
         public string Area { get; set; }

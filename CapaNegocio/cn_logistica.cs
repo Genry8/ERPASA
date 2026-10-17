@@ -2279,6 +2279,14 @@ namespace CapaNegocio
 
 
         //GUARDAR CURSOS
+        //
+        //rutas de PDF en uso por los cursos programados (para detectar huerfanos)
+        public static DataTable ListaRutasServerCursos()
+        {
+            cd_logistica datos = new cd_logistica();
+            return datos.ListaRutasServerCursos();
+        }
+
         public void GuardarCursosProgramados(
             int id,
     string emp,

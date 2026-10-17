@@ -53,6 +53,52 @@ namespace CapaUtilidad
         }
 
         /// <summary>
+        /// Hora del día a partir de una celda de Excel.
+        ///
+        /// Excel no tiene un tipo "hora": guarda la hora como la fracción de un
+        /// día (0,99495 = 23:52) y solo le aplica el formato h:mm. ExcelDataReader
+        /// convierte esa fracción a DateTime sobre la fecha base de Excel, así
+        /// que la celda llega como 31/12/1899 23:52:44 y un TimeSpan.Parse sobre
+        /// ese texto falla. Acá se toma solo la parte horaria.
+        /// </summary>
+        public static TimeSpan Hora(object valor)
+        {
+            if (valor == null || valor == DBNull.Value)
+                return TimeSpan.Zero;
+
+            if (valor is TimeSpan)
+                return (TimeSpan)valor;
+
+            if (valor is DateTime)
+                return ((DateTime)valor).TimeOfDay;
+
+            // Fracción de día, por si la celda llega como número.
+            if (valor is double || valor is float || valor is decimal)
+                return TimeSpan.FromSeconds(Math.Round(Numero(valor) * 86400d));
+
+            string texto = valor.ToString().Trim();
+            if (texto == "")
+                return TimeSpan.Zero;
+
+            TimeSpan hora;
+            if (TimeSpan.TryParse(texto, CultureInfo.CurrentCulture, out hora)) return hora;
+            if (TimeSpan.TryParse(texto, CultureInfo.InvariantCulture, out hora)) return hora;
+
+            DateTime f;
+            if (DateTime.TryParse(texto, CultureInfo.CurrentCulture,
+                    DateTimeStyles.None, out f)) return f.TimeOfDay;
+            if (DateTime.TryParse(texto, CultureInfo.InvariantCulture,
+                    DateTimeStyles.None, out f)) return f.TimeOfDay;
+
+            double fraccion;
+            if (double.TryParse(texto, NumberStyles.Any,
+                    CultureInfo.InvariantCulture, out fraccion))
+                return TimeSpan.FromSeconds(Math.Round(fraccion * 86400d));
+
+            return TimeSpan.Zero;
+        }
+
+        /// <summary>
         /// Devuelve DBNull cuando la celda no trae una fecha reconocible, para
         /// que la columna quede nula en vez de frenar toda la carga.
         /// </summary>

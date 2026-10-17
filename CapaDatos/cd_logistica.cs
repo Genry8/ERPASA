@@ -8848,6 +8848,39 @@ namespace CapaDatos
             }
         }
 
+        // RUTAS DE PDF QUE ESTAN EN USO POR ALGUN CURSO PROGRAMADO.
+        // A proposito NO filtra por Estado: un curso anulado conserva su archivo
+        // y hay que poder descargarlo, asi que su PDF tampoco es un huerfano.
+        public DataTable ListaRutasServerCursos()
+        {
+            SqlDataReader resultado; // Permite leer las filas
+            DataTable tabla = new DataTable();
+            SqlConnection conex = new SqlConnection();
+
+            try
+            {
+                conex = cd_conexion.CrearInstancia().leerconexion();
+                SqlCommand comando = new SqlCommand(
+                    "SELECT DISTINCT RutaServer FROM SST_CursosProgramado " +
+                    "WHERE RutaServer IS NOT NULL AND LTRIM(RTRIM(RutaServer)) <> ''", conex);
+                comando.CommandType = CommandType.Text;
+                conex.Open();
+
+                resultado = comando.ExecuteReader();
+                tabla.Load(resultado);
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conex.State == ConnectionState.Open) conex.Close(); // Cerrar la conexión
+            }
+        }
+
+
         public DataTable ListaCursosProgSST()
         {
             SqlDataReader resultado; // Permite leer las filas

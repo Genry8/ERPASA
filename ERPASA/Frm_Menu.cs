@@ -949,6 +949,12 @@ namespace ERPASA
             AbrirFormularioHijo<Frm_Contabilidad.Frm_RepDetalle_RindeGastoNisira>();
         }
 
+
+        private void button_comercial_contabilidad_EnvioGastoApiNisira_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Contabilidad.Frm_RindeGastoNisiraAPI>();
+        }
+
         private void button_comercial_contabilidad_InfRindeGasto_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo<Frm_Contabilidad.Frm_Rep_RindeCuentas>();
@@ -1563,6 +1569,8 @@ namespace ERPASA
         {
 
         }
+
+
 
     }
 }

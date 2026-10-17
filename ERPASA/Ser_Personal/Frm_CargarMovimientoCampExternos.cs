@@ -416,32 +416,41 @@ namespace ERPASA.Ser_personal
                     {
                         FechaMovimiento = GetDate(row, 0),          // Fecha Movimiento
                         TipoMovimiento = GetString(row, 1),         // Tipo Movimiento
-                        Origen = GetString(row, 2),                 // Origen
 
-                        Empresa = GetString(row, 3),                // Empresa
-                        Sede = GetString(row, 4),                   // Sede
+                        // Detalle y Estado son columnas nuevas del reporte y
+                        // entran en la posicion 3 y 4: todo lo de abajo corrio.
+                        Detalle = GetString(row, 2),                // Detalle
+                        EstadoMovimiento = GetString(row, 3),       // Estado
 
-                        CodCampamento = GetInt(row, 5),             // Cod. Campamento
-                        Campamento = GetString(row, 6),             // Campamento
+                        Origen = GetString(row, 4),                 // Origen
 
-                        CodCarpa = GetInt(row, 7),                  // Cod. Carpa
-                        Carpa = GetString(row, 8),                  // Carpa
-                        TipoOcupante = GetString(row, 9),           // Tipo Ocupante
+                        Empresa = GetString(row, 5),                // Empresa
+                        Sede = GetString(row, 6),                   // Sede
 
-                        CodEspacio = GetInt(row, 10),               // Cod. Espacio
-                        Espacio = GetString(row, 11),               // Espacio
+                        CodCampamento = GetInt(row, 7),             // Cod. Campamento
+                        Campamento = GetString(row, 8),             // Campamento
 
-                        Dni = GetString(row, 12),                   // Dni
-                        NombreCompleto = GetString(row, 13),        // Nombre Completo
-                        EmpresaTrabajador = GetString(row, 14),     // Empresa Trabajador
-                        Gerencia = GetString(row, 15),              // Gerencia
-                        Area = GetString(row, 16),                  // Área
+                        CodCarpa = GetInt(row, 9),                  // Cod. Carpa
+                        Carpa = GetString(row, 10),                 // Carpa
+                        TipoOcupante = GetString(row, 11),          // Tipo Ocupante
 
-                        BonoAlimentacion = GetString(row, 17),      // Bono Alimentación
-                        FechaPosibleSalida = GetDate(row, 18),      // Fecha Posible Salida
+                        CodEspacio = GetInt(row, 12),               // Cod. Espacio
+                        Espacio = GetString(row, 13),               // Espacio
 
-                        Usuario = GetString(row, 19),               // Usuario
-                        FechaHoraRegistro = GetDate(row, 20),       // Fecha Hora Registro
+                        Dni = GetString(row, 14),                   // Dni
+                        NombreCompleto = GetString(row, 15),        // Nombre Completo
+                        EmpresaTrabajador = GetString(row, 16),     // Empresa Trabajador
+                        Gerencia = GetString(row, 17),              // Gerencia
+                        Area = GetString(row, 18),                  // Área
+
+                        BonoAlimentacion = GetString(row, 19),      // Bono Alimentación
+                        FechaPosibleSalida = GetDate(row, 20),      // Fecha Posible Salida
+
+                        Usuario = GetString(row, 21),               // Usuario
+                        FechaHoraRegistro = GetDate(row, 22),       // Fecha Hora Registro
+
+                        ModificadoAnuladoPor = GetString(row, 23),  // Modificado / anulado por
+                        FechaModificacion = GetDate(row, 24),       // Fecha Modificación
 
                         Ano = int.TryParse(añoText, out int _ano) ? _ano : (int?)null,
                         Semana = int.TryParse(semText, out int _sem) ? _sem : (int?)null,

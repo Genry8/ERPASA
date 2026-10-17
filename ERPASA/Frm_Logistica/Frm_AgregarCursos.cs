@@ -193,9 +193,14 @@ namespace ERPASA.Frm_Logistica
                         if (dialogResult == DialogResult.Yes)
                         {
                             ce_apimodels.UploadResponse uploadResult = null;
+                            bool guardado = false;
 
                             try
                             {
+                                // Subir el PDF al servidor tarda; se bloquea la
+                                // ventana para que nadie toque nada a medias.
+                                BloquearVentana(true);
+
                                 // =========================
                                 // 🔹 SUBIR DOCUMENTO
                                 // =========================
@@ -233,14 +238,16 @@ namespace ERPASA.Frm_Logistica
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Error al subir documento");
+                                    // Sin documento en el servidor no hay curso
+                                    // que registrar; se sale sin avisar exito.
                                     return;
                                 }
 
-
+                                guardado = true;
                             }
                             finally
                             {
+                                BloquearVentana(false);
 
                                 // =========================
                                 // 🔹 USAR DATOS DEL ARCHIVO
@@ -254,15 +261,18 @@ namespace ERPASA.Frm_Logistica
                                 //    // SI QUIERES GUARDAR EN BD:
                                 //}
 
-                                Msbox.Frm_NotificacionesPeligro ng =
-                                    new Msbox.Frm_NotificacionesPeligro(
-                                        "GUARDADO CORRECTAMENTE",
-                                        Color.FromArgb(12, 19, 214),
-                                        1);
+                                if (guardado)
+                                {
+                                    Msbox.Frm_NotificacionesPeligro ng =
+                                        new Msbox.Frm_NotificacionesPeligro(
+                                            "GUARDADO CORRECTAMENTE",
+                                            Color.FromArgb(12, 19, 214),
+                                            1);
 
-                                ng.ShowDialog();
+                                    ng.ShowDialog();
 
-                                LimiparCampos();
+                                    LimiparCampos();
+                                }
                             }
                         }
 
@@ -286,9 +296,12 @@ namespace ERPASA.Frm_Logistica
                     if (dialogResult == DialogResult.Yes)
                     {
                         ce_apimodels.UploadResponse uploadResult = null;
+                        bool actualizado = false;
 
                         try
                         {
+                            BloquearVentana(true);
+
                             if (textRuta.Text.Trim().StartsWith(
                                 @"C:\proyecto\CursosAsa\",
                                 StringComparison.OrdinalIgnoreCase))
@@ -330,12 +343,16 @@ namespace ERPASA.Frm_Logistica
                             }
                             else
                             {
-                                MessageBox.Show("Error al subir documento");
+                                // Sin documento en el servidor no hay nada que
+                                // actualizar; se sale sin avisar que salio bien.
                                 return;
                             }
+
+                            actualizado = true;
                         }
                         finally
                         {
+                            BloquearVentana(false);
 
                             // =========================
                             // 🔹 USAR DATOS DEL ARCHIVO
@@ -349,13 +366,16 @@ namespace ERPASA.Frm_Logistica
                             //    // SI QUIERES GUARDAR EN BD:
                             //}
 
-                            Msbox.Frm_NotificacionesPeligro ng =
-                                new Msbox.Frm_NotificacionesPeligro(
-                                    "ACTUALIZADO CORRECTAMENTE",
-                                    Color.FromArgb(12, 19, 214),
-                                    1);
+                            if (actualizado)
+                            {
+                                Msbox.Frm_NotificacionesPeligro ng =
+                                    new Msbox.Frm_NotificacionesPeligro(
+                                        "ACTUALIZADO CORRECTAMENTE",
+                                        Color.FromArgb(12, 19, 214),
+                                        1);
 
-                            ng.ShowDialog();
+                                ng.ShowDialog();
+                            }
 
                             //LimiparCampos();
                         }
@@ -447,6 +467,37 @@ namespace ERPASA.Frm_Logistica
             }
         }
 
+        /// <summary>
+        /// Deja la ventana en espera mientras se sube el PDF y se graba: puntero
+        /// de reloj y sin responder a clics ni teclas. El PDF viaja completo al
+        /// servidor y eso puede tardar, asi que sin esto el usuario alcanza a
+        /// tocar Guardar otra vez o a cerrar el formulario a mitad del proceso.
+        /// </summary>
+        private void BloquearVentana(bool bloquear)
+        {
+            UseWaitCursor = bloquear;
+            Cursor = bloquear ? Cursors.WaitCursor : Cursors.Default;
+
+            foreach (Control c in Controls)
+                c.Enabled = !bloquear;
+
+            Application.DoEvents(); //que alcance a repintarse antes de la espera
+        }
+
+        /// <summary>
+        /// Cambia por guion bajo los caracteres que Windows no admite en un
+        /// nombre de archivo. El nombre del curso lo escribe el usuario y puede
+        /// traer barras o dos puntos, que harian fallar la escritura.
+        /// </summary>
+        private static string LimpiarNombreArchivo(string nombre)
+        {
+            foreach (char c in Path.GetInvalidFileNameChars())
+            {
+                nombre = nombre.Replace(c, '_');
+            }
+            return nombre.Trim();
+        }
+
         private async Task<ce_apimodels.UploadResponse> SubirDocumento()
         {
             try
@@ -454,11 +505,18 @@ namespace ERPASA.Frm_Logistica
                 // =========================
                 // 🔹 NOMBRE PERSONALIZADO
                 // =========================
-                string nombreArchivo =
+                // Lleva la fecha y hora al final para que cada subida escriba un
+                // archivo NUEVO en el servidor. Si se reutilizara el mismo nombre,
+                // el API tendria que sobrescribir el PDF anterior y eso falla
+                // cuando ese archivo quedo con permisos propios (los que se
+                // copiaron a mano a la carpeta de cursos). La ruta definitiva la
+                // devuelve el API y es la que se guarda en RutaServer.
+                string nombreArchivo = LimpiarNombreArchivo(
                     textBox_Id.Text.Trim() + "_" +
                     comboBox_sede.Text.Trim() + "_" +
                     comboBox_TipoTrabajador.Text.Trim() + "_" +
-                    textBox_Curso.Text.Trim();
+                    textBox_Curso.Text.Trim() + "_" +
+                    DateTime.Now.ToString("yyyyMMdd_HHmmss"));
 
                 if (string.IsNullOrEmpty(rutaArchivo))
                 {
@@ -483,7 +541,14 @@ namespace ERPASA.Frm_Logistica
                 }
                 else
                 {
-                    MessageBox.Show("Error al enviar documento");
+                    // El motivo real viene en message: archivo inexistente,
+                    // respuesta de error del servidor, sin memoria, etc.
+                    string motivo = result == null || string.IsNullOrWhiteSpace(result.message)
+                        ? "No se obtuvo respuesta del servidor."
+                        : result.message;
+
+                    MessageBox.Show("Error al enviar documento:\n\n" + motivo,
+                        "SUBIR DOCUMENTO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
             }

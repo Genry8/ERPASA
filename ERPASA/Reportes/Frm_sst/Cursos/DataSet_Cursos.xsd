@@ -24,7 +24,9 @@
               <xs:element name="Contenido" msprop:Generator_ColumnPropNameInTable="ContenidoColumn" msprop:Generator_ColumnPropNameInRow="Contenido" msprop:Generator_UserColumnName="Contenido" msprop:Generator_ColumnVarNameInTable="columnContenido" type="xs:string" minOccurs="0" />
               <xs:element name="TemaIA" msprop:Generator_ColumnPropNameInTable="TemaIAColumn" msprop:Generator_ColumnPropNameInRow="TemaIA" msprop:Generator_UserColumnName="TemaIA" msprop:Generator_ColumnVarNameInTable="columnTemaIA" type="xs:string" minOccurs="0" />
               <xs:element name="ContenidoIA" msprop:Generator_ColumnPropNameInTable="ContenidoIAColumn" msprop:Generator_ColumnPropNameInRow="ContenidoIA" msprop:Generator_UserColumnName="ContenidoIA" msprop:Generator_ColumnVarNameInTable="columnContenidoIA" type="xs:string" minOccurs="0" />
-              <xs:element name="RegistrosDTG" msprop:Generator_ColumnPropNameInRow="RegistrosDTG" msprop:Generator_ColumnPropNameInTable="RegistrosDTGColumn" msprop:Generator_ColumnVarNameInTable="columnRegistrosDTG" msprop:Generator_UserColumnName="RegistrosDTG" type="xs:string" minOccurs="0" />
+              <xs:element name="RegistrosDTG" msprop:Generator_UserColumnName="RegistrosDTG" msprop:Generator_ColumnPropNameInTable="RegistrosDTGColumn" msprop:Generator_ColumnPropNameInRow="RegistrosDTG" msprop:Generator_ColumnVarNameInTable="columnRegistrosDTG" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaInicio" msprop:Generator_ColumnPropNameInRow="FechaInicio" msprop:Generator_ColumnPropNameInTable="FechaInicioColumn" msprop:Generator_ColumnVarNameInTable="columnFechaInicio" msprop:Generator_UserColumnName="FechaInicio" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaFin" msprop:Generator_ColumnPropNameInRow="FechaFin" msprop:Generator_ColumnPropNameInTable="FechaFinColumn" msprop:Generator_ColumnVarNameInTable="columnFechaFin" msprop:Generator_UserColumnName="FechaFin" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -38,7 +40,7 @@
               <xs:element name="DNI" msprop:Generator_ColumnPropNameInTable="DNIColumn" msprop:Generator_ColumnPropNameInRow="DNI" msprop:Generator_UserColumnName="DNI" msprop:Generator_ColumnVarNameInTable="columnDNI" type="xs:string" minOccurs="0" />
               <xs:element name="FIRMA" msprop:Generator_ColumnPropNameInTable="FIRMAColumn" msprop:Generator_ColumnPropNameInRow="FIRMA" msprop:Generator_UserColumnName="FIRMA" msprop:Generator_ColumnVarNameInTable="columnFIRMA" type="xs:base64Binary" minOccurs="0" />
               <xs:element name="NOTA" msprop:Generator_ColumnPropNameInTable="NOTAColumn" msprop:Generator_ColumnPropNameInRow="NOTA" msprop:Generator_UserColumnName="NOTA" msprop:Generator_ColumnVarNameInTable="columnNOTA" type="xs:string" minOccurs="0" />
-              <xs:element name="FECHAPROG" msprop:Generator_UserColumnName="FECHAPROG" msprop:Generator_ColumnPropNameInTable="FECHAPROGColumn" msprop:Generator_ColumnPropNameInRow="FECHAPROG" msprop:Generator_ColumnVarNameInTable="columnFECHAPROG" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHAPROG" msprop:Generator_ColumnPropNameInTable="FECHAPROGColumn" msprop:Generator_ColumnPropNameInRow="FECHAPROG" msprop:Generator_UserColumnName="FECHAPROG" msprop:Generator_ColumnVarNameInTable="columnFECHAPROG" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

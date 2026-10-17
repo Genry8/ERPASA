@@ -500,6 +500,8 @@ namespace ERPASA.Frm_Logistica
             curso.TemaIA,
             curso.ContenidoIA,
             guna2DataGridView1.Rows.Count,
+            dateTimePicker_Fecha_Ini.Value.Date.ToString("yyyy-MM-dd"),
+            dateTimePicker_Fecha_Fin.Value.Date.ToString("yyyy-MM-dd"),
                     }
                 );
             }
@@ -628,7 +630,10 @@ namespace ERPASA.Frm_Logistica
             curso.Tema,
             curso.Contenido,
             curso.TemaIA,
-            curso.ContenidoIA
+            curso.ContenidoIA,
+            guna2DataGridView1.Rows.Count,
+            dateTimePicker_Fecha_Ini.Value.Date.ToString("yyyy-MM-dd"),
+            dateTimePicker_Fecha_Fin.Value.Date.ToString("yyyy-MM-dd"),
                     }
                 );
             }
@@ -1833,13 +1838,13 @@ namespace ERPASA.Frm_Logistica
 
                     if (empText == "AGRICOLA SANTA AZUL S.R.L")
                     {
-                        cn_equipoti.BuscPaginaParaHoja(31, dateTimePicker_Fecha_Fin.Value.Date);
+                        cn_equipoti.BuscPaginaParaHoja(34, dateTimePicker_Fecha_Fin.Value.Date);
                         //cn_equipoti.BuscTemaCurso(1, guna2ComboBox_Curso.Text.Trim());
                         await GenerarPDFMasivo(id, rutafirma, rutaCompleta);
                     }
                     else if (empText == "AGRICOLA INTERANDINA S.A.C")
                     {
-                        cn_equipoti.BuscPaginaParaHoja(32, dateTimePicker_Fecha_Fin.Value.Date);
+                        cn_equipoti.BuscPaginaParaHoja(33, dateTimePicker_Fecha_Fin.Value.Date);
                         //cn_equipoti.BuscTemaCurso(1, guna2ComboBox_Curso.Text.Trim());
                         await GenerarPDF_IAMasivo(id, rutafirma, rutaCompleta);
                     }

@@ -153,12 +153,16 @@ namespace ERPASA.Frm_DestajoUva
             // 
             // Fecha_Inicio
             // 
+            this.Fecha_Inicio.Checked = true;
             this.Fecha_Inicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fecha_Inicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.Fecha_Inicio.Location = new System.Drawing.Point(146, 16);
+            this.Fecha_Inicio.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.Fecha_Inicio.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.Fecha_Inicio.Name = "Fecha_Inicio";
             this.Fecha_Inicio.Size = new System.Drawing.Size(135, 30);
             this.Fecha_Inicio.TabIndex = 409;
+            this.Fecha_Inicio.Value = new System.DateTime(2026, 10, 5, 17, 35, 13, 876);
             // 
             // pictureBox_Excel
             // 
@@ -237,12 +241,16 @@ namespace ERPASA.Frm_DestajoUva
             // 
             // fecha_fin
             // 
+            this.fecha_fin.Checked = true;
             this.fecha_fin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fecha_fin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fecha_fin.Location = new System.Drawing.Point(440, 16);
+            this.fecha_fin.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.fecha_fin.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.fecha_fin.Name = "fecha_fin";
             this.fecha_fin.Size = new System.Drawing.Size(135, 30);
             this.fecha_fin.TabIndex = 429;
+            this.fecha_fin.Value = new System.DateTime(2026, 10, 5, 17, 35, 13, 999);
             // 
             // checkBox1
             // 
