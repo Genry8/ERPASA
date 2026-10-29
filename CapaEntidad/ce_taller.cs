@@ -17,6 +17,15 @@ namespace CapaEntidad
         public static string grupovehiculo { get; set; }
         public static string idVeh { get; set; }
 
+        //Ubicacion de baños (TALL_UbicacionBaños): el reporte deja aqui la fila
+        //elegida para que la ventana de edicion la lea.
+        public static string bano_cabezal { get; set; }
+        public static string bano_valvula { get; set; }
+        public static string bano_numero { get; set; }
+        public static string bano_genero { get; set; }
+        public static string bano_obs { get; set; }
+        public static string bano_foto { get; set; }
+
         /// <summary>
         /// MANTENIMIENTO PREVENTIVO
         /// </summary>

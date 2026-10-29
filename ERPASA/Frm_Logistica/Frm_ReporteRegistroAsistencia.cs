@@ -744,13 +744,13 @@ namespace ERPASA.Frm_Logistica
 
                 if (empText == "AGRICOLA SANTA AZUL S.R.L")
                 {
-                    cn_equipoti.BuscPaginaParaHoja(31, dateTimePicker_Fecha_Fin.Value.Date);
+                    cn_equipoti.BuscPaginaParaHoja(34, dateTimePicker_Fecha_Fin.Value.Date);
                     //cn_equipoti.BuscTemaCurso(1, guna2ComboBox_Curso.Text.Trim());
                     GenerarPDF(id, rutafirma);
                 }
                 else if (empText == "AGRICOLA INTERANDINA S.A.C")
                 {
-                    cn_equipoti.BuscPaginaParaHoja(32, dateTimePicker_Fecha_Fin.Value.Date);
+                    cn_equipoti.BuscPaginaParaHoja(33, dateTimePicker_Fecha_Fin.Value.Date);
                     //cn_equipoti.BuscTemaCurso(1, guna2ComboBox_Curso.Text.Trim());
                     GenerarPDF_IA(id, rutafirma);
                 }

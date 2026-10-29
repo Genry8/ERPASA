@@ -1,4 +1,4 @@
-using CapaDatos;
+﻿using CapaDatos;
 using System;
 using System.Data;
 
@@ -100,6 +100,51 @@ namespace CapaNegocio
         {
             cd_taller datos = new cd_taller();
             return datos.ListaTipoFallaCorrectivo();
+        }
+
+
+        //
+        // UBICACION DE BAÑOS (TALL_UbicacionBaños)
+        //
+        public void GuardarUbicacionBano(
+            string emp, string sed, string cabezal, string valvula
+            , string nrobano, string genero, string obs, string foto
+            , string estado, DateTime fec_cre
+            , int usereg, string hostname
+            , DateTime fec_mov, int usedit, int useelim)
+        {
+            cd_taller datos = new cd_taller();
+            datos.GuardarUbicacionBano(emp, sed, cabezal, valvula, nrobano, genero, obs, foto,
+                estado, fec_cre, usereg, hostname, fec_mov, usedit, useelim);
+        }
+
+        public void ActualizarUbicacionBano(int id,
+            string emp, string sed, string cabezal, string valvula
+            , string nrobano, string genero, string obs, string foto
+            , DateTime fec_mov, int usedit)
+        {
+            cd_taller datos = new cd_taller();
+            datos.ActualizarUbicacionBano(id, emp, sed, cabezal, valvula, nrobano, genero, obs,
+                foto, fec_mov, usedit);
+        }
+
+        public void EliminarUbicacionBano(int id, DateTime fec_mov, int useelim)
+        {
+            cd_taller datos = new cd_taller();
+            datos.EliminarUbicacionBano(id, fec_mov, useelim);
+        }
+
+        public static DataTable ListaReporteUbicacionBano(string emp, string sed)
+        {
+            cd_taller datos = new cd_taller();
+            return datos.ListaReporteUbicacionBano(emp, sed);
+        }
+
+        public static bool BuscExisteUbicacionBano(string emp, string sed, string cabezal,
+            string valvula, string nrobano, int id)
+        {
+            cd_taller datos = new cd_taller();
+            return datos.BuscExisteUbicacionBano(emp, sed, cabezal, valvula, nrobano, id);
         }
 
         public static DataTable ListaReporteVehiculos(
@@ -536,6 +581,20 @@ namespace CapaNegocio
         }
 
 
-    }
 
+        public static DataTable ListaReporteControlLimpieza(
+            DateTime fecini, DateTime fecfin, string emp, string sed)
+        {
+            cd_taller datos = new cd_taller();
+            return datos.ListaReporteControlLimpieza(fecini, fecfin, emp, sed);
+        }
+
+        public static DataTable ListaReporteControlMantenimiento(
+            DateTime fecini, DateTime fecfin, string emp, string sed)
+        {
+            cd_taller datos = new cd_taller();
+            return datos.ListaReporteControlMantenimiento(fecini, fecfin, emp, sed);
+        }
+
+    }
 }

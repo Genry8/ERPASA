@@ -90,7 +90,7 @@ namespace ERPASA.Frm_Taller
             this.toolStripLabel2});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1724, 41);
+            this.toolStrip2.Size = new System.Drawing.Size(1213, 41);
             this.toolStrip2.TabIndex = 264;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -241,11 +241,17 @@ namespace ERPASA.Frm_Taller
             // 
             // comboBox_GrupoVehiculo
             // 
+            this.comboBox_GrupoVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_GrupoVehiculo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_GrupoVehiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_GrupoVehiculo.FocusedColor = System.Drawing.Color.Empty;
             this.comboBox_GrupoVehiculo.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.comboBox_GrupoVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_GrupoVehiculo.FormattingEnabled = true;
+            this.comboBox_GrupoVehiculo.ItemHeight = 30;
             this.comboBox_GrupoVehiculo.Location = new System.Drawing.Point(131, 108);
             this.comboBox_GrupoVehiculo.Name = "comboBox_GrupoVehiculo";
-            this.comboBox_GrupoVehiculo.Size = new System.Drawing.Size(246, 32);
+            this.comboBox_GrupoVehiculo.Size = new System.Drawing.Size(246, 36);
             this.comboBox_GrupoVehiculo.TabIndex = 357;
             // 
             // label9
@@ -286,22 +292,34 @@ namespace ERPASA.Frm_Taller
             // 
             // comboBox_detalle_sede
             // 
+            this.comboBox_detalle_sede.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_detalle_sede.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_detalle_sede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_detalle_sede.FocusedColor = System.Drawing.Color.Empty;
             this.comboBox_detalle_sede.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.comboBox_detalle_sede.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_detalle_sede.FormattingEnabled = true;
+            this.comboBox_detalle_sede.ItemHeight = 30;
             this.comboBox_detalle_sede.Location = new System.Drawing.Point(131, 65);
             this.comboBox_detalle_sede.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_detalle_sede.Name = "comboBox_detalle_sede";
-            this.comboBox_detalle_sede.Size = new System.Drawing.Size(225, 32);
+            this.comboBox_detalle_sede.Size = new System.Drawing.Size(225, 36);
             this.comboBox_detalle_sede.TabIndex = 353;
             // 
             // comboBox_detalle_empresa
             // 
+            this.comboBox_detalle_empresa.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_detalle_empresa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_detalle_empresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_detalle_empresa.FocusedColor = System.Drawing.Color.Empty;
             this.comboBox_detalle_empresa.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.comboBox_detalle_empresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_detalle_empresa.FormattingEnabled = true;
+            this.comboBox_detalle_empresa.ItemHeight = 30;
             this.comboBox_detalle_empresa.Location = new System.Drawing.Point(131, 23);
             this.comboBox_detalle_empresa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_detalle_empresa.Name = "comboBox_detalle_empresa";
-            this.comboBox_detalle_empresa.Size = new System.Drawing.Size(305, 32);
+            this.comboBox_detalle_empresa.Size = new System.Drawing.Size(305, 36);
             this.comboBox_detalle_empresa.TabIndex = 352;
             this.comboBox_detalle_empresa.SelectedIndexChanged += new System.EventHandler(this.comboBox_detalle_empresa_SelectedIndexChanged);
             // 
@@ -349,7 +367,7 @@ namespace ERPASA.Frm_Taller
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1512, 470);
+            this.dataGridView2.Size = new System.Drawing.Size(1190, 470);
             this.dataGridView2.TabIndex = 316;
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
             // 
@@ -366,7 +384,7 @@ namespace ERPASA.Frm_Taller
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1724, 706);
+            this.ClientSize = new System.Drawing.Size(1213, 706);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip2);

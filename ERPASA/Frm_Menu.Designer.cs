@@ -52,6 +52,7 @@ namespace ERPASA
             this.RRHH_SST_ProgramarCursosPregunta = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_SST_Reportes = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_SST_Reportes_AsistenciaCurso = new System.Windows.Forms.ToolStripMenuItem();
+            this.RRHH_SST_Reportes_CursosCapacitacion = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_Comunicaciones = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_Comunicaciones_CosechGanadores = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_Comunicaciones_LideresEnAccion = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,6 +62,9 @@ namespace ERPASA
             this.RRHH_Comunicaciones_EncuestaClima = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_Comunicaciones_ParticipacionEncuesta = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_Comunicaciones_PuntosPlanilla = new System.Windows.Forms.ToolStripMenuItem();
+            this.RRHH_Comunicaciones_NetzunRepGeneral = new System.Windows.Forms.ToolStripMenuItem();
+            this.RRHH_Comunicaciones_CursosNuevos = new System.Windows.Forms.ToolStripMenuItem();
+            this.RRHH_Comunicaciones_CursosMeta = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_RelacComu = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_Planilla = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_Planilla_TareajeTrabajador = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,6 +77,8 @@ namespace ERPASA
             this.RRHH_SIG_CumplimientoDocumentos = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_SIG_CumplimientoCertificaciones = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_Patrimonial = new System.Windows.Forms.ToolStripMenuItem();
+            this.RRHH_Patrimonial_Reportes = new System.Windows.Forms.ToolStripMenuItem();
+            this.RRHH_Patrimonial_Reportes_IngresoVisitas = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_Topico = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_Topico_AtenMedica = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_Topico_RegAtenMedica = new System.Windows.Forms.ToolStripMenuItem();
@@ -132,6 +138,7 @@ namespace ERPASA
             this.button_taller_maquinaria_eficiencia = new System.Windows.Forms.ToolStripMenuItem();
             this.button_taller_tablas_generales = new System.Windows.Forms.ToolStripMenuItem();
             this.button_taller_tablas_generales_vehiculos = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_taller_tablas_generales_UbicacionBano = new System.Windows.Forms.ToolStripMenuItem();
             this.button_taller_tablas_generales_GrupoVehiculo = new System.Windows.Forms.ToolStripMenuItem();
             this.button_taller_tablas_generales_MarcaVehiculo = new System.Windows.Forms.ToolStripMenuItem();
             this.button_taller_tablas_generales_ModeloVehiculo = new System.Windows.Forms.ToolStripMenuItem();
@@ -139,6 +146,8 @@ namespace ERPASA
             this.button_taller_reportes_OrdenTrabajo = new System.Windows.Forms.ToolStripMenuItem();
             this.button_taller_reportes_PorxMantPrev = new System.Windows.Forms.ToolStripMenuItem();
             this.button_taller_reportes_KilometrajeGrif = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_taller_reportes_ControlLimpieza = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_taller_reportes_ControlMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.button_almacen = new System.Windows.Forms.ToolStripMenuItem();
             this.button_almacen_cargarBI = new System.Windows.Forms.ToolStripMenuItem();
             this.button_almacen_cargarBI_EvInventario = new System.Windows.Forms.ToolStripMenuItem();
@@ -166,6 +175,7 @@ namespace ERPASA
             this.button_comercial_contabilidad_InfRindeGasto = new System.Windows.Forms.ToolStripMenuItem();
             this.button_comercial_contabilidad_RepPlanillaMovilidad = new System.Windows.Forms.ToolStripMenuItem();
             this.button_comercial_contabilidad_RepResumenNisira = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_comercial_contabilidad_EnvioGastoApiNisira = new System.Windows.Forms.ToolStripMenuItem();
             this.button_comercial_reportes = new System.Windows.Forms.ToolStripMenuItem();
             this.button_comercial_reportes_InfRindeGasto = new System.Windows.Forms.ToolStripMenuItem();
             this.button_comercial_reportes_PlanillaMovilidad = new System.Windows.Forms.ToolStripMenuItem();
@@ -257,6 +267,8 @@ namespace ERPASA
             this.button_packing_rrhh_tareodetallado = new System.Windows.Forms.ToolStripMenuItem();
             this.button_packing_rrhh_progrSemanalPersonal = new System.Windows.Forms.ToolStripMenuItem();
             this.button_packing_rrhh_progrAnualPersonal = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_PesoPresentacion = new System.Windows.Forms.ToolStripMenuItem();
             this.button_tablas_maestras = new System.Windows.Forms.ToolStripMenuItem();
             this.button_tablas_maestras_usuario = new System.Windows.Forms.ToolStripMenuItem();
             this.button_tablas_maestras_usuario_registrar = new System.Windows.Forms.ToolStripMenuItem();
@@ -284,9 +296,10 @@ namespace ERPASA
             this.TabMaest_CompPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.TabMaest_CompProveedor = new System.Windows.Forms.ToolStripMenuItem();
             this.button_tablas_maestras_cambiarcontraseña = new System.Windows.Forms.ToolStripMenuItem();
-            this.cIERREYFACTURACIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_tablas_maestras_cierreProceso = new System.Windows.Forms.ToolStripMenuItem();
             this.cIERREDECOSECHAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cIERREDEPROCESOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_tablas_maestras_configurarCorreo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -301,7 +314,6 @@ namespace ERPASA
             this.label_Hora_Centro = new System.Windows.Forms.Label();
             this.label_Fecha_Centro = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button_comercial_contabilidad_EnvioGastoApiNisira = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_titulo2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -541,7 +553,8 @@ namespace ERPASA
             // RRHH_SST_Reportes
             // 
             this.RRHH_SST_Reportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RRHH_SST_Reportes_AsistenciaCurso});
+            this.RRHH_SST_Reportes_AsistenciaCurso,
+            this.RRHH_SST_Reportes_CursosCapacitacion});
             this.RRHH_SST_Reportes.Name = "RRHH_SST_Reportes";
             this.RRHH_SST_Reportes.Size = new System.Drawing.Size(515, 34);
             this.RRHH_SST_Reportes.Text = "REPORTES";
@@ -553,6 +566,13 @@ namespace ERPASA
             this.RRHH_SST_Reportes_AsistenciaCurso.Text = "ASISTENCIA DE CURSOS";
             this.RRHH_SST_Reportes_AsistenciaCurso.Click += new System.EventHandler(this.RRHH_SST_Reportes_AsistenciaCurso_Click);
             // 
+            // RRHH_SST_Reportes_CursosCapacitacion
+            // 
+            this.RRHH_SST_Reportes_CursosCapacitacion.Name = "RRHH_SST_Reportes_CursosCapacitacion";
+            this.RRHH_SST_Reportes_CursosCapacitacion.Size = new System.Drawing.Size(358, 34);
+            this.RRHH_SST_Reportes_CursosCapacitacion.Text = "CURSOS CAPACITACION";
+            this.RRHH_SST_Reportes_CursosCapacitacion.Click += new System.EventHandler(this.RRHH_SST_Reportes_CursosCapacitacion_Click);
+            // 
             // RRHH_Comunicaciones
             // 
             this.RRHH_Comunicaciones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -563,7 +583,10 @@ namespace ERPASA
             this.RRHH_Comunicaciones_MovimientoCanjes,
             this.RRHH_Comunicaciones_EncuestaClima,
             this.RRHH_Comunicaciones_ParticipacionEncuesta,
-            this.RRHH_Comunicaciones_PuntosPlanilla});
+            this.RRHH_Comunicaciones_PuntosPlanilla,
+            this.RRHH_Comunicaciones_NetzunRepGeneral,
+            this.RRHH_Comunicaciones_CursosNuevos,
+            this.RRHH_Comunicaciones_CursosMeta});
             this.RRHH_Comunicaciones.Name = "RRHH_Comunicaciones";
             this.RRHH_Comunicaciones.Size = new System.Drawing.Size(401, 34);
             this.RRHH_Comunicaciones.Tag = "21";
@@ -625,6 +648,27 @@ namespace ERPASA
             this.RRHH_Comunicaciones_PuntosPlanilla.Text = "CARGAR PUNTOS PLANILLA";
             this.RRHH_Comunicaciones_PuntosPlanilla.Visible = false;
             this.RRHH_Comunicaciones_PuntosPlanilla.Click += new System.EventHandler(this.RRHH_Comunicaciones_PuntosPlanilla_Click);
+            // 
+            // RRHH_Comunicaciones_NetzunRepGeneral
+            // 
+            this.RRHH_Comunicaciones_NetzunRepGeneral.Name = "RRHH_Comunicaciones_NetzunRepGeneral";
+            this.RRHH_Comunicaciones_NetzunRepGeneral.Size = new System.Drawing.Size(480, 34);
+            this.RRHH_Comunicaciones_NetzunRepGeneral.Text = "CARGAR NETZUN REP GENERAL";
+            this.RRHH_Comunicaciones_NetzunRepGeneral.Click += new System.EventHandler(this.RRHH_Comunicaciones_NetzunRepGeneral_Click);
+            // 
+            // RRHH_Comunicaciones_CursosNuevos
+            // 
+            this.RRHH_Comunicaciones_CursosNuevos.Name = "RRHH_Comunicaciones_CursosNuevos";
+            this.RRHH_Comunicaciones_CursosNuevos.Size = new System.Drawing.Size(480, 34);
+            this.RRHH_Comunicaciones_CursosNuevos.Text = "CARGAR NETZUN CURSOS NUEVOS";
+            this.RRHH_Comunicaciones_CursosNuevos.Click += new System.EventHandler(this.RRHH_Comunicaciones_CursosNuevos_Click);
+            // 
+            // RRHH_Comunicaciones_CursosMeta
+            // 
+            this.RRHH_Comunicaciones_CursosMeta.Name = "RRHH_Comunicaciones_CursosMeta";
+            this.RRHH_Comunicaciones_CursosMeta.Size = new System.Drawing.Size(480, 34);
+            this.RRHH_Comunicaciones_CursosMeta.Text = "CARGAR NETZUN CURSOS META";
+            this.RRHH_Comunicaciones_CursosMeta.Click += new System.EventHandler(this.RRHH_Comunicaciones_CursosMeta_Click);
             // 
             // RRHH_RelacComu
             // 
@@ -715,10 +759,27 @@ namespace ERPASA
             // 
             // RRHH_Patrimonial
             // 
+            this.RRHH_Patrimonial.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.RRHH_Patrimonial_Reportes});
             this.RRHH_Patrimonial.Name = "RRHH_Patrimonial";
             this.RRHH_Patrimonial.Size = new System.Drawing.Size(401, 34);
             this.RRHH_Patrimonial.Tag = "25";
             this.RRHH_Patrimonial.Text = "PATRIMONIAL";
+            // 
+            // RRHH_Patrimonial_Reportes
+            // 
+            this.RRHH_Patrimonial_Reportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.RRHH_Patrimonial_Reportes_IngresoVisitas});
+            this.RRHH_Patrimonial_Reportes.Name = "RRHH_Patrimonial_Reportes";
+            this.RRHH_Patrimonial_Reportes.Size = new System.Drawing.Size(222, 34);
+            this.RRHH_Patrimonial_Reportes.Text = "REPORTES";
+            // 
+            // RRHH_Patrimonial_Reportes_IngresoVisitas
+            // 
+            this.RRHH_Patrimonial_Reportes_IngresoVisitas.Name = "RRHH_Patrimonial_Reportes_IngresoVisitas";
+            this.RRHH_Patrimonial_Reportes_IngresoVisitas.Size = new System.Drawing.Size(320, 34);
+            this.RRHH_Patrimonial_Reportes_IngresoVisitas.Text = "INGRESO DE VISITAS";
+            this.RRHH_Patrimonial_Reportes_IngresoVisitas.Click += new System.EventHandler(this.RRHH_Patrimonial_Reportes_IngresoVisitas_Click);
             // 
             // RRHH_Topico
             // 
@@ -1186,6 +1247,7 @@ namespace ERPASA
             // 
             this.button_taller_tablas_generales.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.button_taller_tablas_generales_vehiculos,
+            this.button_taller_tablas_generales_UbicacionBano,
             this.button_taller_tablas_generales_GrupoVehiculo,
             this.button_taller_tablas_generales_MarcaVehiculo,
             this.button_taller_tablas_generales_ModeloVehiculo});
@@ -1200,6 +1262,13 @@ namespace ERPASA
             this.button_taller_tablas_generales_vehiculos.Size = new System.Drawing.Size(410, 34);
             this.button_taller_tablas_generales_vehiculos.Text = "AGREGAR VEHICULOS";
             this.button_taller_tablas_generales_vehiculos.Click += new System.EventHandler(this.button_taller_tablas_generales_vehiculos_Click);
+            // 
+            // button_taller_tablas_generales_UbicacionBano
+            // 
+            this.button_taller_tablas_generales_UbicacionBano.Name = "button_taller_tablas_generales_UbicacionBano";
+            this.button_taller_tablas_generales_UbicacionBano.Size = new System.Drawing.Size(410, 34);
+            this.button_taller_tablas_generales_UbicacionBano.Text = "UBICACION DE BAÑOS";
+            this.button_taller_tablas_generales_UbicacionBano.Click += new System.EventHandler(this.button_taller_tablas_generales_UbicacionBano_Click);
             // 
             // button_taller_tablas_generales_GrupoVehiculo
             // 
@@ -1227,7 +1296,9 @@ namespace ERPASA
             this.button_taller_reportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.button_taller_reportes_OrdenTrabajo,
             this.button_taller_reportes_PorxMantPrev,
-            this.button_taller_reportes_KilometrajeGrif});
+            this.button_taller_reportes_KilometrajeGrif,
+            this.button_taller_reportes_ControlLimpieza,
+            this.button_taller_reportes_ControlMantenimiento});
             this.button_taller_reportes.Name = "button_taller_reportes";
             this.button_taller_reportes.Size = new System.Drawing.Size(318, 34);
             this.button_taller_reportes.Tag = "83";
@@ -1253,6 +1324,20 @@ namespace ERPASA
             this.button_taller_reportes_KilometrajeGrif.Size = new System.Drawing.Size(418, 34);
             this.button_taller_reportes_KilometrajeGrif.Text = "KILOMETRAJES GRIFO";
             this.button_taller_reportes_KilometrajeGrif.Click += new System.EventHandler(this.button_taller_reportes_KilometrajeGrif_Click);
+            // 
+            // button_taller_reportes_ControlLimpieza
+            // 
+            this.button_taller_reportes_ControlLimpieza.Name = "button_taller_reportes_ControlLimpieza";
+            this.button_taller_reportes_ControlLimpieza.Size = new System.Drawing.Size(418, 34);
+            this.button_taller_reportes_ControlLimpieza.Text = "CONTROL DE LIMPIEZA";
+            this.button_taller_reportes_ControlLimpieza.Click += new System.EventHandler(this.button_taller_reportes_ControlLimpieza_Click);
+            // 
+            // button_taller_reportes_ControlMantenimiento
+            // 
+            this.button_taller_reportes_ControlMantenimiento.Name = "button_taller_reportes_ControlMantenimiento";
+            this.button_taller_reportes_ControlMantenimiento.Size = new System.Drawing.Size(418, 34);
+            this.button_taller_reportes_ControlMantenimiento.Text = "CONTROL DE MANTENIMIENTO";
+            this.button_taller_reportes_ControlMantenimiento.Click += new System.EventHandler(this.button_taller_reportes_ControlMantenimiento_Click);
             // 
             // button_almacen
             // 
@@ -1477,6 +1562,13 @@ namespace ERPASA
             this.button_comercial_contabilidad_RepResumenNisira.Size = new System.Drawing.Size(472, 34);
             this.button_comercial_contabilidad_RepResumenNisira.Text = "REPORTE PARA NISIRA";
             this.button_comercial_contabilidad_RepResumenNisira.Click += new System.EventHandler(this.button_comercial_contabilidad_RepResumenRindGasto_Click);
+            // 
+            // button_comercial_contabilidad_EnvioGastoApiNisira
+            // 
+            this.button_comercial_contabilidad_EnvioGastoApiNisira.Name = "button_comercial_contabilidad_EnvioGastoApiNisira";
+            this.button_comercial_contabilidad_EnvioGastoApiNisira.Size = new System.Drawing.Size(472, 34);
+            this.button_comercial_contabilidad_EnvioGastoApiNisira.Text = "ENVIO DE GASTOS POR API A NISIRA";
+            this.button_comercial_contabilidad_EnvioGastoApiNisira.Click += new System.EventHandler(this.button_comercial_contabilidad_EnvioGastoApiNisira_Click);
             // 
             // button_comercial_reportes
             // 
@@ -1894,7 +1986,8 @@ namespace ERPASA
             this.button_packing_reporte,
             this.button_packing_guiafactura,
             this.button_packing_cierre_proceso,
-            this.button_packing_rrhh});
+            this.button_packing_rrhh,
+            this.button_packing_maestros});
             this.button_packing.Image = ((System.Drawing.Image)(resources.GetObject("button_packing.Image")));
             this.button_packing.Name = "button_packing";
             this.button_packing.Size = new System.Drawing.Size(135, 44);
@@ -2228,6 +2321,22 @@ namespace ERPASA
             this.button_packing_rrhh_progrAnualPersonal.Text = "PROGRAMACION ANUAL DE PERSONAL";
             this.button_packing_rrhh_progrAnualPersonal.Click += new System.EventHandler(this.button_packing_rrhh_progrAnualPersonal_Click);
             // 
+            // button_packing_maestros
+            // 
+            this.button_packing_maestros.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.button_packing_maestros_PesoPresentacion});
+            this.button_packing_maestros.Name = "button_packing_maestros";
+            this.button_packing_maestros.Size = new System.Drawing.Size(291, 34);
+            this.button_packing_maestros.Tag = "209";
+            this.button_packing_maestros.Text = "MAESTROS";
+            // 
+            // button_packing_maestros_PesoPresentacion
+            // 
+            this.button_packing_maestros_PesoPresentacion.Name = "button_packing_maestros_PesoPresentacion";
+            this.button_packing_maestros_PesoPresentacion.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_PesoPresentacion.Text = "AGREGAR PESO PRESENTACION";
+            this.button_packing_maestros_PesoPresentacion.Click += new System.EventHandler(this.button_packing_maestros_PesoPresentacion_Click);
+            // 
             // button_tablas_maestras
             // 
             this.button_tablas_maestras.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2236,7 +2345,8 @@ namespace ERPASA
             this.button_tablas_maestras_empresa,
             this.button_tablas_maestras_componentes,
             this.button_tablas_maestras_cambiarcontraseña,
-            this.cIERREYFACTURACIONToolStripMenuItem});
+            this.button_tablas_maestras_cierreProceso,
+            this.button_tablas_maestras_configurarCorreo});
             this.button_tablas_maestras.Image = ((System.Drawing.Image)(resources.GetObject("button_tablas_maestras.Image")));
             this.button_tablas_maestras.Name = "button_tablas_maestras";
             this.button_tablas_maestras.Size = new System.Drawing.Size(174, 44);
@@ -2451,14 +2561,15 @@ namespace ERPASA
             this.button_tablas_maestras_cambiarcontraseña.Text = "CAMBIAR CONTRASEÑA";
             this.button_tablas_maestras_cambiarcontraseña.Click += new System.EventHandler(this.button_tablas_maestras_cambiarcontraseña_Click);
             // 
-            // cIERREYFACTURACIONToolStripMenuItem
+            // button_tablas_maestras_cierreProceso
             // 
-            this.cIERREYFACTURACIONToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.button_tablas_maestras_cierreProceso.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cIERREDECOSECHAToolStripMenuItem,
             this.cIERREDEPROCESOToolStripMenuItem});
-            this.cIERREYFACTURACIONToolStripMenuItem.Name = "cIERREYFACTURACIONToolStripMenuItem";
-            this.cIERREYFACTURACIONToolStripMenuItem.Size = new System.Drawing.Size(350, 34);
-            this.cIERREYFACTURACIONToolStripMenuItem.Text = "CIERRES DE PROCESO";
+            this.button_tablas_maestras_cierreProceso.Name = "button_tablas_maestras_cierreProceso";
+            this.button_tablas_maestras_cierreProceso.Size = new System.Drawing.Size(350, 34);
+            this.button_tablas_maestras_cierreProceso.Tag = "184";
+            this.button_tablas_maestras_cierreProceso.Text = "CIERRES DE PROCESO";
             // 
             // cIERREDECOSECHAToolStripMenuItem
             // 
@@ -2471,6 +2582,15 @@ namespace ERPASA
             this.cIERREDEPROCESOToolStripMenuItem.Name = "cIERREDEPROCESOToolStripMenuItem";
             this.cIERREDEPROCESOToolStripMenuItem.Size = new System.Drawing.Size(324, 34);
             this.cIERREDEPROCESOToolStripMenuItem.Text = "CIERRE DE PROCESO";
+            this.cIERREDEPROCESOToolStripMenuItem.Click += new System.EventHandler(this.cIERREDEPROCESOToolStripMenuItem_Click);
+            // 
+            // button_tablas_maestras_configurarCorreo
+            // 
+            this.button_tablas_maestras_configurarCorreo.Name = "button_tablas_maestras_configurarCorreo";
+            this.button_tablas_maestras_configurarCorreo.Size = new System.Drawing.Size(350, 34);
+            this.button_tablas_maestras_configurarCorreo.Tag = "185";
+            this.button_tablas_maestras_configurarCorreo.Text = "CONFIGURAR CORREO";
+            this.button_tablas_maestras_configurarCorreo.Click += new System.EventHandler(this.button_tablas_maestras_configurarCorreo_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -2641,13 +2761,6 @@ namespace ERPASA
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button_comercial_contabilidad_EnvioGastoApiNisira
-            // 
-            this.button_comercial_contabilidad_EnvioGastoApiNisira.Name = "button_comercial_contabilidad_EnvioGastoApiNisira";
-            this.button_comercial_contabilidad_EnvioGastoApiNisira.Size = new System.Drawing.Size(472, 34);
-            this.button_comercial_contabilidad_EnvioGastoApiNisira.Text = "ENVIO DE GASTOS POR API A NISIRA";
-            this.button_comercial_contabilidad_EnvioGastoApiNisira.Click += new System.EventHandler(this.button_comercial_contabilidad_EnvioGastoApiNisira_Click);
-            // 
             // Frm_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -2738,6 +2851,8 @@ namespace ERPASA
         private System.Windows.Forms.ToolStripMenuItem button_taller_maquinaria;
         private System.Windows.Forms.ToolStripMenuItem button_taller_tablas_generales;
         private System.Windows.Forms.ToolStripMenuItem button_taller_reportes;
+        private System.Windows.Forms.ToolStripMenuItem button_taller_reportes_ControlLimpieza;
+        private System.Windows.Forms.ToolStripMenuItem button_taller_reportes_ControlMantenimiento;
         private System.Windows.Forms.ToolStripMenuItem button_comercial;
         private System.Windows.Forms.ToolStripMenuItem button_comercial_comercial;
         private System.Windows.Forms.ToolStripMenuItem button_comercial_logistica;
@@ -2859,6 +2974,7 @@ namespace ERPASA
         private System.Windows.Forms.ToolStripMenuItem button_taller_mantenimiento_preventivo;
         private System.Windows.Forms.ToolStripMenuItem button_taller_mantenimiento_correctivo;
         private System.Windows.Forms.ToolStripMenuItem button_taller_tablas_generales_vehiculos;
+        private System.Windows.Forms.ToolStripMenuItem button_taller_tablas_generales_UbicacionBano;
         private System.Windows.Forms.ToolStripMenuItem button_taller_reportes_OrdenTrabajo;
         private System.Windows.Forms.ToolStripMenuItem button_taller_reportes_PorxMantPrev;
         private System.Windows.Forms.ToolStripMenuItem button_taller_tablas_generales_GrupoVehiculo;
@@ -2877,6 +2993,9 @@ namespace ERPASA
         private System.Windows.Forms.ToolStripMenuItem button_comedor_reporte_IngSalBusesDet;
         private System.Windows.Forms.ToolStripMenuItem RRHH_ServPersonal_DescComedorPlanilla;
         private System.Windows.Forms.ToolStripMenuItem RRHH_Comunicaciones_PuntosPlanilla;
+        private System.Windows.Forms.ToolStripMenuItem RRHH_Comunicaciones_NetzunRepGeneral;
+        private System.Windows.Forms.ToolStripMenuItem RRHH_Comunicaciones_CursosNuevos;
+        private System.Windows.Forms.ToolStripMenuItem RRHH_Comunicaciones_CursosMeta;
         private System.Windows.Forms.ToolStripMenuItem RRHH_SST_CargarLogisticaCapacitacion;
         private System.Windows.Forms.ToolStripMenuItem RRHH_SST_CargarProgTerceros;
         private System.Windows.Forms.ToolStripMenuItem button_comercial_contabilidad_campaña;
@@ -2934,7 +3053,7 @@ namespace ERPASA
         private System.Windows.Forms.ToolStripMenuItem RRHH_SST_Reportes_AsistenciaCurso;
         private System.Windows.Forms.ToolStripMenuItem RRHH_SST_ProgramarCursosProveedor;
         private System.Windows.Forms.ToolStripMenuItem button_comercial_comercial_cargamasivaliqui_Citrico;
-        private System.Windows.Forms.ToolStripMenuItem cIERREYFACTURACIONToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem button_tablas_maestras_cierreProceso;
         private System.Windows.Forms.ToolStripMenuItem button_packing_guiafactura;
         private System.Windows.Forms.ToolStripMenuItem button_packing_guiafactura_grrCosecha;
         private System.Windows.Forms.ToolStripMenuItem button_packing_guiafactura_facServicio;
@@ -2947,10 +3066,16 @@ namespace ERPASA
         private System.Windows.Forms.ToolStripMenuItem button_packing_guiafactura_RepConsolidado;
         private System.Windows.Forms.ToolStripMenuItem button_packing_proceso_ControlProc;
         private System.Windows.Forms.ToolStripMenuItem button_packing_rrhh;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_PesoPresentacion;
         private System.Windows.Forms.ToolStripMenuItem button_packing_rrhh_tareodetallado;
         private System.Windows.Forms.ToolStripMenuItem button_packing_rrhh_progrSemanalPersonal;
         private System.Windows.Forms.ToolStripMenuItem button_packing_rrhh_progrAnualPersonal;
         private System.Windows.Forms.ToolStripMenuItem TabMaest_Roles_AppMovil;
         private System.Windows.Forms.ToolStripMenuItem button_comercial_contabilidad_EnvioGastoApiNisira;
+        private System.Windows.Forms.ToolStripMenuItem button_tablas_maestras_configurarCorreo;
+        private System.Windows.Forms.ToolStripMenuItem RRHH_Patrimonial_Reportes;
+        private System.Windows.Forms.ToolStripMenuItem RRHH_Patrimonial_Reportes_IngresoVisitas;
+        private System.Windows.Forms.ToolStripMenuItem RRHH_SST_Reportes_CursosCapacitacion;
     }
 }

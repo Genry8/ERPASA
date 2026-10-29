@@ -1,0 +1,115 @@
+{
+  "info": {
+    "name": "NISIRA API - Liquidacion de Gastos (ASA)",
+    "description": "Coleccion armada segun el Manual del Programador (NISIRA - API).\n\nComo usarla:\n1. Importar este archivo en Postman (Import > File).\n2. Crear un Environment con la variable base_url, por ejemplo http://159.112.129.152:3000\n3. Ejecutar primero '1. TOKEN (loginb2b)'. Su script guarda el JWT en la variable jwt del Environment.\n4. El resto de peticiones ya usan {{jwt}} automaticamente en el header Authorization: Bearer.\n\nEl token dura poco (en el ejemplo del manual, 1 hora): si una peticion devuelve 401, vuelva a ejecutar la 1.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://159.112.129.152:3000" },
+    { "key": "token_cliente", "value": "54B0FFB4-6ED4-4EB3-98AD-5BC18AD61448" },
+    { "key": "datasourceid", "value": "santaazul" },
+    { "key": "jwt", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "1. TOKEN (loginb2b)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Guarda el JWT para que las demas peticiones lo usen solas.",
+              "pm.test('Respuesta 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "var cuerpo = pm.response.json();",
+              "",
+              "pm.test('Trae token', function () {",
+              "    pm.expect(cuerpo).to.have.property('data');",
+              "    pm.expect(cuerpo.data).to.have.property('token');",
+              "});",
+              "",
+              "if (cuerpo && cuerpo.data && cuerpo.data.token) {",
+              "    pm.collectionVariables.set('jwt', cuerpo.data.token);",
+              "    console.log('JWT guardado, largo = ' + cuerpo.data.token.length);",
+              "}"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"token\": \"{{token_cliente}}\",\n    \"datasourceid\": \"{{datasourceid}}\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/loginb2b",
+          "host": [ "{{base_url}}" ],
+          "path": [ "loginb2b" ]
+        },
+        "description": "ITEM 001 del manual. Devuelve {\"data\":{\"token\":\"...\"},\"error\":false}"
+      }
+    },
+    {
+      "name": "2. Lista de sucursales",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{jwt}}" }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/lista/sucursales",
+          "host": [ "{{base_url}}" ],
+          "path": [ "api", "lista", "sucursales" ]
+        },
+        "description": "ITEM 004 del manual. Devuelve idempresa, idsucursal, direccion, descripcion y estado."
+      }
+    },
+    {
+      "name": "3. Listado de liquidaciones de gasto",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{jwt}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"idestado\": \"PE\",\n    \"idarea\": \"\",\n    \"fechaini\": \"20261001\",\n    \"fechafin\": \"20261031\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/liquidacion-gasto/list/liquidacion-gasto",
+          "host": [ "{{base_url}}" ],
+          "path": [ "api", "liquidacion-gasto", "list", "liquidacion-gasto" ]
+        },
+        "description": "ITEM 002 del manual. Es GET pero con cuerpo JSON: fechaini y fechafin son obligatorias (formato yyyyMMdd)."
+      }
+    },
+    {
+      "name": "4. Registrar liquidacion de gasto",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{jwt}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"idcobrarpagardoc\": \"\",\n  \"idsucursal\": \"001\",\n  \"idtipomov\": \"0001\",\n  \"iddocumento\": \"LGS\",\n  \"serie\": \"0001\",\n  \"Fecha\": \"20261026\",\n  \"idclieprov\": \"00010264899\",\n  \"idmoneda\": \"01\",\n  \"idarea\": \"          \",\n  \"idmediopago\": \"    \",\n  \"idunidadnegocio\": \"   \",\n  \"glosa\": \"PRUEBA DESDE POSTMAN\",\n  \"detalle\": [\n    {\n      \"item\": \"001\",\n      \"glosa\": \"COMBUSTIBLE\",\n      \"idclieprov\": \"20514326496\",\n      \"idtipomov\": \"0001\",\n      \"iddocumento\": \"FAC\",\n      \"serie\": \"F045\",\n      \"numero\": \"0016657\",\n      \"Fecha_D\": \"20261020\",\n      \"idcuenta\": \"94561101    \",\n      \"idccosto\": \"94ADM206    \",\n      \"iddestino\": \"001\",\n      \"idmoneda\": \"01\",\n      \"idregimen\": \"01\",\n      \"afecto\": 479.53,\n      \"inafecto\": 0.00,\n      \"pimpuesto\": 18.0000,\n      \"impuesto\": 86.31,\n      \"importe\": 565.84\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/liquidacion-gasto/save",
+          "host": [ "{{base_url}}" ],
+          "path": [ "api", "liquidacion-gasto", "save" ]
+        },
+        "description": "ITEM 012 del manual. OJO: esta peticion CREA un documento en NISIRA. No ejecutarla contra produccion para 'probar'."
+      }
+    }
+  ]
+}

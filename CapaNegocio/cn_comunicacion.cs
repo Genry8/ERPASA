@@ -461,5 +461,26 @@ namespace CapaNegocio
             datoscd.GuardarActualizarLideresEnAccionMasivo(datos);
         }
 
+
+        public void GuardarActualizarNetzunEstudiantesMasivo(DataTable datos)
+        {
+            cd_comunicacion datos2 = new cd_comunicacion();
+            datos2.GuardarActualizarNetzunEstudiantesMasivo(datos);
+        }
+
+
+        public void GuardarActualizarNetzunCursosNuevosMasivo(DataTable datos)
+        {
+            cd_comunicacion datos2 = new cd_comunicacion();
+            datos2.GuardarActualizarNetzunCursosNuevosMasivo(datos);
+        }
+
+
+        public void GuardarActualizarNetzunCursosMetaMasivo(DataTable datos)
+        {
+            cd_comunicacion datos2 = new cd_comunicacion();
+            datos2.GuardarActualizarNetzunCursosMetaMasivo(datos);
+        }
+
     }
 }

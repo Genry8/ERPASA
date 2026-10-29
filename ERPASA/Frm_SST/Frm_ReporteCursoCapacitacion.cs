@@ -116,7 +116,7 @@ namespace ERPASA.Frm_SST
                 // Cargar datos en segundo plano
                 await Task.Run(() =>
                 {
-                    BuscarReportePedido();
+                    BuscarReporte();
                     guna2DataGridView1.ClearSelection();
                 });
 
@@ -152,7 +152,7 @@ namespace ERPASA.Frm_SST
         }
 
 
-        public void BuscarReportePedido()
+        public void BuscarReporte()
         {
             string empText = string.Empty, emp;
 

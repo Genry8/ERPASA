@@ -77,6 +77,8 @@ namespace ERPASA.Reportes.Acopio
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox_Cultivo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.toolStrip2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -214,6 +216,8 @@ namespace ERPASA.Reportes.Acopio
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.comboBox_Cultivo);
             this.groupBox1.Controls.Add(this.label46);
             this.groupBox1.Controls.Add(this.label45);
             this.groupBox1.Controls.Add(this.comboBox_detalle_sede);
@@ -235,7 +239,7 @@ namespace ERPASA.Reportes.Acopio
             this.label46.BackColor = System.Drawing.Color.Transparent;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.label46.Location = new System.Drawing.Point(71, 119);
+            this.label46.Location = new System.Drawing.Point(11, 117);
             this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(54, 20);
@@ -248,7 +252,7 @@ namespace ERPASA.Reportes.Acopio
             this.label45.BackColor = System.Drawing.Color.Transparent;
             this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.label45.Location = new System.Drawing.Point(31, 77);
+            this.label45.Location = new System.Drawing.Point(5, 74);
             this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(88, 20);
@@ -257,35 +261,49 @@ namespace ERPASA.Reportes.Acopio
             // 
             // comboBox_detalle_sede
             // 
+            this.comboBox_detalle_sede.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_detalle_sede.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_detalle_sede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_detalle_sede.FocusedColor = System.Drawing.Color.Empty;
             this.comboBox_detalle_sede.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.comboBox_detalle_sede.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_detalle_sede.FormattingEnabled = true;
-            this.comboBox_detalle_sede.Location = new System.Drawing.Point(133, 113);
+            this.comboBox_detalle_sede.ItemHeight = 30;
+            this.comboBox_detalle_sede.Location = new System.Drawing.Point(73, 111);
             this.comboBox_detalle_sede.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_detalle_sede.Name = "comboBox_detalle_sede";
-            this.comboBox_detalle_sede.Size = new System.Drawing.Size(225, 32);
+            this.comboBox_detalle_sede.Size = new System.Drawing.Size(225, 36);
             this.comboBox_detalle_sede.TabIndex = 353;
             // 
             // comboBox_detalle_empresa
             // 
+            this.comboBox_detalle_empresa.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_detalle_empresa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_detalle_empresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_detalle_empresa.FocusedColor = System.Drawing.Color.Empty;
             this.comboBox_detalle_empresa.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.comboBox_detalle_empresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_detalle_empresa.FormattingEnabled = true;
-            this.comboBox_detalle_empresa.Location = new System.Drawing.Point(133, 71);
+            this.comboBox_detalle_empresa.ItemHeight = 30;
+            this.comboBox_detalle_empresa.Location = new System.Drawing.Point(107, 68);
             this.comboBox_detalle_empresa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_detalle_empresa.Name = "comboBox_detalle_empresa";
-            this.comboBox_detalle_empresa.Size = new System.Drawing.Size(305, 32);
+            this.comboBox_detalle_empresa.Size = new System.Drawing.Size(305, 36);
             this.comboBox_detalle_empresa.TabIndex = 352;
             this.comboBox_detalle_empresa.SelectedIndexChanged += new System.EventHandler(this.comboBox_detalle_empresa_SelectedIndexChanged);
             // 
             // dateTimePicker_FecFin
             // 
-            this.dateTimePicker_FecFin.Checked = false;
             this.dateTimePicker_FecFin.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_FecFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_FecFin.Location = new System.Drawing.Point(406, 27);
             this.dateTimePicker_FecFin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker_FecFin.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker_FecFin.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker_FecFin.Name = "dateTimePicker_FecFin";
             this.dateTimePicker_FecFin.Size = new System.Drawing.Size(154, 31);
             this.dateTimePicker_FecFin.TabIndex = 350;
+            this.dateTimePicker_FecFin.Value = new System.DateTime(2026, 10, 29, 15, 36, 15, 385);
             // 
             // label1
             // 
@@ -302,14 +320,16 @@ namespace ERPASA.Reportes.Acopio
             // 
             // dateTimePicker_FecInicio
             // 
-            this.dateTimePicker_FecInicio.Checked = false;
             this.dateTimePicker_FecInicio.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_FecInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_FecInicio.Location = new System.Drawing.Point(133, 27);
             this.dateTimePicker_FecInicio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker_FecInicio.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker_FecInicio.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker_FecInicio.Name = "dateTimePicker_FecInicio";
             this.dateTimePicker_FecInicio.Size = new System.Drawing.Size(154, 31);
             this.dateTimePicker_FecInicio.TabIndex = 1;
+            this.dateTimePicker_FecInicio.Value = new System.DateTime(2026, 10, 29, 15, 36, 15, 434);
             // 
             // label7
             // 
@@ -597,6 +617,35 @@ namespace ERPASA.Reportes.Acopio
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Width = 362;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
+            this.label3.Location = new System.Drawing.Point(320, 117);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 20);
+            this.label3.TabIndex = 363;
+            this.label3.Text = "CULTIVO";
+            // 
+            // comboBox_Cultivo
+            // 
+            this.comboBox_Cultivo.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_Cultivo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_Cultivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Cultivo.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBox_Cultivo.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.comboBox_Cultivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBox_Cultivo.FormattingEnabled = true;
+            this.comboBox_Cultivo.ItemHeight = 30;
+            this.comboBox_Cultivo.Location = new System.Drawing.Point(406, 111);
+            this.comboBox_Cultivo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox_Cultivo.Name = "comboBox_Cultivo";
+            this.comboBox_Cultivo.Size = new System.Drawing.Size(159, 36);
+            this.comboBox_Cultivo.TabIndex = 362;
+            // 
             // Frm_Reporte_RecepcionAcopio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -671,5 +720,7 @@ namespace ERPASA.Reportes.Acopio
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.Label label3;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_Cultivo;
     }
 }

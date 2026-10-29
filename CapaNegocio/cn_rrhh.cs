@@ -85,5 +85,13 @@ namespace CapaNegocio
 
 
 
+
+        public static DataTable ListaReporteVisitasPv1(
+            DateTime fecini, DateTime fecfin, string emp, string sed)
+        {
+            cd_rrhh datos = new cd_rrhh();
+            return datos.ListaReporteVisitasPv1(fecini, fecfin, emp, sed);
+        }
+
     }
 }

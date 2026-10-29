@@ -118,6 +118,7 @@ namespace CapaDatos
         /// Base URL del servidor principal.
         /// </summary>
         public const string baseUrl = "https://app.agsantaazul.com:45490";
+        public const string baseUrlQA = "https://app.agsantaazul.com:45491";
         //public const string baseUrl = "http://190.119.200.124:45490";
 
         public const string baseUrlExtech = "http://35.190.132.15:8989";
@@ -131,7 +132,22 @@ namespace CapaDatos
         /// <summary>
         /// Base URL del API REST de NISIRA (ver Manual del Programador - NISIRA API).
         /// </summary>
-        public const string baseUrlNisira = "http://172.22.1.89:8081";
+        /// La del manual (172.22.1.89:8081) es la de desarrollo de NISIRA y
+        /// solo responde dentro de su red. La de produccion se configura en
+        /// App.config con la clave NisiraUrl, asi se cambia sin recompilar.
+        public static readonly string baseUrlNisira =
+            System.Configuration.ConfigurationManager.AppSettings["NisiraUrl"]
+            ?? "http://159.112.129.152:3000";
+
+        /// Clave fija del cliente para pedir el token ("loginb2b"), y base de
+        /// datos contra la que se autentica. Tambien salen de App.config.
+        public static readonly string tokenClienteNisira =
+            System.Configuration.ConfigurationManager.AppSettings["NisiraTokenCliente"]
+            ?? "54B0FFB4-6ED4-4EB3-98AD-5BC18AD61448";
+
+        public static readonly string dataSourceIdNisira =
+            System.Configuration.ConfigurationManager.AppSettings["NisiraDataSourceId"]
+            ?? "santaazul";
 
         /// <summary>
         /// Tiempo máximo de espera para peticiones.

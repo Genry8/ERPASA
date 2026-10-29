@@ -62,6 +62,9 @@ namespace ERPASA.Reportes.Acopio
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_EnviarCorreo = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel_EnviarCorreo = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton_EnviarCorreoDestajo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel_EnviarCorreoDestajo = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.guna2TextBoxSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -91,6 +94,10 @@ namespace ERPASA.Reportes.Acopio
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label_cajas = new System.Windows.Forms.Label();
             this.label_equiv = new System.Windows.Forms.Label();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -125,7 +132,14 @@ namespace ERPASA.Reportes.Acopio
             this.toolStripSeparator6,
             this.toolStripSeparator8,
             this.toolStripButton_EnviarCorreo,
-            this.toolStripLabel_EnviarCorreo});
+            this.toolStripLabel_EnviarCorreo,
+            this.toolStripSeparator15,
+            this.toolStripSeparator14,
+            this.toolStripSeparator13,
+            this.toolStripSeparator12,
+            this.toolStripSeparator11,
+            this.toolStripButton_EnviarCorreoDestajo,
+            this.toolStripLabel_EnviarCorreoDestajo});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(1881, 41);
@@ -288,6 +302,28 @@ namespace ERPASA.Reportes.Acopio
             this.toolStripLabel_EnviarCorreo.Size = new System.Drawing.Size(118, 36);
             this.toolStripLabel_EnviarCorreo.Text = "Enviar Correo";
             // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 41);
+            // 
+            // toolStripButton_EnviarCorreoDestajo
+            // 
+            this.toolStripButton_EnviarCorreoDestajo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_EnviarCorreoDestajo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_EnviarCorreoDestajo.Image")));
+            this.toolStripButton_EnviarCorreoDestajo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_EnviarCorreoDestajo.Name = "toolStripButton_EnviarCorreoDestajo";
+            this.toolStripButton_EnviarCorreoDestajo.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton_EnviarCorreoDestajo.ToolTipText = "Enviar correo de destajo";
+            this.toolStripButton_EnviarCorreoDestajo.Click += new System.EventHandler(this.toolStripButton_EnviarCorreoDestajo_Click);
+            // 
+            // toolStripLabel_EnviarCorreoDestajo
+            // 
+            this.toolStripLabel_EnviarCorreoDestajo.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.toolStripLabel_EnviarCorreoDestajo.Name = "toolStripLabel_EnviarCorreoDestajo";
+            this.toolStripLabel_EnviarCorreoDestajo.Size = new System.Drawing.Size(233, 36);
+            this.toolStripLabel_EnviarCorreoDestajo.Text = "Enviar Correo Destajo";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.guna2TextBoxSearch);
@@ -345,12 +381,18 @@ namespace ERPASA.Reportes.Acopio
             // 
             // comboBox_Cultivo
             // 
+            this.comboBox_Cultivo.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_Cultivo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_Cultivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Cultivo.FocusedColor = System.Drawing.Color.Empty;
             this.comboBox_Cultivo.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.comboBox_Cultivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_Cultivo.FormattingEnabled = true;
+            this.comboBox_Cultivo.ItemHeight = 30;
             this.comboBox_Cultivo.Location = new System.Drawing.Point(448, 111);
             this.comboBox_Cultivo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_Cultivo.Name = "comboBox_Cultivo";
-            this.comboBox_Cultivo.Size = new System.Drawing.Size(159, 32);
+            this.comboBox_Cultivo.Size = new System.Drawing.Size(159, 36);
             this.comboBox_Cultivo.TabIndex = 358;
             // 
             // label46
@@ -381,35 +423,49 @@ namespace ERPASA.Reportes.Acopio
             // 
             // comboBox_detalle_sede
             // 
+            this.comboBox_detalle_sede.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_detalle_sede.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_detalle_sede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_detalle_sede.FocusedColor = System.Drawing.Color.Empty;
             this.comboBox_detalle_sede.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.comboBox_detalle_sede.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_detalle_sede.FormattingEnabled = true;
+            this.comboBox_detalle_sede.ItemHeight = 30;
             this.comboBox_detalle_sede.Location = new System.Drawing.Point(133, 111);
             this.comboBox_detalle_sede.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_detalle_sede.Name = "comboBox_detalle_sede";
-            this.comboBox_detalle_sede.Size = new System.Drawing.Size(213, 32);
+            this.comboBox_detalle_sede.Size = new System.Drawing.Size(213, 36);
             this.comboBox_detalle_sede.TabIndex = 353;
             // 
             // comboBox_detalle_empresa
             // 
+            this.comboBox_detalle_empresa.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_detalle_empresa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_detalle_empresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_detalle_empresa.FocusedColor = System.Drawing.Color.Empty;
             this.comboBox_detalle_empresa.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.comboBox_detalle_empresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_detalle_empresa.FormattingEnabled = true;
+            this.comboBox_detalle_empresa.ItemHeight = 30;
             this.comboBox_detalle_empresa.Location = new System.Drawing.Point(133, 71);
             this.comboBox_detalle_empresa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_detalle_empresa.Name = "comboBox_detalle_empresa";
-            this.comboBox_detalle_empresa.Size = new System.Drawing.Size(305, 32);
+            this.comboBox_detalle_empresa.Size = new System.Drawing.Size(305, 36);
             this.comboBox_detalle_empresa.TabIndex = 352;
             this.comboBox_detalle_empresa.SelectedIndexChanged += new System.EventHandler(this.comboBox_detalle_empresa_SelectedIndexChanged);
             // 
             // dateTimePicker_FecFin
             // 
-            this.dateTimePicker_FecFin.Checked = false;
             this.dateTimePicker_FecFin.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_FecFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_FecFin.Location = new System.Drawing.Point(406, 27);
             this.dateTimePicker_FecFin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker_FecFin.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker_FecFin.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker_FecFin.Name = "dateTimePicker_FecFin";
             this.dateTimePicker_FecFin.Size = new System.Drawing.Size(154, 31);
             this.dateTimePicker_FecFin.TabIndex = 350;
+            this.dateTimePicker_FecFin.Value = new System.DateTime(2026, 10, 27, 9, 45, 27, 704);
             // 
             // label1
             // 
@@ -426,14 +482,16 @@ namespace ERPASA.Reportes.Acopio
             // 
             // dateTimePicker_FecInicio
             // 
-            this.dateTimePicker_FecInicio.Checked = false;
             this.dateTimePicker_FecInicio.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_FecInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_FecInicio.Location = new System.Drawing.Point(133, 27);
             this.dateTimePicker_FecInicio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker_FecInicio.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker_FecInicio.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker_FecInicio.Name = "dateTimePicker_FecInicio";
             this.dateTimePicker_FecInicio.Size = new System.Drawing.Size(154, 31);
             this.dateTimePicker_FecInicio.TabIndex = 1;
+            this.dateTimePicker_FecInicio.Value = new System.DateTime(2026, 10, 27, 9, 45, 27, 865);
             // 
             // label7
             // 
@@ -751,6 +809,26 @@ namespace ERPASA.Reportes.Acopio
             this.label_equiv.TabIndex = 392;
             this.label_equiv.Text = "0";
             // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 41);
+            // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 41);
+            // 
+            // toolStripSeparator14
+            // 
+            this.toolStripSeparator14.Name = "toolStripSeparator14";
+            this.toolStripSeparator14.Size = new System.Drawing.Size(6, 41);
+            // 
+            // toolStripSeparator15
+            // 
+            this.toolStripSeparator15.Name = "toolStripSeparator15";
+            this.toolStripSeparator15.Size = new System.Drawing.Size(6, 41);
+            // 
             // Frm_Reporte_PT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -842,6 +920,13 @@ namespace ERPASA.Reportes.Acopio
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripButton toolStripButton_EnviarCorreo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripButton toolStripButton_EnviarCorreoDestajo;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel_EnviarCorreoDestajo;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_EnviarCorreo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
     }
 }

@@ -58,6 +58,76 @@ namespace CapaNegocio
             return null;
         }
 
+        /// <summary>
+        /// 🔹 Evidencia fotografica de un control de limpieza,
+        /// por su nombre de archivo. Es el mismo endpoint que usa el
+        /// aplicativo movil: /recibir/getimageconlimpieza/{fileName}
+        /// Retorna null si no hay foto o si el servidor no responde.
+        /// </summary>
+        public async Task<byte[]> ObtenerEvidenciaLimpiezaBytesAsync(string fileName)
+        {
+            if (string.IsNullOrWhiteSpace(fileName)) return null;
+
+            try
+            {
+                string url = $"{baseUrl}/recibir/getimageconlimpieza/" +
+                             Uri.EscapeDataString(fileName.Trim());
+
+                using (HttpResponseMessage response = await client.GetAsync(url))
+                {
+                    if (response.IsSuccessStatusCode)
+                        return await response.Content.ReadAsByteArrayAsync();
+
+                    Console.WriteLine($"❌ Evidencia no disponible ({(int)response.StatusCode}): {fileName}");
+                }
+            }
+            catch (TaskCanceledException)
+            {
+                Console.WriteLine("⏰ La descarga de la evidencia excedió el tiempo de espera.");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"🔥 Error descargando la evidencia: {e.Message}");
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// 🔹 Evidencia fotografica de un control de mantenimiento,
+        /// por su nombre de archivo. Es el mismo endpoint que usa el
+        /// aplicativo movil: /recibir/getimageconmantenimiento/{fileName}
+        /// Retorna null si no hay foto o si el servidor no responde.
+        /// </summary>
+        public async Task<byte[]> ObtenerEvidenciaMantenimientoBytesAsync(string fileName)
+        {
+            if (string.IsNullOrWhiteSpace(fileName)) return null;
+
+            try
+            {
+                string url = $"{baseUrl}/recibir/getimageconmantenimiento/" +
+                             Uri.EscapeDataString(fileName.Trim());
+
+                using (HttpResponseMessage response = await client.GetAsync(url))
+                {
+                    if (response.IsSuccessStatusCode)
+                        return await response.Content.ReadAsByteArrayAsync();
+
+                    Console.WriteLine($"❌ Evidencia no disponible ({(int)response.StatusCode}): {fileName}");
+                }
+            }
+            catch (TaskCanceledException)
+            {
+                Console.WriteLine("⏰ La descarga de la evidencia excedió el tiempo de espera.");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"🔥 Error descargando la evidencia: {e.Message}");
+            }
+
+            return null;
+        }
+
         public async Task<byte[]> ObtenerFirmaBytesAsync(string fileName)
         {
             Console.WriteLine($"🚀 Descargando bytes de imagen desde servidor: {fileName}");

@@ -46,6 +46,7 @@ namespace ERPASA.Reportes.Acopio
             //DETALLE DE REPORTE
             comboBox_detalle_empresa.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_detalle_sede.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox_Cultivo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
 
@@ -58,6 +59,10 @@ namespace ERPASA.Reportes.Acopio
             comboBox_detalle_sede.DataSource = cn_logistica.ListaCBSedeTodoAsignacionTI();
             comboBox_detalle_sede.DisplayMember = "DesSed"; //NOMBRE DE LA TABLA O NOMBRE DE COLUMNA ID
             comboBox_detalle_sede.ValueMember = "id"; // NOMBRE DE LA COLUMNA o PARA ORDENAR
+
+            comboBox_Cultivo.DataSource = cn_packing.ListaCultivo();
+            comboBox_Cultivo.DisplayMember = "Cultivo"; //NOMBRE DE LA TABLA O NOMBRE DE COLUMNA ID
+            comboBox_Cultivo.ValueMember = "id"; // NOMBRE DE LA COLUMNA o PARA ORDENAR
 
 
         }
@@ -93,7 +98,8 @@ namespace ERPASA.Reportes.Acopio
             //var val = cn_sst.BuscAtencionPaciente(textBox_Dni.Text, dateTimePicker_FecAtencion.Value.Date,textBox_HoraEntrada.Text);
             //if (val == true)
             //{
-            string emp, sed, empText = string.Empty, sedText = string.Empty;
+            string emp, sed,cult, empText = string.Empty, sedText = string.Empty
+                , cultText = string.Empty;
 
             ////////////////////////////////////
             if (comboBox_detalle_empresa.InvokeRequired)
@@ -120,6 +126,19 @@ namespace ERPASA.Reportes.Acopio
                 sedText = comboBox_detalle_sede.Text;
             }
 
+            ////////////////////////////////////
+            if (comboBox_Cultivo.InvokeRequired)
+            {
+                comboBox_Cultivo.Invoke(new MethodInvoker(() =>
+                {
+                    cultText = comboBox_Cultivo.Text;
+                }));
+            }
+            else
+            {
+                cultText = comboBox_Cultivo.Text;
+            }
+
             if (empText == "SELECCIONE")
             {
                 emp = "%";
@@ -136,6 +155,14 @@ namespace ERPASA.Reportes.Acopio
             {
                 sed = sedText;
             }
+            if (cultText == "SELECCIONE")
+            {
+                cult = "%";
+            }
+            else
+            {
+                cult = cultText;
+            }
 
 
             //Msbox.Frm_NotificacionesGuardar ng = new Msbox.Frm_NotificacionesGuardar("REPORTE ENCONTRADO", Color.FromArgb(0, 179, 78), 2);
@@ -143,11 +170,11 @@ namespace ERPASA.Reportes.Acopio
 
             dtg2 = cn_sst.ListaRecepcion(dateTimePicker_FecInicio.Value.Date
                 , dateTimePicker_FecFin.Value.Date, emp
-                , sed);
+                , sed,cult);
 
             dtg1 = cn_sst.ListaRecepcionVariedad(dateTimePicker_FecInicio.Value.Date
                 , dateTimePicker_FecFin.Value.Date, emp
-                , sed);
+                , sed,cult);
 
         }
 

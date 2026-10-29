@@ -216,6 +216,10 @@ namespace ERPASA.Frm_Correo
                     // Datos del correo
                     DateTime fechaInicio = ce_correo.fechaProcesoIni ?? DateTime.Now;
                     DateTime fechaFin = ce_correo.fechaProcesoFin ?? DateTime.Now;
+                    String empresa = ce_correo.empresaProceso ?? "";
+                    String sede = ce_correo.sedeProceso ?? "";
+                    String cultivo = ce_correo.cultivoProceso ?? "";
+
                     string rangoFecha = "", usuarioEnvia = "";
 
                     if (fechaInicio.Date == fechaFin.Date)
@@ -230,10 +234,14 @@ namespace ERPASA.Frm_Correo
                     }
                     usuarioEnvia += ce_usuario.usenam;
 
-                    correo.Subject = guna2TextBox_Asunto.Text.Trim() + rangoFecha;
+                    correo.Subject = guna2TextBox_Asunto.Text.Trim() + rangoFecha + " - "+cultivo;
                     correo.Body =
                     guna2TextBox_Cuerpo.Text +
                     rangoFecha +
+                    "<br><br>" +
+                    "EMPRESA: " + empresa + "<br>" +                    
+                    "SEDE: " + sede + "<br>" +
+                    "CULTIVO: " + cultivo +
                     "<br><br>" +
                     "Slds,<br>" +
                     usuarioEnvia;

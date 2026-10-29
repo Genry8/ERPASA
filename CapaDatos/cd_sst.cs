@@ -352,7 +352,8 @@ namespace CapaDatos
 
 
         // MOSTRAR LISTA DE ASIGNACION POR FILTROS
-        public DataTable ListaRecepcionAcopio(DateTime fecini, DateTime fecfin, string emp, string sed)
+        public DataTable ListaRecepcionAcopio(DateTime fecini, DateTime fecfin
+            , string emp, string sed, string cult)
         {
             SqlDataReader resultado; //permite leer las filas
             DataTable tabla = new DataTable();
@@ -368,6 +369,7 @@ namespace CapaDatos
                 comando.Parameters.AddWithValue("@Fechafin", SqlDbType.Date).Value = fecfin;
                 comando.Parameters.AddWithValue("@Emp", SqlDbType.VarChar).Value = emp;
                 comando.Parameters.AddWithValue("@Sed", SqlDbType.VarChar).Value = sed;
+                comando.Parameters.AddWithValue("@Cult", SqlDbType.VarChar).Value = cult;
                 resultado = comando.ExecuteReader();
                 tabla.Load(resultado);
                 return tabla;
@@ -387,7 +389,8 @@ namespace CapaDatos
 
 
         // MOSTRAR LISTA RECEPCION
-        public DataTable ListaRecepcion(DateTime fecini, DateTime fecfin, string emp, string sed)
+        public DataTable ListaRecepcion(DateTime fecini
+            , DateTime fecfin, string emp, string sed,string cult)
         {
             SqlDataReader resultado; //permite leer las filas
             DataTable tabla = new DataTable();
@@ -403,6 +406,7 @@ namespace CapaDatos
                 comando.Parameters.AddWithValue("@Fechafin", SqlDbType.Date).Value = fecfin;
                 comando.Parameters.AddWithValue("@Emp", SqlDbType.VarChar).Value = emp;
                 comando.Parameters.AddWithValue("@Sed", SqlDbType.VarChar).Value = sed;
+                comando.Parameters.AddWithValue("@Cult", SqlDbType.VarChar).Value = cult;
                 resultado = comando.ExecuteReader();
                 tabla.Load(resultado);
                 return tabla;
@@ -1227,7 +1231,8 @@ namespace CapaDatos
 
 
         // MOSTRAR LISTA DE ASIGNACION POR FILTROS
-        public DataTable ListaRecepcionAcopioVariedad(DateTime fecini, DateTime fecfin, string emp, string sed)
+        public DataTable ListaRecepcionAcopioVariedad(DateTime fecini, DateTime fecfin
+            , string emp, string sed, string cult)
         {
             SqlDataReader resultado; //permite leer las filas
             DataTable tabla = new DataTable();
@@ -1243,6 +1248,7 @@ namespace CapaDatos
                 comando.Parameters.AddWithValue("@Fechafin", SqlDbType.Date).Value = fecfin;
                 comando.Parameters.AddWithValue("@Emp", SqlDbType.VarChar).Value = emp;
                 comando.Parameters.AddWithValue("@Sed", SqlDbType.VarChar).Value = sed;
+                comando.Parameters.AddWithValue("@Cult", SqlDbType.VarChar).Value = cult;
                 resultado = comando.ExecuteReader();
                 tabla.Load(resultado);
                 return tabla;
@@ -1262,7 +1268,8 @@ namespace CapaDatos
 
 
         // MOSTRAR LISTA DE recepcion
-        public DataTable ListaRecepcionVariedad(DateTime fecini, DateTime fecfin, string emp, string sed)
+        public DataTable ListaRecepcionVariedad(DateTime fecini
+            , DateTime fecfin, string emp, string sed,string cult)
         {
             SqlDataReader resultado; //permite leer las filas
             DataTable tabla = new DataTable();
@@ -1278,6 +1285,7 @@ namespace CapaDatos
                 comando.Parameters.AddWithValue("@Fechafin", SqlDbType.Date).Value = fecfin;
                 comando.Parameters.AddWithValue("@Emp", SqlDbType.VarChar).Value = emp;
                 comando.Parameters.AddWithValue("@Sed", SqlDbType.VarChar).Value = sed;
+                comando.Parameters.AddWithValue("@Cult", SqlDbType.VarChar).Value = cult;
                 resultado = comando.ExecuteReader();
                 tabla.Load(resultado);
                 return tabla;
@@ -1444,7 +1452,8 @@ namespace CapaDatos
         }
 
         // MOSTRAR LISTA DE ASIGNACION POR FILTROS
-        public DataTable ListaRecepcionAcopioProducto(DateTime fecini, DateTime fecfin, string emp, string sed)
+        public DataTable ListaRecepcionAcopioProducto(DateTime fecini, DateTime fecfin
+            , string emp, string sed, string cult)
         {
             SqlDataReader resultado; //permite leer las filas
             DataTable tabla = new DataTable();
@@ -1460,6 +1469,7 @@ namespace CapaDatos
                 comando.Parameters.AddWithValue("@Fechafin", SqlDbType.Date).Value = fecfin;
                 comando.Parameters.AddWithValue("@Emp", SqlDbType.VarChar).Value = emp;
                 comando.Parameters.AddWithValue("@Sed", SqlDbType.VarChar).Value = sed;
+                comando.Parameters.AddWithValue("@Cult", SqlDbType.VarChar).Value = cult;
                 resultado = comando.ExecuteReader();
                 tabla.Load(resultado);
                 return tabla;

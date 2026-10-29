@@ -502,6 +502,14 @@ namespace ERPASA.Reportes.Acopio
             }
         }
 
+        private string ValorCombo(ComboBox combo)
+        {
+            string valor = combo.Text.Trim();
+            return valor.Equals("SELECCIONE", StringComparison.OrdinalIgnoreCase) || valor == ""
+                ? "TODOS"
+                : valor;
+        }
+
         // Generar Excel del reporte
         private async void toolStripButton_EnviarCorreo_Click(object sender, EventArgs e)
         {
@@ -510,6 +518,10 @@ namespace ERPASA.Reportes.Acopio
             {
                 ce_correo.fechaProcesoIni = dateTimePicker_FecInicio.Value.Date;
                 ce_correo.fechaProcesoFin = dateTimePicker_FecFin.Value.Date;
+                ce_correo.empresaProceso = ValorCombo(comboBox_detalle_empresa);
+                ce_correo.sedeProceso = ValorCombo(comboBox_detalle_sede);
+                ce_correo.cultivoProceso = ValorCombo(comboBox_Cultivo);
+
                 ce_correo.codCorreo = 1;
 
                 string titulo = "Reporte_Producto_Terminado_";
@@ -551,6 +563,68 @@ namespace ERPASA.Reportes.Acopio
                 Msbox.Frm_NotificacionesGuardar ng = new Msbox.Frm_NotificacionesGuardar("NO HAY REPORTE A ENVIAR", Color.FromArgb(238, 24, 24), 3);
                 ng.Show();
             }
+        }
+
+        /// <summary>
+        /// Correo de destajo (PACK_EnviarCorreo Id = 6). A diferencia del
+        /// anterior, el cuerpo lleva el cuadro de cajas por presentacion y
+        /// fecha, y el Excel adjunto trae dos hojas: el detalle y ese mismo
+        /// resumen.
+        /// </summary>
+        private async void toolStripButton_EnviarCorreoDestajo_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.RowCount == 0)
+            {
+                Msbox.Frm_NotificacionesGuardar ng =
+                    new Msbox.Frm_NotificacionesGuardar("NO HAY REPORTE A ENVIAR",
+                        Color.FromArgb(238, 24, 24), 3);
+                ng.Show();
+                return;
+            }
+
+            var resumen = ResumenPaletasDestajo.Calcular(dataGridView2);
+
+            if (resumen.Faltante != null)
+            {
+                MessageBox.Show(
+                    "El reporte no trae la columna " + resumen.Faltante + ", que hace " +
+                    "falta para armar el cuadro de cajas.\n\n" +
+                    "Se necesitan PRESENTACION, FECHA PROCESO y CAJAS.",
+                    Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ce_correo.fechaProcesoIni = dateTimePicker_FecInicio.Value.Date;
+            ce_correo.fechaProcesoFin = dateTimePicker_FecFin.Value.Date;
+            ce_correo.empresaProceso = ValorCombo(comboBox_detalle_empresa);
+            ce_correo.sedeProceso = ValorCombo(comboBox_detalle_sede);
+            ce_correo.cultivoProceso = ValorCombo(comboBox_Cultivo);
+
+            ce_correo.codCorreo = 6;
+            ce_correo.tablaHtmlResumen = ResumenPaletasDestajo.Html(resumen);
+
+            string titulo = "Reg_PaletasProceso_";
+            _cts = new CancellationTokenSource();
+
+            var frbm = new frm_dowloadExcel();
+            frbm.Show(this);
+
+            string rutaExcel = await Task.Run(() =>
+            {
+                return objexcel_progress.exportarexcelCorreoDestajo(
+                    dataGridView2, frbm, _cts.Token, titulo,
+                    ce_correo.fechaProcesoIni.Value,
+                    ce_correo.fechaProcesoFin.Value,
+                    resumen);
+            });
+
+            frbm.Close();
+
+            ce_correo.rutaArchivoAdjunto = rutaExcel;
+
+            Frm_Correo.EnviarCorreoDestajo frm = new Frm_Correo.EnviarCorreoDestajo();
+            AddOwnedForm(frm);
+            frm.ShowDialog();
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)

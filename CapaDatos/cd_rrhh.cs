@@ -307,5 +307,40 @@ namespace CapaDatos
 
 
 
+
+        // MOSTRAR LISTA REPORTE DE VISITAS (PV_Visitas)
+        public DataTable ListaReporteVisitasPv1(
+            DateTime fecini, DateTime fecfin, string emp, string sed)
+        {
+            SqlDataReader resultado; //permite leer las filas
+            DataTable tabla = new DataTable();
+            SqlConnection conex = new SqlConnection();
+
+            try
+            {
+                conex = cd_conexion.CrearInstancia().leerconexion();
+                SqlCommand comando = new SqlCommand("SP_MOSTRAR_LISTA_VISITAS_PV", conex);
+                comando.CommandType = CommandType.StoredProcedure;
+                conex.Open();
+                comando.Parameters.AddWithValue("@FecIni", SqlDbType.Date).Value = fecini;
+                comando.Parameters.AddWithValue("@FecFin", SqlDbType.Date).Value = fecfin;
+                comando.Parameters.AddWithValue("@Emp", SqlDbType.VarChar).Value = emp;
+                comando.Parameters.AddWithValue("@Sed", SqlDbType.VarChar).Value = sed;
+                resultado = comando.ExecuteReader();
+                tabla.Load(resultado);
+                return tabla;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                if (conex.State == ConnectionState.Open) conex.Close(); // CERRAMOS LA CONEXION
+            }
+        }
+
     }
 }

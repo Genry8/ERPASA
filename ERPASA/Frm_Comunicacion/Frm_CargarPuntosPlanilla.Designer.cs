@@ -72,7 +72,7 @@ namespace ERPASA.Frm_Comunicacion
             this.toolStripLabel2});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1378, 41);
+            this.toolStrip2.Size = new System.Drawing.Size(1213, 41);
             this.toolStrip2.TabIndex = 264;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -164,11 +164,18 @@ namespace ERPASA.Frm_Comunicacion
             // 
             // comboBox_Hojas
             // 
+            this.comboBox_Hojas.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_Hojas.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_Hojas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Hojas.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBox_Hojas.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox_Hojas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_Hojas.FormattingEnabled = true;
+            this.comboBox_Hojas.ItemHeight = 30;
             this.comboBox_Hojas.Location = new System.Drawing.Point(785, 66);
             this.comboBox_Hojas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_Hojas.Name = "comboBox_Hojas";
-            this.comboBox_Hojas.Size = new System.Drawing.Size(228, 28);
+            this.comboBox_Hojas.Size = new System.Drawing.Size(228, 36);
             this.comboBox_Hojas.TabIndex = 312;
             // 
             // label3
@@ -198,9 +205,14 @@ namespace ERPASA.Frm_Comunicacion
             // 
             // textRuta
             // 
+            this.textRuta.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textRuta.DefaultText = "";
+            this.textRuta.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textRuta.Location = new System.Drawing.Point(93, 69);
             this.textRuta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textRuta.Name = "textRuta";
+            this.textRuta.PlaceholderText = "";
+            this.textRuta.SelectedText = "";
             this.textRuta.Size = new System.Drawing.Size(398, 26);
             this.textRuta.TabIndex = 309;
             // 
@@ -240,7 +252,7 @@ namespace ERPASA.Frm_Comunicacion
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.dataGridView1.Location = new System.Drawing.Point(11, 108);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 112);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -260,7 +272,7 @@ namespace ERPASA.Frm_Comunicacion
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1351, 548);
+            this.dataGridView1.Size = new System.Drawing.Size(1186, 375);
             this.dataGridView1.TabIndex = 314;
             // 
             // Column1
@@ -275,7 +287,7 @@ namespace ERPASA.Frm_Comunicacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1378, 706);
+            this.ClientSize = new System.Drawing.Size(1213, 501);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label_cantreg);
             this.Controls.Add(this.comboBox_Hojas);

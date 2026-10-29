@@ -1,4 +1,4 @@
-
+﻿
 using CapaEntidad;
 using System;
 using System.Data;
@@ -808,6 +808,159 @@ namespace CapaDatos
 
 
         // METODO PARA GUARDAR LISTA VEHICULOS
+
+        //
+        //
+        // UBICACION DE BAÑOS (TALL_UbicacionBaños)
+        //
+        //
+
+        // METODO PARA GUARDAR UNA UBICACION DE BAÑO
+        public void GuardarUbicacionBano(
+            string emp, string sed, string cabezal, string valvula
+            , string nrobano, string genero, string obs, string foto
+            , string estado, DateTime fec_cre
+            , int usereg, string hostname
+            , DateTime fec_mov, int usedit, int useelim)
+        {
+            using (var conexion = leerconexion())
+            {
+                using (var comando = new SqlCommand("SP_GUARDAR_TALL_UBICACION_BANOS"))
+                {
+                    comando.Connection = conexion;
+                    comando.CommandType = CommandType.StoredProcedure;
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@Empresa", SqlDbType.VarChar).Value = emp;
+                    comando.Parameters.AddWithValue("@Sede", SqlDbType.VarChar).Value = sed;
+                    comando.Parameters.AddWithValue("@Cabezal", SqlDbType.VarChar).Value = cabezal;
+                    comando.Parameters.AddWithValue("@Valvula", SqlDbType.VarChar).Value = valvula;
+                    comando.Parameters.AddWithValue("@NroBano", SqlDbType.VarChar).Value = nrobano;
+                    comando.Parameters.AddWithValue("@Genero", SqlDbType.VarChar).Value = genero;
+                    comando.Parameters.AddWithValue("@Obs", SqlDbType.VarChar).Value = obs;
+                    comando.Parameters.AddWithValue("@Foto", SqlDbType.VarChar).Value = foto;
+                    comando.Parameters.AddWithValue("@Estado", SqlDbType.VarChar).Value = estado;
+                    comando.Parameters.AddWithValue("@FecCre", SqlDbType.DateTime2).Value = fec_cre;
+                    comando.Parameters.AddWithValue("@UseReg", SqlDbType.Int).Value = usereg;
+                    comando.Parameters.AddWithValue("@Hostname", SqlDbType.VarChar).Value = hostname;
+                    comando.Parameters.AddWithValue("@FecEdit", SqlDbType.DateTime2).Value = fec_mov;
+                    comando.Parameters.AddWithValue("@UseEdit", SqlDbType.Int).Value = usedit;
+                    comando.Parameters.AddWithValue("@UseElim", SqlDbType.Int).Value = useelim;
+                    comando.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+
+        // METODO PARA ACTUALIZAR UNA UBICACION DE BAÑO
+        public void ActualizarUbicacionBano(int id,
+            string emp, string sed, string cabezal, string valvula
+            , string nrobano, string genero, string obs, string foto
+            , DateTime fec_mov, int usedit)
+        {
+            using (var conexion = leerconexion())
+            {
+                using (var comando = new SqlCommand("SP_ACTUALIZAR_TALL_UBICACION_BANOS"))
+                {
+                    comando.Connection = conexion;
+                    comando.CommandType = CommandType.StoredProcedure;
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = id;
+                    comando.Parameters.AddWithValue("@Empresa", SqlDbType.VarChar).Value = emp;
+                    comando.Parameters.AddWithValue("@Sede", SqlDbType.VarChar).Value = sed;
+                    comando.Parameters.AddWithValue("@Cabezal", SqlDbType.VarChar).Value = cabezal;
+                    comando.Parameters.AddWithValue("@Valvula", SqlDbType.VarChar).Value = valvula;
+                    comando.Parameters.AddWithValue("@NroBano", SqlDbType.VarChar).Value = nrobano;
+                    comando.Parameters.AddWithValue("@Genero", SqlDbType.VarChar).Value = genero;
+                    comando.Parameters.AddWithValue("@Obs", SqlDbType.VarChar).Value = obs;
+                    comando.Parameters.AddWithValue("@Foto", SqlDbType.VarChar).Value = foto;
+                    comando.Parameters.AddWithValue("@FecEdit", SqlDbType.DateTime2).Value = fec_mov;
+                    comando.Parameters.AddWithValue("@UseEdit", SqlDbType.Int).Value = usedit;
+                    comando.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+
+        // METODO PARA ELIMINAR (BAJA LOGICA) UNA UBICACION DE BAÑO
+        public void EliminarUbicacionBano(int id, DateTime fec_mov, int useelim)
+        {
+            using (var conexion = leerconexion())
+            {
+                using (var comando = new SqlCommand("SP_ELIMINAR_TALL_UBICACION_BANOS"))
+                {
+                    comando.Connection = conexion;
+                    comando.CommandType = CommandType.StoredProcedure;
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = id;
+                    comando.Parameters.AddWithValue("@FecEdit", SqlDbType.DateTime2).Value = fec_mov;
+                    comando.Parameters.AddWithValue("@UseElim", SqlDbType.Int).Value = useelim;
+                    comando.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+
+        // MOSTRAR LISTA DE UBICACIONES DE BAÑO
+        public DataTable ListaReporteUbicacionBano(string emp, string sed)
+        {
+            SqlDataReader resultado; //permite leer las filas
+            DataTable tabla = new DataTable();
+            SqlConnection conex = new SqlConnection();
+
+            try
+            {
+                conex = cd_conexion.CrearInstancia().leerconexion();
+                SqlCommand comando = new SqlCommand("SP_MOSTRAR_TALL_UBICACION_BANOS", conex);
+                comando.CommandType = CommandType.StoredProcedure;
+                conex.Open();
+                comando.Parameters.AddWithValue("@Emp", SqlDbType.VarChar).Value = emp;
+                comando.Parameters.AddWithValue("@Sed", SqlDbType.VarChar).Value = sed;
+                resultado = comando.ExecuteReader();
+                tabla.Load(resultado);
+                return tabla;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                if (conex.State == ConnectionState.Open) conex.Close(); // CERRAMOS LA CONEXION
+            }
+        }
+
+
+        // VERIFICA SI YA EXISTE ESE BAÑO (misma empresa, sede, cabezal,
+        // valvula y numero). Al editar se pasa el Id para no chocar consigo mismo.
+        public bool BuscExisteUbicacionBano(string emp, string sed, string cabezal,
+            string valvula, string nrobano, int id)
+        {
+            using (var conexion = cd_conexion.CrearInstancia().leerconexion())
+            {
+                using (var comando = new SqlCommand("SP_CODIGO_TALL_UBICACION_BANOS"))
+                {
+                    comando.Connection = conexion;
+                    comando.CommandType = CommandType.StoredProcedure;
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@Empresa", SqlDbType.VarChar).Value = emp;
+                    comando.Parameters.AddWithValue("@Sede", SqlDbType.VarChar).Value = sed;
+                    comando.Parameters.AddWithValue("@Cabezal", SqlDbType.VarChar).Value = cabezal;
+                    comando.Parameters.AddWithValue("@Valvula", SqlDbType.VarChar).Value = valvula;
+                    comando.Parameters.AddWithValue("@NroBano", SqlDbType.VarChar).Value = nrobano;
+                    comando.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = id;
+
+                    SqlDataReader reader = comando.ExecuteReader();
+                    return reader.HasRows;
+                }
+            }
+        }
+
+
         public void GuardarListaVehiculos(
             string emp, string sed, string area, string placa
             , string tipovehiculo, string marca, string modelo, string responsable
@@ -1835,6 +1988,60 @@ namespace CapaDatos
 
 
 
+
+
+        // MOSTRAR LISTA REPORTE CONTROL DE LIMPIEZA
+        public DataTable ListaReporteControlLimpieza(
+            DateTime fecini, DateTime fecfin, string emp, string sed)
+        {
+            return ListaReporteTaller("SP_MOSTRAR_LISTA_CONTROL_LIMPIEZA",
+                fecini, fecfin, emp, sed);
+        }
+
+
+        // MOSTRAR LISTA REPORTE CONTROL DE MANTENIMIENTO
+        public DataTable ListaReporteControlMantenimiento(
+            DateTime fecini, DateTime fecfin, string emp, string sed)
+        {
+            return ListaReporteTaller("SP_MOSTRAR_LISTA_CONTROL_MANTENIMIENTO",
+                fecini, fecfin, emp, sed);
+        }
+
+
+        // Los dos reportes anteriores reciben los mismos cuatro filtros, asi
+        // que comparten la lectura y solo cambian de procedimiento.
+        private DataTable ListaReporteTaller(string procedimiento,
+            DateTime fecini, DateTime fecfin, string emp, string sed)
+        {
+            SqlDataReader resultado; //permite leer las filas
+            DataTable tabla = new DataTable();
+            SqlConnection conex = new SqlConnection();
+
+            try
+            {
+                conex = cd_conexion.CrearInstancia().leerconexion();
+                SqlCommand comando = new SqlCommand(procedimiento, conex);
+                comando.CommandType = CommandType.StoredProcedure;
+                conex.Open();
+                comando.Parameters.AddWithValue("@FecIni", SqlDbType.Date).Value = fecini;
+                comando.Parameters.AddWithValue("@FecFin", SqlDbType.Date).Value = fecfin;
+                comando.Parameters.AddWithValue("@Emp", SqlDbType.VarChar).Value = emp;
+                comando.Parameters.AddWithValue("@Sed", SqlDbType.VarChar).Value = sed;
+                resultado = comando.ExecuteReader();
+                tabla.Load(resultado);
+                return tabla;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                if (conex.State == ConnectionState.Open) conex.Close(); // CERRAMOS LA CONEXION
+            }
+        }
 
     }
 }

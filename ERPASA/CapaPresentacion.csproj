@@ -29,7 +29,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>http://localhost/ERPASA/</UpdateUrl>
-    <ApplicationRevision>170</ApplicationRevision>
+    <ApplicationRevision>175</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -387,6 +387,17 @@
     <Compile Include="Frm_TabMaestra\Roles\Frm_RolesUserAppMovil.designer.cs">
       <DependentUpon>Frm_RolesUserAppMovil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Taller\CrystalReportPrintLimpieza.cs">
+      <DependentUpon>CrystalReportPrintLimpieza.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Frm_Taller\DataSetTaller.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTaller.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\AcopioRRHH\Frm_CargarReqPersonalAnual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -482,6 +493,12 @@
     </Compile>
     <Compile Include="Reportes\Acopio\Frm_ReporteGuiaRecepcion.Designer.cs">
       <DependentUpon>Frm_ReporteGuiaRecepcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Correo\EnviarCorreoDestajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Correo\EnviarCorreoDestajo.Designer.cs">
+      <DependentUpon>EnviarCorreoDestajo.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Correo\EnviarCorreo.cs">
       <SubType>Form</SubType>
@@ -640,6 +657,24 @@
     </Compile>
     <Compile Include="Frm_Comercial\Frm_RegistrarPesoPresentacion.Designer.cs">
       <DependentUpon>Frm_RegistrarPesoPresentacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Comunicacion\Frm_CargarNetzunRepGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Comunicacion\Frm_CargarNetzunRepGeneral.Designer.cs">
+      <DependentUpon>Frm_CargarNetzunRepGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Comunicacion\Frm_CargarNetzunCursosMeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Comunicacion\Frm_CargarNetzunCursosMeta.Designer.cs">
+      <DependentUpon>Frm_CargarNetzunCursosMeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Comunicacion\Frm_CargarNetzunCursosNuevos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Comunicacion\Frm_CargarNetzunCursosNuevos.Designer.cs">
+      <DependentUpon>Frm_CargarNetzunCursosNuevos.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Comunicacion\Frm_CargarPuntosPlanilla.cs">
       <SubType>Form</SubType>
@@ -1237,6 +1272,27 @@
     <Compile Include="Ser_Personal\Frm_ReporteIngresoSalidaBuses.Designer.cs">
       <DependentUpon>Frm_ReporteIngresoSalidaBuses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Patrimonial\Frm_ReporteVisitasPv1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Patrimonial\Frm_ReporteVisitasPv1.Designer.cs">
+      <DependentUpon>Frm_ReporteVisitasPv1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Taller\Frm_VerEvidencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Taller\Frm_ReporteControlLimpieza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Taller\Frm_ReporteControlLimpieza.Designer.cs">
+      <DependentUpon>Frm_ReporteControlLimpieza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Taller\Frm_ReporteControlMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Taller\Frm_ReporteControlMantenimiento.Designer.cs">
+      <DependentUpon>Frm_ReporteControlMantenimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Taller\Frm_ReporteOrdenTrabajo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1410,6 +1466,18 @@
     </Compile>
     <Compile Include="Reportes\Acopio\Frm_Reporte_Frio.Designer.cs">
       <DependentUpon>Frm_Reporte_Frio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Taller\Frm_RegistrarUbicacionBano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Taller\Frm_RegistrarUbicacionBano.Designer.cs">
+      <DependentUpon>Frm_RegistrarUbicacionBano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Taller\frm_AgregarUbicacionBano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Taller\frm_AgregarUbicacionBano.Designer.cs">
+      <DependentUpon>frm_AgregarUbicacionBano.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Taller\Frm_RegistrarVehiculos.cs">
       <SubType>Form</SubType>
@@ -2199,6 +2267,7 @@
     <Compile Include="Reportes\Acopio\Frm_Reporte_Gasificado.Designer.cs">
       <DependentUpon>Frm_Reporte_Gasificado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Acopio\ResumenPaletasDestajo.cs" />
     <Compile Include="Reportes\Acopio\Frm_Reporte_PT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2333,6 +2402,319 @@
     </Compile>
     <Compile Include="Reportes\Frm_Comedor\Frm_CargarFoto.Designer.cs">
       <DependentUpon>Frm_CargarFoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCultivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCultivo.Designer.cs">
+      <DependentUpon>Frm_MaestroCultivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCultivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCultivo.Designer.cs">
+      <DependentUpon>frm_AgregarCultivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCampana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCampana.Designer.cs">
+      <DependentUpon>Frm_MaestroCampana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCampana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCampana.Designer.cs">
+      <DependentUpon>frm_AgregarCampana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCategoria.Designer.cs">
+      <DependentUpon>Frm_MaestroCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCategoria.Designer.cs">
+      <DependentUpon>frm_AgregarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCalibre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCalibre.Designer.cs">
+      <DependentUpon>Frm_MaestroCalibre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCalibre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCalibre.Designer.cs">
+      <DependentUpon>frm_AgregarCalibre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCabezal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCabezal.Designer.cs">
+      <DependentUpon>Frm_MaestroCabezal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCabezal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCabezal.Designer.cs">
+      <DependentUpon>frm_AgregarCabezal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCabezalPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCabezalPT.Designer.cs">
+      <DependentUpon>Frm_MaestroCabezalPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCabezalPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCabezalPT.Designer.cs">
+      <DependentUpon>frm_AgregarCabezalPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCamara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCamara.Designer.cs">
+      <DependentUpon>Frm_MaestroCamara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCamara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCamara.Designer.cs">
+      <DependentUpon>frm_AgregarCamara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCamaraFrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCamaraFrio.Designer.cs">
+      <DependentUpon>Frm_MaestroCamaraFrio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCamaraFrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCamaraFrio.Designer.cs">
+      <DependentUpon>frm_AgregarCamaraFrio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCamaraPreFrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCamaraPreFrio.Designer.cs">
+      <DependentUpon>Frm_MaestroCamaraPreFrio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCamaraPreFrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCamaraPreFrio.Designer.cs">
+      <DependentUpon>frm_AgregarCamaraPreFrio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCamaraGasificado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroCamaraGasificado.Designer.cs">
+      <DependentUpon>Frm_MaestroCamaraGasificado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCamaraGasificado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarCamaraGasificado.Designer.cs">
+      <DependentUpon>frm_AgregarCamaraGasificado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroMaquinaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroMaquinaria.Designer.cs">
+      <DependentUpon>Frm_MaestroMaquinaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarMaquinaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarMaquinaria.Designer.cs">
+      <DependentUpon>frm_AgregarMaquinaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroFilerMaquina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroFilerMaquina.Designer.cs">
+      <DependentUpon>Frm_MaestroFilerMaquina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarFilerMaquina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarFilerMaquina.Designer.cs">
+      <DependentUpon>frm_AgregarFilerMaquina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroEstilos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroEstilos.Designer.cs">
+      <DependentUpon>Frm_MaestroEstilos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarEstilos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarEstilos.Designer.cs">
+      <DependentUpon>frm_AgregarEstilos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroEmpaqueProceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroEmpaqueProceso.Designer.cs">
+      <DependentUpon>Frm_MaestroEmpaqueProceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarEmpaqueProceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarEmpaqueProceso.Designer.cs">
+      <DependentUpon>frm_AgregarEmpaqueProceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTipoParihuela.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTipoParihuela.Designer.cs">
+      <DependentUpon>Frm_MaestroTipoParihuela.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTipoParihuela.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTipoParihuela.Designer.cs">
+      <DependentUpon>frm_AgregarTipoParihuela.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTipoPaLlet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTipoPaLlet.Designer.cs">
+      <DependentUpon>Frm_MaestroTipoPaLlet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTipoPaLlet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTipoPaLlet.Designer.cs">
+      <DependentUpon>frm_AgregarTipoPaLlet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTipoMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTipoMateria.Designer.cs">
+      <DependentUpon>Frm_MaestroTipoMateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTipoMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTipoMateria.Designer.cs">
+      <DependentUpon>frm_AgregarTipoMateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTipoCosecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTipoCosecha.Designer.cs">
+      <DependentUpon>Frm_MaestroTipoCosecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTipoCosecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTipoCosecha.Designer.cs">
+      <DependentUpon>frm_AgregarTipoCosecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTipoDefecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTipoDefecto.Designer.cs">
+      <DependentUpon>Frm_MaestroTipoDefecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTipoDefecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTipoDefecto.Designer.cs">
+      <DependentUpon>frm_AgregarTipoDefecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTipoCausaError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTipoCausaError.Designer.cs">
+      <DependentUpon>Frm_MaestroTipoCausaError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTipoCausaError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTipoCausaError.Designer.cs">
+      <DependentUpon>frm_AgregarTipoCausaError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroMotivoParadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroMotivoParadas.Designer.cs">
+      <DependentUpon>Frm_MaestroMotivoParadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarMotivoParadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarMotivoParadas.Designer.cs">
+      <DependentUpon>frm_AgregarMotivoParadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTurno.Designer.cs">
+      <DependentUpon>Frm_MaestroTurno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTurno.Designer.cs">
+      <DependentUpon>frm_AgregarTurno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTransporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTransporte.Designer.cs">
+      <DependentUpon>Frm_MaestroTransporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTransporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTransporte.Designer.cs">
+      <DependentUpon>frm_AgregarTransporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroEstadoPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroEstadoPT.Designer.cs">
+      <DependentUpon>Frm_MaestroEstadoPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarEstadoPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarEstadoPT.Designer.cs">
+      <DependentUpon>frm_AgregarEstadoPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\IconosMaestro.cs" />
+    <Compile Include="Frm_Sistema\Frm_RegistrarCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Sistema\Frm_RegistrarCorreo.Designer.cs">
+      <DependentUpon>Frm_RegistrarCorreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Sistema\frm_AgregarCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Sistema\frm_AgregarCorreo.Designer.cs">
+      <DependentUpon>frm_AgregarCorreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_RegistrarPesoPresentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_RegistrarPesoPresentacion.Designer.cs">
+      <DependentUpon>Frm_RegistrarPesoPresentacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarPesoPresentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarPesoPresentacion.Designer.cs">
+      <DependentUpon>frm_AgregarPesoPresentacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Acopio\Frm_AcopioRecepcion.cs">
       <SubType>Form</SubType>
@@ -2686,8 +3068,21 @@
     <EmbeddedResource Include="Frm_Contabilidad\Frm_RindeGastoNisiraAPI.resx">
       <DependentUpon>Frm_RindeGastoNisiraAPI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Sistema\frm_AgregarCorreo.resx">
+      <DependentUpon>frm_AgregarCorreo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_TabMaestra\Roles\Frm_RolesUserAppMovil.resx">
       <DependentUpon>Frm_RolesUserAppMovil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Taller\CrystalReportPrintLimpieza.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportPrintLimpieza.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Taller\frm_AgregarUbicacionBano.resx">
+      <DependentUpon>frm_AgregarUbicacionBano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Taller\Frm_ReporteControlLimpieza.resx">
+      <DependentUpon>Frm_ReporteControlLimpieza.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\AcopioRRHH\Frm_CargarReqPersonalAnual.resx">
       <DependentUpon>Frm_CargarReqPersonalAnual.cs</DependentUpon>
@@ -2736,6 +3131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Acopio\Frm_ReporteGuiaRecepcion.resx">
       <DependentUpon>Frm_ReporteGuiaRecepcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Correo\EnviarCorreoDestajo.resx">
+      <DependentUpon>EnviarCorreoDestajo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Correo\EnviarCorreo.resx">
       <DependentUpon>EnviarCorreo.cs</DependentUpon>
@@ -2813,6 +3211,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Comercial\Frm_RegistrarPesoPresentacion.resx">
       <DependentUpon>Frm_RegistrarPesoPresentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Comunicacion\Frm_CargarNetzunRepGeneral.resx">
+      <DependentUpon>Frm_CargarNetzunRepGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Comunicacion\Frm_CargarNetzunCursosMeta.resx">
+      <DependentUpon>Frm_CargarNetzunCursosMeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Comunicacion\Frm_CargarNetzunCursosNuevos.resx">
+      <DependentUpon>Frm_CargarNetzunCursosNuevos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Comunicacion\Frm_CargarPuntosPlanilla.resx">
       <DependentUpon>Frm_CargarPuntosPlanilla.cs</DependentUpon>
@@ -3194,6 +3601,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Acopio\Frm_Reporte_Frio.resx">
       <DependentUpon>Frm_Reporte_Frio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Taller\Frm_RegistrarUbicacionBano.resx">
+      <DependentUpon>Frm_RegistrarUbicacionBano.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Taller\Frm_RegistrarVehiculos.resx">
       <DependentUpon>Frm_RegistrarVehiculos.cs</DependentUpon>
@@ -3674,6 +4084,9 @@
     <EmbeddedResource Include="Reportes\Frm_Comedor\Frm_CargarFoto.resx">
       <DependentUpon>Frm_CargarFoto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Acopio\Frm_Maestros\Frm_RegistrarPesoPresentacion.resx">
+      <DependentUpon>Frm_RegistrarPesoPresentacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Acopio\Frm_AcopioRecepcion.resx">
       <DependentUpon>Frm_AcopioRecepcion.cs</DependentUpon>
     </EmbeddedResource>
@@ -3898,6 +4311,17 @@
     </None>
     <None Include="Frm_Sistema\DataSetSistemas.xss">
       <DependentUpon>DataSetSistemas.xsd</DependentUpon>
+    </None>
+    <None Include="Frm_Taller\DataSetTaller.xsc">
+      <DependentUpon>DataSetTaller.xsd</DependentUpon>
+    </None>
+    <None Include="Frm_Taller\DataSetTaller.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTaller.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Frm_Taller\DataSetTaller.xss">
+      <DependentUpon>DataSetTaller.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />

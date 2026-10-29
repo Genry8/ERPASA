@@ -1,6 +1,7 @@
 ﻿using CapaDatos;
 using System;
 using System.Data;
+using System.Runtime.Remoting.Messaging;
 
 namespace CapaNegocio
 {
@@ -76,16 +77,18 @@ namespace CapaNegocio
 
         //LISTA 
         //
-        public static DataTable ListaRecepcionAcopio(DateTime fecini, DateTime fecfin, string emp, string sed)
+        public static DataTable ListaRecepcionAcopio(DateTime fecini, DateTime fecfin
+            , string emp, string sed, string cult)
         {
             cd_sst datos = new cd_sst();
-            return datos.ListaRecepcionAcopio(fecini, fecfin, emp, sed);
+            return datos.ListaRecepcionAcopio(fecini, fecfin, emp, sed, cult);
         }
 
-        public static DataTable ListaRecepcion(DateTime fecini, DateTime fecfin, string emp, string sed)
+        public static DataTable ListaRecepcion(DateTime fecini
+            , DateTime fecfin, string emp, string sed,string cult)
         {
             cd_sst datos = new cd_sst();
-            return datos.ListaRecepcion(fecini, fecfin, emp, sed);
+            return datos.ListaRecepcion(fecini, fecfin, emp, sed,cult);
         }
 
         public static DataTable ListaEstadoPallet(DateTime fecini, DateTime fecfin, string emp, string sed, string pallet)
@@ -254,16 +257,18 @@ namespace CapaNegocio
 
         //LISTA 
         //
-        public static DataTable ListaRecepcionAcopioVariedad(DateTime fecini, DateTime fecfin, string emp, string sed)
+        public static DataTable ListaRecepcionAcopioVariedad(DateTime fecini, DateTime fecfin
+            , string emp, string sed, string cult)
         {
             cd_sst datos = new cd_sst();
-            return datos.ListaRecepcionAcopioVariedad(fecini, fecfin, emp, sed);
+            return datos.ListaRecepcionAcopioVariedad(fecini, fecfin, emp, sed, cult);
         }
 
-        public static DataTable ListaRecepcionVariedad(DateTime fecini, DateTime fecfin, string emp, string sed)
+        public static DataTable ListaRecepcionVariedad(DateTime fecini
+            , DateTime fecfin, string emp, string sed,string cult)
         {
             cd_sst datos = new cd_sst();
-            return datos.ListaRecepcionVariedad(fecini, fecfin, emp, sed);
+            return datos.ListaRecepcionVariedad(fecini, fecfin, emp, sed,cult);
         }
 
         public static DataTable ListaReporteVolcadoMaquina(DateTime fecini,
@@ -295,10 +300,11 @@ namespace CapaNegocio
 
         //LISTA 
         //
-        public static DataTable ListaRecepcionAcopioProducto(DateTime fecini, DateTime fecfin, string emp, string sed)
+        public static DataTable ListaRecepcionAcopioProducto(DateTime fecini, DateTime fecfin
+            , string emp, string sed, string cult)
         {
             cd_sst datos = new cd_sst();
-            return datos.ListaRecepcionAcopioProducto(fecini, fecfin, emp, sed);
+            return datos.ListaRecepcionAcopioProducto(fecini, fecfin, emp, sed, cult);
         }
 
         //ACTUALIZAR PERSONAL SST

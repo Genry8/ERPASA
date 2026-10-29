@@ -1,4 +1,4 @@
-using CapaDatos;
+﻿using CapaDatos;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
@@ -21,8 +21,8 @@ namespace CapaNegocio
         // 🔑 Credenciales del API (ver ITEM 001 del manual - servicio "loginb2b").
         // TODO: confirmar/rotar con el administrador de NISIRA si corresponde.
         // =====================================================================
-        private const string TokenCliente = "54B0FFB4-6ED4-4EB3-98AD-5BC18AD61448";
-        private const string DataSourceIdProd = "santaazul";
+        private static string TokenCliente { get { return cd_conexionApi.tokenClienteNisira; } }
+        private static string DataSourceIdProd { get { return cd_conexionApi.dataSourceIdNisira; } }
 
         /// <summary>
         /// 1) Hace login contra NISIRA ("loginb2b") y devuelve el JWT a usar

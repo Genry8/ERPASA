@@ -1234,5 +1234,94 @@ namespace CapaDatos
 
 
 
+
+        // COM_NetzunReporteEstudiantes: alta o actualizacion por
+        // IdNetzun + Curso + FecReporte.
+        public void GuardarActualizarNetzunEstudiantesMasivo(DataTable datos)
+        {
+            CargaMasiva(datos, "#NetzunEstudiantes", @"CREATE TABLE #NetzunEstudiantes(
+                        IdNetzun                 int,
+                        NombresApellidos         varchar(100),
+                        Email                    varchar(100),
+                        Funcion                  varchar(50),
+                        EstadoUsuario            varchar(30),
+                        InicioSesion             varchar(10),
+                        Rol                      varchar(50),
+                        Curso                    varchar(150),
+                        FecPrimeraMatricula      date,
+                        EstadoCurso              varchar(30),
+                        IntentosDesaprobados     int,
+                        Capsulas                 varchar(20),
+                        PorcentajeProgreso       decimal(9,4),
+                        DuracionCurso            time(0),
+                        AvanceHoras              time(0),
+                        NotaExamen               varchar(10),
+                        FecAprobacionExamen      date,
+                        FecUltimaLeccion         date,
+                        HoraUltimaLeccion        time(0),
+                        FecDeadline              date,
+                        Nivel1                   varchar(100),
+                        CodigoInterno            varchar(50),
+                        CursoAsignadoLibre       varchar(20),
+                        Cargo                    varchar(100),
+                        NumeroDocumento          varchar(20),
+                        CursoNetzunPropio        varchar(30),
+                        FecCertificacion         date,
+                        FecInscripcionCurso      date,
+                        RutaAprendizaje          varchar(150),
+                        FecInscripcionUsuario    date,
+                        FecDesactivacionUsuario  date,
+                        Especializaciones        varchar(250),
+                        FecFinEspecializacion    varchar(100),
+                        FecFinRuta               date,
+                        HoraFinRuta              time(0),
+                        FecUltimaMatricula       datetime2(0),
+                        Empresa                  varchar(100),
+                        Gerencia                 varchar(100),
+                        TipoTrabajador           varchar(50),
+                        Dni                      varchar(15),
+                        FecReporte               date,
+                        FecCre                   datetime,
+                        UseReg                   int,
+                        Hostname                 varchar(50),
+                        FecEdit                  datetime,
+                        UseEdit                  int)", "SP_GUARDAR_ACTUALIZAR_COM_NETZUN_ESTUDIANTES_MASIVO");
+        }
+
+
+        // COM_NetzunCursosNuevos: alta o actualizacion por
+        // NombresApellidos + Curso + FecAsignacion.
+        public void GuardarActualizarNetzunCursosNuevosMasivo(DataTable datos)
+        {
+            CargaMasiva(datos, "#NetzunCursosNuevos", @"CREATE TABLE #NetzunCursosNuevos(
+                        NombresApellidos  varchar(100),
+                        Especializacion   varchar(250),
+                        Curso             varchar(150),
+                        FecAsignacion     date,
+                        HorasTotales      decimal(18,10),
+                        Combinada         varchar(300),
+                        FecCre            datetime,
+                        UseReg            int,
+                        Hostname          varchar(50),
+                        FecEdit           datetime,
+                        UseEdit           int)", "SP_GUARDAR_ACTUALIZAR_COM_NETZUN_CURSOSNUEVOS_MASIVO");
+        }
+
+
+        // COM_NetzunCursosMeta: alta o actualizacion por ValidacionCursos + Fecha.
+        public void GuardarActualizarNetzunCursosMetaMasivo(DataTable datos)
+        {
+            CargaMasiva(datos, "#NetzunCursosMeta", @"CREATE TABLE #NetzunCursosMeta(
+                        ValidacionCursos  varchar(250),
+                        Fecha             date,
+                        Semana            int,
+                        Meta              float,
+                        FecCre            datetime,
+                        UseReg            int,
+                        Hostname          varchar(50),
+                        FecEdit           datetime,
+                        UseEdit           int)", "SP_GUARDAR_ACTUALIZAR_COM_NETZUN_CURSOSMETA_MASIVO");
+        }
+
     }
 }

@@ -167,9 +167,14 @@ namespace ERPASA.Frm_SST
             // 
             // textBox_marc
             // 
+            this.textBox_marc.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_marc.DefaultText = "";
+            this.textBox_marc.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBox_marc.Location = new System.Drawing.Point(516, 10);
             this.textBox_marc.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_marc.Name = "textBox_marc";
+            this.textBox_marc.PlaceholderText = "";
+            this.textBox_marc.SelectedText = "";
             this.textBox_marc.Size = new System.Drawing.Size(8, 26);
             this.textBox_marc.TabIndex = 307;
             this.textBox_marc.Visible = false;
@@ -415,6 +420,7 @@ namespace ERPASA.Frm_SST
             this.Name = "Frm_ReporteProgramacionTerceros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " REPORTE PROGRAMACION TERCEROS";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_ReporteProgramacionTerceros_Load);
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();

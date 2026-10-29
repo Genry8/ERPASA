@@ -10,7 +10,10 @@ namespace CapaEntidad
         public static DateTime? fechaProcesoFin { get; set; }
         public static DateTime? fecha { get; set; }
         public static string empresa { get; set; }
+        public static string empresaProceso { get; set; }
         public static string sede { get; set; }
+        public static string sedeProceso { get; set; }
+        public static string cultivoProceso { get; set; }
         public static string gerencia { get; set; }
         public static string area { get; set; }
         public static string responsable { get; set; }
@@ -23,6 +26,12 @@ namespace CapaEntidad
         public static string cuerpo { get; set; }
         public static string uuid { get; set; }
         public static string rutaArchivoAdjunto { get; set; }
+
+        /// <summary>
+        /// Cuadro resumen en HTML que se intercala en el cuerpo del correo.
+        /// Lo llena el reporte antes de abrir la ventana de envio.
+        /// </summary>
+        public static string tablaHtmlResumen { get; set; }
 
 
         public static string ServidorSMTP

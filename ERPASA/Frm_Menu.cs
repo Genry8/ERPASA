@@ -50,6 +50,8 @@ namespace ERPASA
             }
 
 
+            AgregarMaestrosPacking();
+
             AplicarEstiloMenu();
             //
             //textBox_bienvenida.Text = "BIENVENIDO :  " + ce_usuario.usenam;
@@ -427,6 +429,32 @@ namespace ERPASA
         }
 
 
+        /// <summary>
+        /// Igual que la version generica, pero para formularios que necesitan
+        /// parametros de construccion (los maestros de packing comparten clase
+        /// y se distinguen por el descriptor, asi que no sirve new()).
+        /// Si ya hay uno abierto del mismo titulo, se trae al frente.
+        /// </summary>
+        public void AbrirFormularioHijo(Form formulario)
+        {
+            Form abierto = panel_contenedor.Controls.OfType<Form>()
+                .FirstOrDefault(f => f.GetType() == formulario.GetType() &&
+                                     f.Text == formulario.Text);
+
+            if (abierto != null)
+            {
+                formulario.Dispose();
+                abierto.BringToFront();
+                return;
+            }
+
+            formulario.TopLevel = false;
+            panel_contenedor.Controls.Add(formulario);
+            panel_contenedor.Tag = formulario;
+            formulario.Show();
+            formulario.BringToFront();
+        }
+
         public void AbrirFormularioHijo<MiForm>() where MiForm : Form, new()
         {
             Form fh;
@@ -759,6 +787,13 @@ namespace ERPASA
             //AbrirFormularioHijo<Frm_TabMaestra.Usuario.CambiarContrasena>();
         }
 
+
+        private void button_tablas_maestras_configurarCorreo_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Sistema.Frm_RegistrarCorreo>();
+        }
+
+
         private void TabMaest_UserReg_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo<Frm_TabMaestra.frm_Registrar_usuario>();
@@ -821,6 +856,57 @@ namespace ERPASA
             AbrirFormularioHijo<Frm_Taller.Frm_RegistrarVehiculos>();
         }
 
+        /// <summary>
+        /// Cuelga de PAKING > MAESTROS una opcion por cada tabla maestra,
+        /// debajo de "Agregar peso presentacion". Se arman por codigo y no en
+        /// el diseñador: son dos docenas y cada una abre su propio formulario.
+        /// </summary>
+        private void AgregarMaestrosPacking()
+        {
+                AgregarMaestro("CULTIVO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCultivo(); });
+                AgregarMaestro("CAMPAÑA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCampana(); });
+                AgregarMaestro("CATEGORIA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCategoria(); });
+                AgregarMaestro("CALIBRE", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCalibre(); });
+                AgregarMaestro("CABEZAL", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCabezal(); });
+                AgregarMaestro("CABEZAL PT", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCabezalPT(); });
+                AgregarMaestro("CAMARA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamara(); });
+                AgregarMaestro("CAMARA DE FRIO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamaraFrio(); });
+                AgregarMaestro("CAMARA DE PRE FRIO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamaraPreFrio(); });
+                AgregarMaestro("CAMARA DE GASIFICADO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamaraGasificado(); });
+                AgregarMaestro("MAQUINARIA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroMaquinaria(); });
+                AgregarMaestro("FILER POR MAQUINA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroFilerMaquina(); });
+                AgregarMaestro("ESTILOS", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroEstilos(); });
+                AgregarMaestro("EMPAQUE DE PROCESO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroEmpaqueProceso(); });
+                AgregarMaestro("TIPO DE PARIHUELA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoParihuela(); });
+                AgregarMaestro("TIPO DE PALLET", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoPaLlet(); });
+                AgregarMaestro("TIPO DE MATERIA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoMateria(); });
+                AgregarMaestro("TIPO DE COSECHA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoCosecha(); });
+                AgregarMaestro("TIPO DE DEFECTO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoDefecto(); });
+                AgregarMaestro("TIPO DE CAUSA DE ERROR", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoCausaError(); });
+                AgregarMaestro("MOTIVO DE PARADAS", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroMotivoParadas(); });
+                AgregarMaestro("TURNO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTurno(); });
+                AgregarMaestro("TRANSPORTE", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTransporte(); });
+                AgregarMaestro("ESTADO PT", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroEstadoPT(); });
+        }
+
+        private void AgregarMaestro(string titulo, Func<Form> crear)
+        {
+            var opcion = new ToolStripMenuItem(titulo);
+            opcion.Click += delegate { AbrirFormularioHijo(crear()); };
+            button_packing_maestros.DropDownItems.Add(opcion);
+        }
+
+        private void button_packing_maestros_PesoPresentacion_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_RegistrarPesoPresentacion>();
+        }
+
+
+        private void button_taller_tablas_generales_UbicacionBano_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Taller.Frm_RegistrarUbicacionBano>();
+        }
+
         private void button_taller_tablas_generales_GrupoVehiculo_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo<Frm_Taller.Frm_RegistrarGrupoVehiculo>();
@@ -844,6 +930,17 @@ namespace ERPASA
         {
             AbrirFormularioHijo<Frm_Taller.Frm_ProximosMantPreventivo>();
 
+        }
+
+
+        private void button_taller_reportes_ControlLimpieza_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Taller.Frm_ReporteControlLimpieza>();
+        }
+
+        private void button_taller_reportes_ControlMantenimiento_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Taller.Frm_ReporteControlMantenimiento>();
         }
 
         private void button_taller_reportes_KilometrajeGrif_Click(object sender, EventArgs e)
@@ -1029,6 +1126,26 @@ namespace ERPASA
         {
             AbrirFormularioHijo<Frm_SIG.Frm_Cargar_CumplimientoCertificaciones>();
         }
+
+        /// <summary>
+        /// PATRIMONIAL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// 
+
+        private void RRHH_Patrimonial_Reportes_IngresoVisitas_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Patrimonial.Frm_ReporteVisitasPv1>();
+        }
+
+
+        /// <summary>
+        /// ATENCION MEDICA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        
         private void RRHH_Topico_AtenMedica_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo<Frm_SST.Frm_Cargar_AtenMed>();
@@ -1267,6 +1384,19 @@ namespace ERPASA
             AbrirFormularioHijo<Frm_Logistica.Frm_ReporteRegistroAsistencia>();
         }
 
+
+        private void RRHH_SST_Reportes_CursosCapacitacion_Click(object sender, EventArgs e)
+        {
+            //AbrirFormularioHijo<Frm_Logistica.Frm_ReporteCursoCapacitacion>();
+            AbrirFormularioHijo<Frm_Logistica.Frm_ReporteCursoCapacitacion>();
+
+            // Maximizar el formulario hijo
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
+            }
+        }
+
         /// <summary>
         /// 
         /// 
@@ -1294,6 +1424,21 @@ namespace ERPASA
         private void RRHH_Comunicaciones_ParticipacionEncuesta_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo<Frm_Comunicacion.Frm_CargarEncuestaParticipacion>();
+        }
+
+        private void RRHH_Comunicaciones_CursosMeta_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Comunicacion.Frm_CargarNetzunCursosMeta>();
+        }
+
+        private void RRHH_Comunicaciones_CursosNuevos_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Comunicacion.Frm_CargarNetzunCursosNuevos>();
+        }
+
+        private void RRHH_Comunicaciones_NetzunRepGeneral_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Comunicacion.Frm_CargarNetzunRepGeneral>();
         }
 
         private void RRHH_Comunicaciones_PuntosPlanilla_Click(object sender, EventArgs e)
@@ -1570,7 +1715,10 @@ namespace ERPASA
 
         }
 
+        private void cIERREDEPROCESOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+        }
 
     }
 }

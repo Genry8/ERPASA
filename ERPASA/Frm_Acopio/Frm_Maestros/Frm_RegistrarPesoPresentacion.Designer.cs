@@ -1,0 +1,458 @@
+﻿
+namespace ERPASA.Frm_Acopio.Frm_Maestros
+{
+    partial class Frm_RegistrarPesoPresentacion
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_RegistrarPesoPresentacion));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton_buscar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel_buscar = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton_excel = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton_nuevo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton_imprimir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel_imprimir = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton_eliminar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.comboBox_detalle_sede = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_detalle_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label_cultivo = new System.Windows.Forms.Label();
+            this.comboBox_detalle_cultivo = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.textBox_Buscar = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStrip2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton_buscar,
+            this.toolStripLabel_buscar,
+            this.toolStripSeparator7,
+            this.toolStripSeparator9,
+            this.toolStripButton_excel,
+            this.toolStripLabel3,
+            this.toolStripSeparator10,
+            this.toolStripSeparator1,
+            this.toolStripButton_nuevo,
+            this.toolStripLabel1,
+            this.toolStripSeparator2,
+            this.toolStripSeparator5,
+            this.toolStripButton_imprimir,
+            this.toolStripLabel_imprimir,
+            this.toolStripSeparator3,
+            this.toolStripSeparator4,
+            this.toolStripButton_eliminar,
+            this.toolStripLabel2});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(1213, 41);
+            this.toolStrip2.TabIndex = 264;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // toolStripButton_buscar
+            // 
+            this.toolStripButton_buscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_buscar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_buscar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_buscar.Image")));
+            this.toolStripButton_buscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_buscar.Name = "toolStripButton_buscar";
+            this.toolStripButton_buscar.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton_buscar.ToolTipText = "Buscar";
+            this.toolStripButton_buscar.Click += new System.EventHandler(this.toolStripButton_buscar_Click);
+            // 
+            // toolStripLabel_buscar
+            // 
+            this.toolStripLabel_buscar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel_buscar.Name = "toolStripLabel_buscar";
+            this.toolStripLabel_buscar.Size = new System.Drawing.Size(81, 36);
+            this.toolStripLabel_buscar.Text = "Buscar";
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 41);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 41);
+            // 
+            // toolStripButton_excel
+            // 
+            this.toolStripButton_excel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_excel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_excel.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_excel.Image")));
+            this.toolStripButton_excel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_excel.Name = "toolStripButton_excel";
+            this.toolStripButton_excel.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton_excel.ToolTipText = "Excel";
+            this.toolStripButton_excel.Click += new System.EventHandler(this.toolStripButton_excel_Click);
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(100, 36);
+            this.toolStripLabel3.Text = "Exportar";
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 41);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 41);
+            // 
+            // toolStripButton_nuevo
+            // 
+            this.toolStripButton_nuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_nuevo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_nuevo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_nuevo.Image")));
+            this.toolStripButton_nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_nuevo.Name = "toolStripButton_nuevo";
+            this.toolStripButton_nuevo.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton_nuevo.ToolTipText = "Agregar";
+            this.toolStripButton_nuevo.Click += new System.EventHandler(this.toolStripButton_nuevo_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(190, 36);
+            this.toolStripLabel1.Text = "Nueva Presentacion";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 41);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 41);
+            // 
+            // toolStripButton_imprimir
+            // 
+            this.toolStripButton_imprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_imprimir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_imprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_imprimir.Image")));
+            this.toolStripButton_imprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_imprimir.Name = "toolStripButton_imprimir";
+            this.toolStripButton_imprimir.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton_imprimir.ToolTipText = "Imprimir";
+            this.toolStripButton_imprimir.Click += new System.EventHandler(this.toolStripButton_imprimir_Click);
+            // 
+            // toolStripLabel_imprimir
+            // 
+            this.toolStripLabel_imprimir.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel_imprimir.Name = "toolStripLabel_imprimir";
+            this.toolStripLabel_imprimir.Size = new System.Drawing.Size(102, 36);
+            this.toolStripLabel_imprimir.Text = "Imprimir";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 41);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 41);
+            // 
+            // toolStripButton_eliminar
+            // 
+            this.toolStripButton_eliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_eliminar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_eliminar.Image")));
+            this.toolStripButton_eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_eliminar.Name = "toolStripButton_eliminar";
+            this.toolStripButton_eliminar.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton_eliminar.ToolTipText = "Eliminar";
+            this.toolStripButton_eliminar.Click += new System.EventHandler(this.toolStripButton_eliminar_Click);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(97, 36);
+            this.toolStripLabel2.Text = "Eliminar";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label_cultivo);
+            this.groupBox1.Controls.Add(this.comboBox_detalle_cultivo);
+            this.groupBox1.Controls.Add(this.label46);
+            this.groupBox1.Controls.Add(this.label45);
+            this.groupBox1.Controls.Add(this.comboBox_detalle_sede);
+            this.groupBox1.Controls.Add(this.comboBox_detalle_empresa);
+            this.groupBox1.Location = new System.Drawing.Point(10, 61);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(900, 112);
+            this.groupBox1.TabIndex = 314;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos principales";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.BackColor = System.Drawing.Color.Transparent;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
+            this.label46.Location = new System.Drawing.Point(69, 71);
+            this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(54, 20);
+            this.label46.TabIndex = 355;
+            this.label46.Text = "SEDE";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.BackColor = System.Drawing.Color.Transparent;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
+            this.label45.Location = new System.Drawing.Point(29, 29);
+            this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(88, 20);
+            this.label45.TabIndex = 354;
+            this.label45.Text = "EMPRESA";
+            // 
+            // comboBox_detalle_sede
+            // 
+            this.comboBox_detalle_sede.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_detalle_sede.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_detalle_sede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_detalle_sede.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBox_detalle_sede.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.comboBox_detalle_sede.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBox_detalle_sede.FormattingEnabled = true;
+            this.comboBox_detalle_sede.ItemHeight = 30;
+            this.comboBox_detalle_sede.Location = new System.Drawing.Point(131, 65);
+            this.comboBox_detalle_sede.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox_detalle_sede.Name = "comboBox_detalle_sede";
+            this.comboBox_detalle_sede.Size = new System.Drawing.Size(225, 36);
+            this.comboBox_detalle_sede.TabIndex = 353;
+            // 
+            // comboBox_detalle_empresa
+            // 
+            this.comboBox_detalle_empresa.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_detalle_empresa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_detalle_empresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_detalle_empresa.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBox_detalle_empresa.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.comboBox_detalle_empresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBox_detalle_empresa.FormattingEnabled = true;
+            this.comboBox_detalle_empresa.ItemHeight = 30;
+            this.comboBox_detalle_empresa.Location = new System.Drawing.Point(131, 23);
+            this.comboBox_detalle_empresa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox_detalle_empresa.Name = "comboBox_detalle_empresa";
+            this.comboBox_detalle_empresa.Size = new System.Drawing.Size(305, 36);
+            this.comboBox_detalle_empresa.TabIndex = 352;
+            this.comboBox_detalle_empresa.SelectedIndexChanged += new System.EventHandler(this.comboBox_detalle_empresa_SelectedIndexChanged);
+            // 
+            // label_cultivo
+            // 
+            this.label_cultivo.AutoSize = true;
+            this.label_cultivo.BackColor = System.Drawing.Color.Transparent;
+            this.label_cultivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F);
+            this.label_cultivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
+            this.label_cultivo.Location = new System.Drawing.Point(470, 29);
+            this.label_cultivo.Name = "label_cultivo";
+            this.label_cultivo.Size = new System.Drawing.Size(76, 20);
+            this.label_cultivo.TabIndex = 358;
+            this.label_cultivo.Text = "CULTIVO";
+            // 
+            // comboBox_detalle_cultivo
+            // 
+            this.comboBox_detalle_cultivo.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_detalle_cultivo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_detalle_cultivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_detalle_cultivo.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBox_detalle_cultivo.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.comboBox_detalle_cultivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBox_detalle_cultivo.FormattingEnabled = true;
+            this.comboBox_detalle_cultivo.ItemHeight = 30;
+            this.comboBox_detalle_cultivo.Location = new System.Drawing.Point(560, 23);
+            this.comboBox_detalle_cultivo.Name = "comboBox_detalle_cultivo";
+            this.comboBox_detalle_cultivo.Size = new System.Drawing.Size(280, 36);
+            this.comboBox_detalle_cultivo.TabIndex = 359;
+            // 
+            // textBox_Buscar
+            // 
+            this.textBox_Buscar.BorderRadius = 6;
+            this.textBox_Buscar.DefaultText = "";
+            this.textBox_Buscar.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.textBox_Buscar.Location = new System.Drawing.Point(10, 180);
+            this.textBox_Buscar.Name = "textBox_Buscar";
+            this.textBox_Buscar.PlaceholderText = "Buscar en los resultados...";
+            this.textBox_Buscar.SelectedText = "";
+            this.textBox_Buscar.Size = new System.Drawing.Size(560, 36);
+            this.textBox_Buscar.TabIndex = 315;
+            this.textBox_Buscar.TextChanged += new System.EventHandler(this.textBox_Buscar_TextChanged);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.dataGridView2.EnableHeadersVisualStyles = false;
+            this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
+            this.dataGridView2.Location = new System.Drawing.Point(10, 226);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowHeadersWidth = 82;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(1190, 466);
+            this.dataGridView2.TabIndex = 316;
+            this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Fecha";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 116;
+            // 
+            // Frm_RegistrarPesoPresentacion
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1213, 706);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.textBox_Buscar);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.toolStrip2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Frm_RegistrarPesoPresentacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Tag = "";
+            this.Text = "REGISTRO PESO POR PRESENTACION";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Frm_RegistrarPesoPresentacion_Load);
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ToolStripButton toolStripButton_buscar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel_buscar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripButton toolStripButton_excel;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        public System.Windows.Forms.DataGridView dataGridView2;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_Buscar;
+        private System.Windows.Forms.Label label_cultivo;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_cultivo;
+        private System.Windows.Forms.Label label45;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_empresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButton_imprimir;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel_imprimir;
+        private System.Windows.Forms.Label label46;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_detalle_sede;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton toolStripButton_nuevo;
+        private System.Windows.Forms.ToolStripButton toolStripButton_eliminar;
+    }
+}
