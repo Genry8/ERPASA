@@ -390,7 +390,7 @@ namespace CapaDatos
 
         // MOSTRAR LISTA RECEPCION
         public DataTable ListaRecepcion(DateTime fecini
-            , DateTime fecfin, string emp, string sed,string cult)
+            , DateTime fecfin, string emp, string sed, string cult)
         {
             SqlDataReader resultado; //permite leer las filas
             DataTable tabla = new DataTable();
@@ -1269,7 +1269,7 @@ namespace CapaDatos
 
         // MOSTRAR LISTA DE recepcion
         public DataTable ListaRecepcionVariedad(DateTime fecini
-            , DateTime fecfin, string emp, string sed,string cult)
+            , DateTime fecfin, string emp, string sed, string cult)
         {
             SqlDataReader resultado; //permite leer las filas
             DataTable tabla = new DataTable();

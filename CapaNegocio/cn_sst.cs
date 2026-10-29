@@ -1,7 +1,6 @@
 ﻿using CapaDatos;
 using System;
 using System.Data;
-using System.Runtime.Remoting.Messaging;
 
 namespace CapaNegocio
 {
@@ -85,10 +84,10 @@ namespace CapaNegocio
         }
 
         public static DataTable ListaRecepcion(DateTime fecini
-            , DateTime fecfin, string emp, string sed,string cult)
+            , DateTime fecfin, string emp, string sed, string cult)
         {
             cd_sst datos = new cd_sst();
-            return datos.ListaRecepcion(fecini, fecfin, emp, sed,cult);
+            return datos.ListaRecepcion(fecini, fecfin, emp, sed, cult);
         }
 
         public static DataTable ListaEstadoPallet(DateTime fecini, DateTime fecfin, string emp, string sed, string pallet)
@@ -265,10 +264,10 @@ namespace CapaNegocio
         }
 
         public static DataTable ListaRecepcionVariedad(DateTime fecini
-            , DateTime fecfin, string emp, string sed,string cult)
+            , DateTime fecfin, string emp, string sed, string cult)
         {
             cd_sst datos = new cd_sst();
-            return datos.ListaRecepcionVariedad(fecini, fecfin, emp, sed,cult);
+            return datos.ListaRecepcionVariedad(fecini, fecfin, emp, sed, cult);
         }
 
         public static DataTable ListaReporteVolcadoMaquina(DateTime fecini,

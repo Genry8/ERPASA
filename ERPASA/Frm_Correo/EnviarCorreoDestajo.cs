@@ -246,7 +246,7 @@ namespace ERPASA.Frm_Correo
                     }
                     usuarioEnvia += ce_usuario.usenam;
 
-                    correo.Subject = guna2TextBox_Asunto.Text.Trim() + rangoFecha ;
+                    correo.Subject = guna2TextBox_Asunto.Text.Trim() + rangoFecha;
                     // El cuadro resumen lo arma el reporte y lo deja en
                     // ce_correo.tablaHtmlResumen; si no vino, el correo sale
                     // igual que siempre, solo con el texto.

@@ -98,7 +98,7 @@ namespace ERPASA.Reportes.Acopio
             //var val = cn_sst.BuscAtencionPaciente(textBox_Dni.Text, dateTimePicker_FecAtencion.Value.Date,textBox_HoraEntrada.Text);
             //if (val == true)
             //{
-            string emp, sed,cult, empText = string.Empty, sedText = string.Empty
+            string emp, sed, cult, empText = string.Empty, sedText = string.Empty
                 , cultText = string.Empty;
 
             ////////////////////////////////////
@@ -170,11 +170,11 @@ namespace ERPASA.Reportes.Acopio
 
             dtg2 = cn_sst.ListaRecepcion(dateTimePicker_FecInicio.Value.Date
                 , dateTimePicker_FecFin.Value.Date, emp
-                , sed,cult);
+                , sed, cult);
 
             dtg1 = cn_sst.ListaRecepcionVariedad(dateTimePicker_FecInicio.Value.Date
                 , dateTimePicker_FecFin.Value.Date, emp
-                , sed,cult);
+                , sed, cult);
 
         }
 

@@ -234,12 +234,12 @@ namespace ERPASA.Frm_Correo
                     }
                     usuarioEnvia += ce_usuario.usenam;
 
-                    correo.Subject = guna2TextBox_Asunto.Text.Trim() + rangoFecha + " - "+cultivo;
+                    correo.Subject = guna2TextBox_Asunto.Text.Trim() + rangoFecha + " - " + cultivo;
                     correo.Body =
                     guna2TextBox_Cuerpo.Text +
                     rangoFecha +
                     "<br><br>" +
-                    "EMPRESA: " + empresa + "<br>" +                    
+                    "EMPRESA: " + empresa + "<br>" +
                     "SEDE: " + sede + "<br>" +
                     "CULTIVO: " + cultivo +
                     "<br><br>" +

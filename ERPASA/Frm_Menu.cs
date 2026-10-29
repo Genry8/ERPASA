@@ -863,30 +863,30 @@ namespace ERPASA
         /// </summary>
         private void AgregarMaestrosPacking()
         {
-                AgregarMaestro("CULTIVO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCultivo(); });
-                AgregarMaestro("CAMPAÑA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCampana(); });
-                AgregarMaestro("CATEGORIA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCategoria(); });
-                AgregarMaestro("CALIBRE", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCalibre(); });
-                AgregarMaestro("CABEZAL", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCabezal(); });
-                AgregarMaestro("CABEZAL PT", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCabezalPT(); });
-                AgregarMaestro("CAMARA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamara(); });
-                AgregarMaestro("CAMARA DE FRIO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamaraFrio(); });
-                AgregarMaestro("CAMARA DE PRE FRIO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamaraPreFrio(); });
-                AgregarMaestro("CAMARA DE GASIFICADO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamaraGasificado(); });
-                AgregarMaestro("MAQUINARIA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroMaquinaria(); });
-                AgregarMaestro("FILER POR MAQUINA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroFilerMaquina(); });
-                AgregarMaestro("ESTILOS", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroEstilos(); });
-                AgregarMaestro("EMPAQUE DE PROCESO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroEmpaqueProceso(); });
-                AgregarMaestro("TIPO DE PARIHUELA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoParihuela(); });
-                AgregarMaestro("TIPO DE PALLET", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoPaLlet(); });
-                AgregarMaestro("TIPO DE MATERIA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoMateria(); });
-                AgregarMaestro("TIPO DE COSECHA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoCosecha(); });
-                AgregarMaestro("TIPO DE DEFECTO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoDefecto(); });
-                AgregarMaestro("TIPO DE CAUSA DE ERROR", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoCausaError(); });
-                AgregarMaestro("MOTIVO DE PARADAS", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroMotivoParadas(); });
-                AgregarMaestro("TURNO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTurno(); });
-                AgregarMaestro("TRANSPORTE", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTransporte(); });
-                AgregarMaestro("ESTADO PT", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroEstadoPT(); });
+            AgregarMaestro("CULTIVO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCultivo(); });
+            AgregarMaestro("CAMPAÑA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCampana(); });
+            AgregarMaestro("CATEGORIA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCategoria(); });
+            AgregarMaestro("CALIBRE", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCalibre(); });
+            AgregarMaestro("CABEZAL", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCabezal(); });
+            AgregarMaestro("CABEZAL PT", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCabezalPT(); });
+            AgregarMaestro("CAMARA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamara(); });
+            AgregarMaestro("CAMARA DE FRIO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamaraFrio(); });
+            AgregarMaestro("CAMARA DE PRE FRIO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamaraPreFrio(); });
+            AgregarMaestro("CAMARA DE GASIFICADO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamaraGasificado(); });
+            AgregarMaestro("MAQUINARIA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroMaquinaria(); });
+            AgregarMaestro("FILER POR MAQUINA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroFilerMaquina(); });
+            AgregarMaestro("ESTILOS", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroEstilos(); });
+            AgregarMaestro("EMPAQUE DE PROCESO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroEmpaqueProceso(); });
+            AgregarMaestro("TIPO DE PARIHUELA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoParihuela(); });
+            AgregarMaestro("TIPO DE PALLET", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoPaLlet(); });
+            AgregarMaestro("TIPO DE MATERIA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoMateria(); });
+            AgregarMaestro("TIPO DE COSECHA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoCosecha(); });
+            AgregarMaestro("TIPO DE DEFECTO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoDefecto(); });
+            AgregarMaestro("TIPO DE CAUSA DE ERROR", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoCausaError(); });
+            AgregarMaestro("MOTIVO DE PARADAS", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroMotivoParadas(); });
+            AgregarMaestro("TURNO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTurno(); });
+            AgregarMaestro("TRANSPORTE", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTransporte(); });
+            AgregarMaestro("ESTADO PT", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroEstadoPT(); });
         }
 
         private void AgregarMaestro(string titulo, Func<Form> crear)
@@ -1145,7 +1145,7 @@ namespace ERPASA
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        
+
         private void RRHH_Topico_AtenMedica_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo<Frm_SST.Frm_Cargar_AtenMed>();

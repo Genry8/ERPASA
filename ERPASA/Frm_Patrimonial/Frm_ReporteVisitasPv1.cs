@@ -460,10 +460,10 @@ namespace ERPASA.Frm_Patrimonial
                            GraphicsUnit.Pixel))
                 using (var blanco = new SolidBrush(Color.White))
                 using (var centrado = new StringFormat
-                       {
-                           Alignment = StringAlignment.Center,
-                           LineAlignment = StringAlignment.Center
-                       })
+                {
+                    Alignment = StringAlignment.Center,
+                    LineAlignment = StringAlignment.Center
+                })
                 {
                     g.DrawString("PDF", letra, blanco, banda, centrado);
                 }
