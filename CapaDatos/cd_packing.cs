@@ -4765,5 +4765,129 @@ namespace CapaDatos
             }
         }
 
+
+        //
+        // MAESTRO PACK_Identificador (PACK_Identificador)
+        //
+
+        // MOSTRAR LISTA DE PACK_Identificador
+        public DataTable ListaMaestroIdentificador()
+        {
+            SqlDataReader resultado; //permite leer las filas
+            DataTable tabla = new DataTable();
+            SqlConnection conex = new SqlConnection();
+
+            try
+            {
+                conex = cd_conexion.CrearInstancia().leerconexion();
+                SqlCommand comando = new SqlCommand("SP_MOSTRAR_PACK_IDENTIFICADOR", conex);
+                comando.CommandType = CommandType.StoredProcedure;
+                conex.Open();
+                resultado = comando.ExecuteReader();
+                tabla.Load(resultado);
+                return tabla;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                if (conex.State == ConnectionState.Open) conex.Close(); // CERRAMOS LA CONEXION
+            }
+        }
+
+
+        // METODO PARA GUARDAR EN PACK_Identificador
+        public void GuardarMaestroIdentificador(string identificador, string cultivo, string obs
+            , DateTime fec_cre, int usereg, string hostname)
+        {
+            using (var conexion = leerconexion())
+            {
+                using (var comando = new SqlCommand("SP_GUARDAR_PACK_IDENTIFICADOR"))
+                {
+                    comando.Connection = conexion;
+                    comando.CommandType = CommandType.StoredProcedure;
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@Identificador", SqlDbType.VarChar).Value = identificador;
+                    comando.Parameters.AddWithValue("@Cultivo", SqlDbType.VarChar).Value = cultivo;
+                    comando.Parameters.AddWithValue("@Obs", SqlDbType.VarChar).Value = obs;
+                    comando.Parameters.AddWithValue("@FecCre", SqlDbType.DateTime2).Value = fec_cre;
+                    comando.Parameters.AddWithValue("@UseReg", SqlDbType.Int).Value = usereg;
+                    comando.Parameters.AddWithValue("@Hostname", SqlDbType.VarChar).Value = hostname;
+                    comando.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+
+        // METODO PARA ACTUALIZAR EN PACK_Identificador
+        public void ActualizarMaestroIdentificador(int id, string identificador, string cultivo, string obs
+            , DateTime fec_mov, int usedit)
+        {
+            using (var conexion = leerconexion())
+            {
+                using (var comando = new SqlCommand("SP_ACTUALIZAR_PACK_IDENTIFICADOR"))
+                {
+                    comando.Connection = conexion;
+                    comando.CommandType = CommandType.StoredProcedure;
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = id;
+                    comando.Parameters.AddWithValue("@Identificador", SqlDbType.VarChar).Value = identificador;
+                    comando.Parameters.AddWithValue("@Cultivo", SqlDbType.VarChar).Value = cultivo;
+                    comando.Parameters.AddWithValue("@Obs", SqlDbType.VarChar).Value = obs;
+                    comando.Parameters.AddWithValue("@FecEdit", SqlDbType.DateTime2).Value = fec_mov;
+                    comando.Parameters.AddWithValue("@UseEdit", SqlDbType.Int).Value = usedit;
+                    comando.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+
+        // METODO PARA ELIMINAR (BAJA LOGICA, Estado = 'N') EN PACK_Identificador
+        public void EliminarMaestroIdentificador(int id, DateTime fec_mov, int useelim)
+        {
+            using (var conexion = leerconexion())
+            {
+                using (var comando = new SqlCommand("SP_ELIMINAR_PACK_IDENTIFICADOR"))
+                {
+                    comando.Connection = conexion;
+                    comando.CommandType = CommandType.StoredProcedure;
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = id;
+                    comando.Parameters.AddWithValue("@FecEdit", SqlDbType.DateTime2).Value = fec_mov;
+                    comando.Parameters.AddWithValue("@UseElim", SqlDbType.Int).Value = useelim;
+                    comando.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+
+        // VERIFICA SI YA EXISTE EL REGISTRO EN PACK_Identificador
+        public bool BuscExisteMaestroIdentificador(string identificador, string cultivo, int id)
+        {
+            using (var conexion = cd_conexion.CrearInstancia().leerconexion())
+            {
+                using (var comando = new SqlCommand("SP_CODIGO_PACK_IDENTIFICADOR"))
+                {
+                    comando.Connection = conexion;
+                    comando.CommandType = CommandType.StoredProcedure;
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@Identificador", SqlDbType.VarChar).Value = identificador;
+                    comando.Parameters.AddWithValue("@Cultivo", SqlDbType.VarChar).Value = cultivo;
+                    comando.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = id;
+
+                    SqlDataReader reader = comando.ExecuteReader();
+                    return reader.HasRows;
+                }
+            }
+        }
+
+
     }
 }

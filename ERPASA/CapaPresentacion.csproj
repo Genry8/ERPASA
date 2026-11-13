@@ -29,7 +29,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>http://localhost/ERPASA/</UpdateUrl>
-    <ApplicationRevision>175</ApplicationRevision>
+    <ApplicationRevision>177</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1697,6 +1697,19 @@
     <Compile Include="Frm_SelecDesarrollo\Frm_CargarEficiencia.Designer.cs">
       <DependentUpon>Frm_CargarEficiencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_SelecDesarrollo\MapeoExcel.cs" />
+    <Compile Include="Frm_SelecDesarrollo\Frm_CargarEficienciaQC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_SelecDesarrollo\Frm_CargarEficienciaQC.Designer.cs">
+      <DependentUpon>Frm_CargarEficienciaQC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_SelecDesarrollo\Frm_CoberturaProgramadoQC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_SelecDesarrollo\Frm_CoberturaProgramadoQC.Designer.cs">
+      <DependentUpon>Frm_CoberturaProgramadoQC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Administracion\Frm_CargarDetalleCosechador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2618,6 +2631,18 @@
     </Compile>
     <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarTipoCosecha.Designer.cs">
       <DependentUpon>frm_AgregarTipoCosecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroIdentificador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroIdentificador.Designer.cs">
+      <DependentUpon>Frm_MaestroIdentificador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarIdentificador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Acopio\Frm_Maestros\frm_AgregarIdentificador.Designer.cs">
+      <DependentUpon>frm_AgregarIdentificador.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Acopio\Frm_Maestros\Frm_MaestroTipoDefecto.cs">
       <SubType>Form</SubType>
@@ -3712,6 +3737,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_SelecDesarrollo\Frm_CargarEficiencia.resx">
       <DependentUpon>Frm_CargarEficiencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_SelecDesarrollo\Frm_CargarEficienciaQC.resx">
+      <DependentUpon>Frm_CargarEficienciaQC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_SelecDesarrollo\Frm_CoberturaProgramadoQC.resx">
+      <DependentUpon>Frm_CoberturaProgramadoQC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Administracion\Frm_CargarDetalleCosechador.resx">
       <DependentUpon>Frm_CargarDetalleCosechador.cs</DependentUpon>

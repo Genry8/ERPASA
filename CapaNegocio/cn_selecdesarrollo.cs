@@ -1,5 +1,6 @@
-using CapaDatos;
+﻿using CapaDatos;
 using System;
+using System.Data;
 
 namespace CapaNegocio
 {
@@ -105,6 +106,31 @@ namespace CapaNegocio
             , hoja, fec_mov, usedit);
         }
 
-    }
 
+        public void GuardarEficienciaQC(DataTable datos)
+        {
+            cd_selecdesarrollo capa = new cd_selecdesarrollo();
+            capa.GuardarEficienciaQC(datos);
+        }
+
+        public static int ContarEficienciaQC(string anio, int semana)
+        {
+            cd_selecdesarrollo capa = new cd_selecdesarrollo();
+            return capa.ContarEficienciaQC(anio, semana);
+        }
+
+
+        public void GuardarCoberturaProgramadoQC(DataTable datos)
+        {
+            cd_selecdesarrollo capa = new cd_selecdesarrollo();
+            capa.GuardarCoberturaProgramadoQC(datos);
+        }
+
+        public static int ContarCoberturaProgramadoQC(string anio, int semana)
+        {
+            cd_selecdesarrollo capa = new cd_selecdesarrollo();
+            return capa.ContarCoberturaProgramadoQC(anio, semana);
+        }
+
+    }
 }

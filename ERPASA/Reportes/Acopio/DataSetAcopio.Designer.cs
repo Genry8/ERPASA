@@ -662,6 +662,8 @@ namespace ERPASA.Reportes.Acopio {
             
             private global::System.Data.DataColumn columnIdCabezal;
             
+            private global::System.Data.DataColumn columnIdentificador;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DataTable1DataTable() {
@@ -793,6 +795,14 @@ namespace ERPASA.Reportes.Acopio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IdentificadorColumn {
+                get {
+                    return this.columnIdentificador;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -828,7 +838,7 @@ namespace ERPASA.Reportes.Acopio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string Pallet, string Cabezal, string Variedad, string Kilos, string Fecha, string Empresa, string Id, string Jabas, string Presentacion, string Destino, byte[] Matrix, string IdCabezal) {
+            public DataTable1Row AddDataTable1Row(string Pallet, string Cabezal, string Variedad, string Kilos, string Fecha, string Empresa, string Id, string Jabas, string Presentacion, string Destino, byte[] Matrix, string IdCabezal, string Identificador) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Pallet,
@@ -842,7 +852,8 @@ namespace ERPASA.Reportes.Acopio {
                         Presentacion,
                         Destino,
                         Matrix,
-                        IdCabezal};
+                        IdCabezal,
+                        Identificador};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -877,6 +888,7 @@ namespace ERPASA.Reportes.Acopio {
                 this.columnDestino = base.Columns["Destino"];
                 this.columnMatrix = base.Columns["Matrix"];
                 this.columnIdCabezal = base.Columns["IdCabezal"];
+                this.columnIdentificador = base.Columns["Identificador"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -906,6 +918,8 @@ namespace ERPASA.Reportes.Acopio {
                 base.Columns.Add(this.columnMatrix);
                 this.columnIdCabezal = new global::System.Data.DataColumn("IdCabezal", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdCabezal);
+                this.columnIdentificador = new global::System.Data.DataColumn("Identificador", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdentificador);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1754,6 +1768,22 @@ namespace ERPASA.Reportes.Acopio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Identificador {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.IdentificadorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Identificador\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.IdentificadorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsPalletNull() {
                 return this.IsNull(this.tableDataTable1.PalletColumn);
             }
@@ -1894,6 +1924,18 @@ namespace ERPASA.Reportes.Acopio {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetIdCabezalNull() {
                 this[this.tableDataTable1.IdCabezalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIdentificadorNull() {
+                return this.IsNull(this.tableDataTable1.IdentificadorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIdentificadorNull() {
+                this[this.tableDataTable1.IdentificadorColumn] = global::System.Convert.DBNull;
             }
         }
         

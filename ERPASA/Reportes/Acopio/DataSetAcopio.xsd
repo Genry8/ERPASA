@@ -36,7 +36,8 @@
               <xs:element name="Presentacion" msprop:Generator_ColumnPropNameInTable="PresentacionColumn" msprop:Generator_ColumnPropNameInRow="Presentacion" msprop:Generator_UserColumnName="Presentacion" msprop:Generator_ColumnVarNameInTable="columnPresentacion" type="xs:string" minOccurs="0" />
               <xs:element name="Destino" msprop:Generator_ColumnPropNameInTable="DestinoColumn" msprop:Generator_ColumnPropNameInRow="Destino" msprop:Generator_UserColumnName="Destino" msprop:Generator_ColumnVarNameInTable="columnDestino" type="xs:string" minOccurs="0" />
               <xs:element name="Matrix" msprop:Generator_ColumnPropNameInTable="MatrixColumn" msprop:Generator_ColumnPropNameInRow="Matrix" msprop:Generator_UserColumnName="Matrix" msprop:Generator_ColumnVarNameInTable="columnMatrix" type="xs:base64Binary" minOccurs="0" />
-              <xs:element name="IdCabezal" msprop:Generator_ColumnPropNameInRow="IdCabezal" msprop:Generator_ColumnPropNameInTable="IdCabezalColumn" msprop:Generator_ColumnVarNameInTable="columnIdCabezal" msprop:Generator_UserColumnName="IdCabezal" type="xs:string" minOccurs="0" />
+              <xs:element name="IdCabezal" msprop:Generator_UserColumnName="IdCabezal" msprop:Generator_ColumnPropNameInTable="IdCabezalColumn" msprop:Generator_ColumnPropNameInRow="IdCabezal" msprop:Generator_ColumnVarNameInTable="columnIdCabezal" type="xs:string" minOccurs="0" />
+              <xs:element name="Identificador" msprop:Generator_ColumnPropNameInRow="Identificador" msprop:Generator_ColumnPropNameInTable="IdentificadorColumn" msprop:Generator_ColumnVarNameInTable="columnIdentificador" msprop:Generator_UserColumnName="Identificador" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -53,7 +54,7 @@
               <xs:element name="empresa" msprop:Generator_ColumnPropNameInTable="empresaColumn" msprop:Generator_ColumnPropNameInRow="empresa" msprop:Generator_UserColumnName="empresa" msprop:Generator_ColumnVarNameInTable="columnempresa" type="xs:string" minOccurs="0" />
               <xs:element name="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:string" minOccurs="0" />
               <xs:element name="MatrixPalet" msprop:Generator_ColumnPropNameInTable="MatrixPaletColumn" msprop:Generator_ColumnPropNameInRow="MatrixPalet" msprop:Generator_UserColumnName="MatrixPalet" msprop:Generator_ColumnVarNameInTable="columnMatrixPalet" type="xs:base64Binary" minOccurs="0" />
-              <xs:element name="MatrixOrden" msprop:Generator_UserColumnName="MatrixOrden" msprop:Generator_ColumnPropNameInTable="MatrixOrdenColumn" msprop:Generator_ColumnPropNameInRow="MatrixOrden" msprop:Generator_ColumnVarNameInTable="columnMatrixOrden" type="xs:string" minOccurs="0" />
+              <xs:element name="MatrixOrden" msprop:Generator_ColumnPropNameInTable="MatrixOrdenColumn" msprop:Generator_ColumnPropNameInRow="MatrixOrden" msprop:Generator_UserColumnName="MatrixOrden" msprop:Generator_ColumnVarNameInTable="columnMatrixOrden" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

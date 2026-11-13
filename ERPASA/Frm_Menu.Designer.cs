@@ -91,6 +91,8 @@ namespace ERPASA
             this.RRHH_SelecDesarr_Labor = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_SelecDesarr_GrupoLabor = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_SelecDesarr_Productividad = new System.Windows.Forms.ToolStripMenuItem();
+            this.RRHH_SelecDesarr_EficienciaQC = new System.Windows.Forms.ToolStripMenuItem();
+            this.RRHH_SelecDesarr_CoberturaProgramadoQC = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_Serv_Personal = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_Serv_Personal_Subsidios = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHH_ServPersonal_EncuestaComedor = new System.Windows.Forms.ToolStripMenuItem();
@@ -269,6 +271,31 @@ namespace ERPASA
             this.button_packing_rrhh_progrAnualPersonal = new System.Windows.Forms.ToolStripMenuItem();
             this.button_packing_maestros = new System.Windows.Forms.ToolStripMenuItem();
             this.button_packing_maestros_PesoPresentacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_Cultivo = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_Campana = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_Categoria = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_Calibre = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_Cabezal = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_CabezalPT = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_Camara = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_CamaraFrio = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_CamaraPreFrio = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_CamaraGasificado = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_Maquinaria = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_FilerMaquina = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_Estilos = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_EmpaqueProceso = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_TipoParihuela = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_TipoPallet = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_TipoMateria = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_TipoCosecha = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_TipoDefecto = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_TipoCausaError = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_MotivoParadas = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_Turno = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_Transporte = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_EstadoPT = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_packing_maestros_Identificador = new System.Windows.Forms.ToolStripMenuItem();
             this.button_tablas_maestras = new System.Windows.Forms.ToolStripMenuItem();
             this.button_tablas_maestras_usuario = new System.Windows.Forms.ToolStripMenuItem();
             this.button_tablas_maestras_usuario_registrar = new System.Windows.Forms.ToolStripMenuItem();
@@ -402,7 +429,6 @@ namespace ERPASA
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(66)))));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.button_RRHH,
@@ -822,7 +848,9 @@ namespace ERPASA
             this.RRHH_SelecDesarr_Obs_Cobertura,
             this.RRHH_SelecDesarr_Labor,
             this.RRHH_SelecDesarr_GrupoLabor,
-            this.RRHH_SelecDesarr_Productividad});
+            this.RRHH_SelecDesarr_Productividad,
+            this.RRHH_SelecDesarr_EficienciaQC,
+            this.RRHH_SelecDesarr_CoberturaProgramadoQC});
             this.RRHH_SelecDesarr.Name = "RRHH_SelecDesarr";
             this.RRHH_SelecDesarr.Size = new System.Drawing.Size(401, 34);
             this.RRHH_SelecDesarr.Tag = "27";
@@ -876,6 +904,20 @@ namespace ERPASA
             this.RRHH_SelecDesarr_Productividad.Size = new System.Drawing.Size(479, 34);
             this.RRHH_SelecDesarr_Productividad.Text = "CARGAR PRODUCTIVIDAD";
             this.RRHH_SelecDesarr_Productividad.Click += new System.EventHandler(this.RRHH_SelecDesarr_Productividad_Click);
+            // 
+            // RRHH_SelecDesarr_EficienciaQC
+            // 
+            this.RRHH_SelecDesarr_EficienciaQC.Name = "RRHH_SelecDesarr_EficienciaQC";
+            this.RRHH_SelecDesarr_EficienciaQC.Size = new System.Drawing.Size(479, 34);
+            this.RRHH_SelecDesarr_EficienciaQC.Text = "CARGAR CUMPLIMIENTO QC";
+            this.RRHH_SelecDesarr_EficienciaQC.Click += new System.EventHandler(this.RRHH_SelecDesarr_EficienciaQC_Click);
+            // 
+            // RRHH_SelecDesarr_CoberturaProgramadoQC
+            // 
+            this.RRHH_SelecDesarr_CoberturaProgramadoQC.Name = "RRHH_SelecDesarr_CoberturaProgramadoQC";
+            this.RRHH_SelecDesarr_CoberturaProgramadoQC.Size = new System.Drawing.Size(479, 34);
+            this.RRHH_SelecDesarr_CoberturaProgramadoQC.Text = "CARGAR COBERTURA PROGRAMADO QC";
+            this.RRHH_SelecDesarr_CoberturaProgramadoQC.Click += new System.EventHandler(this.RRHH_SelecDesarr_CoberturaProgramadoQC_Click);
             // 
             // RRHH_Serv_Personal
             // 
@@ -2324,7 +2366,32 @@ namespace ERPASA
             // button_packing_maestros
             // 
             this.button_packing_maestros.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.button_packing_maestros_PesoPresentacion});
+            this.button_packing_maestros_PesoPresentacion,
+            this.button_packing_maestros_Cultivo,
+            this.button_packing_maestros_Campana,
+            this.button_packing_maestros_Categoria,
+            this.button_packing_maestros_Calibre,
+            this.button_packing_maestros_Cabezal,
+            this.button_packing_maestros_CabezalPT,
+            this.button_packing_maestros_Camara,
+            this.button_packing_maestros_CamaraFrio,
+            this.button_packing_maestros_CamaraPreFrio,
+            this.button_packing_maestros_CamaraGasificado,
+            this.button_packing_maestros_Maquinaria,
+            this.button_packing_maestros_FilerMaquina,
+            this.button_packing_maestros_Estilos,
+            this.button_packing_maestros_EmpaqueProceso,
+            this.button_packing_maestros_TipoParihuela,
+            this.button_packing_maestros_TipoPallet,
+            this.button_packing_maestros_TipoMateria,
+            this.button_packing_maestros_TipoCosecha,
+            this.button_packing_maestros_TipoDefecto,
+            this.button_packing_maestros_TipoCausaError,
+            this.button_packing_maestros_MotivoParadas,
+            this.button_packing_maestros_Turno,
+            this.button_packing_maestros_Transporte,
+            this.button_packing_maestros_EstadoPT,
+            this.button_packing_maestros_Identificador});
             this.button_packing_maestros.Name = "button_packing_maestros";
             this.button_packing_maestros.Size = new System.Drawing.Size(291, 34);
             this.button_packing_maestros.Tag = "209";
@@ -2336,6 +2403,181 @@ namespace ERPASA
             this.button_packing_maestros_PesoPresentacion.Size = new System.Drawing.Size(434, 34);
             this.button_packing_maestros_PesoPresentacion.Text = "AGREGAR PESO PRESENTACION";
             this.button_packing_maestros_PesoPresentacion.Click += new System.EventHandler(this.button_packing_maestros_PesoPresentacion_Click);
+            // 
+            // button_packing_maestros_Cultivo
+            // 
+            this.button_packing_maestros_Cultivo.Name = "button_packing_maestros_Cultivo";
+            this.button_packing_maestros_Cultivo.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_Cultivo.Text = "CULTIVO";
+            this.button_packing_maestros_Cultivo.Click += new System.EventHandler(this.button_packing_maestros_Cultivo_Click);
+            // 
+            // button_packing_maestros_Campana
+            // 
+            this.button_packing_maestros_Campana.Name = "button_packing_maestros_Campana";
+            this.button_packing_maestros_Campana.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_Campana.Text = "CAMPAÑA";
+            this.button_packing_maestros_Campana.Click += new System.EventHandler(this.button_packing_maestros_Campana_Click);
+            // 
+            // button_packing_maestros_Categoria
+            // 
+            this.button_packing_maestros_Categoria.Name = "button_packing_maestros_Categoria";
+            this.button_packing_maestros_Categoria.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_Categoria.Text = "CATEGORIA";
+            this.button_packing_maestros_Categoria.Click += new System.EventHandler(this.button_packing_maestros_Categoria_Click);
+            // 
+            // button_packing_maestros_Calibre
+            // 
+            this.button_packing_maestros_Calibre.Name = "button_packing_maestros_Calibre";
+            this.button_packing_maestros_Calibre.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_Calibre.Text = "CALIBRE";
+            this.button_packing_maestros_Calibre.Click += new System.EventHandler(this.button_packing_maestros_Calibre_Click);
+            // 
+            // button_packing_maestros_Cabezal
+            // 
+            this.button_packing_maestros_Cabezal.Name = "button_packing_maestros_Cabezal";
+            this.button_packing_maestros_Cabezal.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_Cabezal.Text = "CABEZAL";
+            this.button_packing_maestros_Cabezal.Click += new System.EventHandler(this.button_packing_maestros_Cabezal_Click);
+            // 
+            // button_packing_maestros_CabezalPT
+            // 
+            this.button_packing_maestros_CabezalPT.Name = "button_packing_maestros_CabezalPT";
+            this.button_packing_maestros_CabezalPT.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_CabezalPT.Text = "CABEZAL PT";
+            this.button_packing_maestros_CabezalPT.Click += new System.EventHandler(this.button_packing_maestros_CabezalPT_Click);
+            // 
+            // button_packing_maestros_Camara
+            // 
+            this.button_packing_maestros_Camara.Name = "button_packing_maestros_Camara";
+            this.button_packing_maestros_Camara.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_Camara.Text = "CAMARA";
+            this.button_packing_maestros_Camara.Click += new System.EventHandler(this.button_packing_maestros_Camara_Click);
+            // 
+            // button_packing_maestros_CamaraFrio
+            // 
+            this.button_packing_maestros_CamaraFrio.Name = "button_packing_maestros_CamaraFrio";
+            this.button_packing_maestros_CamaraFrio.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_CamaraFrio.Text = "CAMARA DE FRIO";
+            this.button_packing_maestros_CamaraFrio.Click += new System.EventHandler(this.button_packing_maestros_CamaraFrio_Click);
+            // 
+            // button_packing_maestros_CamaraPreFrio
+            // 
+            this.button_packing_maestros_CamaraPreFrio.Name = "button_packing_maestros_CamaraPreFrio";
+            this.button_packing_maestros_CamaraPreFrio.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_CamaraPreFrio.Text = "CAMARA DE PRE FRIO";
+            this.button_packing_maestros_CamaraPreFrio.Click += new System.EventHandler(this.button_packing_maestros_CamaraPreFrio_Click);
+            // 
+            // button_packing_maestros_CamaraGasificado
+            // 
+            this.button_packing_maestros_CamaraGasificado.Name = "button_packing_maestros_CamaraGasificado";
+            this.button_packing_maestros_CamaraGasificado.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_CamaraGasificado.Text = "CAMARA DE GASIFICADO";
+            this.button_packing_maestros_CamaraGasificado.Click += new System.EventHandler(this.button_packing_maestros_CamaraGasificado_Click);
+            // 
+            // button_packing_maestros_Maquinaria
+            // 
+            this.button_packing_maestros_Maquinaria.Name = "button_packing_maestros_Maquinaria";
+            this.button_packing_maestros_Maquinaria.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_Maquinaria.Text = "MAQUINARIA";
+            this.button_packing_maestros_Maquinaria.Click += new System.EventHandler(this.button_packing_maestros_Maquinaria_Click);
+            // 
+            // button_packing_maestros_FilerMaquina
+            // 
+            this.button_packing_maestros_FilerMaquina.Name = "button_packing_maestros_FilerMaquina";
+            this.button_packing_maestros_FilerMaquina.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_FilerMaquina.Text = "FILER POR MAQUINA";
+            this.button_packing_maestros_FilerMaquina.Click += new System.EventHandler(this.button_packing_maestros_FilerMaquina_Click);
+            // 
+            // button_packing_maestros_Estilos
+            // 
+            this.button_packing_maestros_Estilos.Name = "button_packing_maestros_Estilos";
+            this.button_packing_maestros_Estilos.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_Estilos.Text = "ESTILOS";
+            this.button_packing_maestros_Estilos.Click += new System.EventHandler(this.button_packing_maestros_Estilos_Click);
+            // 
+            // button_packing_maestros_EmpaqueProceso
+            // 
+            this.button_packing_maestros_EmpaqueProceso.Name = "button_packing_maestros_EmpaqueProceso";
+            this.button_packing_maestros_EmpaqueProceso.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_EmpaqueProceso.Text = "EMPAQUE DE PROCESO";
+            this.button_packing_maestros_EmpaqueProceso.Click += new System.EventHandler(this.button_packing_maestros_EmpaqueProceso_Click);
+            // 
+            // button_packing_maestros_TipoParihuela
+            // 
+            this.button_packing_maestros_TipoParihuela.Name = "button_packing_maestros_TipoParihuela";
+            this.button_packing_maestros_TipoParihuela.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_TipoParihuela.Text = "TIPO DE PARIHUELA";
+            this.button_packing_maestros_TipoParihuela.Click += new System.EventHandler(this.button_packing_maestros_TipoParihuela_Click);
+            // 
+            // button_packing_maestros_TipoPallet
+            // 
+            this.button_packing_maestros_TipoPallet.Name = "button_packing_maestros_TipoPallet";
+            this.button_packing_maestros_TipoPallet.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_TipoPallet.Text = "TIPO DE PALLET";
+            this.button_packing_maestros_TipoPallet.Click += new System.EventHandler(this.button_packing_maestros_TipoPallet_Click);
+            // 
+            // button_packing_maestros_TipoMateria
+            // 
+            this.button_packing_maestros_TipoMateria.Name = "button_packing_maestros_TipoMateria";
+            this.button_packing_maestros_TipoMateria.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_TipoMateria.Text = "TIPO DE MATERIA";
+            this.button_packing_maestros_TipoMateria.Click += new System.EventHandler(this.button_packing_maestros_TipoMateria_Click);
+            // 
+            // button_packing_maestros_TipoCosecha
+            // 
+            this.button_packing_maestros_TipoCosecha.Name = "button_packing_maestros_TipoCosecha";
+            this.button_packing_maestros_TipoCosecha.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_TipoCosecha.Text = "TIPO DE COSECHA";
+            this.button_packing_maestros_TipoCosecha.Click += new System.EventHandler(this.button_packing_maestros_TipoCosecha_Click);
+            // 
+            // button_packing_maestros_TipoDefecto
+            // 
+            this.button_packing_maestros_TipoDefecto.Name = "button_packing_maestros_TipoDefecto";
+            this.button_packing_maestros_TipoDefecto.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_TipoDefecto.Text = "TIPO DE DEFECTO";
+            this.button_packing_maestros_TipoDefecto.Click += new System.EventHandler(this.button_packing_maestros_TipoDefecto_Click);
+            // 
+            // button_packing_maestros_TipoCausaError
+            // 
+            this.button_packing_maestros_TipoCausaError.Name = "button_packing_maestros_TipoCausaError";
+            this.button_packing_maestros_TipoCausaError.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_TipoCausaError.Text = "TIPO DE CAUSA DE ERROR";
+            this.button_packing_maestros_TipoCausaError.Click += new System.EventHandler(this.button_packing_maestros_TipoCausaError_Click);
+            // 
+            // button_packing_maestros_MotivoParadas
+            // 
+            this.button_packing_maestros_MotivoParadas.Name = "button_packing_maestros_MotivoParadas";
+            this.button_packing_maestros_MotivoParadas.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_MotivoParadas.Text = "MOTIVO DE PARADAS";
+            this.button_packing_maestros_MotivoParadas.Click += new System.EventHandler(this.button_packing_maestros_MotivoParadas_Click);
+            // 
+            // button_packing_maestros_Turno
+            // 
+            this.button_packing_maestros_Turno.Name = "button_packing_maestros_Turno";
+            this.button_packing_maestros_Turno.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_Turno.Text = "TURNO";
+            this.button_packing_maestros_Turno.Click += new System.EventHandler(this.button_packing_maestros_Turno_Click);
+            // 
+            // button_packing_maestros_Transporte
+            // 
+            this.button_packing_maestros_Transporte.Name = "button_packing_maestros_Transporte";
+            this.button_packing_maestros_Transporte.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_Transporte.Text = "TRANSPORTE";
+            this.button_packing_maestros_Transporte.Click += new System.EventHandler(this.button_packing_maestros_Transporte_Click);
+            // 
+            // button_packing_maestros_EstadoPT
+            // 
+            this.button_packing_maestros_EstadoPT.Name = "button_packing_maestros_EstadoPT";
+            this.button_packing_maestros_EstadoPT.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_EstadoPT.Text = "ESTADO PT";
+            this.button_packing_maestros_EstadoPT.Click += new System.EventHandler(this.button_packing_maestros_EstadoPT_Click);
+            // 
+            // button_packing_maestros_Identificador
+            // 
+            this.button_packing_maestros_Identificador.Name = "button_packing_maestros_Identificador";
+            this.button_packing_maestros_Identificador.Size = new System.Drawing.Size(434, 34);
+            this.button_packing_maestros_Identificador.Text = "IDENTIFICADOR";
+            this.button_packing_maestros_Identificador.Click += new System.EventHandler(this.button_packing_maestros_Identificador_Click);
             // 
             // button_tablas_maestras
             // 
@@ -2954,6 +3196,8 @@ namespace ERPASA
         private System.Windows.Forms.ToolStripMenuItem button_sistema_reporte_printcamara;
         private System.Windows.Forms.ToolStripMenuItem button_packing_proceso_imprimir_tarjaPT;
         private System.Windows.Forms.ToolStripMenuItem RRHH_SelecDesarr_Productividad;
+        private System.Windows.Forms.ToolStripMenuItem RRHH_SelecDesarr_EficienciaQC;
+        private System.Windows.Forms.ToolStripMenuItem RRHH_SelecDesarr_CoberturaProgramadoQC;
         private System.Windows.Forms.ToolStripMenuItem RRHH_Comunicaciones_SaldoPuntos;
         private System.Windows.Forms.ToolStripMenuItem RRHH_Comunicaciones_ParticipacionEncuesta;
         private System.Windows.Forms.ToolStripMenuItem RRHH_Serv_Personal;
@@ -3068,6 +3312,31 @@ namespace ERPASA
         private System.Windows.Forms.ToolStripMenuItem button_packing_rrhh;
         private System.Windows.Forms.ToolStripMenuItem button_packing_maestros;
         private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_PesoPresentacion;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_Cultivo;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_Campana;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_Categoria;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_Calibre;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_Cabezal;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_CabezalPT;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_Camara;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_CamaraFrio;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_CamaraPreFrio;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_CamaraGasificado;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_Maquinaria;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_FilerMaquina;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_Estilos;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_EmpaqueProceso;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_TipoParihuela;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_TipoPallet;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_TipoMateria;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_TipoCosecha;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_TipoDefecto;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_TipoCausaError;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_MotivoParadas;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_Turno;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_Transporte;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_EstadoPT;
+        private System.Windows.Forms.ToolStripMenuItem button_packing_maestros_Identificador;
         private System.Windows.Forms.ToolStripMenuItem button_packing_rrhh_tareodetallado;
         private System.Windows.Forms.ToolStripMenuItem button_packing_rrhh_progrSemanalPersonal;
         private System.Windows.Forms.ToolStripMenuItem button_packing_rrhh_progrAnualPersonal;

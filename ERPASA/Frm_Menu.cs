@@ -50,7 +50,6 @@ namespace ERPASA
             }
 
 
-            AgregarMaestrosPacking();
 
             AplicarEstiloMenu();
             //
@@ -861,39 +860,129 @@ namespace ERPASA
         /// debajo de "Agregar peso presentacion". Se arman por codigo y no en
         /// el diseñador: son dos docenas y cada una abre su propio formulario.
         /// </summary>
-        private void AgregarMaestrosPacking()
+        private void button_packing_maestros_Cultivo_Click(object sender, EventArgs e)
         {
-            AgregarMaestro("CULTIVO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCultivo(); });
-            AgregarMaestro("CAMPAÑA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCampana(); });
-            AgregarMaestro("CATEGORIA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCategoria(); });
-            AgregarMaestro("CALIBRE", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCalibre(); });
-            AgregarMaestro("CABEZAL", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCabezal(); });
-            AgregarMaestro("CABEZAL PT", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCabezalPT(); });
-            AgregarMaestro("CAMARA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamara(); });
-            AgregarMaestro("CAMARA DE FRIO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamaraFrio(); });
-            AgregarMaestro("CAMARA DE PRE FRIO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamaraPreFrio(); });
-            AgregarMaestro("CAMARA DE GASIFICADO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroCamaraGasificado(); });
-            AgregarMaestro("MAQUINARIA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroMaquinaria(); });
-            AgregarMaestro("FILER POR MAQUINA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroFilerMaquina(); });
-            AgregarMaestro("ESTILOS", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroEstilos(); });
-            AgregarMaestro("EMPAQUE DE PROCESO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroEmpaqueProceso(); });
-            AgregarMaestro("TIPO DE PARIHUELA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoParihuela(); });
-            AgregarMaestro("TIPO DE PALLET", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoPaLlet(); });
-            AgregarMaestro("TIPO DE MATERIA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoMateria(); });
-            AgregarMaestro("TIPO DE COSECHA", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoCosecha(); });
-            AgregarMaestro("TIPO DE DEFECTO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoDefecto(); });
-            AgregarMaestro("TIPO DE CAUSA DE ERROR", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTipoCausaError(); });
-            AgregarMaestro("MOTIVO DE PARADAS", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroMotivoParadas(); });
-            AgregarMaestro("TURNO", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTurno(); });
-            AgregarMaestro("TRANSPORTE", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroTransporte(); });
-            AgregarMaestro("ESTADO PT", delegate { return new Frm_Acopio.Frm_Maestros.Frm_MaestroEstadoPT(); });
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroCultivo>();
         }
 
-        private void AgregarMaestro(string titulo, Func<Form> crear)
+        private void button_packing_maestros_Campana_Click(object sender, EventArgs e)
         {
-            var opcion = new ToolStripMenuItem(titulo);
-            opcion.Click += delegate { AbrirFormularioHijo(crear()); };
-            button_packing_maestros.DropDownItems.Add(opcion);
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroCampana>();
+        }
+
+        private void button_packing_maestros_Categoria_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroCategoria>();
+        }
+
+        private void button_packing_maestros_Calibre_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroCalibre>();
+        }
+
+        private void button_packing_maestros_Cabezal_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroCabezal>();
+        }
+
+        private void button_packing_maestros_CabezalPT_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroCabezalPT>();
+        }
+
+        private void button_packing_maestros_Camara_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroCamara>();
+        }
+
+        private void button_packing_maestros_CamaraFrio_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroCamaraFrio>();
+        }
+
+        private void button_packing_maestros_CamaraPreFrio_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroCamaraPreFrio>();
+        }
+
+        private void button_packing_maestros_CamaraGasificado_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroCamaraGasificado>();
+        }
+
+        private void button_packing_maestros_Maquinaria_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroMaquinaria>();
+        }
+
+        private void button_packing_maestros_FilerMaquina_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroFilerMaquina>();
+        }
+
+        private void button_packing_maestros_Estilos_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroEstilos>();
+        }
+
+        private void button_packing_maestros_EmpaqueProceso_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroEmpaqueProceso>();
+        }
+
+        private void button_packing_maestros_TipoParihuela_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroTipoParihuela>();
+        }
+
+        private void button_packing_maestros_TipoPallet_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroTipoPaLlet>();
+        }
+
+        private void button_packing_maestros_TipoMateria_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroTipoMateria>();
+        }
+
+        private void button_packing_maestros_TipoCosecha_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroTipoCosecha>();
+        }
+
+        private void button_packing_maestros_TipoDefecto_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroTipoDefecto>();
+        }
+
+        private void button_packing_maestros_TipoCausaError_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroTipoCausaError>();
+        }
+
+        private void button_packing_maestros_MotivoParadas_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroMotivoParadas>();
+        }
+
+        private void button_packing_maestros_Turno_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroTurno>();
+        }
+
+        private void button_packing_maestros_Transporte_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroTransporte>();
+        }
+
+        private void button_packing_maestros_EstadoPT_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroEstadoPT>();
+        }
+
+        private void button_packing_maestros_Identificador_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_Acopio.Frm_Maestros.Frm_MaestroIdentificador>();
         }
 
         private void button_packing_maestros_PesoPresentacion_Click(object sender, EventArgs e)
@@ -1194,6 +1283,16 @@ namespace ERPASA
         private void RRHH_SelecDesarr_GrupoLabor_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo<Frm_SelecDesarrollo.Frm_CargarGrupoLabor>();
+        }
+
+        private void RRHH_SelecDesarr_EficienciaQC_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_SelecDesarrollo.Frm_CargarEficienciaQC>();
+        }
+
+        private void RRHH_SelecDesarr_CoberturaProgramadoQC_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo<Frm_SelecDesarrollo.Frm_CoberturaProgramadoQC>();
         }
 
         private void RRHH_SelecDesarr_Productividad_Click(object sender, EventArgs e)

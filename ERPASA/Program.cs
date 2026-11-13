@@ -15,7 +15,7 @@ namespace ERPASA
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Frm_TabMaestra.Frm_RolesUserAppMovil());
             //Application.Run(new Frm_Contabilidad.Frm_RindeGastoNisiraAPI());
-            //Application.Run(new Reportes.Acopio.Frm_Reporte_RecepcionAcopio());
+            //Application.Run(new Frm_SelecDesarrollo.Frm_CargarEficiencia());
             Application.Run(new Frm_Login());
         }
 

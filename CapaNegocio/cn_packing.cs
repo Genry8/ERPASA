@@ -1315,5 +1315,40 @@ namespace CapaNegocio
             return datos.BuscExisteEnviarCorreo(emp, sed, formulario, tipocorreo, id);
         }
 
+
+        //
+        //maestro PACK_Identificador
+        public static DataTable ListaMaestroIdentificador()
+        {
+            cd_packing datos = new cd_packing();
+            return datos.ListaMaestroIdentificador();
+        }
+
+        public void GuardarMaestroIdentificador(string identificador, string cultivo, string obs
+            , DateTime fec_cre, int usereg, string hostname)
+        {
+            cd_packing datos = new cd_packing();
+            datos.GuardarMaestroIdentificador(identificador, cultivo, obs, fec_cre, usereg, hostname);
+        }
+
+        public void ActualizarMaestroIdentificador(int id, string identificador, string cultivo, string obs
+            , DateTime fec_mov, int usedit)
+        {
+            cd_packing datos = new cd_packing();
+            datos.ActualizarMaestroIdentificador(id, identificador, cultivo, obs, fec_mov, usedit);
+        }
+
+        public void EliminarMaestroIdentificador(int id, DateTime fec_mov, int useelim)
+        {
+            cd_packing datos = new cd_packing();
+            datos.EliminarMaestroIdentificador(id, fec_mov, useelim);
+        }
+
+        public static bool BuscExisteMaestroIdentificador(string identificador, string cultivo, int id)
+        {
+            cd_packing datos = new cd_packing();
+            return datos.BuscExisteMaestroIdentificador(identificador, cultivo, id);
+        }
+
     }
 }

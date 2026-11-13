@@ -395,6 +395,7 @@ namespace ERPASA.Reportes.Acopio
                 string fecha = row.Cells[6].Value?.ToString();
                 string destino = row.Cells[15].Value?.ToString();
                 string idcabezal = row.Cells[16].Value?.ToString();
+                string identificador = row.Cells[17].Value?.ToString();
 
                 string inicial = "";
                 string empresa;
@@ -466,7 +467,8 @@ namespace ERPASA.Reportes.Acopio
                     presentacion,
                     destino,
                     dm,
-                    idcabezal
+                    idcabezal,
+                    identificador
                 );
 
 

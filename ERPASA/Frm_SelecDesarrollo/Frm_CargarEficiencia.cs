@@ -42,9 +42,21 @@ namespace ERPASA.Frm_SelecDesarrollo
             comboBox_Año.SelectedIndex = 0;
 
             comboBox_Hojas.DropDownStyle = ComboBoxStyle.DropDownList;
+            Cargar_Empresa();
+            comboBox_empresa.DropDownStyle = ComboBoxStyle.DropDownList;
 
             PonerOscuroComboBox();
         }
+
+        public void Cargar_Empresa()
+        {
+            //CARGAR EMPRESA
+            comboBox_empresa.DataSource = cn_logistica.ListaCBEmpresaTodoAsignacionTI();
+            comboBox_empresa.DisplayMember = "DesEmp"; //NOMBRE DE LA TABLA O NOMBRE DE COLUMNA ID
+            comboBox_empresa.ValueMember = "id"; // NOMBRE DE LA COLUMNA o PARA ORDENAR
+
+        }
+
 
         public void PonerOscuroComboBox()
         {
@@ -320,7 +332,7 @@ namespace ERPASA.Frm_SelecDesarrollo
         {
 
             string hojaText = string.Empty
-                , añoText = string.Empty, semText = string.Empty;
+                , añoText = string.Empty, semText = string.Empty, empText = string.Empty;
 
             // Obtener el valor de la hojaText
             if (comboBox_Hojas.InvokeRequired)
@@ -357,6 +369,18 @@ namespace ERPASA.Frm_SelecDesarrollo
             else
             {
                 semText = comboBox_Semana.Text;
+            }
+            // Obtener el valor de la semana
+            if (comboBox_empresa.InvokeRequired)
+            {
+                comboBox_empresa.Invoke(new MethodInvoker(() =>
+                {
+                    empText = comboBox_empresa.Text;
+                }));
+            }
+            else
+            {
+                empText = comboBox_empresa.Text;
             }
 
             List<ce_eficiencia> lista = new List<ce_eficiencia>();
@@ -445,7 +469,6 @@ namespace ERPASA.Frm_SelecDesarrollo
         public void GuardarEficiencia()
         {
             DateTime currentDateTime = DateTime.Now.Date;
-
 
             string MessageBoxTitle = "REGISTRO";
             string MessageBoxContent = "¿Desea Guardar?";

@@ -1,4 +1,4 @@
-
+﻿
 using CapaEntidad;
 using System;
 using System.Data;
@@ -688,6 +688,98 @@ FROM @KilosSource;
         }
 
 
+
+
+        // SD_EficienciaQC: reemplaza el año y la semana completos (ver el SP).
+        public void GuardarEficienciaQC(DataTable datos)
+        {
+            CargaMasiva(datos, "#EficienciaQC", @"CREATE TABLE #EficienciaQC(
+                        IdReq              int,
+                        Semana             int,
+                        [Año]              varchar(80),
+                        Posicion           varchar(180),
+                        Sede               varchar(80),
+                        Planta             varchar(180),
+                        EstadoProceso      varchar(80),
+                        SemProy            int,
+                        FechaProy          date,
+                        SemAjuste          int,
+                        FechaReq           date,
+                        TiempoProceso      int,
+                        TipoPersonal       varchar(80),
+                        FechaTerna         date,
+                        FechaRpta          date,
+                        Dias               int,
+                        FechaEntrevista    date,
+                        FechaCierreProc    date,
+                        FechaIng           date,
+                        DiasDuracion       int,
+                        Vencimiento        int,
+                        Inspector          varchar(180),
+                        Incidencia         varchar(480),
+                        Obs                varchar(480),
+                        Hoja               varchar(180),
+                        Estado             varchar(10),
+                        FecCre             datetime,
+                        UseReg             int,
+                        Hostname           varchar(180),
+                        FecEdit            datetime,
+                        UseEdit            int)", "SP_GUARDAR_REEMPLAZAR_SD_EFICIENCIAQC");
+        }
+
+        // Cuantos registros tiene ya ese año y semana en SD_EficienciaQC.
+        public int ContarEficienciaQC(string anio, int semana)
+        {
+            using (var conexion = leerconexion())
+            using (var comando = new SqlCommand("SP_CONTAR_SD_EFICIENCIAQC", conexion))
+            {
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add("@Anio", SqlDbType.VarChar, 80).Value = anio;
+                comando.Parameters.Add("@Semana", SqlDbType.Int).Value = semana;
+
+                conexion.Open();
+                object resultado = comando.ExecuteScalar();
+                return resultado == null || resultado == DBNull.Value ? 0 : Convert.ToInt32(resultado);
+            }
+        }
+
+
+        // SD_CoberturaProgramadoQC: reemplaza el año y la semana completos (ver el SP).
+        public void GuardarCoberturaProgramadoQC(DataTable datos)
+        {
+            CargaMasiva(datos, "#CoberturaProgramadoQC", @"CREATE TABLE #CoberturaProgramadoQC(
+                        Empresa          varchar(80),
+                        Sede             varchar(80),
+                        [Año]            varchar(80),
+                        Semana           int,
+                        Zona             varchar(180),
+                        Planta           varchar(180),
+                        Fecha            date,
+                        CantProy         int,
+                        CantProyAjust    int,
+                        Estado           varchar(10),
+                        FecCre           datetime,
+                        UseReg           int,
+                        Hostname         varchar(180),
+                        FecEdit          datetime,
+                        UseEdit          int)", "SP_GUARDAR_REEMPLAZAR_SD_COBERTURAPROGRAMADOQC");
+        }
+
+        // Cuantos registros tiene ya ese año y semana en SD_CoberturaProgramadoQC.
+        public int ContarCoberturaProgramadoQC(string anio, int semana)
+        {
+            using (var conexion = leerconexion())
+            using (var comando = new SqlCommand("SP_CONTAR_SD_COBERTURAPROGRAMADOQC", conexion))
+            {
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add("@Anio", SqlDbType.VarChar, 80).Value = anio;
+                comando.Parameters.Add("@Semana", SqlDbType.Int).Value = semana;
+
+                conexion.Open();
+                object resultado = comando.ExecuteScalar();
+                return resultado == null || resultado == DBNull.Value ? 0 : Convert.ToInt32(resultado);
+            }
+        }
 
     }
 }
