@@ -16,7 +16,7 @@ namespace CapaDatos
         public cd_conexion()
         {
             string srtserver = ConfigurationManager.AppSettings["server"];
-            conexionstring = "server=10.250.200.9;DataBase=BD_ASA; Integrated Security = false; uid=app; pwd=Asa2026.C@r@l";
+            conexionstring = "server=10.250.200.9;DataBase=BD_TEST; Integrated Security = false; uid=app; pwd=Asa2026.C@r@l";
         }
 
         public static cd_conexion CrearInstancia()

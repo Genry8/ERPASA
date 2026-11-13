@@ -242,6 +242,12 @@ namespace ERPASA.Frm_SST
                         Convert.ToDateTime(dataGridView1[14, i].Value),//HR_SAL
                         "",
 
+                        // NUEVAS COLUMNAS (NULL)
+                        null, // LUGAR ATENCION
+                        null, // UBICACION REPORTE
+                        null, // PERSONAL TRASLADO
+                        null, // BRINDO ATENCION
+
                         comboBox_Hojas.Text,
                         "",
                         ce_usuario.FechaSistema(),

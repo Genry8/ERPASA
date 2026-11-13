@@ -129,25 +129,30 @@ namespace CapaNegocio
         }
 
 
-        //GUARDAR ATENCIONES MEDICAS
+
+        // GUARDAR ATENCIONES MEDICAS
         public void GuardarAtenMedica(DateTime fecha, Boolean quincena, string mes, string emp, string sed, string dni
             , string apenom, string area, string jefearea, string patologia, string diagnostico
             , string sintomas, string localidad
             , decimal cant_med, string accion_realizada
             , string parteCuerpo, string labor
             , DateTime hr_ent, DateTime hr_sal
-            , DateTime hr_campo, DateTime hr_topico, string nivelAtencion, string hoja
-            , string estado, DateTime fec_cre, int usereg,
-            string hostname, DateTime fec_mov, int usedit)
+            , DateTime hr_campo, DateTime hr_topico, string nivelAtencion
+            , string lugarAtencion, string ubicacionReporte
+            , string personalTraslado, string brindoAtencion
+            , string hoja, string estado, DateTime fec_cre, int usereg
+            , string hostname, DateTime fec_mov, int usedit)
         {
             cd_planilla datos = new cd_planilla();
+
             datos.GuardarAtenMedica(fecha, quincena, mes, emp, sed, dni
-            , apenom, area, jefearea, patologia, diagnostico, sintomas, localidad
-            , cant_med, accion_realizada, parteCuerpo, labor
-            , hr_ent, hr_sal
-            , hr_campo, hr_topico, nivelAtencion, hoja, estado, fec_cre, usereg, hostname
-                , fec_mov, usedit);
+                , apenom, area, jefearea, patologia, diagnostico, sintomas, localidad
+                , cant_med, accion_realizada, parteCuerpo, labor
+                , hr_ent, hr_sal, hr_campo, hr_topico, nivelAtencion
+                , lugarAtencion, ubicacionReporte, personalTraslado, brindoAtencion
+                , hoja, estado, fec_cre, usereg, hostname, fec_mov, usedit);
         }
+
 
 
         //GUARDAR CHARLA

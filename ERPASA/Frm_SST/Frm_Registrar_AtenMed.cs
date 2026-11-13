@@ -331,37 +331,42 @@ namespace ERPASA.Frm_SST
                 {
 
                     objcnlog.GuardarAtenMedica(
-                    //Convert.ToInt32(dataGridView1[0, i].Value).ToString("D8").Trim(),//DNI
-                    dateTimePicker_FecAtencion.Value.Date,//FECHA INICIO
-                    checkBox_Incidencia.Checked,//INCIDENCIA
-                    dateTimePicker_FecAtencion.Value.Month.ToString(),//MES
-                    comboBox_detalle_empresa.Text,
-                    comboBox_detalle_sede.Text,
-                    textBox_Dni.Text,//DNI
-                    textBox_ApeNom.Text,//APENOM
-                    textBox_Area.Text,//AREA
-                    textBox_JefeArea.Text,//JEFEAREA
-                    textBox_Patologia.Text,//PATOLOGIA
-                    textBox_Diagnóstico.Text,//DIAGNOSTICO
-                    textBox_Sintomas.Text,//SINTOMAS
-                    textBox_Localidad.Text,//LOCALIDAD
-                    Convert.ToDecimal(0),//CANT MEDICAMENTO
-                    textBox_AccionRealizada.Text,//ACCION REALIZADA
-                    textBox_ParteAfectada.Text,//PARTE DE CUERPO
-                    textBox_Labor.Text,//LABOR
-                    Convert.ToDateTime(textBox_HoraEntrada.Text),//HR_ENT
-                    Convert.ToDateTime(textBox_HoraSalida.Text),//HR_SAL
-                    Convert.ToDateTime(textBox_HoraCampo.Text),//HR_CAMPO
-                    Convert.ToDateTime(textBox_HoraTopico.Text),//HR_TOPICO
-                    comboBox_NivelAtencion.Text.Trim(),
+                        dateTimePicker_FecAtencion.Value.Date, // FECHA
+                        checkBox_Incidencia.Checked, // INCIDENCIA
+                        dateTimePicker_FecAtencion.Value.Month.ToString(), // MES
+                        comboBox_detalle_empresa.Text,
+                        comboBox_detalle_sede.Text,
+                        textBox_Dni.Text, // DNI
+                        textBox_ApeNom.Text, // APENOM
+                        textBox_Area.Text, // AREA
+                        textBox_JefeArea.Text, // JEFEAREA
+                        textBox_Patologia.Text, // PATOLOGIA
+                        textBox_Diagnóstico.Text, // DIAGNOSTICO
+                        textBox_Sintomas.Text, // SINTOMAS
+                        textBox_Localidad.Text, // LOCALIDAD
+                        Convert.ToDecimal(0), // CANT MEDICAMENTO
+                        textBox_AccionRealizada.Text, // ACCION REALIZADA
+                        textBox_ParteAfectada.Text, // PARTE DE CUERPO
+                        textBox_Labor.Text, // LABOR
+                        Convert.ToDateTime(textBox_HoraEntrada.Text), // HR_ENT
+                        Convert.ToDateTime(textBox_HoraSalida.Text), // HR_SAL
+                        Convert.ToDateTime(textBox_HoraCampo.Text), // HR_CAMPO
+                        Convert.ToDateTime(textBox_HoraTopico.Text), // HR_TOPICO
+                        comboBox_NivelAtencion.Text.Trim(), // NIVEL ATENCION
 
-                    "",
-                    "S",
-                    ce_usuario.FechaSistema(),
-                    ce_usuario.usecod,
-                    ce_usuario.HostName(),
-                    ce_usuario.FechaSistema(),
-                    0
+                        // NUEVAS COLUMNAS (NULL)
+                        null, // LUGAR ATENCION
+                        null, // UBICACION REPORTE
+                        null, // PERSONAL TRASLADO
+                        null, // BRINDO ATENCION
+
+                        "", // HOJA
+                        "S", // ESTADO
+                        ce_usuario.FechaSistema(),
+                        ce_usuario.usecod,
+                        ce_usuario.HostName(),
+                        ce_usuario.FechaSistema(),
+                        0
                     );
 
                     GuardarRecetaDGV();

@@ -871,6 +871,7 @@ namespace CapaDatos
 
 
 
+
         // METODO PARA GUARDAR ATENCION MEDICA
         public void GuardarAtenMedica(DateTime fecha, Boolean quincena, string mes, string emp, string sed, string dni
             , string apenom, string area, string jefearea, string patologia
@@ -878,17 +879,20 @@ namespace CapaDatos
             , decimal cant_med, string accion_realizada
             , string parteCuerpo, string labor
             , DateTime hr_ent, DateTime hr_sal
-            , DateTime hr_campo, DateTime hr_topico, string nivelAtencion, string hoja
-            , string estado, DateTime fec_cre, int usereg, string hostname, DateTime fec_mov, int usedit)
+            , DateTime hr_campo, DateTime hr_topico, string nivelAtencion
+            , string lugarAtencion, string ubicacionReporte
+            , string personalTraslado, string brindoAtencion
+            , string hoja, string estado, DateTime fec_cre, int usereg
+            , string hostname, DateTime fec_mov, int usedit)
         {
             using (var conexion = leerconexion())
             {
-
                 using (var comando = new SqlCommand("SP_GUARDAR_ATEN_MEDICA"))
                 {
                     comando.Connection = conexion;
                     comando.CommandType = CommandType.StoredProcedure;
                     conexion.Open();
+
                     comando.Parameters.AddWithValue("@Fecha", SqlDbType.Date).Value = fecha;
                     comando.Parameters.AddWithValue("@Incidencia", SqlDbType.Bit).Value = quincena;
                     comando.Parameters.AddWithValue("@Mes", SqlDbType.VarChar).Value = mes;
@@ -906,24 +910,37 @@ namespace CapaDatos
                     comando.Parameters.AddWithValue("@Accion_realizada", SqlDbType.VarChar).Value = accion_realizada;
                     comando.Parameters.AddWithValue("@ParteCuerpo", SqlDbType.VarChar).Value = parteCuerpo;
                     comando.Parameters.AddWithValue("@Labor", SqlDbType.VarChar).Value = labor;
-                    comando.Parameters.AddWithValue("@Hr_ent", SqlDbType.Time).Value = hr_ent;
-                    comando.Parameters.AddWithValue("@Hr_sal", SqlDbType.Time).Value = hr_sal;
-                    comando.Parameters.AddWithValue("@Hr_campo", SqlDbType.Time).Value = hr_campo;
-                    comando.Parameters.AddWithValue("@Hr_topico", SqlDbType.Time).Value = hr_topico;
+                    comando.Parameters.AddWithValue("@Hr_ent", SqlDbType.Time).Value = hr_ent.TimeOfDay;
+                    comando.Parameters.AddWithValue("@Hr_sal", SqlDbType.Time).Value = hr_sal.TimeOfDay;
+                    comando.Parameters.AddWithValue("@Hr_campo", SqlDbType.Time).Value = hr_campo.TimeOfDay;
+                    comando.Parameters.AddWithValue("@Hr_topico", SqlDbType.Time).Value = hr_topico.TimeOfDay;
                     comando.Parameters.AddWithValue("@Nivel_atencion", SqlDbType.VarChar).Value = nivelAtencion;
+
+                    // NUEVAS COLUMNAS: SE GUARDAN COMO NULL
+                    comando.Parameters.Add("@LugarAtencion", SqlDbType.VarChar, 280).Value =
+                        string.IsNullOrWhiteSpace(lugarAtencion) ? (object)DBNull.Value : lugarAtencion;
+
+                    comando.Parameters.Add("@UbicacionReporte", SqlDbType.VarChar, 280).Value =
+                        string.IsNullOrWhiteSpace(ubicacionReporte) ? (object)DBNull.Value : ubicacionReporte;
+
+                    comando.Parameters.Add("@PersonalTraslado", SqlDbType.VarChar, 280).Value =
+                        string.IsNullOrWhiteSpace(personalTraslado) ? (object)DBNull.Value : personalTraslado;
+
+                    comando.Parameters.Add("@BrindoAtencion", SqlDbType.VarChar, 280).Value =
+                        string.IsNullOrWhiteSpace(brindoAtencion) ? (object)DBNull.Value : brindoAtencion;
 
                     comando.Parameters.AddWithValue("@Hoja", SqlDbType.VarChar).Value = hoja;
                     comando.Parameters.AddWithValue("@Estado", SqlDbType.VarChar).Value = estado;
                     comando.Parameters.AddWithValue("@FecCre", SqlDbType.DateTime).Value = fec_cre;
                     comando.Parameters.AddWithValue("@UseReg", SqlDbType.Int).Value = usereg;
                     comando.Parameters.AddWithValue("@Hostname", SqlDbType.VarChar).Value = hostname;
-                    comando.Parameters.AddWithValue("@FecEdit", SqlDbType.DateTime).Value = fec_mov;
-                    comando.Parameters.AddWithValue("@UseEdit", SqlDbType.Int).Value = usedit;
-                    comando.ExecuteNonQuery();
 
+                    comando.Parameters.AddWithValue("@FecEdit", SqlDbType.DateTime).Value = DBNull.Value;
+                    comando.Parameters.AddWithValue("@UseEdit", SqlDbType.Int).Value = DBNull.Value;
+
+                    comando.ExecuteNonQuery();
                 }
             }
-
         }
 
 
